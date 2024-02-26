@@ -1,0 +1,17 @@
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+
+	<!-- typeAlias : VO/DTO 클래스들의 풀클래스명을 단순한 클래스명으로 사용하기 위해 별칭을 등록할 수 있는 영역 -->
+	<!-- 즉 VO, DTO 등록하는 곳 -->
+	<typeAliases>
+		<typeAlias type="com.semi.festopia.model.vo.User" alias="User" />
+	</typeAliases>
+
+	<!-- mapper 파일들 등록하는 곳 -->
+	<mappers>
+		<mapper resource="mappers/user-mapper.xml" />
+	</mappers>
+</configuration>
