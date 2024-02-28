@@ -34,6 +34,9 @@ crossorigin="anonymous"
 </head>
 <body>
 	<header>
+      <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+     </div>
       <h1>FESTOPIA</h1>
       <nav>
         <a href="#section2"

@@ -1,5 +1,24 @@
 @charset "UTF-8";
 
+.progress-bar-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 5px;
+  background: #ddd;
+}
+.progress-bar {
+  width: 0;
+  height: 100%;
+  background: #00a8ff;
+  background-color: teal;
+}
+
+
+
+
 html {
     height:100%;
 }
@@ -148,7 +167,29 @@ main section {
 }
 
 
+.text-animation {
+  /* animation:'textAni 1s 1 alternate'; */
+  animation: textAni 1s forwards;
 
+  /* animation: boxAni 2s linear;
+  animation: boxAni 2s linear 3;
+  animation: boxAni 3s linear infinite;
+  animation: boxAni 3s linear infinite alternate;
+  animation: boxAni 3s linear infinite reverse;
+  animation: boxAni 3s linear infinite alternate-reverse;
+  animation: boxAni 3s linear forwards; */
+}
+
+@keyframes textAni {
+  from {
+      opacity: 0;
+      transform: translateY(0);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(-10px);
+  }
+}
 
 
 
