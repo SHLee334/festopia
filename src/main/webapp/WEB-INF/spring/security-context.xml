@@ -17,7 +17,7 @@
 		<security:intercept-url pattern="/mypage" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')" /> <!-- 회원/관리자만 마이페이지 접속가능 -->
 		<security:form-login default-target-url="/login" login-processing-url="/login" authentication-success-handler-ref="customLoginSucess"/>
 		<security:csrf disabled="true" /> <!-- 이거 안 넣으면 ,cross origin error 일어남 -->
-		<security:logout logout-url="/logout" invalidate-session="true" logout-success-url="/index.jsp"/>
+		<security:logout logout-url="/logout" invalidate-session="true" logout-success-url="/"/>
 	</security:http>
 
 	<!-- 인증 매니저 : 다양한 방식의 인증을 처리할 수 있도록 설계 -->

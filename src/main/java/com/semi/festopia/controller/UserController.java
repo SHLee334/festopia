@@ -3,6 +3,7 @@ package com.semi.festopia.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -35,4 +36,11 @@ public class UserController {
 		//System.out.println("UserController 로그인 : " + username);
 		//return "redirect:/";
 	//}
+	
+	// 로그인 후 마이페이지이동
+	@GetMapping("/mypage")
+	public void myPage(User vo) {
+	}
+	
+	
 }
