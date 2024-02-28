@@ -34,27 +34,123 @@ crossorigin="anonymous"
 </head>
 <body>
 	<header>
-		<h1>FESTOPIA</h1>
-		<nav>
-			<a href="#section2"><i class="fa-solid fa-magnifying-glass" style="color: #938f9e;"></i></a>
-				<button class="btn btn-secondary dropdown-toggle"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-					<i class="fa-solid fa-circle-user" ></i>
-				</button>
-			<a href="#section3"><i class="fa-solid fa-circle-exclamation" style="color: #938f9e;"></i></a>
+      <h1>FESTOPIA</h1>
+      <nav>
+        <a href="#section2"
+          ><i class="fa-solid fa-magnifying-glass" style="color: #938f9e"></i
+        ></a>
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-circle-user"></i>
+        </button>
+        <a href="#section3"
+          ><i class="fa-solid fa-circle-exclamation" style="color: #938f9e"></i
+        ></a>
+        <sec:authentication property="principal" var="user" />
 
-			<ul class="dropdown-menu">
-				<li><a class="dropdown-item" href="#">로그인</a></li>
-				<li><a class="dropdown-item" href="#">회원가입</a></li>
+        <ul class="dropdown-menu">
+          <c:choose>
+            <c:when test="${user == 'anonymousUser'}">
+              <li>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  로그인
+                </button>
+              </li>
 
-				<li>   님, 환영합니다 </li>
-				<li><a class="dropdown-item" href="#">마이페이지</a></li>
-				<li><a class="dropdown-item" href="/logout" >로그아웃</a></li>
+              <li>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal2"
+                >
+                  회원가입
+                </button>
+              </li>
+            </c:when>
+            <c:otherwise>
+              <li>${user.id}님, 환영합니다</li>
+              <li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
+              <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
+            </c:otherwise>
+          </c:choose>
+        </ul>
+      </nav>
 
-			</ul>
-			  
-		</nav>
-	</header>
-	<!--  
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Modal title
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <jsp:include page="/WEB-INF/views/login.jsp" />
+            </div>
+            <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button> -->
+            <!-- </div>  -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 2-->
+      <div
+        class="modal fade"
+        id="exampleModal2"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Modal title
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <jsp:include page="/WEB-INF/views/register.jsp" />
+            </div>
+            <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button> -->
+            <!-- </div>  -->
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--  
 	<%-- 회원가입 세션 --%>
 	<div class="user-account-set" >
 		<div><a href="register.jsp">회원가입</a></div>
@@ -69,6 +165,5 @@ crossorigin="anonymous"
 	</div>
 	
 	-->
-	
 </body>
 </html>
