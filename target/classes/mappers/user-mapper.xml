@@ -5,11 +5,19 @@
 	<result property="id" column="user_id"/>
 	<result property="password" column="user_pwd"/>
 	<result property="email" column="user_email"/>
-	<result property="userStatus" column="user_status"/>
+	<result property="enabled" column="user_enabled"/>
 	<result property="userEnrollDate" column="user_enroll_date"/>
 	<result property="userQuitDate" column="user_quit_date"/>
-	<result property="userRole" column="user_role"/>
+	<result property="auth" column="user_role"/>
 	</resultMap>
+	
+	<insert id="registerUser" parameterType="User">
+		INSERT INTO user (user_id, user_pwd, user_email) VALUES (#{id} , #{password}, #{email})
+	</insert>
+	
+	<select id="loginUser" parameterType="String" resultMap="userMap">
+		SELECT * FROM user WHERE user_id = #{id}
+	</select>
 	
 	
 </mapper>

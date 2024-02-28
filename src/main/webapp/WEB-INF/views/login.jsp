@@ -8,8 +8,8 @@
 </head>
 <body>
 	<h1>로그인세션</h1>
-    <form action="signIn" method="post">
-      <div><input type="text" name="id" placeholder="아이디를 입력해주세요" /></div>
+    <form action="/login" method="post">
+      <div><input type="text" name="username" placeholder="아이디를 입력해주세요" /></div>
       <div><input type="password" name="password" placeholder="패스워드를 입력해주세요"/></div>
       <div><input type="submit" value="로그인" /></div>
     </form>

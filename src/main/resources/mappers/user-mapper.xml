@@ -12,11 +12,11 @@
 	</resultMap>
 	
 	<insert id="registerUser" parameterType="User">
-		INSERT INTO user (user_id, user_pwd, user_email) VALUES (#{id} , #{password}, #{email});
+		INSERT INTO user (user_id, user_pwd, user_email) VALUES (#{id} , #{password}, #{email})
 	</insert>
 	
-	<select id="loginUser" parameterType="String" resultType="User">
-		SELECT * FROM user WHERE user_id = #{id};
+	<select id="loginUser" parameterType="String" resultMap="userMap">
+		SELECT * FROM user WHERE user_id = #{id}
 	</select>
 	
 	
