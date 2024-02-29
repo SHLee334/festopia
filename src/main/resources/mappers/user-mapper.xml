@@ -19,5 +19,19 @@
 		SELECT * FROM user WHERE user_id = #{id}
 	</select>
 	
+	<!-- id 변경 쿼리문 -->
+	<update id="updateId" parameterType="String" >
+		UPDATE user
+		SET user_id=#{id}
+	</update>
+	
+	<!-- pwd 변경 쿼리문 -->
+	
+	<!-- 회원탈퇴 쿼리문 -->
+	
+	<!-- 찜목록 리스트 불러오기 쿼리문 -->
+	
+	<!-- 활동내역 리스트 불러오기 쿼리문 -->
+	
 	
 </mapper>
