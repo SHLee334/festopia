@@ -21,4 +21,16 @@ public class UserDAO {
 		System.out.println("user : " + user);
 		return user;
 	}
+	
+	// 유저 닉네임 변경
+	public int updateUserNickname(User vo) {
+		return session.update("userMapper.updateUserNickname", vo);
+	}
+	
+	// 유저 비번/메일 변경
+	public int updateUserInfo(User vo){
+		return session.update("userMapper.updateUserInfo", vo);
+	}
+		
+				
 }

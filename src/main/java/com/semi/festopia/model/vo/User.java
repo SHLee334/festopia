@@ -17,6 +17,7 @@ public class User implements UserDetails{
 	private int userCode;
 	private String id;
 	private String password;
+	private String nickname;
 	private String email;
 	private int enabled;
 	private Date userEnrollDate; //java.sql.Date로 import 함.

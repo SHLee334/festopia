@@ -36,4 +36,14 @@ public class UserService implements UserDetailsService{
 		vo.setPassword(encodePw);
 		return dao.registerUser(vo);
 	}
+	
+	// 아이디 변경
+	public int updateUserNickname(User vo) {
+		return dao.updateUserNickname(vo);
+	}
+	
+	// 비번/메일 변경
+	public int updateUserInfo(User vo) {
+		return dao.updateUserInfo(vo);
+	}
 }

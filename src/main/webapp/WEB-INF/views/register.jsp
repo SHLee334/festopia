@@ -13,6 +13,9 @@ pageEncoding="UTF-8"%>
         <input type="text" name="id" placeholder="아이디를 입력해주세요" />
       </div>
       <div>
+      	<input type="text" name="nickname" placeholder="넥네임을 입력해주세요" />
+      </div>
+      <div>
         <input
           type="password"
           name="password"
