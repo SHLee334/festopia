@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+.searchFilter {
+  border: 1px solid black;
+  width: 1000px;
+  height: 100px;
+}
