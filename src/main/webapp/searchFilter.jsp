@@ -26,6 +26,7 @@
 		<h1>검색 결과 페이지</h1>
 		<form action="search" >
 		<div class="searchFilter">
+			<div class="category">
 			<input type="checkbox" class="btn-check" id="btn-check-1" name="checkFes" value="1"
 			autocomplete="off"> <label class="btn" for="btn-check-1">교육/체험</label>
 			
@@ -61,6 +62,7 @@
 			
 			<input type="checkbox" class="btn-check" id="btn-check-12" name="checkFes" value="12"
 			autocomplete="off"> <label class="btn" for="btn-check-12">클래식</label>
+			</div>
 			
 			<input type="submit" value="검색">
 	
