@@ -53,14 +53,26 @@ header {
     position: fixed;
     display:flex;
     width:98%;
-    height:40px;
     justify-content: space-between;
     align-items: center;
     z-index:9999;
 }
 
-header nav {
-    font-size: 25px;
+
+
+
+#list {
+
+  list-style: none;
+  
+}
+
+.emoji {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  
 }
 
 .slider {
@@ -166,6 +178,14 @@ main section {
   padding-top:10px;
 }
 
+.row {
+  display:flex;
+  padding-left:300px;
+
+}
+
+
+/*스크롤*/
 
 .text-animation {
   /* animation:'textAni 1s 1 alternate'; */

@@ -6,6 +6,9 @@ pageEncoding="UTF-8"%>
     <meta charset="UTF-8" />
     <title>Insert title here</title>
 
+
+<!--  부트스트랩 또 적용하면 안됨  -->
+
   <!-- 스타일 적용 -->
 <link rel="stylesheet" href="./resources/css/index.css"/>
 
@@ -19,9 +22,10 @@ pageEncoding="UTF-8"%>
 
   </head>
   <body>
-    
+
     <jsp:include page="/header.jsp" />
     <main>
+     
 <div class="wrap">
       <section class="size" id="section1">
         <div class="slider">FESTOPIA
@@ -52,6 +56,12 @@ pageEncoding="UTF-8"%>
         <h2>이번 달 축제 일정</h2>
       </section>
     </div>
+ 
+
+
+
+
+
     </main>
     <!-- <a href="#" class="top">TOP</a> -->
    

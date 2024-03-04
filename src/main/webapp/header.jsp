@@ -23,17 +23,14 @@ src="https://kit.fontawesome.com/4602e82315.js"
 crossorigin="anonymous"
 ></script>
 
-<!--풀페이지 스크롤 기능-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/ㅊ"></script>
-
-
 
 
 
 </head>
 <body>
 	<header>
+
+    <!-- 스크롤 기능-->
       <div class="progress-bar-container">
         <div class="progress-bar"></div>
      </div>
@@ -152,6 +149,18 @@ crossorigin="anonymous"
           </div>
         </div>
       </div>
+
+      <div class="emoji">
+        <ul id="list">
+          <li><a href="#section1"><img src="./resources/css/free-icon-firework-8939197.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top"></a></li> <br> <br> <br> <br>
+          <li><a href="#section2"><img src="./resources/css/free-icon-ballons-5089869.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top"></a></li> <br> <br> <br> <br>
+          <li><a href="#section3"><img src="./resources/css/free-icon-parade-5257560.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top"></a></li>
+        </ul>
+      </div>
+
+      
+
+   
     </header>
     <!--  
 	<%-- 회원가입 세션 --%>
@@ -168,5 +177,6 @@ crossorigin="anonymous"
 	</div>
 	
 	-->
+  
 </body>
 </html>
