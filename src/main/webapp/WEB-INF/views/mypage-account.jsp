@@ -51,7 +51,8 @@
 			<form action="/unableAccount" method="post">
 				<div>
 					<input type="password" name="password" placeholder="비밀번호를 입력해주세요" />
-					<c:if test="${user.password eq password}">
+					<input type="hidden" name="pwdCheck" value="${user.password}">
+					<c:if test="">
 						<span>인증완료!(패스워드 인증시 뜨는 문자)</span>
 						<input type="submit" value="계정삭제">	
 					</c:if>
