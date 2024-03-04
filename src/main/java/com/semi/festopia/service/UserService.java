@@ -44,6 +44,8 @@ public class UserService implements UserDetailsService{
 	
 	// 비번/메일 변경
 	public int updateUserInfo(User vo) {
+		String encodePw = bcpe.encode(vo.getPassword());
+		vo.setPassword(encodePw);
 		return dao.updateUserInfo(vo);
 	}
 }
