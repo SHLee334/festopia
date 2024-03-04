@@ -25,9 +25,9 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler{
 		});
 		
 		if(roleNames.contains("ROLE_ADMIN")) { //관리자가 로그인에 성공함
-			response.sendRedirect("/index.jsp");
+			response.sendRedirect("/");
 		} else if(roleNames.contains("ROLE_MEMBER")) {// 유저가 로그인에 성공함
-			response.sendRedirect("/index.jsp");
+			response.sendRedirect("/");
 			return;
 		}
 		// 메모 : 일단 권한직급이 뭐가 되든 간에 로그인되면 홈페이지로 강제 이송
