@@ -43,7 +43,7 @@ uri="http://www.springframework.org/security/tags" %>
     <header>
       <h1>FESTOPIA</h1>
       <nav>
-        <a href="#section2"
+        <a href="searchFilter.jsp"
           ><i class="fa-solid fa-magnifying-glass" style="color: #938f9e"></i
         ></a>
         <button
