@@ -15,7 +15,6 @@ uri="http://www.springframework.org/security/tags" %>
       .mypage-container {
         height: 100vh;
         display: flex;
-        flex-wrap: nowrap;
         align-items: center;
         background-image: url(../../resources/css/mypage.jpg);
         background-repeat: no-repeat;
@@ -32,6 +31,7 @@ uri="http://www.springframework.org/security/tags" %>
       .item:nth-child(1) {
         background-color: none;
         width: 30vh;
+        margin-left: 10rem;
       }
       .li-nav {
         margin-bottom: 50px;
@@ -101,7 +101,9 @@ uri="http://www.springframework.org/security/tags" %>
         </ul>
       </nav>
 
-      <div class="item" id="main-jsp"><jsp:include page="mypage-account.jsp" /></div>
+      <div class="item" id="main-jsp">
+        <jsp:include page="mypage-account.jsp" />
+      </div>
       <div class="item" id="main-jsp">account jsp2</div>
       <div class="item" id="main-jsp">account jsp3</div>
     </div>
