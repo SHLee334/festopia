@@ -7,7 +7,9 @@ uri="http://www.springframework.org/security/tags" %>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>header부분만 따로</title>
+    <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+	<!-- 파비콘 -->
+	<link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"

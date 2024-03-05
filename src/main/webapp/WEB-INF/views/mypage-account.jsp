@@ -9,7 +9,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+<!-- 파비콘 -->
+<link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
 </head>
 <body>
 	<nav>
