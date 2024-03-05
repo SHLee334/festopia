@@ -12,12 +12,11 @@
 	<jsp:include page="/header.jsp" />
 	
 	<h1>축제 조회 결과</h1>
-	<table border="1">
+	<table border=1>
 		<tr>
 			<th>축제명</th>
 			<th>시작일</th>
 			<th>종료일</th>
-			<th>카테고리</th>
 		</tr>
 		
 		<c:forEach items="${list}" var="item">
@@ -25,7 +24,7 @@
 			<td>${item.name}</td>
 			<td>${item.startDate}</td>
 			<td>${item.endDate}</td>
-			<td>${item.category}</td>
+
 		</tr>
 		</c:forEach>
 	</table>

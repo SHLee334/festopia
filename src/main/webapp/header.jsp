@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib prefix="sec"
-uri="http://www.springframework.org/security/tags" %>
+uri="http://www.springframework.org/security/tags"%>
 
 <!DOCTYPE html>
 <html>
@@ -41,9 +41,43 @@ uri="http://www.springframework.org/security/tags" %>
       </div>
       <h1>FESTOPIA</h1>
       <nav>
-        <a href="searchFilter.jsp"
-          ><i class="fa-solid fa-magnifying-glass" style="color: #938f9e"></i
-        ></a>
+        <button
+          type="button"
+          class="searchButton"
+          data-bs-toggle="modal"
+          data-bs-target="#searchModal"
+        >
+          <i class="fa-solid fa-magnifying-glass" style="color: #938f9e"></i>
+        </button>
+
+        <!-- searchModal -->
+        <div
+          class="modal fade"
+          id="searchModal"
+          tabindex="-1"
+          aria-labelledby="searchModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="searchModalLabel">
+                  행사를 찾아보세요!
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+               	<jsp:include page="/searchFilter.jsp" />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <button
           class="btn btn-secondary dropdown-toggle"
           type="button"
@@ -86,7 +120,7 @@ uri="http://www.springframework.org/security/tags" %>
               <sec:authorize
                 access="hasRole('ROLE_ADMIN') and isAuthenticated()"
               />
-              <li>${user.nickname}님, 환영합니다</li>
+              <li>${user.nickname}님,환영합니다</li>
               <li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
               <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
             </c:otherwise>
