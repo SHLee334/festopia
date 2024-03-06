@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.semi.festopia.model.dao.SearchDAO;
+import com.semi.festopia.model.dto.SearchDTO;
 import com.semi.festopia.model.vo.Festival;
 
 @Service
@@ -14,10 +15,14 @@ public class SearchService {
 	@Autowired
 	private SearchDAO dao;
 	
-	public List<Festival> searchFestival(String[] checkFes) {
-		List<String> fesList = Arrays.asList(checkFes);
-		System.out.println(Arrays.asList(checkFes));
-		return dao.searchFestival(fesList);
+	public List<Festival> searchFestival(SearchDTO dto) {
+		//dto.getCheckFes()
+		System.out.println(dto.getCheckFes()); // 없으면 null
+		if(dto.getCheckFes() == null) {
+			dto.setNoCategory(true);
+		} 
+		
+		return dao.searchFestival(dto);
 	}
 
 }

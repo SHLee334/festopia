@@ -9,6 +9,7 @@
 	<typeAliases>
 		<typeAlias type="com.semi.festopia.model.vo.User" alias="User" />
 		<typeAlias type="com.semi.festopia.model.vo.Festival" alias="Festival" />
+		<typeAlias type="com.semi.festopia.model.dto.SearchDTO" alias="SearchDTO"/>
 	</typeAliases>
 
 	<!-- mapper 파일들 등록하는 곳 -->

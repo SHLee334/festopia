@@ -1,10 +1,11 @@
 package com.semi.festopia.model.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import java.util.List;
 
-@Getter @Setter
+import lombok.Data;
+
+@Data
 public class SearchDTO {
-	private String feeStatus;
-
+	private List<String> checkFes;
+	private boolean noCategory;
 }

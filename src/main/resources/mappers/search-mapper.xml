@@ -21,15 +21,23 @@
 		<result property="category" column="category_name" />
 	</resultMap>
 
-	<select id="searchFestival" parameterType="ArrayList"
+	<select id="searchFestival" parameterType="SearchDTO"
 		resultMap="festivalMap">
+		<choose>
+			<when test="noCategory == true">
+			SELECT * FROM festival
+			</when>
+			
+			<otherwise>
+			SELECT * FROM festival
+				JOIN fes_category USING (category_code) WHERE category_code IN
+				<foreach collection="checkFes" item="item" open="(" close=")" separator=",">
+					#{item}
+				</foreach>				
+			</otherwise>
+		</choose>
+		
 
-		SELECT * FROM festival
-		JOIN fes_category USING (category_code) WHERE category_code IN
-		<foreach collection="list" item="item" open="(" close=")"
-			separator=",">
-			#{item}
-		</foreach>
 	</select>
 
 </mapper>

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.semi.festopia.model.dto.SearchDTO;
 import com.semi.festopia.model.vo.Festival;
 import com.semi.festopia.service.SearchService;
 
@@ -16,11 +17,10 @@ public class SearchController {
 	private SearchService service;
 	
 	@GetMapping("search")
-	public String search(String[] checkFes, Model model) {
-		List<Festival> list = service.searchFestival(checkFes);
-		System.out.println(checkFes);
+	public String search(SearchDTO dto, Model model) {
+		System.out.println(dto);
+		List<Festival> list = service.searchFestival(dto);
 		model.addAttribute("list", list);
-		System.out.println(list);
 		return "searchResult";
 	}
 
