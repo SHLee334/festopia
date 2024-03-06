@@ -16,25 +16,18 @@ uri="http://www.springframework.org/security/tags" %>
       * {
         box-sizing: border-box;
       }
-      /* .tabs {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 130vh;
-        height: 80vh;
-        padding: 30px 20px;
-        background: #f5f5f5;
-        box-shadow: 5px 5px 10px 5px #ccc;
-        overflow: hidden;
-        margin-left: 300px;
-      } */
+      body{
+        background: white;
+      }
       .tabs .tab-header {
         float: left;
         width: 180px;
         height: 80vh;
         border-right: 1px solid #ccc; /*nav쪽 줄*/
-        padding: 50px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
       .tabs .tab-header > div {
         height: 50px;
@@ -44,10 +37,6 @@ uri="http://www.springframework.org/security/tags" %>
         color: #888;
         cursor: pointer;
         padding-left: 10px;
-      }
-      .tabs .tab-header > div:hover,
-      .tabs .tab-header > div.active {
-        color: #00acee;
       }
       .tabs .tab-header div i {
         display: inline-block;
@@ -82,140 +71,107 @@ uri="http://www.springframework.org/security/tags" %>
       .tabs .tab-content > div.active {
         top: 0px;
       }
-
-      /* .tabs .tab-indicator {
-        position: absolute;
-        width: 4px;
-        height: 50px;
-        background: #00acee;
-        left: 198px; 스크롤바 위치
-        top: 80px; 스크롤바 위치
-        transition: all 500ms ease-in-out;
-      } */
+      .pigeon-account{
+        display: flex;
+        align-items: center;
+        background-color: beige;
+        height: 20rem;
+      }
+      #userImage{
+        border-radius: 50%;
+        border: 1px solid #888;
+        background-color: none;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        margin-left: 50px;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      #userInfo{
+        text-align: left;
+        margin-left: 100px;
+        line-height: 50px;
+      }
     </style>
   </head>
   <body>
     <div class="tabs">
       <div class="tab-header">
-        <div class="inneractive0">Code</div>
-        <div class="inneractive1">About</div>
-        <div class="inneractive2">Services</div>
-        <div class="inneractive3">Contact</div>
+        <div class="inneractive0">개인정보 수정</div>
+        <div class="inneractive1">비밀번호 변경</div>
+        <div class="inneractive2">회원탈퇴</div>
       </div>
-      <!-- <div class="tab-indicator"></div> -->
+   
       <div class="tab-content">
+
         <div class="innercontent0">
-          <h2>This is code section</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis eum
-            similique quisquam officiis neque, cumque dignissimos architecto
-            nisi totam sapiente eos et illum laborum atque vero ea perferendis
-            consectetur veritatis.
-          </p>
+          <nav class="pigeon-account">
+            <div id="userImage"></div>
+            <div id="userInfo">
+              <ul>
+                <li>이름 : ${user.nickname}님</li>
+                <li>이메일 : ${user.email}</li>
+                <li>아이디 : ${user.id}</li>
+              </ul> 
+            </div>
+            
+          </nav>
+
+          <div class="modify-second-page" id="content-page" >
+            닉네임 슬라이드 변경
+            ${user}
+            <form action="/updateUserNickname" method="post">
+              <div><span>현재 닉네임 : ${user.nickname}</span></div>
+              <div><input type="text" name="nickname" placeholder="변경할 닉네임을 입력하세요" /> </div>
+              <div><input type="hidden" name="userCode" value="${user.userCode}" /></div>
+              <div><input type="submit" value="아이디 변경하기" /></div>
+            </form>
+          </div>
         </div>
 
         <div class="innercontent1">
-          <h2>This is about section</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis eum
-            similique quisquam officiis neque, cumque dignissimos architecto
-            nisi totam sapiente eos et illum laborum atque vero ea perferendis
-            consectetur veritatis.
-          </p>
+          <div class="modify-second-page" id="content-page" >
+            pwd / email변경 슬라이드
+            <form action="updateUserInfo" method="post">
+              <div>
+                <input type="password" name="password" placeholder="변경할 비밀번호를 입력해주세요"/>
+                <input type="password" name="passwordCheck" placeholder="변경할 비밀번호를 한번 더 입력해주세요"/>
+                <span>비밀번호 동일한거 확인 완료 라고 띄우기</span>	
+              </div>
+              <div>
+                <input type="text" name="email" value="${user.email}" placeholder="변경할 이메일을 입력해주세요.">
+              </div>
+              <div>
+                <input type="hidden" name="userCode" value="${user.userCode}" />
+                <input type="submit" value="계정정보 변경하기">
+              </div>
+            </form>
+          </div>
         </div>
 
         <div class="innercontent2">
-          <h2>This is services section</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis eum
-            similique quisquam officiis neque, cumque dignissimos architecto
-            nisi totam sapiente eos et illum laborum atque vero ea perferendis
-            consectetur veritatis.
-          </p>
+          <div class="modify-second-page" id="content-page" >회원탈퇴
+            <form action="/unableAccount" method="post">
+              <div>
+                <input type="password" name="password" placeholder="비밀번호를 입력해주세요" />
+                <input type="hidden" name="pwdCheck" value="${user.password}">
+                <c:if test="">
+                  <span>인증완료!(패스워드 인증시 뜨는 문자)</span>
+                  <input type="submit" value="계정삭제">	
+                </c:if>
+              </div>
+            </form>
+            account-second-page의 크기는 buttion3개 다 합한거랑 같은 사이즈 
         </div>
-
-        <div class="innercontent3">
-          <h2>This is contact section</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis eum
-            similique quisquam officiis neque, cumque dignissimos architecto
-            nisi totam sapiente eos et illum laborum atque vero ea perferendis
-            consectetur veritatis.
-          </p>
         </div>
       </div>
     </div>
 
-    <!-- <div class="account-page">
+    
 
-	
-	<div class="account-first-page"> 
-		<nav class="pigeon-account" >
-			<div>회원 사진</div>
-			<div>${user.nickname}님, 환영합니다. nav파트는 position fixed</div>
-		</nav>
-	
-		<div class="myaccount-button">
-			<ul>
-				<li><button>닉네임 변경</button></li>
-				<li><button> 개인정보 수정</button></li>
-				<li><button>회원탈퇴</button></li>
-			</ul>
-		</div>
-	</div>
-	
-	<div class="account-second-page">
-		<div class="modify-second-page" id="content-page" >
-			닉네임 슬라이드 변경
-			${user}
-			<form action="/updateUserNickname" method="post">
-				<div><span>현재 닉네임 : ${user.nickname}</span></div>
-				<div><input type="text" name="nickname" placeholder="변경할 닉네임을 입력하세요" /> </div>
-				<div><input type="hidden" name="userCode" value="${user.userCode}" /></div>
-				<div><input type="submit" value="아이디 변경하기" /></div>
-			</form>
-		</div>
 
-		<div class="modify-second-page" id="content-page" >
-			pwd / email변경 슬라이드
-			<form action="updateUserInfo" method="post">
-				<div>
-					<input type="password" name="password" placeholder="변경할 비밀번호를 입력해주세요"/>
-					<input type="password" name="passwordCheck" placeholder="변경할 비밀번호를 한번 더 입력해주세요"/>
-					<span>비밀번호 동일한거 확인 완료 라고 띄우기</span>	
-				</div>
-				<div>
-					<input type="text" name="email" value="${user.email}" placeholder="변경할 이메일을 입력해주세요.">
-				</div>
-				<div>
-					<input type="hidden" name="userCode" value="${user.userCode}" />
-					<input type="submit" value="계정정보 변경하기">
-				</div>
-			</form>
-		</div>
-		
-		<div class="modify-second-page" id="content-page" >회원탈퇴
-			<form action="/unableAccount" method="post">
-				<div>
-					<input type="password" name="password" placeholder="비밀번호를 입력해주세요" />
-					<input type="hidden" name="pwdCheck" value="${user.password}">
-					<c:if test="">
-						<span>인증완료!(패스워드 인증시 뜨는 문자)</span>
-						<input type="submit" value="계정삭제">	
-					</c:if>
-				</div>
-			</form>
-		  account-second-page의 크기는 buttion3개 다 합한거랑 같은 사이즈 
-	</div>
-	</div>
-</div> -->
-
-    <script>
-      // 첫번째 켜짐
-      $(".inneractive0").on("click", (e) => {
-        $(e.target).css("color", "blue");
-        $(`.innercontent0`).css("display", "block");
-      });
+    <script src="../../resources/js/mypage-account.js">
     </script>
   </body>
 </html>

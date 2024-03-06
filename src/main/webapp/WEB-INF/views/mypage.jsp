@@ -20,6 +20,7 @@ uri="http://www.springframework.org/security/tags" %>
         background-repeat: no-repeat;
         background-size: cover;
         background-position: bottom;
+        flex-shrink: 0;
       }
       .item {
         height: 80vh;
@@ -45,11 +46,12 @@ uri="http://www.springframework.org/security/tags" %>
 
       /* main jsp section */
       #main-jsp:nth-of-type(1) {
-        background-color: #01579b;
+        background-color: white;
         width: 130vh;
         border-radius: 20px;
         display: none;
         overflow: auto;
+        flex-shrink: 0;
       }
       #main-jsp:nth-last-of-type(2) {
         background-color: blue;
@@ -57,6 +59,7 @@ uri="http://www.springframework.org/security/tags" %>
         border-radius: 20px;
         display: none;
         overflow: auto;
+        flex-shrink: 0;
       }
       #main-jsp:nth-of-type(3) {
         background-color: aqua;
@@ -64,17 +67,21 @@ uri="http://www.springframework.org/security/tags" %>
         border-radius: 20px;
         display: none;
         overflow: auto;
+        flex-shrink: 0;
       }
 
       /* 구간 별 색깔 */
       #button01 {
         background-color: #01579b;
+        /* flex-shrink: 0; */
       }
       #button02 {
         background-color: blue;
+        /* flex-shrink: 0; */
       }
       #button03 {
         background-color: aqua;
+        /* flex-shrink: 0; */
       }
     </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
