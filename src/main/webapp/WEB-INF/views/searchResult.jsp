@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="../../resources/css/reset.css">
 <link rel="stylesheet" href="../../resources/css/searchResult.css">
 
+<!-- 아이콘 추가 : fontawesome -->
+<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<jsp:include page="/header.jsp" />
@@ -64,12 +66,16 @@
 	<div class="content-list">
 		<c:forEach items="${list}" var="item">
 			<div class="card">
-				<img src="${item.poster}" class="card-img">
-				<div class="card-body">
-					<p class="card-name">${item.name}</p>
-					<p class="card-date">${item.startDate} ~ ${item.endDate}</p>
-					<p class="card-place">${item.place}</p>
-				</div>
+				<a href="상세페이지">
+					<img src="${item.poster}" class="card-img" >
+					<button class="fav-btn" type="button" onclick="alert('찜 목록 추가!')">
+					</button>
+					<div class="card-body">
+						<p class="card-name">${item.name}</p>
+						<p class="card-date">${item.startDate} ~ ${item.endDate}</p>
+						<p class="card-place">${item.place}</p>
+					</div>
+				</a>
 			</div>
 		</c:forEach>
 	</div>

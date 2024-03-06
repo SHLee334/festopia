@@ -27,7 +27,7 @@ uri="http://www.springframework.org/security/tags" %>
     <link rel="stylesheet" href="./resources/css/index.css" />
 
     <!-- js 적용 -->
-    <script src="resources/js/index.js"></script>
+    
 
     <!-- 아이콘 추가 -->
     <script
