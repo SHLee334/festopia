@@ -33,7 +33,7 @@
 				JOIN fes_category USING (category_code) WHERE category_code IN
 				<foreach collection="checkFes" item="item" open="(" close=")" separator=",">
 					#{item}
-				</foreach>				
+				</foreach>
 			</otherwise>
 		</choose>
 		

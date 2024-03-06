@@ -172,7 +172,7 @@ pageEncoding="UTF-8"%>
           <hr />
           <br />
 
-          <div class="feeStatus">
+          <div class="checkfeeStatus">
             <h5>입장료</h5>
             <label
               ><input type="checkbox" name="feeStatus" value="nonfree" />

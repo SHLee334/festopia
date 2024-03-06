@@ -8,4 +8,5 @@ import lombok.Data;
 public class SearchDTO {
 	private List<String> checkFes;
 	private boolean noCategory;
+	private List<String> feeStatus;
 }

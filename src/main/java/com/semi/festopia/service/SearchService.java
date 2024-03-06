@@ -21,7 +21,7 @@ public class SearchService {
 		if(dto.getCheckFes() == null) {
 			dto.setNoCategory(true);
 		} 
-		
+		System.out.println(dto.getFeeStatus());
 		return dao.searchFestival(dto);
 	}
 
