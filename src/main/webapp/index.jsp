@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
       type="image/x-icon"
     />
 
-    <!--  부트스트랩 또 적용하면 안됨  -->
+
 
     <!--  부트스트랩 또 적용하면 안됨  -->
 
@@ -28,7 +28,7 @@ pageEncoding="UTF-8"%>
     />
 
     <!-- js 적용 -->
-    <!-- <script src="resources/js/index.js"></script> -->
+    <script src="resources/js/index.js"></script>
 
     <!-- 글꼴 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,7 +37,7 @@ pageEncoding="UTF-8"%>
       href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lilita+One&display=swap"
       rel="stylesheet"
     />
-    <script src="resources/js/index.js"></script>
+ 
   </head>
   <body>
     <jsp:include page="/header.jsp" />

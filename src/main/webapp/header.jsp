@@ -39,7 +39,7 @@ uri="http://www.springframework.org/security/tags"%>
     <link rel="stylesheet" href="./resources/css/index.css" />
 
     <!-- js 적용 -->
-    <script src="resources/js/index.js"></script>
+    <script src="resources/js/header.js"></script>
 
     <!-- 아이콘 추가 -->
     <script
@@ -54,7 +54,6 @@ uri="http://www.springframework.org/security/tags"%>
         <div class="progress-bar"></div>
       </div>
       <h1>FESTOPIA</h1>
-
       <nav>
         <!-- searchModal -->
         <div
@@ -89,7 +88,7 @@ uri="http://www.springframework.org/security/tags"%>
           <form
             action="https://www.google.com/search"
             class="search"
-            id="search-bar"
+            id = "search-bar"
           >
             <input
               type="search"
@@ -106,6 +105,7 @@ uri="http://www.springframework.org/security/tags"%>
             </div>
           </form>
         </div>
+
         <!-- </a> -->
         <button
           class="btn btn-secondary dropdown-toggle"
