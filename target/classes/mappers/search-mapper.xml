@@ -1,31 +1,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="searchMapper">
 	<resultMap type="Festival" id="festivalMap">
-		<id property="code" column="fes_code"/>
-		<result property="name" column="fes_name"/>
-		<result property="startDate" column="fes_start_date"/>
-		<result property="endDate" column="fes_end_date"/>
-		<result property="status" column="fes_status"/>
-		<result property="place" column="fes_location"/>
-		<result property="lat" column="fes_latitude"/>
-		<result property="lot" column="fes_longitude"/>
-		<result property="feeStatus" column="fes_fee_status"/>
-		<result property="fee" column="fes_fee"/>
-		<result property="age" column="fes_age"/>
-		<result property="enrollDate" column="fes_enroll_date"/>
-		<result property="operator" column="fes_operator"/>
-		<result property="hmpgUrl" column="fes_url"/>
-		<result property="poster" column="fes_poster"/>
-		<result property="viewCount" column="fes_view_count"/>
-		<result property="season" column="season_code"/>
-		<result property="category" column="category_name"/>
+		<id property="code" column="fes_code" />
+		<result property="name" column="fes_name" />
+		<result property="startDate" column="fes_start_date" />
+		<result property="endDate" column="fes_end_date" />
+		<result property="status" column="fes_status" />
+		<result property="place" column="fes_location" />
+		<result property="lat" column="fes_latitude" />
+		<result property="lot" column="fes_longitude" />
+		<result property="feeStatus" column="fes_fee_status" />
+		<result property="fee" column="fes_fee" />
+		<result property="age" column="fes_age" />
+		<result property="enrollDate" column="fes_enroll_date" />
+		<result property="operator" column="fes_operator" />
+		<result property="hmpgUrl" column="fes_url" />
+		<result property="poster" column="fes_poster" />
+		<result property="viewCount" column="fes_view_count" />
+		<result property="season" column="season_code" />
+		<result property="category" column="category_name" />
 	</resultMap>
-	
-	<select id="searchFestival" parameterType="ArrayList" resultMap="festivalMap">
-		SELECT * FROM festival 
-		JOIN fes_category USING (category_code) WHERE category_code IN 
-		<foreach collection="list" item="item" open="(" close=")" separator=",">
-		#{item}
+
+	<select id="searchFestival" parameterType="ArrayList"
+		resultMap="festivalMap">
+
+		SELECT * FROM festival
+		JOIN fes_category USING (category_code) WHERE category_code IN
+		<foreach collection="list" item="item" open="(" close=")"
+			separator=",">
+			#{item}
 		</foreach>
 	</select>
 

@@ -12,8 +12,8 @@ import com.semi.festopia.model.vo.Festival;
 public class SearchDAO {
 	@Autowired
 	private SqlSessionTemplate session;
-	
 	public List<Festival> searchFestival(List<String> fesList) {
+		System.out.println(fesList);
 		return session.selectList("searchMapper.searchFestival", fesList);
 	}
 	
