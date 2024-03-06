@@ -9,7 +9,9 @@ uri="http://www.springframework.org/security/tags" %>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Insert title here</title>
+    <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+    <!-- 파비콘 -->
+    <link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
@@ -104,7 +106,6 @@ uri="http://www.springframework.org/security/tags" %>
       </div>
    
       <div class="tab-content">
-
         <div class="innercontent0">
           <nav class="pigeon-account">
             <div id="userImage"></div>

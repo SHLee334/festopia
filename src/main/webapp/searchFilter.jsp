@@ -4,8 +4,13 @@ pageEncoding="UTF-8"%>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Insert title here</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+    <!-- 파비콘 -->
+    <link
+      rel="icon"
+      href="resources/resources/favicon.png"
+      type="image/x-icon"
+    />
 
     <!-- 스타일 적용 -->
     <link rel="stylesheet" href="./resources/css/searchFilter.css" />
@@ -169,7 +174,14 @@ pageEncoding="UTF-8"%>
 
           <div class="feeStatus">
             <h5>입장료</h5>
-            <label><input type="checkbox" name="feeStatus" value="nonfree"/> 유료</label> <label><input type="checkbox" name="feeStatus" value="free"/> 무료</label>
+            <label
+              ><input type="checkbox" name="feeStatus" value="nonfree" />
+              유료</label
+            >
+            <label
+              ><input type="checkbox" name="feeStatus" value="free" />
+              무료</label
+            >
           </div>
 
           <input type="submit" value="검색" />
