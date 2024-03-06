@@ -23,23 +23,23 @@
 	
 	<!-- 회원정보 수정 ㅡㅡㅡㅡㅡㅡㅡ --> 
 	
-	<!-- 닉네임 변경 쿼리문 -->
+	<!-- 개인정보 수정(닉네임, 이메일)(비밀번호 인증 필요 없음) 쿼리문 -->
 	<update id="updateUserNickname" parameterType="User" >
 		UPDATE user
-		SET user_nickname = #{nickname}
+		SET user_nickname = #{nickname}, user_email = #{email}
 		WHERE user_code = #{userCode}
 	</update>
 	
 	
-	<!-- pwd, email 변경 쿼리문 -->
+	<!-- pwd변경(현재 비밀번호 인증 후 실행) 쿼리문 -->
 	<update id="updateUserInfo" parameterType="User">
 		Update user
-		SET user_pwd = #{password}, user_email = #{email}
+		SET user_pwd = #{password}
 		WHERE user_code = #{userCode}
 	</update>
 	
 	<!-- 회원탈퇴 쿼리문 -->
-	<update id="unableAccount" parameterType="String">
+	<update id="unableAccount" parameterType="int">
 		Update user
 		SET user_enabled = 0
 		WHERE user_code = #{userCode}

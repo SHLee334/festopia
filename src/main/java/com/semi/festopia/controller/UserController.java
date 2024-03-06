@@ -77,9 +77,11 @@ public class UserController {
 	}
 	
 	@PostMapping("/unableAccount")
-	public String unableAccount(HttpServletRequest request) {
+	public String unableAccount(User vo, HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		session.invalidate();
+		if(service.unableAccount(vo)==1) {
+			session.invalidate();
+		}
 		return "redirect:/";
 	}
 	
