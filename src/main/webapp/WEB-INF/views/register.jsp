@@ -4,13 +4,18 @@ pageEncoding="UTF-8"%>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Insert title here</title>
+    <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+	<!-- 파비콘 -->
+	<link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
   </head>
   <body>
     <h1>회원가입 세션</h1>
     <form action="signUp" method="post">
       <div>
         <input type="text" name="id" placeholder="아이디를 입력해주세요" />
+      </div>
+      <div>
+      	<input type="text" name="nickname" placeholder="넥네임을 입력해주세요" />
       </div>
       <div>
         <input

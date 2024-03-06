@@ -1,11 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib prefix="sec"
-uri="http://www.springframework.org/security/tags" %>
+uri="http://www.springframework.org/security/tags"%>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
+    <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+    <!-- 파비콘 -->
+    <link
+      rel="icon"
+      href="resources/resources/favicon.png"
+      type="image/x-icon"
+    />
+
+    <!-- =============== REMIXICONS =============== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
     <title>header부분만 따로</title>
 
     <link
@@ -31,21 +46,67 @@ uri="http://www.springframework.org/security/tags" %>
       src="https://kit.fontawesome.com/4602e82315.js"
       crossorigin="anonymous"
     ></script>
-
-    <!--풀페이지 스크롤 기능-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/ㅊ"></script>
   </head>
   <body>
     <header>
+      <!-- 스크롤 기능-->
+      <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+      </div>
       <h1>FESTOPIA</h1>
+
       <nav>
-        <a href="#section2"
-          ><i class="fa-solid fa-magnifying-glass" style="color: #938f9e"></i
-        ></a>
+        <!-- searchModal -->
+        <div
+          class="modal fade"
+          id="searchModal"
+          tabindex="-1"
+          aria-labelledby="searchModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="searchModalLabel">
+                  행사를 찾아보세요!
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <jsp:include page="/searchFilter.jsp" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--세미-->
+        <!-- <a href="searchFilter.jsp"> -->
+        <div class="container">
+          <form
+            action="https://www.google.com/search"
+            class="search"
+            id="search-bar"
+          >
+            <input
+              type="search"
+              placeholder="Type something..."
+              name="q"
+              class="search__input"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal"
+            />
+
+            <div class="search__button" id="search-button">
+              <i class="ri-search-2-line search__icon"></i>
+              <i class="ri-close-line search__close"></i>
+            </div>
+          </form>
+        </div>
+        <!-- </a> -->
         <button
           class="btn btn-secondary dropdown-toggle"
           type="button"
@@ -54,34 +115,103 @@ uri="http://www.springframework.org/security/tags" %>
         >
           <i class="fa-solid fa-circle-user"></i>
         </button>
-        <a href="#section3"
+        <a href=""
           ><i class="fa-solid fa-circle-exclamation" style="color: #938f9e"></i
         ></a>
+        <!-- <sec:authentication property="principal" var="user" /> -->
 
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">로그인</a></li>
-          <li><a class="dropdown-item" href="#">회원가입</a></li>
+          <c:choose>
+            <c:when test="${user == 'anonymousUser'}">
+              <li>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  로그인
+                </button>
+              </li>
 
-          <li>님, 환영합니다</li>
-          <li><a class="dropdown-item" href="#">마이페이지</a></li>
-          <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
+              <li>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal2"
+                >
+                  회원가입
+                </button>
+              </li>
+            </c:when>
+            <c:otherwise>
+              <sec:authorize
+                access="hasRole('ROLE_ADMIN') and isAuthenticated()"
+              />
+              <li>${user.nickname}님,환영합니다</li>
+              <li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
+              <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
+            </c:otherwise>
+          </c:choose>
         </ul>
       </nav>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Modal title
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <jsp:include page="/WEB-INF/views/login.jsp" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 2-->
+      <div
+        class="modal fade"
+        id="exampleModal2"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Modal title
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <jsp:include page="/WEB-INF/views/register.jsp" />
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
-    <!--  
-	<%-- 회원가입 세션 --%>
-	<div class="user-account-set" >
-		<div><a href="register.jsp">회원가입</a></div>
-		<div><a href="#">로그인</a></div>
-	</div>
-	
-	<%-- 로그인후 세션 --%>
-	<div class="user-account-set">
-		<div>user-id-info</div>
-		<div><a href="#">마이페이지</a></div>
-		<div><a href="#">로그아웃</a></div>
-	</div>
-	
-	-->
   </body>
 </html>

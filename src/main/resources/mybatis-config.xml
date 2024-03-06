@@ -8,10 +8,12 @@
 	<!-- 즉 VO, DTO 등록하는 곳 -->
 	<typeAliases>
 		<typeAlias type="com.semi.festopia.model.vo.User" alias="User" />
+		<typeAlias type="com.semi.festopia.model.vo.Festival" alias="Festival" />
 	</typeAliases>
 
 	<!-- mapper 파일들 등록하는 곳 -->
 	<mappers>
 		<mapper resource="mappers/user-mapper.xml" />
+		<mapper resource="mappers/search-mapper.xml" />
 	</mappers>
 </configuration>
