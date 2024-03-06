@@ -7,6 +7,13 @@ uri="http://www.springframework.org/security/tags"%>
 <html>
   <head>
     <meta charset="UTF-8" />
+
+    <!-- =============== REMIXICONS =============== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
     <title>header부분만 따로</title>
 
     <link
@@ -40,7 +47,9 @@ uri="http://www.springframework.org/security/tags"%>
         <div class="progress-bar"></div>
       </div>
       <h1>FESTOPIA</h1>
+
       <nav>
+        <!--상현-->
         <button
           type="button"
           class="searchButton"
@@ -72,12 +81,33 @@ uri="http://www.springframework.org/security/tags"%>
                 ></button>
               </div>
               <div class="modal-body">
-               	<jsp:include page="/searchFilter.jsp" />
+                <jsp:include page="/searchFilter.jsp" />
               </div>
             </div>
           </div>
         </div>
+        <!--세미-->
+        <!-- <a href="searchFilter.jsp"> -->
+        <div class="container">
+          <form
+            action="https://www.google.com/search"
+            class="search"
+            id="search-bar"
+          >
+            <input
+              type="search"
+              placeholder="Type something..."
+              name="q"
+              class="search__input"
+            />
 
+            <div class="search__button" id="search-button">
+              <i class="ri-search-2-line search__icon"></i>
+              <i class="ri-close-line search__close"></i>
+            </div>
+          </form>
+        </div>
+        <!-- </a> -->
         <button
           class="btn btn-secondary dropdown-toggle"
           type="button"
@@ -86,10 +116,10 @@ uri="http://www.springframework.org/security/tags"%>
         >
           <i class="fa-solid fa-circle-user"></i>
         </button>
-        <a href="#section3"
+        <a href=""
           ><i class="fa-solid fa-circle-exclamation" style="color: #938f9e"></i
         ></a>
-        <sec:authentication property="principal" var="user" />
+        <!-- <sec:authentication property="principal" var="user" /> -->
 
         <ul class="dropdown-menu">
           <c:choose>
@@ -182,49 +212,6 @@ uri="http://www.springframework.org/security/tags"%>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="emoji">
-        <ul id="list">
-          <li>
-            <a href="#section1"
-              ><img
-                src="./resources/css/free-icon-firework-8939197.png"
-                alt="Logo"
-                width="50"
-                height="50"
-                class="d-inline-block align-text-top"
-            /></a>
-          </li>
-          <br />
-          <br />
-          <br />
-          <br />
-          <li>
-            <a href="#section2"
-              ><img
-                src="./resources/css/free-icon-ballons-5089869.png"
-                alt="Logo"
-                width="50"
-                height="50"
-                class="d-inline-block align-text-top"
-            /></a>
-          </li>
-          <br />
-          <br />
-          <br />
-          <br />
-          <li>
-            <a href="#section3"
-              ><img
-                src="./resources/css/free-icon-parade-5257560.png"
-                alt="Logo"
-                width="50"
-                height="50"
-                class="d-inline-block align-text-top"
-            /></a>
-          </li>
-        </ul>
       </div>
     </header>
   </body>

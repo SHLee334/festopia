@@ -18,7 +18,7 @@ pageEncoding="UTF-8"%>
 <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lilita+One&display=swap" rel="stylesheet">
 
 <!-- js 적용 -->
-<script src="resources/js/index.js"></script>
+<!-- <script src="resources/js/index.js"></script> -->
 
   </head>
   <body>
@@ -32,6 +32,7 @@ pageEncoding="UTF-8"%>
         
           <div class="slide">
             <h1>FESTOPIA</h1>
+           
           </div>
           <div class="slide">
             <h1>FESTOPIA</h1>
@@ -57,13 +58,57 @@ pageEncoding="UTF-8"%>
       </section>
     </div>
  
+    <div class="emoji">
+      <ul id="list">
+        <li>
+          <a href="#section1"
+            ><img
+              src="./resources/css/free-icon-firework-8939197.png"
+              alt="Logo"
+              width="50"
+              height="50"
+              class="d-inline-block align-text-top"
+          /></a>
+        </li>
+        <br />
+        <br />
+        <br />
+        <br />
+        <li>
+          <a href="#section2"
+            ><img
+              src="./resources/css/free-icon-ballons-5089869.png"
+              alt="Logo"
+              width="50"
+              height="50"
+              class="d-inline-block align-text-top"
+          /></a>
+        </li>
+        <br />
+        <br />
+        <br />
+        <br />
+        <li>
+          <a href="#section3"
+            ><img
+              src="./resources/css/free-icon-parade-5257560.png"
+              alt="Logo"
+              width="50"
+              height="50"
+              class="d-inline-block align-text-top"
+          /></a>
+        </li>
+      </ul>
+    </div>
+
+    <!--검색창 애니메이션-->
 
 
 
 
 
     </main>
-    <!-- <a href="#" class="top">TOP</a> -->
+   
    
   </body>
 </html>
