@@ -37,4 +37,8 @@ public class UserDAO {
 		return session.update("userMapper.unableAccount", vo);
 	}
 				
+	// ajax, 유저 아이디 중복테크
+	public User idCheck(String id) {
+		return session.selectOne("userMapper.idCheck", id);
+	}
 }

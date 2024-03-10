@@ -85,5 +85,15 @@ public class UserController {
 		return "redirect:/";
 	}
 	
-	
+	// AjaxController
+	@ResponseBody
+	@PostMapping("/idCheck")
+	public boolean icCheck(String id) {
+		User user = service.idCheck(id);
+		if(user != null) {
+			return false;
+		}else {
+			return true;
+		}
+	}
 }

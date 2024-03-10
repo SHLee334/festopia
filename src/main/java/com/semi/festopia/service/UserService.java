@@ -53,4 +53,9 @@ public class UserService implements UserDetailsService{
 	public int unableAccount(User vo) {
 		return dao.unableAccount(vo);
 	}
+	
+	// ajax, 유저 아이디 중복체크
+	public User idCheck(String id) {
+		return dao.idCheck(id);
+	}
 }
