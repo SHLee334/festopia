@@ -25,7 +25,7 @@ pageEncoding="UTF-8"%>
                 type="checkbox"
                 class="btn-check"
                 id="btn-check-1"
-                name="checkFes"
+                name="checkFesCate"
                 value="1"
                 autocomplete="off"
               />
@@ -37,7 +37,7 @@ pageEncoding="UTF-8"%>
                 type="checkbox"
                 class="btn-check"
                 id="btn-check-2"
-                name="checkFes"
+                name="checkFesCate"
                 value="2"
                 autocomplete="off"
               />
@@ -47,7 +47,7 @@ pageEncoding="UTF-8"%>
                 type="checkbox"
                 class="btn-check"
                 id="btn-check-3"
-                name="checkFes"
+                name="checkFesCate"
                 value="3"
                 autocomplete="off"
               />
@@ -57,7 +57,7 @@ pageEncoding="UTF-8"%>
                 type="checkbox"
                 class="btn-check"
                 id="btn-check-4"
-                name="checkFes"
+                name="checkFesCate"
                 value="4"
                 autocomplete="off"
               />
@@ -69,7 +69,7 @@ pageEncoding="UTF-8"%>
                 type="checkbox"
                 class="btn-check"
                 id="btn-check-5"
-                name="checkFes"
+                name="checkFesCate"
                 value="5"
                 autocomplete="off"
               />
@@ -79,7 +79,7 @@ pageEncoding="UTF-8"%>
                 type="checkbox"
                 class="btn-check"
                 id="btn-check-6"
-                name="checkFes"
+                name="checkFesCate"
                 value="6"
                 autocomplete="off"
               />
@@ -93,7 +93,7 @@ pageEncoding="UTF-8"%>
                 type="checkbox"
                 class="btn-check"
                 id="btn-check-7"
-                name="checkFes"
+                name="checkFesCate"
                 value="7"
                 autocomplete="off"
               />
@@ -103,7 +103,7 @@ pageEncoding="UTF-8"%>
                 type="checkbox"
                 class="btn-check"
                 id="btn-check-8"
-                name="checkFes"
+                name="checkFesCate"
                 value="8"
                 autocomplete="off"
               />
@@ -113,7 +113,7 @@ pageEncoding="UTF-8"%>
                 type="checkbox"
                 class="btn-check"
                 id="btn-check-9"
-                name="checkFes"
+                name="checkFesCate"
                 value="9"
                 autocomplete="off"
               />
@@ -125,7 +125,7 @@ pageEncoding="UTF-8"%>
                 type="checkbox"
                 class="btn-check"
                 id="btn-check-10"
-                name="checkFes"
+                name="checkFesCate"
                 value="10"
                 autocomplete="off"
               />
@@ -135,7 +135,7 @@ pageEncoding="UTF-8"%>
                 type="checkbox"
                 class="btn-check"
                 id="btn-check-11"
-                name="checkFes"
+                name="checkFesCate"
                 value="11"
                 autocomplete="off"
               />
@@ -145,7 +145,7 @@ pageEncoding="UTF-8"%>
                 type="checkbox"
                 class="btn-check"
                 id="btn-check-12"
-                name="checkFes"
+                name="checkFesCate"
                 value="12"
                 autocomplete="off"
               />
@@ -175,11 +175,11 @@ pageEncoding="UTF-8"%>
           <div class="checkfeeStatus">
             <h5>입장료</h5>
             <label
-              ><input type="checkbox" name="feeStatus" value="nonfree" />
+              ><input type="checkbox" name="checkFeeStatus" value="1" />
               유료</label
             >
             <label
-              ><input type="checkbox" name="feeStatus" value="free" />
+              ><input type="checkbox" name="checkFeeStatus" value="2" />
               무료</label
             >
           </div>

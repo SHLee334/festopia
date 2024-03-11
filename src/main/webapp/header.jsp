@@ -8,6 +8,7 @@ uri="http://www.springframework.org/security/tags"%>
   <head>
     <meta charset="UTF-8" />
     <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- 파비콘 -->
     <link
       rel="icon"
@@ -38,9 +39,6 @@ uri="http://www.springframework.org/security/tags"%>
     <!-- 스타일 적용 -->
     <link rel="stylesheet" href="./resources/css/index.css" />
 
-    <!-- js 적용 -->
-    <script src="resources/js/index.js"></script>
-
     <!-- 아이콘 추가 -->
     <script
       src="https://kit.fontawesome.com/4602e82315.js"
@@ -56,48 +54,21 @@ uri="http://www.springframework.org/security/tags"%>
       <h1>FESTOPIA</h1>
 
       <nav>
-        <!-- searchModal -->
-        <div
-          class="modal fade"
-          id="searchModal"
-          tabindex="-1"
-          aria-labelledby="searchModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="searchModalLabel">
-                  행사를 찾아보세요!
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <jsp:include page="/searchFilter.jsp" />
-              </div>
-            </div>
-          </div>
-        </div>
+
         <!--세미-->
-        <!-- <a href="searchFilter.jsp"> -->
+
         <div class="container">
           <form
-            action="https://www.google.com/search"
+            action="search"
             class="search"
             id="search-bar"
+            name="name"
           >
             <input
               type="search"
               placeholder="Type something..."
               name="q"
               class="search__input"
-              data-bs-toggle="modal"
-              data-bs-target="#searchModal"
             />
 
             <div class="search__button" id="search-button">
@@ -105,6 +76,10 @@ uri="http://www.springframework.org/security/tags"%>
               <i class="ri-close-line search__close"></i>
             </div>
           </form>
+
+          <div class="cateFilter" style="display: none">
+          	<jsp:include page="searchFilter.jsp" />
+          </div>
         </div>
         <!-- </a> -->
         <button
@@ -213,5 +188,8 @@ uri="http://www.springframework.org/security/tags"%>
         </div>
       </div>
     </header>
+
+    <!-- js 적용 -->
+    <script src="resources/js/index.js"></script>
   </body>
 </html>

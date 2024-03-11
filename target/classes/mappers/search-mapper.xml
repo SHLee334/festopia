@@ -24,17 +24,37 @@
 	<select id="searchFestival" parameterType="SearchDTO"
 		resultMap="festivalMap">
 		<choose>
-			<when test="noCategory == true">
+			<when test="noCategory == true and freeOrNo == true" >
 			SELECT * FROM festival
 			</when>
 			
-			<otherwise>
-			SELECT * FROM festival
-				JOIN fes_category USING (category_code) WHERE category_code IN
-				<foreach collection="checkFes" item="item" open="(" close=")" separator=",">
+			<when test="noCategory == false and freeOrNo == true">
+				SELECT * FROM festival
+				WHERE category_code IN
+				<foreach collection="checkFesCate" item="item" open="(" close=")" separator=",">
 					#{item}
 				</foreach>
-			</otherwise>
+			</when>
+			
+			<when test="noCategory == true and freeOrNo == false">
+				SELECT * FROM festival
+				WHERE fes_fee_status IN
+				<foreach collection="checkFeeStatus" item="item" open="(" close=")" separator=",">
+					#{item}
+				</foreach>		
+			</when>
+			
+			<when test="noCategory == false and freeOrNo == false">
+				SELECT * FROM festival 
+				WHERE  category_code IN 
+				<foreach collection="checkFesCate" item="item" open="(" close=")" separator=",">
+					#{item}
+				</foreach>	
+				AND fes_fee_status IN
+				<foreach collection="checkFeeStatus" item="item" open="(" close=")" separator=",">
+					#{item}
+				</foreach>				
+			</when>
 		</choose>
 		
 

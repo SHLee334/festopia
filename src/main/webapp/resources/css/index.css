@@ -246,6 +246,15 @@ main section {
   transition: opacity 1.5s;
 }
 
+.cateFilter {
+  width: 1140px;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  position: fixed;
+  z-index: 9999;
+}
+
 .search__input:-webkit-autofill {
   box-shadow: 0 0 0 100px var(--white-color) inset;
 }

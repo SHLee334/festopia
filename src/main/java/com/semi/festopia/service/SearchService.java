@@ -16,13 +16,16 @@ public class SearchService {
 	private SearchDAO dao;
 	
 	public List<Festival> searchFestival(SearchDTO dto) {
-		//dto.getCheckFes()
-		System.out.println(dto.getCheckFes()); // 없으면 null
-		if(dto.getCheckFes() == null) {
+
+		if(dto.getCheckFesCate() == null) {
 			dto.setNoCategory(true);
 		} 
-		System.out.println(dto.getFeeStatus());
+		if(dto.getCheckFeeStatus() == null) {
+			dto.setFreeOrNo(true);
+		}
 		return dao.searchFestival(dto);
 	}
 
 }
+
+	

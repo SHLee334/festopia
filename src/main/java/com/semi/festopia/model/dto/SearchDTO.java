@@ -6,7 +6,8 @@ import lombok.Data;
 
 @Data
 public class SearchDTO {
-	private List<String> checkFes;
+	private List<String> checkFesCate;
 	private boolean noCategory;
-	private List<String> feeStatus;
+	private List<String> checkFeeStatus;
+	private boolean freeOrNo;
 }
