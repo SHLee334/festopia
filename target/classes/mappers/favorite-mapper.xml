@@ -1,0 +1,23 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="favorite">
+	<resultMap type="Favorite" id="favoriteMap">
+		<id property="fvCode" column="fv_code" />
+		<result property="userCode" column="user_code_fk" />
+		<result property="fesCode" column="fes_code_fk" />
+	</resultMap>
+	
+	<select id="select" parameterType="Favorite" resultMap="favoriteMap">
+		SELECT fv_code FROM favorite
+		WHERE user_code_fk = #{userCode} AND fes_code_fk = #{fesCode}
+	</select>
+	
+	<insert id="insert" parameterType="Favorite">
+		INSERT INTO favorite(user_code_fk, fes_code_fk)
+		VALUES (#{userCode}, #{fesCode})	
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM favorite
+		WHERE fv_code = #{code}
+	</delete>
+</mapper>
