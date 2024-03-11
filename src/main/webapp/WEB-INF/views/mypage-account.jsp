@@ -72,10 +72,15 @@ uri="http://www.springframework.org/security/tags" %>
         <div class="innercontent1">
           <div class="modify-second-page" id="content-page">
             <div class="current-pwd-check">
-              <!-- 현재 손봐야하는 비밀번호 변경전(현재 비번 재확인) JWT배우면 가능-->
-              <input type="hidden" id="currentPwd" value="${user.password}" />
+              <input
+                type="password"
+                name="password"
+                id="accountCheck"
+                placeholder="현재 비밀번호를 입력하세요."
+              />
+              <input type="button" value="확인" />
             </div>
-            <form action="updateUserInfo" method="post">
+            <form action="updateUserInfo" method="post" id="pwdChangeForm">
               <div>
                 <input
                   type="password"

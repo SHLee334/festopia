@@ -1,5 +1,7 @@
 package com.semi.festopia.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -9,6 +11,11 @@ import org.springframework.stereotype.Service;
 
 import com.semi.festopia.model.dao.UserDAO;
 import com.semi.festopia.model.vo.User;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 
 
 @Service
@@ -29,6 +36,9 @@ public class UserService implements UserDetailsService{
 		//System.out.println( "로그인 userService : " + username);
 		return user;
 	}
+	
+
+	
 	
 	// 회원가입
 	public int registerUser (User vo) {
@@ -58,4 +68,5 @@ public class UserService implements UserDetailsService{
 	public User idCheck(String id) {
 		return dao.idCheck(id);
 	}
+	
 }

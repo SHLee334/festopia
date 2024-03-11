@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.2.xsd">
 
-	<bean id="customLoginSucess" class="com.semi.festopia.service.util.CustomLoginSuccessHandler"/>
+	<bean id="customLoginSuccess" class="com.semi.festopia.service.util.CustomLoginSuccessHandler"/>
 	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 
 	<context:component-scan base-package="com.semi.festopia" />
@@ -15,7 +15,7 @@
 
 	<security:http>
 		<security:intercept-url pattern="/mypage" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')" /> <!-- 회원/관리자만 마이페이지 접속가능 -->
-		<security:form-login default-target-url="/login" login-processing-url="/login" authentication-success-handler-ref="customLoginSucess"/>
+		<security:form-login default-target-url="/login" login-processing-url="/login"  authentication-success-handler-ref="customLoginSuccess"/>
 		<security:csrf disabled="true" /> <!-- 이거 안 넣으면 ,cross origin error 일어남 -->
 		<security:logout logout-url="/logout" invalidate-session="true" logout-success-url="/"/>
 	</security:http>

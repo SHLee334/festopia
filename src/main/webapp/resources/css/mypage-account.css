@@ -78,3 +78,6 @@ body {
   margin-left: 100px;
   line-height: 50px;
 }
+#pwdChangeForm {
+  display: none;
+}

@@ -41,4 +41,5 @@ public class UserDAO {
 	public User idCheck(String id) {
 		return session.selectOne("userMapper.idCheck", id);
 	}
+	
 }

@@ -47,7 +47,7 @@
 	
 	<!-- ajax, id중복체크 -->
 	<select id="idCheck" parameterType="String" resultMap="userMap">
-		SELECT * FROM user WHERE user_id=${id}
+		SELECT * FROM user WHERE user_id=#{id}
 	</select>
 	
 	<!-- 찜목록 리스트 불러오기 쿼리문 -->
