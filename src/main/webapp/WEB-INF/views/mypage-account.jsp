@@ -79,7 +79,9 @@ uri="http://www.springframework.org/security/tags" %>
                 id="accountCheck"
                 placeholder="현재 비밀번호를 입력하세요."
               />
-              <input type="button" value="확인" />
+              <input type="text" id="accountPwdCheck" value="${pwdBind}">
+              <input type="button" id="checkThisAccount" value="확인" />
+              <span id="wrongTry"></span>
             </div>
             <form action="updateUserInfo" method="post" id="pwdChangeForm">
               <div>

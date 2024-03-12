@@ -27,7 +27,7 @@ pageEncoding="UTF-8"%>
         <input
           type="password"
           name="password"
-          id="password"
+          id="loginPassword"
           placeholder="패스워드를 입력해주세요"
         />
       </div>
@@ -42,10 +42,10 @@ pageEncoding="UTF-8"%>
         $.ajax({
           type: "post",
           url: "/bindPwd",
-          data: { "pwd" : `$("#password").val()` },
+          data: "pwd="+$("#loginPassword").val(),
 
           success: function () {
-            alert($("#password").val());
+            alert($("#loginPassword").val());
           },
           error: function () {
             alert("정보 받기 실패");

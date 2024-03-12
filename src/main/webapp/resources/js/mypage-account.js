@@ -1,26 +1,5 @@
-// 마우스 접근시 색깔바뀜 효과를 내려고 했으나, 현재 선택중인 nav도 이벤트가 지속적으로 결러서 색상 고정이 안됨.
-// 추후 시간있을때 건드려보기
-// $(".inneractive0").on("mouseenter mouseleave", (e) => {
-//   if (e.type === "mouseenter") {
-//     $(".inneractive0").css("color", "#00acee");
-//   } else if (e.type === "mouseleave") {
-//     $(".inneractive0").css("color", "#888");
-//   }
-// });
-// $(".inneractive1").on("mouseenter mouseleave", (e) => {
-//   if (e.type === "mouseenter") {
-//     $(".inneractive1").css("color", "#00acee");
-//   } else if (e.type === "mouseleave") {
-//     $(".inneractive1").css("color", "#888");
-//   }
-// });
-// $(".inneractive3").on("mouseenter mouseleave", (e) => {
-//   if (e.type === "mouseenter") {
-//     $(".inneractive3").css("color", "#00acee");
-//   } else if (e.type === "mouseleave") {
-//     $(".inneractive3").css("color", "#888");
-//   }
-// });
+
+
 
 //default
 $(".inneractive0").css("color", "#00acee");
@@ -54,4 +33,17 @@ $(".inneractive2").click(() => {
   $(".inneractive2").css("color", "#00acee");
   $(".inneractive1").css("color", "#888");
   $(".inneractive0").css("color", "#888");
+});
+
+$("#checkThisAccount").click(()=>{
+  console.log($("#checkThisAccount").val());
+  console.log($("#accountCheck").val());
+  const result =$("#accountCheck").val().test($("#checkThisAccount").val());
+  console.log(result);
+  if(result){
+    $(".current-pwd-check").css('display','none');
+    $("#pwdChangeForm").css('display','block');
+  }else{
+    $("#wrongTry").text("기존비밀번호를 입력해주세요").css("color","red");
+  }
 });
