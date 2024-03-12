@@ -34,11 +34,12 @@ uri="http://www.springframework.org/security/tags" %>
             <div id="userImage"></div>
             <div id="userInfo">
               <ul>
+              
                 <li>이름 : ${user.nickname}님</li>
                 <li>이메일 : ${user.email}</li>
                 <li>아이디 : ${user.id}</li>
                 <li>회원가입일 : ${user.userEnrollDate}</li>
-              </ul>
+			  </ul>
             </div>
           </nav>
 

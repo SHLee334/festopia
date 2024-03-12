@@ -37,7 +37,7 @@ pageEncoding="UTF-8"%>
       href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lilita+One&display=swap"
       rel="stylesheet"
     />
-    <script src="resources/js/index.js"></script>
+
   </head>
   <body>
     <jsp:include page="/header.jsp" />

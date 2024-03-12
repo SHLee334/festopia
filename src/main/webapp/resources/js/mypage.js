@@ -1,12 +1,3 @@
-const token = `${token}`;
-	alert(token);
-	
-	localStorage.setItem("token",token);
-	location.href="/";
-
-
-
-
 const btn = document.querySelectorAll(".account-modify-button");
 const account_page = document.querySelectorAll("#main-jsp");
 
@@ -64,5 +55,3 @@ btn[2].addEventListener("click", function () {
     offDisplay(2);
   }
 });
-
-

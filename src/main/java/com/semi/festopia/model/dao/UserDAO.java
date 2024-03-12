@@ -22,6 +22,7 @@ public class UserDAO {
 		return user;
 	}
 	
+	
 	// 유저 닉네임&이메일 변경
 	public int updateUserNickname(User vo) {
 		return session.update("userMapper.updateUserNickname", vo);

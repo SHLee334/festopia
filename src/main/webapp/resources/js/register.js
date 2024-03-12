@@ -19,6 +19,7 @@ $("#idCheck").click(() => {
 function userIdCheck() {
   const regExp = /^[a-zA-Z0-9]{5,20}$/;
   let result = regExp.test($("#id").val());
+
   if (result === true) {
     return 1;
   } else if ($("#id").val() === "") {
@@ -106,20 +107,19 @@ $("#email").keyup((e) => {
 });
 
 function validate() {
-  if (!userIdCheck()) {
-    console.log(userIdCheck());
+  if (userIdCheck() !== 1) {
     $("#id").focus();
     return false;
-  } else if (!nicknameCheck()) {
+  } else if (nicknameCheck() !== 1) {
     $("#nickname").focus();
     return false;
-  } else if (!userPwdCheck()) {
+  } else if (userPwdCheck() !== 1) {
     $("#password").focus();
     return false;
-  } else if (!userPwdDoubleCheck()) {
+  } else if (userPwdDoubleCheck() !== 1) {
     $("#passwordCheck").focus();
     return false;
-  } else if (!userEmailCheck()) {
+  } else if (userEmailCheck() !== 1) {
     $("#email").focus();
     return false;
   }

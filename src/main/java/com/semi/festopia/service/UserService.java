@@ -37,8 +37,6 @@ public class UserService implements UserDetailsService{
 		return user;
 	}
 	
-
-	
 	
 	// 회원가입
 	public int registerUser (User vo) {
