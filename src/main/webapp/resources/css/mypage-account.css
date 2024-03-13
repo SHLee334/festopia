@@ -79,5 +79,17 @@ body {
   line-height: 50px;
 }
 #pwdChangeForm {
-  display: none;
+  background-color: aquamarine;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-pwd-check {
+  background-color: beige;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

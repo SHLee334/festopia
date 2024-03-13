@@ -35,21 +35,13 @@ pageEncoding="UTF-8"%>
         <input type="submit" value="로그인" id="bindPwd" />
       </div>
     </form>
-    <button type="button" id="passwordBind"></button>
 
     <script>
       $("#bindPwd").click(() => {
         $.ajax({
           type: "post",
           url: "/bindPwd",
-          data: "pwd="+$("#loginPassword").val(),
-
-          success: function () {
-            alert($("#loginPassword").val());
-          },
-          error: function () {
-            alert("정보 받기 실패");
-          },
+          data: "pwd=" + $("#loginPassword").val(),
         });
       });
     </script>

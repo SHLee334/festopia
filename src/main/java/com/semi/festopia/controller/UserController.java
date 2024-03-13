@@ -46,25 +46,25 @@ public class UserController {
 	@GetMapping("/mypage")
 	public void myPage(User user) {}
 	
-	@PostMapping("/updateUserNickname")
-	public String updateUserNickname(User vo,  HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		if(service.updateUserNickname(vo)==1) {
-			session.setAttribute("vo", vo);
-		}
-		System.out.println(vo);
-		return "/mypage";
-	}
+//	@PostMapping("/updateUserNickname")
+//	public String updateUserNickname(User vo,  HttpServletRequest request) {
+//		HttpSession session = request.getSession();
+//		if(service.updateUserNickname(vo)==1) {
+//			session.setAttribute("vo", vo);
+//		}
+//		System.out.println(vo);
+//		return "/mypage";
+//	}
 	
-	@PostMapping("/updateUserInfo")
-	public String updateUserInfo(User vo, HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		if(service.updateUserInfo(vo)==1) {
-			session.setAttribute("vo", vo);
-		}
-		// 고쳐야 되는 부분. 비번 업데이트시 인코딩이 되지 않을 날것의 상태에 db에 저장됨.
-		return "/mypage";
-	}
+//	@PostMapping("/updateUserInfo")
+//	public String updateUserInfo(User vo, HttpServletRequest request) {
+//		HttpSession session = request.getSession();
+//		if(service.updateUserInfo(vo)==1) {
+//			session.setAttribute("vo", vo);
+//		}
+//		// 고쳐야 되는 부분. 비번 업데이트시 인코딩이 되지 않을 날것의 상태에 db에 저장됨.
+//		return "/mypage";
+//	}
 	
 	@PostMapping("/unableAccount")
 	public String unableAccount(User vo, HttpServletRequest request) {

@@ -34,38 +34,49 @@ uri="http://www.springframework.org/security/tags" %>
             <div id="userImage"></div>
             <div id="userInfo">
               <ul>
-              
-                <li>이름 : ${user.nickname}님</li>
-                <li>이메일 : ${user.email}</li>
+                <li id="nameChangeResult">이름 : ${user.nickname}님</li>
+                <li id="emailChangeResult">이메일 : ${user.email}</li>
                 <li>아이디 : ${user.id}</li>
                 <li>회원가입일 : ${user.userEnrollDate}</li>
-			  </ul>
+              </ul>
             </div>
           </nav>
 
           <div class="modify-second-page" id="content-page">
-            <form action="/updateUserNickname" method="post">
-              <div><span>현재 닉네임 : ${user.nickname}</span></div>
+            <form id="nicknameChangeForm">
               <div>
                 <input
                   type="text"
                   name="nickname"
+                  id="nicknameChangeInner"
                   value="${user.nickname}"
                   placeholder="변경할 닉네임을 입력하세요"
                 />
+                <span></span>
               </div>
               <div>
                 <input
                   type="text"
                   name="email"
+                  id="emailChange"
                   value="${user.email}"
                   placeholder="변경할 이메일을 입력해주세요."
                 />
+                <span></span>
               </div>
               <div>
                 <input type="hidden" name="userCode" value="${user.userCode}" />
+                <input type="hidden" name="auth" value="${user.auth}" />
               </div>
-              <div><input type="submit" value="정보 수정하기" /></div>
+              <div>
+                <input
+                  type="button"
+                  value="정보 수정하기"
+                  id="nicknameChange"
+                  onclick="return infoValidate()"
+                />
+              </div>
+              <span id="nicknameResult"></span>
             </form>
           </div>
         </div>
@@ -79,28 +90,37 @@ uri="http://www.springframework.org/security/tags" %>
                 id="accountCheck"
                 placeholder="현재 비밀번호를 입력하세요."
               />
-              <input type="text" id="accountPwdCheck" value="${pwdBind}">
-              <input type="button" id="checkThisAccount" value="확인" />
+              <input type="hidden" id="accountPwdCheck" value="${pwdBind}" />
               <span id="wrongTry"></span>
+              <input type="button" id="checkThisAccount" value="확인" />
             </div>
-            <form action="updateUserInfo" method="post" id="pwdChangeForm">
+            <form id="pwdChangeForm">
               <div>
                 <input
                   type="password"
                   name="password"
+                  id="passwordChangeInner"
                   placeholder="변경할 비밀번호를 입력해주세요"
                 />
+                <span></span>
                 <input
                   type="password"
                   name="passwordCheck"
+                  id="passwordCheckInner"
                   placeholder="변경할 비밀번호를 한번 더 입력해주세요"
                 />
-                <span>비밀번호 동일한거 확인 완료 라고 띄우기</span>
+                <span></span>
               </div>
 
               <div>
                 <input type="hidden" name="userCode" value="${user.userCode}" />
-                <input type="submit" value="비밀번호 변경하기" />
+                <input type="hidden" name="auth" value="${user.auth}" />
+                <input
+                  type="button"
+                  id="pwdChangeFormButton"
+                  value="비밀번호 변경하기"
+                  onclick="return pwdValidate()"
+                />
               </div>
             </form>
           </div>
