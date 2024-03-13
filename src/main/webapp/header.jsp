@@ -84,6 +84,7 @@ uri="http://www.springframework.org/security/tags"%>
         </div>
         <!--세미-->
         <!-- <a href="searchFilter.jsp"> -->
+          <!-- 검색창 아이콘 -->
         <div class="container">
           <form
             action="https://www.google.com/search"
@@ -104,58 +105,62 @@ uri="http://www.springframework.org/security/tags"%>
               <i class="ri-close-line search__close"></i>
             </div>
           </form>
+
+
+           <!-- </a> -->
+        <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+      <!--로그인, 회원가입 -->
+        <i class="fa-solid fa-circle-user"></i>
+      </button>
+      <a href="" id="inform"
+        > <!-- 공지사항 -->
+        <i class="fa-solid fa-circle-exclamation fa-2xl"></i></a>
+      <!-- <sec:authentication property="principal" var="user" /> -->
+
+      <ul class="dropdown-menu">
+        <c:choose>
+          <c:when test="${user == 'anonymousUser'}">
+            <li>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                로그인
+              </button>
+            </li>
+
+            <li>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal2"
+              >
+                회원가입
+              </button>
+            </li>
+          </c:when>
+          <c:otherwise>
+            <sec:authorize
+              access="hasRole('ROLE_ADMIN') and isAuthenticated()"
+            />
+            <li>${user.nickname}님,환영합니다</li>
+            <li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
+            <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
+          </c:otherwise>
+        </c:choose>
+      </ul>
+    </nav>
         </div>
 
-        <!-- </a> -->
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <i class="fa-solid fa-circle-user"></i>
-        </button>
-        <a href=""
-          ><i class="fa-solid fa-circle-exclamation" style="color: #938f9e"></i
-        ></a>
-        <!-- <sec:authentication property="principal" var="user" /> -->
-
-        <ul class="dropdown-menu">
-          <c:choose>
-            <c:when test="${user == 'anonymousUser'}">
-              <li>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                >
-                  로그인
-                </button>
-              </li>
-
-              <li>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal2"
-                >
-                  회원가입
-                </button>
-              </li>
-            </c:when>
-            <c:otherwise>
-              <sec:authorize
-                access="hasRole('ROLE_ADMIN') and isAuthenticated()"
-              />
-              <li>${user.nickname}님,환영합니다</li>
-              <li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
-              <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
-            </c:otherwise>
-          </c:choose>
-        </ul>
-      </nav>
+       
 
       <!-- Modal -->
       <div

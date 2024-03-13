@@ -19,5 +19,11 @@ public class SearchService {
 		System.out.println(Arrays.asList(checkFes));
 		return dao.searchFestival(fesList);
 	}
+	
+	public List<Festival> popularFestival(){
+		return dao.popularFestival();
+		
+		
+	}
 
 }

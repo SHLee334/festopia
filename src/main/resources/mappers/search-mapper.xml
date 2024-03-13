@@ -31,5 +31,15 @@
 			#{item}
 		</foreach>
 	</select>
+	
+	<select id = "popularFestival" resultMap="festivalMap" >
+	
+	SELECT *
+	FROM festival
+	ORDER BY fes_view_count desc
+	LIMIT 4
+	
+	
+	</select>
 
 </mapper>
