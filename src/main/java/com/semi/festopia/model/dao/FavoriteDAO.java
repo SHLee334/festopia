@@ -13,15 +13,15 @@ public class FavoriteDAO {
 	private SqlSessionTemplate session;
 	
 	public Favorite select(Favorite fav) {
-		return session.selectOne("fav.select", fav);
+		return session.selectOne("favorite.select", fav);
 	}
 	
 	public int insert(Favorite fav) {
-		return session.insert("fav.insert", fav);
+		return session.insert("favorite.insert", fav);
 	}
 	
 	public int delete(int code) {
-		return session.delete("fav.delete", code);
+		return session.delete("favorite.delete", code);
 	}
 	
 }
