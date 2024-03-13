@@ -31,24 +31,22 @@
 </script>
 </head>
 <body>
+
 	<h2>축제상세 페이지</h2>
-<!-- 
-	<form action="/festivalDetail" method="post">
-		<div class="fes-detail-card">
-			<div class="form-poster">
-				<img src="${vo.poster}" class="poster-img">
-			</div>
-			<div class="form-body">
-				<div class="card-body">
-					<h5 class="body-title">${vo.name}</h5>
-					<p class="body-date">${vo.startDate} ~ ${vo.endDate}</p>
-					<p class="body-place">${vo.place}
-						<small class="text-muted">Last updated 3 mins ago</small>
-					</p>
-				</div>
-			</div>
+	
+	<div class="fes-detail-card">
+		<img src="${vo.poster}" class="detail-poster">
+		<div class="detail-info">
+			<h5 class="detail-category">${vo.category}</h5>
+			<h5 class="detail-name">${vo.name}</h5>
+			<p class="detail-date">${vo.startDate}~${vo.endDate}</p>
+			<p class="detail-place">${vo.place}</p>
+			<p class="detail-place">${vo.fee}</p>			
 		</div>
-	</form>
- -->
+	</div>
+	
+	
+
+
 </body>
 </html>

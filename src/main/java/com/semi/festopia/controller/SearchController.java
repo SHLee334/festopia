@@ -36,7 +36,9 @@ public class SearchController {
 		System.out.println(list);
 		return "searchResult";
 	}
-	
+
+
+	/*========== 찜 ==========*/
 	@GetMapping("favorite")
 	public String favorite(String code, Model model) {
 		
@@ -56,9 +58,7 @@ public class SearchController {
 		
 		return "searchResult";
 	}
-
 	
-	/*========== 찜 ==========*/
 	@ResponseBody
 	@PostMapping("/addFav")
 	public boolean addFav(String code) {
@@ -82,10 +82,11 @@ public class SearchController {
 		return true;
 	}
 
+	
 	/*========== 축제 상세 ==========*/
-	@GetMapping("/festivalDetail")
-	public void festivalDetail(String no, Model model) {
-		model.addAttribute("vo", searchService.select(Integer.parseInt(no)));
+	@GetMapping("/detail")
+	public String detail(String code, Model model) {
+		model.addAttribute("vo", searchService.detail(Integer.parseInt(code)));
+		return "festivalDetail";
 	}
-
 }

@@ -20,8 +20,8 @@ public class SearchService {
 		return dao.searchFestival(fesList);
 	}
 	
-	public Festival select(int no) {
-		return dao.select(no);
+	public Festival detail(int code) {
+		return dao.detail(code);
 	}
 
 }

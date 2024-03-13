@@ -71,9 +71,9 @@
 	<div class="content-list">
 	
 		<c:forEach items="${list}" var="item">
-			<a href="/festivalDetail" class="card">
+			<a href="/detail?code=${item.code}" class="card">
 				<img src="${item.poster}" class="card-img" >
-				<!-- <button class="fav-btn" type="button" onclick="alert('찜 목록 추가!')">  -->
+				<!-- 썸네일 찜 
 				<c:choose>
 					<c:when test="${empty fav}">
 						<i class="fa-regular fa-heart" id="addFav"></i>
@@ -95,7 +95,6 @@
 				</script>
 				</c:otherwise>
 				</c:choose>
-				<!-- </button> -->
 				
 				<script>
 					$("#addFav").click(() => {
@@ -109,6 +108,7 @@
 						})
 					})
 				</script>
+				-->
 				
 				<div class="card-body">
 					<p class="card-name">${item.name}</p>

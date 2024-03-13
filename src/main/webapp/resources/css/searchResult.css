@@ -70,7 +70,7 @@
 }
 
 #addFav {
-  postiion : absolute;
+  position: absolute;
   border: none;
   height: 30px;
   width: 30px;
@@ -81,7 +81,7 @@
 }
 
 #delFav {
-  postiion : absolute;
+  position: absolute;
   border: none;
   height: 30px;
   width: 30px;

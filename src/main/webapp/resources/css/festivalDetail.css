@@ -1,1 +1,29 @@
 @charset "UTF-8";
+.fes-detail-card {
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-poster {
+  position: relative;
+  width: 35%;
+  border-radius: 2%;
+  margin-right: 20px;
+}
+
+.detail-info {
+  display: inline;
+  width: 65%;
+}
+
+.detail-category {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid purple;
+  padding-bottom: 10px;
+  width: 250px;
+}

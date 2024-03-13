@@ -17,8 +17,8 @@ public class SearchDAO {
 		return session.selectList("searchMapper.searchFestival", fesList);
 	}
 	
-	public Festival select(int no) {
-		return session.selectOne("searchMapper.festivalDetail", no);
+	public Festival detail(int code) {
+		return session.selectOne("searchMapper.detail", code);
 	}
 	
 }

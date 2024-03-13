@@ -34,7 +34,7 @@
 	</select>
 
 	<!-- 축제 상세페이지 -->
-	<select id="festivalDetail" parameterType="int" resultMap="festivalMap">
+	<select id="detail" parameterType="int" resultMap="festivalMap">
 		SELECT * FROM festival
 		WHERE fes_code = #{code}
 	</select>
