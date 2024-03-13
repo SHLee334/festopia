@@ -39,6 +39,10 @@
 				close=")" separator=",">
 				#{item}
 			</foreach>
+			
+			<if test="inputFesName != ''">
+				AND fes_name LIKE CONCAT('%',#{inputFesName},'%')
+			</if>
 
 			<choose>
 				<when test="checkStartDate != '' and checkEndDate==''">
@@ -82,6 +86,10 @@
 					</choose>
 				</when>
 			</choose>
+			
+
+			
+
 		</where>
 
 	</select>

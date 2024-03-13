@@ -61,28 +61,228 @@ uri="http://www.springframework.org/security/tags"%>
       <h1>FESTOPIA</h1>
 
       <nav>
-        <!--세미-->
-
         <div class="container">
           <form action="search" class="search" id="search-bar" name="name">
             <input
               type="search"
               placeholder="Type something..."
-              name="q"
+              name="inputFesName"
               class="search__input"
+              autocomplete="off"
             />
+            <div class="cateFilter" style="display: none">
+              <div class="searchFilter">
+                <div class="category">
+                  <br />
+                  <div class="category-1">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-1"
+                      name="checkFesCate"
+                      value="1"
+                      autocomplete="off"
+                    />
+                    <label class="btn category-btn" for="btn-check-1"
+                      >교육/체험</label
+                    >
+
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-2"
+                      name="checkFesCate"
+                      value="2"
+                      autocomplete="off"
+                    />
+                    <label class="btn category-btn" for="btn-check-2"
+                      >국악</label
+                    >
+
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-3"
+                      name="checkFesCate"
+                      value="3"
+                      autocomplete="off"
+                    />
+                    <label class="btn category-btn" for="btn-check-3"
+                      >기타</label
+                    >
+
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-4"
+                      name="checkFesCate"
+                      value="4"
+                      autocomplete="off"
+                    />
+                    <label class="btn category-btn" for="btn-check-4"
+                      >독주/독창회</label
+                    >
+
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-5"
+                      name="checkFesCate"
+                      value="5"
+                      autocomplete="off"
+                    />
+                    <label class="btn category-btn" for="btn-check-5"
+                      >무용</label
+                    >
+
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-6"
+                      name="checkFesCate"
+                      value="6"
+                      autocomplete="off"
+                    />
+                    <label class="btn category-btn" for="btn-check-6"
+                      >뮤지컬/오페라</label
+                    >
+                  </div>
+                  <br />
+                  <div class="category-2">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-7"
+                      name="checkFesCate"
+                      value="7"
+                      autocomplete="off"
+                    />
+                    <label class="btn category-btn" for="btn-check-7"
+                      >연극</label
+                    >
+
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-8"
+                      name="checkFesCate"
+                      value="8"
+                      autocomplete="off"
+                    />
+                    <label class="btn category-btn" for="btn-check-8"
+                      >영화</label
+                    >
+
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-9"
+                      name="checkFesCate"
+                      value="9"
+                      autocomplete="off"
+                    />
+                    <label class="btn category-btn" for="btn-check-9"
+                      >전시/미술</label
+                    >
+
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-10"
+                      name="checkFesCate"
+                      value="10"
+                      autocomplete="off"
+                    />
+                    <label class="btn category-btn" for="btn-check-10"
+                      >축제</label
+                    >
+
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-11"
+                      name="checkFesCate"
+                      value="11"
+                      autocomplete="off"
+                    />
+                    <label class="btn category-btn" for="btn-check-11"
+                      >콘서트</label
+                    >
+
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-12"
+                      name="checkFesCate"
+                      value="12"
+                      autocomplete="off"
+                    />
+                    <label class="btn category-btn" for="btn-check-12"
+                      >클래식</label
+                    >
+                  </div>
+                </div>
+                <br />
+                <hr />
+                <br />
+
+                <div class="fesDate">
+                  <h5>기간</h5>
+                  <select name="checkDateSelect" id="">
+                    <option value="targetStart">시작일</option>
+                    <option value="targetEnd">종료일</option>
+                  </select>
+                  &nbsp;
+                  <input
+                    type="text"
+                    class="datepicker"
+                    id="startDatepicker"
+                    name="checkStartDate"
+                    autocomplete="off"
+                  />
+                  &nbsp; ~ &nbsp;
+                  <input
+                    type="text"
+                    class="datepicker"
+                    id="endDatepicker"
+                    name="checkEndDate"
+                    autocomplete="off"
+                  />
+                </div>
+
+                <br />
+                <hr />
+                <br />
+
+                <div class="checkfeeStatus">
+                  <h5>입장료</h5>
+                  <label
+                    ><input type="checkbox" name="checkFeeStatus" value="1" />
+                    유료</label
+                  >
+                  <label
+                    ><input type="checkbox" name="checkFeeStatus" value="2" />
+                    무료</label
+                  >
+                </div>
+                <hr />
+                <div id="searchFilterButton">
+                  <input type="submit" value="DIVE!!" />
+
+                  <i
+                    class="fa-regular fa-rectangle-xmark closeSearchFilter"
+                  ></i>
+                </div>
+              </div>
+            </div>
 
             <div class="search__button" id="search-button">
               <i class="ri-search-2-line search__icon"></i>
-              <i class="ri-close-line search__close"></i>
+              <i class="ri-close-line search__close closeAllSearchFilter"></i>
             </div>
           </form>
-
-          <div class="cateFilter" style="display: none">
-            <jsp:include page="searchFilter.jsp" />
-          </div>
         </div>
-        <!-- </a> -->
+
         <button
           class="btn btn-secondary dropdown-toggle"
           type="button"

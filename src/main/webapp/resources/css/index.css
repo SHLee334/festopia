@@ -310,3 +310,38 @@ main section {
     width: 1140px;
   }
 }
+
+/*============== SEARCHFILTER ===============*/
+.category {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dateSetting {
+  border: 1px solid black;
+}
+
+.feeStatus {
+  border: 1px solid black;
+}
+
+.category-btn {
+  background-color: lightgray;
+}
+
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  background-color: lightblue;
+  border: none;
+}
+
+#searchFilterButton {
+  display: flex;
+  justify-content: space-between;
+  size: 2rem;
+}
