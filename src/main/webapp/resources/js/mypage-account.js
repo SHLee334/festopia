@@ -11,10 +11,11 @@ $("#nicknameChange").click(() => {
       if (user !== null) {
         $("#nameChangeResult").html("이름 : " + `${user.nickname}`);
         $("#emailChangeResult").html("이메일 : " + `${user.email}`);
-       // location.reload();
+        location.reload();
       } else {
         alert("뭔가 잘못됐습니다. 다시 시도해주세요.");
       }
+      
     },
   });
 });

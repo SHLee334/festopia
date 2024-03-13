@@ -33,6 +33,11 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("loginFail")
+	public String loginFail() {
+		return "redirect:/";
+	}
+	
 	// 회원가입
 	@PostMapping("signUp")
 	public String signUp(User vo) {
