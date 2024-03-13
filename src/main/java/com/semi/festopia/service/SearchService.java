@@ -17,6 +17,7 @@ public class SearchService {
 	
 	public List<Festival> searchFestival(SearchDTO dto) {
 
+		System.out.println("service : " + dto.getCheckFesCate());
 		if(dto.getCheckFesCate() == null) {
 			dto.setNoCategory(true);
 		} 

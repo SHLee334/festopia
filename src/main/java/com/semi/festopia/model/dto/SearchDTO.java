@@ -10,4 +10,7 @@ public class SearchDTO {
 	private boolean noCategory;
 	private List<String> checkFeeStatus;
 	private boolean freeOrNo;
+	private String checkDateSelect;
+	private String checkStartDate;
+	private String checkEndDate;
 }

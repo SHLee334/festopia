@@ -156,16 +156,28 @@ pageEncoding="UTF-8"%>
           <hr />
           <br />
 
-          <div class="dateSetting">
+          <div class="fesDate">
             <h5>기간</h5>
-            <select name="" id="">
-              <option value="">시작일</option>
-              <option value="">종료일</option>
-              <input type="date" readonly />
-              ~
-              <input type="date" readonly />
-              <input type="checkbox" />
+            <select name="checkDateSelect" id="">
+              <option value="targetStart">시작일</option>
+              <option value="targetEnd">종료일</option>
             </select>
+            &nbsp;
+            <input
+              type="text"
+              class="datepicker"
+              id="startDatepicker"
+              name="checkStartDate"
+              autocomplete="off"
+            />
+            &nbsp; ~ &nbsp;
+            <input
+              type="text"
+              class="datepicker"
+              id="endDatepicker"
+              name="checkEndDate"
+              autocomplete="off"
+            />
           </div>
 
           <br />
@@ -184,7 +196,7 @@ pageEncoding="UTF-8"%>
             >
           </div>
 
-          <input type="submit" value="검색" />
+          <input type="submit" />
         </div>
       </form>
     </main>

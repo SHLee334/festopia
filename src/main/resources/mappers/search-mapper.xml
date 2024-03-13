@@ -23,41 +23,105 @@
 
 	<select id="searchFestival" parameterType="SearchDTO"
 		resultMap="festivalMap">
-		<choose>
-			<when test="noCategory == true and freeOrNo == true" >
-			SELECT * FROM festival
-			</when>
-			
-			<when test="noCategory == false and freeOrNo == true">
-				SELECT * FROM festival
-				WHERE category_code IN
-				<foreach collection="checkFesCate" item="item" open="(" close=")" separator=",">
+
+		SELECT * FROM festival
+		<where>
+			<if test="noCategory == false">
+				category_code IN
+				<foreach collection="checkFesCate" item="item" open="("
+					close=")" separator=",">
 					#{item}
 				</foreach>
-			</when>
-			
-			<when test="noCategory == true and freeOrNo == false">
-				SELECT * FROM festival
-				WHERE fes_fee_status IN
-				<foreach collection="checkFeeStatus" item="item" open="(" close=")" separator=",">
-					#{item}
-				</foreach>		
-			</when>
-			
-			<when test="noCategory == false and freeOrNo == false">
-				SELECT * FROM festival 
-				WHERE  category_code IN 
-				<foreach collection="checkFesCate" item="item" open="(" close=")" separator=",">
-					#{item}
-				</foreach>	
-				AND fes_fee_status IN
-				<foreach collection="checkFeeStatus" item="item" open="(" close=")" separator=",">
-					#{item}
-				</foreach>				
-			</when>
-		</choose>
-		
+			</if>
+
+			AND fes_fee_status IN
+			<foreach collection="checkFeeStatus" item="item" open="("
+				close=")" separator=",">
+				#{item}
+			</foreach>
+
+			<choose>
+				<when test="checkStartDate != '' and checkEndDate==''">
+					<choose>
+						<when test="checkDateSelect == 'targetStart'">
+							AND fes_start_date >= '${checkStartDate}' ORDER BY
+							fes_start_date ASC
+						</when>
+
+						<when test="checkDateSelect == 'targetEnd'">
+							AND fes_end_date <![CDATA[<]]>=
+							'${checkStartDate}' ORDER BY fes_start_date ASC
+						</when>
+					</choose>
+				</when>
+				<when test="checkStartDate == '' and checkEndDate!=''">
+					<choose>
+						<when test="checkDateSelect == 'targetStart'">
+							AND fes_start_date >= '${checkEndDate}' ORDER BY
+							fes_end_date ASC
+						</when>
+
+						<when test="checkDateSelect == 'targetEnd'">
+							AND fes_end_date <![CDATA[<]]>=
+							'${checkEndDate}' ORDER BY fes_end_date ASC
+						</when>
+					</choose>
+				</when>
+				<when test="checkStartDate != '' and checkEndDate != ''">
+					<choose>
+						<when test="checkDateSelect == 'targetStart'">
+							AND fes_start_date BETWEEN '${checkStartDate}' AND
+							'${checkEndDate}' ORDER BY
+							fes_start_date ASC
+						</when>
+
+						<when test="checkDateSelect == 'targetEnd'">
+							AND fes_end_date BETWEEN '${checkStartDate}' AND
+							'${checkEndDate}' ORDER BY fes_end_date ASC
+						</when>
+					</choose>
+				</when>
+			</choose>
+		</where>
 
 	</select>
 
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

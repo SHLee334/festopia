@@ -18,7 +18,6 @@ public class SearchController {
 	
 	@GetMapping("search")
 	public String search(SearchDTO dto, Model model) {
-		System.out.println(dto);
 		List<Festival> list = service.searchFestival(dto);
 		model.addAttribute("list", list);
 		return "searchResult";

@@ -9,6 +9,13 @@ uri="http://www.springframework.org/security/tags"%>
     <meta charset="UTF-8" />
     <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Jquery UI JS파일 -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Jquery UI CSS파일 -->
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
     <!-- 파비콘 -->
     <link
       rel="icon"
@@ -54,16 +61,10 @@ uri="http://www.springframework.org/security/tags"%>
       <h1>FESTOPIA</h1>
 
       <nav>
-
         <!--세미-->
 
         <div class="container">
-          <form
-            action="search"
-            class="search"
-            id="search-bar"
-            name="name"
-          >
+          <form action="search" class="search" id="search-bar" name="name">
             <input
               type="search"
               placeholder="Type something..."
@@ -78,7 +79,7 @@ uri="http://www.springframework.org/security/tags"%>
           </form>
 
           <div class="cateFilter" style="display: none">
-          	<jsp:include page="searchFilter.jsp" />
+            <jsp:include page="searchFilter.jsp" />
           </div>
         </div>
         <!-- </a> -->
