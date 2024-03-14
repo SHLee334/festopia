@@ -22,16 +22,17 @@ public class SearchController {
 
 	
 	@GetMapping("search")
-	public String search(SearchDTO dto, Model model) {
+	public String search(SearchDTO dto) {
 		List<Festival> list = service.searchFestival(dto);
-		model.addAttribute("list", list);
+		System.out.println(list);
 		return "searchResult";
 	}
 	
 	@ResponseBody
 	@PostMapping("/search")
-	public List<Festival> search() {
+	public List<Festival> search(Model model) {
 		List<Festival> list = service.popularFestival();
+		//model.addAttribute("list", list);
 		System.out.println(list);
 		return list;
 	}
