@@ -2,17 +2,6 @@
 pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
-    <!-- 파비콘 -->
-    <link
-      rel="icon"
-      href="resources/resources/favicon.png"
-      type="image/x-icon"
-    />
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  </head>
   <body>
     <h1>로그인세션</h1>
     <form action="/login" method="post">

@@ -383,7 +383,6 @@ uri="http://www.springframework.org/security/tags"%>
       </div>
     </header>
 
-    <!-- js 적용 -->
-    <script src="resources/js/index.js"></script>
+    
   </body>
 </html>

@@ -96,5 +96,17 @@ uri="http://www.springframework.org/security/tags"%>
         <i class="fa-solid fa-arrow-up-from-bracket"></i>
       </div>
     </div>
+
+    <div class="commentZone">
+      <div id="inputCom">
+        <p>댓글 입력</p>
+        <form action="/writeCom" method="post" name="comText">
+          <input type="text" name="com" id="com" /> <br>
+          <input type="submit" value="댓글 달기" />
+        </form>
+      </div>
+
+      <div id="comList"></div>
+    </div>
   </body>
 </html>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,8 +12,6 @@ pageEncoding="UTF-8"%>
       href="resources/resources/favicon.png"
       type="image/x-icon"
     />
-
-
 
     <!--  부트스트랩 또 적용하면 안됨  -->
 
@@ -27,9 +26,6 @@ pageEncoding="UTF-8"%>
       rel="stylesheet"
     />
 
-    <!-- js 적용 -->
-    <script src="resources/js/index.js"></script>
-
     <!-- 글꼴 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,31 +33,9 @@ pageEncoding="UTF-8"%>
       href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lilita+One&display=swap"
       rel="stylesheet"
     />
- 
- 
- 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
-    <jsp:include page="/header.jsp" />
-    
-    <script>
-    	$.ajax ( {
-    		// 요청
-    		type : "post",
-    		url : "/search",
-    		
-    		// 응답
-    		success : function(list){
-    			console.log(list);
-    			
-    		}
-    		
-    		
-    	})
-    </script>
-    
-    
-    
+    <jsp:include page="/header.jsp" />    
     
     <main>
       <div class="wrap">
@@ -109,7 +83,7 @@ pageEncoding="UTF-8"%>
 
 
 
-        </section>
+			</section>
 
         <section class="size" id="section3">
           <span style="background: rgb(255, 255, 255); font-size: 2em">
@@ -162,5 +136,9 @@ pageEncoding="UTF-8"%>
         </ul>
       </div>
     </main>
+        
+    
+<!-- js 적용 -->
+    <script src="/resources/js/index.js"></script>
   </body>
 </html>
