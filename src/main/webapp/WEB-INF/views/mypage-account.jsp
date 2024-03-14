@@ -120,7 +120,7 @@ uri="http://www.springframework.org/security/tags" %>
                   type="button"
                   id="pwdChangeFormButton"
                   value="비밀번호 변경하기"
-                  onclick="return pwdValidate()"
+                  disabled="disabled"
                 />
               </div>
             </form>

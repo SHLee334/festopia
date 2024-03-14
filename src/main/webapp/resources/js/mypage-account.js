@@ -123,17 +123,25 @@ $("#emailChange").keyup((e) => {
   inputHandler(e, userEmailCheck(), "* 정확한 이메일 양식을 작성해주세요");
 });
 
-function infoValidate() {
-  if (nicknameCheck() !== 1) {
-    $("#nicknameChangeInner").focus();
-    return false;
-  } else if (userEmailCheck() !== 1) {
-    $("#emailChange").focus();
-    return false;
-  }
-  $("#nicknameChange").attr("disabled", false);
-  return true;
+const result = nicknameCheck()===1 && userEmailCheck()===1;
+console.log(result);
+if(result){
+  $("#pwdChangeFormButton").attr("disabled", false);
+} else{
+  $("#pwdChangeFormButton").attr("disabled", true);
 }
+
+// function infoValidate() {
+//   if (nicknameCheck() !== 1) {
+//     $("#nicknameChangeInner").focus();
+//     return false;
+//   } else if (userEmailCheck() !== 1) {
+//     $("#emailChange").focus();
+//     return false;
+//   }
+//   $("#nicknameChange").attr("disabled", false);
+//   return true;
+// }
 
 // ------------------------------------------------
 // 비밀번호 변경전 비번 한번 더 체크
