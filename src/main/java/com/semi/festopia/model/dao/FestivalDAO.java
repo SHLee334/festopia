@@ -13,6 +13,7 @@ public class FestivalDAO {
 	private SqlSessionTemplate session;
 	
 	public Festival select(int code) {
-		return session.selectOne("fes.select", code);
+		return session.selectOne("festivalMapper.select", code);
 	}
+
 }

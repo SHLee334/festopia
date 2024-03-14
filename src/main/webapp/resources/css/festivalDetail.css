@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 .fes-detail-card {
   display: flex;
   flex-wrap: nowrap;
@@ -7,6 +8,7 @@
   align-items: center;
 }
 
+/* ===== 축제정보 ===== */
 .detail-poster {
   position: relative;
   width: 35%;
@@ -26,4 +28,23 @@
   border-bottom: 2px solid purple;
   padding-bottom: 10px;
   width: 250px;
+}
+
+/* ===== 찜 버튼 ===== */
+.fa-heart {
+	cursor: pointer;
+}
+#addFav {
+	color: red;
+}
+#delFav {
+	color: red;
+}
+
+/* ===== 공유 버튼 ===== */
+.fa-arrow-up-from-bracket {
+	cursor: pointer;
+}
+.fa-arrow-up-from-bracket :hover {
+	color: blue;
 }
