@@ -11,12 +11,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.semi.festopia.model.dto.SearchDTO;
 import com.semi.festopia.model.vo.Festival;
+import com.semi.festopia.service.FestivalService;
 import com.semi.festopia.service.SearchService;
 
 @Controller
 public class SearchController {
 	@Autowired
-	private SearchService service;
+	private SearchService searchService;
+	
+
 	
 	@GetMapping("search")
 	public String search(SearchDTO dto, Model model) {
@@ -35,5 +38,11 @@ public class SearchController {
 	
 	
 	
+	/*========== 축제 상세 ==========*/
+	@GetMapping("/detail")
+	public String detail(String code, Model model) {
+		model.addAttribute("vo", service.detail(Integer.parseInt(code)));
+		return "festivalDetail";
+	}
 
 }

@@ -24,4 +24,8 @@ public class SearchDAO {
 		return session.selectList("searchMapper.popularFestival");
 	}
 	
+	public Festival detail(int code) {
+		return session.selectOne("searchMapper.detail", code);
+	}
+	
 }

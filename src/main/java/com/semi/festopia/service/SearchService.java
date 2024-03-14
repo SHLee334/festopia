@@ -32,6 +32,10 @@ public class SearchService {
 		
 		
 	}
+	
+	public Festival detail(int code) {
+		return dao.detail(code);
+	}
 
 }
 

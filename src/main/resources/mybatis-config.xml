@@ -10,11 +10,13 @@
 		<typeAlias type="com.semi.festopia.model.vo.User" alias="User" />
 		<typeAlias type="com.semi.festopia.model.vo.Festival" alias="Festival" />
 		<typeAlias type="com.semi.festopia.model.dto.SearchDTO" alias="SearchDTO"/>
+		<typeAlias type="com.semi.festopia.model.vo.Favorite" alias="Favorite" />
 	</typeAliases>
 
 	<!-- mapper 파일들 등록하는 곳 -->
 	<mappers>
 		<mapper resource="mappers/user-mapper.xml" />
 		<mapper resource="mappers/search-mapper.xml" />
+		<mapper resource="mappers/favorite-mapper.xml"/>
 	</mappers>
 </configuration>

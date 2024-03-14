@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+.fes-detail-card {
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== 축제정보 ===== */
+.detail-poster {
+  position: relative;
+  width: 35%;
+  border-radius: 2%;
+  margin-right: 20px;
+}
+
+.detail-info {
+  display: inline;
+  width: 65%;
+}
+
+.detail-category {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid purple;
+  padding-bottom: 10px;
+  width: 250px;
+}
+
+/* ===== 찜 버튼 ===== */
+.fa-heart {
+	cursor: pointer;
+}
+#addFav {
+	color: red;
+}
+#delFav {
+	color: red;
+}
+
+/* ===== 공유 버튼 ===== */
+.fa-arrow-up-from-bracket {
+	cursor: pointer;
+}
+.fa-arrow-up-from-bracket :hover {
+	color: blue;
+}
