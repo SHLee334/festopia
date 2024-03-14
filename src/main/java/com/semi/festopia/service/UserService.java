@@ -1,5 +1,7 @@
 package com.semi.festopia.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -9,6 +11,11 @@ import org.springframework.stereotype.Service;
 
 import com.semi.festopia.model.dao.UserDAO;
 import com.semi.festopia.model.vo.User;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 
 
 @Service
@@ -30,6 +37,7 @@ public class UserService implements UserDetailsService{
 		return user;
 	}
 	
+	
 	// 회원가입
 	public int registerUser (User vo) {
 		String encodePw = bcpe.encode(vo.getPassword());
@@ -37,15 +45,26 @@ public class UserService implements UserDetailsService{
 		return dao.registerUser(vo);
 	}
 	
-	// 아이디 변경
+	// 아이디,이메일 변경
 	public int updateUserNickname(User vo) {
 		return dao.updateUserNickname(vo);
 	}
 	
-	// 비번/메일 변경
+	// 비번 변경
 	public int updateUserInfo(User vo) {
 		String encodePw = bcpe.encode(vo.getPassword());
 		vo.setPassword(encodePw);
 		return dao.updateUserInfo(vo);
 	}
+	
+	// 유저 회원탈퇴
+	public int unableAccount(User vo) {
+		return dao.unableAccount(vo);
+	}
+	
+	// ajax, 유저 아이디 중복체크
+	public User idCheck(String id) {
+		return dao.idCheck(id);
+	}
+	
 }

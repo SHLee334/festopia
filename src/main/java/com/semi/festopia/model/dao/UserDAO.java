@@ -22,15 +22,25 @@ public class UserDAO {
 		return user;
 	}
 	
-	// 유저 닉네임 변경
+	
+	// 유저 닉네임&이메일 변경
 	public int updateUserNickname(User vo) {
 		return session.update("userMapper.updateUserNickname", vo);
 	}
 	
-	// 유저 비번/메일 변경
+	// 유저 비번 변경
 	public int updateUserInfo(User vo){
 		return session.update("userMapper.updateUserInfo", vo);
 	}
-		
+	
+	// 유저 회원탈퇴
+	public int unableAccount(User vo) {
+		return session.update("userMapper.unableAccount", vo);
+	}
 				
+	// ajax, 유저 아이디 중복테크
+	public User idCheck(String id) {
+		return session.selectOne("userMapper.idCheck", id);
+	}
+	
 }

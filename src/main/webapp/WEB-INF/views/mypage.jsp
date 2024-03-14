@@ -10,8 +10,12 @@ uri="http://www.springframework.org/security/tags" %>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
-	<!-- 파비콘 -->
-	<link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
+    <!-- 파비콘 -->
+    <link
+      rel="icon"
+      href="resources/resources/favicon.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <style>
       .mypage-container {

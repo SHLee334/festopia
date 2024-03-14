@@ -33,6 +33,7 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler{
 		// 메모 : 일단 권한직급이 뭐가 되든 간에 로그인되면 홈페이지로 강제 이송
 		// user 정보가 잘 들어왔는지 확인할 수 있는 system.out은  UserService/ dao쪽의 login 로직에 있음.
 		
+		
 	}
 	
 }

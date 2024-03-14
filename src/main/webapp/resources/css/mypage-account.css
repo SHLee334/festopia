@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: white;
+}
+.tabs .tab-header {
+  float: left;
+  width: 180px;
+  height: 80vh;
+  border-right: 1px solid #ccc; /*nav쪽 줄*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tabs .tab-header > div {
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  padding-left: 10px;
+}
+.tabs .tab-header div i {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+.tabs .tab-content {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.tabs .tab-content > div > i {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #555;
+  color: #f5f5f5;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+}
+.tabs .tab-content > div {
+  display: none;
+  /* position: absolute; */
+  text-align: center;
+  padding: 40px 20px;
+  /* top: -200%; */
+  transition: all 500ms ease-in-out;
+}
+.tabs .tab-content > div.active {
+  top: 0px;
+}
+.pigeon-account {
+  display: flex;
+  align-items: center;
+  background-color: beige;
+  height: 20rem;
+}
+#userImage {
+  border-radius: 50%;
+  border: 1px solid #888;
+  background-color: none;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin-left: 50px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+#userInfo {
+  text-align: left;
+  margin-left: 100px;
+  line-height: 50px;
+}
+#pwdChangeForm {
+  background-color: aquamarine;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-pwd-check {
+  background-color: beige;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

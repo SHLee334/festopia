@@ -382,8 +382,10 @@ uri="http://www.springframework.org/security/tags"%>
         </div>
       </div>
     </header>
+    <<<<<<< HEAD
 
     <!-- js 적용 -->
+    ======= >>>>>>> jungdj221
     <script src="resources/js/index.js"></script>
   </body>
 </html>
