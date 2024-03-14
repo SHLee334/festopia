@@ -17,7 +17,7 @@ import com.semi.festopia.service.SearchService;
 @Controller
 public class SearchController {
 	@Autowired
-	private SearchService searchService;
+	private SearchService service;
 	
 
 	
