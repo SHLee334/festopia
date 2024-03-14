@@ -33,6 +33,7 @@ pageEncoding="UTF-8"%>
       </div>
       <div>
         <input type="submit" value="로그인" id="bindPwd" />
+        ${requestScope.loginFail}
       </div>
     </form>
 
