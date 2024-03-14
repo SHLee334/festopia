@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   resizeHandler();
 
   // menu click event
-  const nav = document.querySelector("nav");
+  const nav = document.querySelector("#divPac");
   let currentNav;
 
   function navHandler(e) {

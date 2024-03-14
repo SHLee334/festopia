@@ -51,9 +51,6 @@ header {
 }
 
 /*검색창 위치...*/
-nav .container {
-  margin-right: 80px;
-}
 
 #list {
   list-style: none;
@@ -327,6 +324,7 @@ main section {
 }
 
 /*============== SEARCHFILTER ===============*/
+
 .category {
   display: flex;
   flex-direction: column;
@@ -360,6 +358,7 @@ main section {
   justify-content: space-between;
   size: 2rem;
 }
+
 
 /* 인기 축제 */
 
@@ -423,6 +422,7 @@ main section {
 .container {
   display: flex;
   margin-top: 20px;
+  margin-right: 80px;
 }
 
 /*로그인, 회원가입 버튼 위치*/

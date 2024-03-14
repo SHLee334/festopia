@@ -62,7 +62,7 @@ uri="http://www.springframework.org/security/tags"%>
         <div class="progress-bar"></div>
       </div>
       <h1>FESTOPIA</h1>
-      <nav>
+      <div id="btnPac">
         <div class="container">
           <form action="search" class="search" id="search-bar" name="name">
             <input
@@ -88,7 +88,6 @@ uri="http://www.springframework.org/security/tags"%>
                     <label class="btn category-btn" for="btn-check-1"
                       >교육/체험</label
                     >
-
                     <input
                       type="checkbox"
                       class="btn-check"
@@ -100,7 +99,6 @@ uri="http://www.springframework.org/security/tags"%>
                     <label class="btn category-btn" for="btn-check-2"
                       >국악</label
                     >
-
                     <input
                       type="checkbox"
                       class="btn-check"
@@ -112,7 +110,6 @@ uri="http://www.springframework.org/security/tags"%>
                     <label class="btn category-btn" for="btn-check-3"
                       >기타</label
                     >
-
                     <input
                       type="checkbox"
                       class="btn-check"
@@ -124,7 +121,6 @@ uri="http://www.springframework.org/security/tags"%>
                     <label class="btn category-btn" for="btn-check-4"
                       >독주/독창회</label
                     >
-
                     <input
                       type="checkbox"
                       class="btn-check"
@@ -136,7 +132,6 @@ uri="http://www.springframework.org/security/tags"%>
                     <label class="btn category-btn" for="btn-check-5"
                       >무용</label
                     >
-
                     <input
                       type="checkbox"
                       class="btn-check"
@@ -162,7 +157,6 @@ uri="http://www.springframework.org/security/tags"%>
                     <label class="btn category-btn" for="btn-check-7"
                       >연극</label
                     >
-
                     <input
                       type="checkbox"
                       class="btn-check"
@@ -174,7 +168,6 @@ uri="http://www.springframework.org/security/tags"%>
                     <label class="btn category-btn" for="btn-check-8"
                       >영화</label
                     >
-
                     <input
                       type="checkbox"
                       class="btn-check"
@@ -186,7 +179,6 @@ uri="http://www.springframework.org/security/tags"%>
                     <label class="btn category-btn" for="btn-check-9"
                       >전시/미술</label
                     >
-
                     <input
                       type="checkbox"
                       class="btn-check"
@@ -198,7 +190,6 @@ uri="http://www.springframework.org/security/tags"%>
                     <label class="btn category-btn" for="btn-check-10"
                       >축제</label
                     >
-
                     <input
                       type="checkbox"
                       class="btn-check"
@@ -210,7 +201,6 @@ uri="http://www.springframework.org/security/tags"%>
                     <label class="btn category-btn" for="btn-check-11"
                       >콘서트</label
                     >
-
                     <input
                       type="checkbox"
                       class="btn-check"
@@ -270,7 +260,6 @@ uri="http://www.springframework.org/security/tags"%>
                 <hr />
                 <div id="searchFilterButton">
                   <input type="submit" value="DIVE!!" />
-
                   <i
                     class="fa-regular fa-rectangle-xmark closeSearchFilter"
                   ></i>
@@ -283,61 +272,59 @@ uri="http://www.springframework.org/security/tags"%>
               <i class="ri-close-line search__close closeAllSearchFilter"></i>
             </div>
           </form>
+
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <!--로그인, 회원가입 -->
+            <i class="fa-solid fa-circle-user"></i>
+          </button>
+          <a href="" id="inform">
+            <!-- 공지사항 -->
+            <i class="fa-solid fa-circle-exclamation fa-2xl"></i
+          ></a>
+          <!-- <sec:authentication property="principal" var="user" /> -->
+
+          <ul class="dropdown-menu">
+            <c:choose>
+              <c:when test="${user == 'anonymousUser'}">
+                <li>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    로그인
+                  </button>
+                </li>
+
+                <li>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal2"
+                  >
+                    회원가입
+                  </button>
+                </li>
+              </c:when>
+              <c:otherwise>
+                <sec:authorize
+                  access="hasRole('ROLE_ADMIN') and isAuthenticated()"
+                />
+                <li>${user.nickname}님,환영합니다</li>
+                <li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
+                <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
+              </c:otherwise>
+            </c:choose>
+          </ul>
         </div>
-
-        <button
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-      <!--로그인, 회원가입 -->
-        <i class="fa-solid fa-circle-user"></i>
-      </button>
-      <a href="" id="inform"
-        > <!-- 공지사항 -->
-        <i class="fa-solid fa-circle-exclamation fa-2xl"></i></a>
-      <!-- <sec:authentication property="principal" var="user" /> -->
-
-      <ul class="dropdown-menu">
-        <c:choose>
-          <c:when test="${user == 'anonymousUser'}">
-            <li>
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                로그인
-              </button>
-            </li>
-
-            <li>
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal2"
-              >
-                회원가입
-              </button>
-            </li>
-          </c:when>
-          <c:otherwise>
-            <sec:authorize
-              access="hasRole('ROLE_ADMIN') and isAuthenticated()"
-            />
-            <li>${user.nickname}님,환영합니다</li>
-            <li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
-            <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
-          </c:otherwise>
-        </c:choose>
-      </ul>
-    </nav>
-        </div>
-
-       
+      </div>
 
       <!-- Modal -->
       <div
