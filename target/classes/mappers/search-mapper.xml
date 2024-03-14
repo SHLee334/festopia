@@ -1,7 +1,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="searchMapper">
 	<resultMap type="Festival" id="festivalMap">
-		<id property="code" column="fes_code" />
+		<id property="fesCode" column="fes_code" />
 		<result property="name" column="fes_name" />
 		<result property="startDate" column="fes_start_date" />
 		<result property="endDate" column="fes_end_date" />
@@ -107,6 +107,6 @@
 	<!-- 축제 상세페이지 -->
 	<select id="detail" parameterType="int" resultMap="festivalMap">
 		SELECT * FROM festival
-		WHERE fes_code = #{code}
+		WHERE fes_code = #{fesCode}
 	</select>
 </mapper>

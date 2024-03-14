@@ -35,14 +35,6 @@ public class SearchController {
 		System.out.println(list);
 		return list;
 	}
-	
-	
-	
-	/*========== 축제 상세 ==========*/
-	@GetMapping("/detail")
-	public String detail(String code, Model model) {
-		model.addAttribute("vo", service.detail(Integer.parseInt(code)));
-		return "festivalDetail";
-	}
+
 
 }

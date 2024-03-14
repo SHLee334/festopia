@@ -94,14 +94,16 @@
 .card-body {
   display: inline;
   height: 20%;
-  padding: 5px;
+  padding: 5px 10px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-name {
   font-weight: bolder;
   margin-bottom: 0px;
-  white-space: nowrap;
-  overflow: hidden;
+  
 }
 
 .card-date {
