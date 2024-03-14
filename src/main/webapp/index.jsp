@@ -54,10 +54,6 @@ pageEncoding="UTF-8"%>
     		success : function(list){
     			console.log(list);
     			
-    			for(const item of list){
-    				for 
-    				
-    			}
     		}
     		
     		
