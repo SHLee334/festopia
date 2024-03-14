@@ -29,17 +29,15 @@ public class AjaxController {
 	
 	// AjaxController
 	
-	// 아이디 중복 체크
+	// 회원가입시 아이디 실시간 중복체크
 	@ResponseBody
-	@PostMapping("/idCheck")
-	public boolean idCheck(String id) {
+	@PostMapping("/isDuplicated")
+	public User idCheck(String id) {
 		User user = service.idCheck(id);
-		if (user != null) {
-			return false;
-		} else {
-			return true;
-		}
+		return user;
 	}
+	
+	
 	
 	// 로그인시 패스워드 마이페이지로 바인딩
 	@ResponseBody
@@ -49,6 +47,7 @@ public class AjaxController {
 		session.setAttribute("pwdBind", pwd);
 		return "/mypage-account";
 	}
+	
 	
 	// user정보 update로직들 userController -> ajaxController로 변경
 	@ResponseBody

@@ -15,7 +15,6 @@ $("#nicknameChange").click(() => {
       } else {
         alert("뭔가 잘못됐습니다. 다시 시도해주세요.");
       }
-      
     },
   });
 });
@@ -26,18 +25,23 @@ $("#pwdChangeFormButton").click(() => {
     type: "post",
     url: "/updateUserInfo",
     data: $("#pwdChangeForm").serialize(),
-    success: function (data) {
-      console.log(data);
-      if (data !== null) {
-        console.log($("#passwordChangeInner"));
+    success: function (user) {
+      // console.log(user);
+      if (user !== null) {
+        //console.log($("#passwordChangeInner"));
         $(".current-pwd-check").slideDown(200);
         $("#pwdChangeForm").hide();
         $("#wrongTry")
           .text("성공적으로 패스워드를 변경하였습니다!")
           .css("color", "green");
-        console.log($("#accountPwdCheck").val($("#passwordChangeInner").val()));
-        $("#accountPwdCheck").val($("#passwordChangeInner").val());
-        // location.reload();
+        setTimeout(function () {
+          alert(
+            "비밀번호변경이 확인되었습니다. 개인정보 보호를 위해 자동 로그아웃됩니다. 다시 로그인해주세요."
+          );
+          location.href = "/logout";
+        }, 1000);
+        //console.log($("#accountPwdCheck").val($("#passwordChangeInner").val()));
+        //$("#accountPwdCheck").val($("#passwordChangeInner").val());
       }
     },
   });
@@ -118,6 +122,7 @@ function userEmailCheck() {
 $("#emailChange").keyup((e) => {
   inputHandler(e, userEmailCheck(), "* 정확한 이메일 양식을 작성해주세요");
 });
+
 function infoValidate() {
   if (nicknameCheck() !== 1) {
     $("#nicknameChangeInner").focus();
@@ -126,8 +131,10 @@ function infoValidate() {
     $("#emailChange").focus();
     return false;
   }
+  $("#nicknameChange").attr("disabled", false);
   return true;
 }
+
 // ------------------------------------------------
 // 비밀번호 변경전 비번 한번 더 체크
 $(".inneractive1").click(() => {

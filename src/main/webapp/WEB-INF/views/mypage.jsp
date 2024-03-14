@@ -111,6 +111,7 @@ uri="http://www.springframework.org/security/tags" %>
               조회내역
             </button>
           </li>
+          <!-- 관리자 관련-->
         </ul>
       </nav>
 
@@ -119,7 +120,7 @@ uri="http://www.springframework.org/security/tags" %>
       </div>
       <div class="item" id="main-jsp">account jsp2</div>
       <div class="item" id="main-jsp">
-      		<jsp:include page="myComment.jsp" />
+        <jsp:include page="myComment.jsp" />
       </div>
     </div>
     <script src="../../resources/js/mypage.js"></script>

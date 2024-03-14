@@ -45,11 +45,6 @@ public class UserController {
 		return "redirect:/";
 	}
 	
-//	@PostMapping("/login")
-//	public String login(String username) {
-//		service.loadUserByUsername(username);
-//		return "redirect:/";
-//	}
 	
 	@GetMapping("/mypage-favorite")
 	public void favorite() {}

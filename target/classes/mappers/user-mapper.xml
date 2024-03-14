@@ -21,8 +21,9 @@
 	</select>
 	
 	
-	<!-- 회원정보 수정 ㅡㅡㅡㅡㅡㅡㅡ --> 
 	
+	
+	<!-- 회원정보 수정 ㅡㅡㅡㅡㅡㅡㅡ --> 
 	<!-- 개인정보 수정(닉네임, 이메일)(비밀번호 인증 필요 없음) 쿼리문 -->
 	<update id="updateUserNickname" parameterType="User" >
 		UPDATE user

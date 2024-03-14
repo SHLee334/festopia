@@ -73,6 +73,7 @@ uri="http://www.springframework.org/security/tags" %>
                   type="button"
                   value="정보 수정하기"
                   id="nicknameChange"
+                  disabled
                   onclick="return infoValidate()"
                 />
               </div>

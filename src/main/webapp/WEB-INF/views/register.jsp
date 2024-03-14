@@ -24,7 +24,7 @@ pageEncoding="UTF-8"%>
           placeholder="아이디를 입력해주세요"
         />
         <span id="idCheckSpan"></span>
-        <input type="button" id="idCheck" value="아이디 중복확인" />
+        <span id="idCheckSpan2"></span>
       </div>
       <div>
         <input
