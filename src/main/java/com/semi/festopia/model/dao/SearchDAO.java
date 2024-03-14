@@ -18,4 +18,10 @@ public class SearchDAO {
 		System.out.println(fesList);
 		return session.selectList("searchMapper.searchFestival", fesList);
 	}
+	
+	public List<Festival> popularFestival(){
+		
+		return session.selectList("searchMapper.popularFestival");
+	}
+	
 }

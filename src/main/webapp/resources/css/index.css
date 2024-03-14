@@ -85,6 +85,7 @@ nav .container {
   background-position: center;
 
   display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
 
@@ -92,12 +93,26 @@ nav .container {
 }
 
 .slide h1 {
-  font-size: 100px;
+  font-size: 130px;
   color: white;
   text-shadow: 5px 5px 5px rgb(114, 114, 106);
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
   font-style: normal;
+  display: flex;
+  justify-content: center;
+  margin-top: 350px;
+}
+
+.slide p {
+  font-size: 60px;
+  color: white;
+  text-shadow: 5px 5px 5px rgb(114, 114, 106);
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
 }
 
 .slide:nth-child(1) {
@@ -344,4 +359,79 @@ main section {
   display: flex;
   justify-content: space-between;
   size: 2rem;
+}
+
+/* 인기 축제 */
+
+.content-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  width: 18rem;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  text-decoration: none;
+  color: black;
+}
+.card img {
+  position: relative;
+  height: 80%;
+  object-fit: cover;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+}
+.card-body {
+  display: inline;
+  height: 20%;
+  padding: 5px;
+}
+.fav-btn {
+  /*background: url(file:///D:/spring-workspace/festopia/src/main/webapp/resources/resources/favicon.png) no-repeat;*/
+  border: none;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.card-name {
+  font-weight: bolder;
+  margin-bottom: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.card-date {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin: 0 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.card-place {
+  font-size: 0.8rem;
+  margin: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* 검색창 옆으로 아이콘 옮김*/
+
+.container {
+  display: flex;
+  margin-top: 20px;
+}
+
+/*로그인, 회원가입 버튼 위치*/
+.btn {
+  margin-top: 20px;
+  height: 40px;
+}
+
+#inform {
+  margin-top: 10px;
+  padding: 20px;
 }

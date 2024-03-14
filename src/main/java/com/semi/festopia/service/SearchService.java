@@ -26,6 +26,12 @@ public class SearchService {
 		}
 		return dao.searchFestival(dto);
 	}
+	
+	public List<Festival> popularFestival(){
+		return dao.popularFestival();
+		
+		
+	}
 
 }
 

@@ -46,6 +46,9 @@ uri="http://www.springframework.org/security/tags"%>
     <!-- 스타일 적용 -->
     <link rel="stylesheet" href="./resources/css/index.css" />
 
+    <!-- js 적용 -->
+    <script src="resources/js/header.js"></script>
+
     <!-- 아이콘 추가 -->
     <script
       src="https://kit.fontawesome.com/4602e82315.js"
@@ -59,7 +62,6 @@ uri="http://www.springframework.org/security/tags"%>
         <div class="progress-bar"></div>
       </div>
       <h1>FESTOPIA</h1>
-
       <nav>
         <div class="container">
           <form action="search" class="search" id="search-bar" name="name">
@@ -284,54 +286,58 @@ uri="http://www.springframework.org/security/tags"%>
         </div>
 
         <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <i class="fa-solid fa-circle-user"></i>
-        </button>
-        <a href=""
-          ><i class="fa-solid fa-circle-exclamation" style="color: #938f9e"></i
-        ></a>
-        <!-- <sec:authentication property="principal" var="user" /> -->
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+      <!--로그인, 회원가입 -->
+        <i class="fa-solid fa-circle-user"></i>
+      </button>
+      <a href="" id="inform"
+        > <!-- 공지사항 -->
+        <i class="fa-solid fa-circle-exclamation fa-2xl"></i></a>
+      <!-- <sec:authentication property="principal" var="user" /> -->
 
-        <ul class="dropdown-menu">
-          <c:choose>
-            <c:when test="${user == 'anonymousUser'}">
-              <li>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                >
-                  로그인
-                </button>
-              </li>
+      <ul class="dropdown-menu">
+        <c:choose>
+          <c:when test="${user == 'anonymousUser'}">
+            <li>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                로그인
+              </button>
+            </li>
 
-              <li>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal2"
-                >
-                  회원가입
-                </button>
-              </li>
-            </c:when>
-            <c:otherwise>
-              <sec:authorize
-                access="hasRole('ROLE_ADMIN') and isAuthenticated()"
-              />
-              <li>${user.nickname}님,환영합니다</li>
-              <li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
-              <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
-            </c:otherwise>
-          </c:choose>
-        </ul>
-      </nav>
+            <li>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal2"
+              >
+                회원가입
+              </button>
+            </li>
+          </c:when>
+          <c:otherwise>
+            <sec:authorize
+              access="hasRole('ROLE_ADMIN') and isAuthenticated()"
+            />
+            <li>${user.nickname}님,환영합니다</li>
+            <li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
+            <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
+          </c:otherwise>
+        </c:choose>
+      </ul>
+    </nav>
+        </div>
+
+       
 
       <!-- Modal -->
       <div
