@@ -94,36 +94,7 @@
 	<div class="fes-detail-map">
 		
 	</div>	
+        
 
-        <i class="fa-solid fa-arrow-up-from-bracket"></i>
-      </div>
-    </div>
-
-    <div class="commentZone">
-      <div id="inputCom">
-        <p>댓글 입력</p>
-        <form action="/writeCom" method="post">
-          <textarea rows="5" cols="30" name="comText"></textarea>
-          <input type="hidden" name="fesCode" value="${vo.code}" />
-          <input
-            type="submit"
-            value="댓글 달기"
-          />
-        </form>
-      </div>
-
-      <div id="comList">
-        <h6>댓글 목록</h6>
-
-		<form action="/viewCom" method="post">
-			<input type="hidden" name="fesCode" value="${vo.code}" />
-		</form>
-		<c:forEach items="${com}" var="item">
-	        <strong>${item.userCode}</strong>
-	        <span> | </span><span>${user.nickname}</span>
-	        <p>${item.comText}</p>
-        </c:forEach>
-      </div>
-    </div>
   </body>
 </html>

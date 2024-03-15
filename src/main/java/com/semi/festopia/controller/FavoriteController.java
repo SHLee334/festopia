@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.semi.festopia.model.vo.Favorite;
+import com.semi.festopia.model.vo.Festival;
 import com.semi.festopia.model.vo.User;
 import com.semi.festopia.service.FavoriteService;
 import com.semi.festopia.service.SearchService;
@@ -25,6 +26,7 @@ public class FavoriteController {
 	/*========== 축제 상세 ==========*/
 	@GetMapping("/detail")
 	public String detail(String code, Model model) {
+		
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		User user = (User) principal;
 		

@@ -69,11 +69,19 @@
 
 	<!-- 검색결과 축제 항목 카드 -->
 	<div class="content-list">
-	
 		<c:forEach items="${list}" var="item">
 			<a href="/detail?code=${item.fesCode}" class="card">
-				<img src="${item.poster}" class="card-img" >
+				<img src="${item.poster}" class="card-poster" >
 				
+				<div class="card-body">
+					<div class="cord-body-content">
+						<p class="card-name">${item.name}</p>
+						<p class="card-date">${item.startDate} ~ ${item.endDate}</p>
+						<p class="card-place">${item.place}</p>
+					</div>
+				</div>
+				
+				<!-- 찜 -->
 				<c:choose>
 				<c:when test="${empty favorite}">
 					<h3><i class="fa-solid fa-heart" id="addFav"></i></h3>
@@ -109,15 +117,9 @@
 						});
 					});
 				</script>
-				
-								
-				<div class="card-body">
-					<p class="card-name">${item.name}</p>
-					<p class="card-date">${item.startDate} ~ ${item.endDate}</p>
-					<p class="card-place">${item.place}</p>
-				</div>
-			</a>
+			 </a>
 		</c:forEach>
+		
 		
 	</div>
 </body>

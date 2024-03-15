@@ -6,7 +6,7 @@
   min-width: 80vw;
   max-width: 60vw;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 /* ===== 축제정보 ===== */
@@ -45,6 +45,9 @@
 
 /* ===== 찜 버튼 ===== */
 .fa-heart {
+  position: absolute;
+  top: 2px;
+  right: 10px;
   cursor: pointer;
 }
 #addFav {
@@ -52,17 +55,16 @@
 }
 #delFav {
   color: rgb(223, 33, 33);
-  position: absolute;
-  top: 2px;
-  right: 10px;
-  cursor: pointer;
 }
 
 /* ===== 공유 버튼 ===== */
 .fa-arrow-up-from-bracket {
+  position: absolute;
+  top: 2px;
+  right: 45px;
   cursor: pointer;
 }
-.fa-arrow-up-from-bracket :hover {
+.fa-arrow-up-from-bracket:hover {
   color: blue;
 }
 
