@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib prefix="sec"
+uri="http://www.springframework.org/security/tags"%>
 
 <!DOCTYPE html>
 <html>
@@ -58,9 +60,10 @@ pageEncoding="UTF-8"%>
     			
           htmlCode +=
           
+        	 
             '<div class="card">' + 
             '<a href="상세페이지">' + 
-              '<img src=' + item.poster +  'class="card-img" >' + 
+              '<img src=' + item.poster +  ' class=" card-img" >' + 
               '<button class="fav-btn" type="button" onclick="alert(\'찜 목록 추가!\')">' + 
               '</button>' + 
               '<div class="card-body">' + 
@@ -70,7 +73,8 @@ pageEncoding="UTF-8"%>
               '</div>' + 
             '</a>' + 
             '</div>' + 
-          '</div>';
+          '</div>' 
+          ;
 
         }
 
@@ -104,27 +108,10 @@ pageEncoding="UTF-8"%>
         </section>
 
         <section class="size" id="section2">
-          <span style="font-size: 2em"> &#128293; </span>
-          <h2>인기 축제</h2>
+          <h2><span style="font-size: 2em"> &#128293; </span> 인기 축제</h2>
 
-	<!-- 검색결과 축제 항목 카드 -->
-	<!-- <div class="content-list">
+	
 
-  		<c:forEach items="${list}" var="item">
-    <div class="card">
-      <a href="상세페이지">
-        <img src="${item.poster}" class="card-img" >
-        <button class="fav-btn" type="button" onclick="alert('찜 목록 추가!')">
-        </button>
-        <div class="card-body">
-          <p class="card-name">${item.name}</p>
-          <p class="card-date">${item.startDate} ~ ${item.endDate}</p>
-          <p class="card-place">${item.place}</p>
-        </div>
-      </a>
-    </div>
-  </c:forEach>
-</div> -->
 
 <div class="content-list">
 

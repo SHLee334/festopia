@@ -22,9 +22,10 @@ public class SearchController {
 
 	
 	@GetMapping("search")
-	public String search(SearchDTO dto) {
+	public String search(SearchDTO dto, Model model) {
 		List<Festival> list = service.searchFestival(dto);
 		System.out.println(list);
+		model.addAttribute("list", list);
 		return "searchResult";
 	}
 	
