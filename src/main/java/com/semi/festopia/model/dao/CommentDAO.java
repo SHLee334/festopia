@@ -22,5 +22,7 @@ public class CommentDAO {
 	public List<Comment> viewCom(int fesCode) {
 		return session.selectList("commentMapper.viewCom", fesCode);
 	}
+	
+	
 
 }

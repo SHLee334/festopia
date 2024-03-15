@@ -9,13 +9,26 @@
 		<result property="fesCode" column="fes_code"/>
 	</resultMap>
 	
+	<resultMap type="User" id="userMap">
+		<result property="userCode" column="user_code"/>
+		<result property="id" column="user_id"/>
+		<result property="password" column="user_pwd"/>
+		<result property="nickname" column="user_nickname"/>
+		<result property="email" column="user_email"/>
+		<result property="enabled" column="user_enabled"/>
+		<result property="userEnrollDate" column="user_enroll_date"/>
+		<result property="userQuitDate" column="user_quit_date"/>
+		<result property="auth" column="user_role"/>
+		<collection property="user" resultMap="commentMap"></collection>
+	</resultMap>
+	
 	<insert id="insertCom" parameterType="Comment">
 		INSERT INTO comment (com_text, user_code, fes_code) 
 		VALUES (#{comText}, #{userCode}, #{fesCode})
 	</insert>
 	
 	<select id="viewCom" parameterType="int" resultMap="commentMap">
-		SELECT user_nickname, com_text, com_date FROM comment
+		SELECT * FROM comment 
 		JOIN user USING(user_code) WHERE fes_code = #{fesCode}
 	</select>
 </mapper>

@@ -116,7 +116,7 @@ uri="http://www.springframework.org/security/tags"%>
       <div>
         <h6>댓글 목록</h6>
         <c:forEach items="${com}" var="item">
-          <strong>${item.userName}</strong>
+          <strong>${com.nickname}</strong>
           <span> | </span>
           <span>${item.comDate}</span>
           <p>${item.comText}</p>
