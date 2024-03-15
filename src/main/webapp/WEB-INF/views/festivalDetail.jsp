@@ -51,10 +51,10 @@
 
 			<c:choose>
 				<c:when test="${empty favorite}">
-					<i class="fa-regular fa-heart" id="addFav"></i>
+					<h5><i class="fa-solid fa-heart" id="addFav"></i></h5>
 				</c:when>
 				<c:otherwise>
-					<i class="fa-solid fa-heart" id="delFav"></i>
+					<h5><i class="fa-solid fa-heart" id="delFav"></i></h5>
 					
 					<script>
 					console.log(${favorite.fvCode});
@@ -85,7 +85,7 @@
 			</script>
 
 			<!-- 공유(클립보드) -->
-			<i class="fa-solid fa-arrow-up-from-bracket"></i>
+			<h5><i class="fa-solid fa-arrow-up-from-bracket"></i></h5>
 		</div>
 	</div>
 	

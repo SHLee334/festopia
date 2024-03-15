@@ -20,8 +20,7 @@ public class FavoriteController {
 	private FavoriteService favService;
 	
 	@Autowired
-	private SearchService service;
-	
+	private SearchService searchService;
 	
 	/*========== 축제 상세 ==========*/
 	@GetMapping("/detail")
@@ -29,7 +28,7 @@ public class FavoriteController {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		User user = (User) principal;
 		
-		model.addAttribute("vo", service.detail(Integer.parseInt(code)));
+		model.addAttribute("vo", searchService.detail(Integer.parseInt(code)));
 		
 		// 축제코드(fesCode), 유저코드(userCode) 보내기
 		Favorite vo = new Favorite();
