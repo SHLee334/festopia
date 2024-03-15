@@ -15,7 +15,6 @@ import com.semi.festopia.model.vo.Favorite;
 import com.semi.festopia.model.vo.Festival;
 import com.semi.festopia.model.vo.User;
 import com.semi.festopia.service.FavoriteService;
-import com.semi.festopia.service.FestivalService;
 import com.semi.festopia.service.SearchService;
 
 @Controller

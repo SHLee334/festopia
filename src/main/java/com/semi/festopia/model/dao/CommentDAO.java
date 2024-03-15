@@ -20,7 +20,7 @@ public class CommentDAO {
 	
 	// 댓글 출력
 	public List<Comment> viewCom(int fesCode) {
-		return session.selectOne("commentMapper.viewCom", fesCode);
+		return session.selectList("commentMapper.viewCom", fesCode);
 	}
 
 }

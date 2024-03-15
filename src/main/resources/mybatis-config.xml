@@ -17,7 +17,6 @@
 	<!-- mapper 파일들 등록하는 곳 -->
 	<mappers>
 		<mapper resource="mappers/user-mapper.xml" />
-		<mapper resource="mappers/festival-mapper.xml" />
 		<mapper resource="mappers/search-mapper.xml" />
 		<mapper resource="mappers/favorite-mapper.xml"/>
 		<mapper resource="mappers/comment-mapper.xml"/>

@@ -82,15 +82,13 @@
 }
 
 #com {
-  width: 80%;
+  width: 50%;
   height: 50px;
 }
 
 #comList {
   width: 50%;
   height: 100%;
-  position: absolute;
   top: 2px;
   right: 45px;
-  cursor: pointer;
 }
