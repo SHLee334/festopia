@@ -13,4 +13,9 @@
 		INSERT INTO comment (com_text, user_code, fes_code) 
 		VALUES (#{comText}, #{userCode}, #{fesCode})
 	</insert>
+	
+	<select id="viewCom" parameterType="int" resultMap="commentMap">
+		SELECT user_nickname, com_text, com_date FROM comment
+		JOIN user USING(user_code) WHERE fes_code = #{fesCode}
+	</select>
 </mapper>

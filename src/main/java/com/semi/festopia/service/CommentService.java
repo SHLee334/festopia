@@ -1,5 +1,7 @@
 package com.semi.festopia.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,10 @@ public class CommentService {
 	
 	public int insertCom(Comment com) {
 		return dao.insertCom(com);
+	}
+	
+	public List<Comment> viewCom(int fesCode) {
+		return dao.viewCom(fesCode);
 	}
 
 
