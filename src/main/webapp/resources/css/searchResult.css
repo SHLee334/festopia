@@ -61,7 +61,11 @@
   color: black;
 }
 
-.card img {
+.card:hover {
+  color: black !important;
+}
+
+.card-img {
   position: relative;
   height: 80%;
   object-fit: cover;
@@ -69,24 +73,22 @@
   border-bottom-right-radius: 0%;
 }
 
-#addFav {
+.card-img:hover {
+  background-color: black;
+}
+
+.fa-heart {
   position: absolute;
-  border: none;
-  height: 30px;
-  width: 30px;
-  top: 10px;
-  right: 10px;
-  color: red;
+  top: 15px;
+  right: 20px;
   cursor: pointer;
 }
 
+#addFav {
+  color: rgb(71, 71, 71);
+}
+
 #delFav {
-  position: absolute;
-  border: none;
-  height: 30px;
-  width: 30px;
-  top: 10px;
-  right: 10px;
   color: red;
   cursor: pointer;
 }
@@ -94,7 +96,7 @@
 .card-body {
   display: inline;
   height: 20%;
-  padding: 5px 15px !important;
+  padding: 5px 10px !important;
 }
 
 .card-name {
@@ -102,6 +104,7 @@
   margin-bottom: 0px;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-date {
@@ -110,6 +113,7 @@
   margin: 0 0 5px;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-place {
@@ -117,4 +121,5 @@
   margin: 0px;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor
 public class Festival {
-	private int code;
+	private int fesCode;
 	private String name;
 	private String startDate;
 	private String endDate;

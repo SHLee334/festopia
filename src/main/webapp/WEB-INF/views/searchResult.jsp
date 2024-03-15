@@ -71,9 +71,46 @@
 	<div class="content-list">
 	
 		<c:forEach items="${list}" var="item">
-			<a href="/detail?code=${item.code}" class="card">
+			<a href="/detail?code=${item.fesCode}" class="card">
 				<img src="${item.poster}" class="card-img" >
 				
+				<c:choose>
+				<c:when test="${empty favorite}">
+					<h3><i class="fa-solid fa-heart" id="addFav"></i></h3>
+				</c:when>
+				<c:otherwise>
+					<h3><i class="fa-solid fa-heart" id="delFav"></i></h3>
+					
+					<script>
+					console.log(${favorite.fvCode});
+		              $("#delFav").click(() => {
+		                $.ajax({
+		                  type: 'post',
+		                  url: '/delFav',
+		                  data: 'code=' + ${favorite.fvCode},
+		                  success: function (data) {
+		                    location.reload();
+		                  }
+		                });
+		              });
+		            </script>
+				</c:otherwise>
+				</c:choose>
+				<script>
+				console.log(`${item.fesCode}`);
+					$('#addFav').click(() => {
+						$.ajax({
+							type: 'post',
+							url: '/addFav',
+							data: 'code=' + ${item.fesCode},
+							success: function(data) {
+								location.reload();
+							}
+						});
+					});
+				</script>
+				
+								
 				<div class="card-body">
 					<p class="card-name">${item.name}</p>
 					<p class="card-date">${item.startDate} ~ ${item.endDate}</p>

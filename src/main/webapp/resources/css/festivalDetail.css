@@ -3,7 +3,8 @@
 .fes-detail-card {
   display: flex;
   flex-wrap: nowrap;
-  max-width: 80%;
+  min-width: 80vw;
+  max-width: 60vw;
   justify-content: center;
   align-items: center;
 }
@@ -11,23 +12,35 @@
 /* ===== 축제정보 ===== */
 .detail-poster {
   position: relative;
-  width: 35%;
+  width: 45%;
   border-radius: 2%;
   margin-right: 20px;
 }
 
 .detail-info {
+  position: relative;
   display: inline;
-  width: 65%;
+  width: 55%;
 }
 
 .detail-category {
+  display: inline-block;
+  font-size: 1rem;
   font-weight: bold;
-  font-size: 2rem;
+  background-color: rgb(134, 17, 125);
+  color: white;
+  padding: 3px 5px;
+  margin: 0 0 10px 0;
+  border-radius: 5px;
+}
+
+.detail-name {
+  font-weight: bold;
+  font-size: 1.5rem;
   margin-bottom: 20px;
   border-bottom: 2px solid purple;
   padding-bottom: 10px;
-  width: 250px;
+  width: 100%;
 }
 
 /* ===== 찜 버튼 ===== */
@@ -35,10 +48,14 @@
   cursor: pointer;
 }
 #addFav {
-  color: red;
+  color: rgb(71, 71, 71);
 }
 #delFav {
-  color: red;
+  color: rgb(223, 33, 33);
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  cursor: pointer;
 }
 
 /* ===== 공유 버튼 ===== */
@@ -72,4 +89,8 @@
 #comList {
   width: 50%;
   height: 100%;
+  position: absolute;
+  top: 2px;
+  right: 45px;
+  cursor: pointer;
 }
