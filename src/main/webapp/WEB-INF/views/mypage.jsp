@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> <%@ taglib prefix="sec"
-uri="http://www.springframework.org/security/tags" %>
+uri="http://www.springframework.org/security/tags" %> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core"%>
 <sec:authorize access="isAuthenticated()">
-  <sec:authentication property="principal" var="user" />
+<sec:authentication property="principal" var="user" />
 </sec:authorize>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +60,7 @@ uri="http://www.springframework.org/security/tags" %>
         overflow: auto;
         flex-shrink: 0;
       }
-      #main-jsp:nth-last-of-type(2) {
+      #main-jsp:nth-of-type(2) {
         background-color: blue;
         width: 130vh;
         border-radius: 20px;
@@ -69,6 +70,14 @@ uri="http://www.springframework.org/security/tags" %>
       }
       #main-jsp:nth-of-type(3) {
         background-color: aqua;
+        width: 130vh;
+        border-radius: 20px;
+        display: none;
+        overflow: auto;
+        flex-shrink: 0;
+      }
+      #admin-jsp {
+        background-color: yellowgreen;
         width: 130vh;
         border-radius: 20px;
         display: none;
@@ -89,15 +98,20 @@ uri="http://www.springframework.org/security/tags" %>
         background-color: aqua;
         /* flex-shrink: 0; */
       }
+      #button04 {
+        background-color: yellowgreen;
+      }
     </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
+    
     <jsp:include page="/header.jsp" />
     <div class="mypage-container">
       <nav class="item">
         <ul>
-          <li class="li-nav">${user.nickname}님, 반갑습니다.</li>
+          <li class="li-nav">${user.nickname}님, 반갑습니다. ${user.auth}</li>
+
           <li class="li-nav">
             <button class="account-modify-button" id="button01">
               계정설정
@@ -111,16 +125,30 @@ uri="http://www.springframework.org/security/tags" %>
               조회내역
             </button>
           </li>
-          <!-- 관리자 관련-->
+           <!-- 관리자 관련-->
+			
+			<li class="li-nav">
+			 <button class="account-modify-button" id="button04">
+			    관리하기
+			 </button>
+		 </li>
+			
+			
+			
+			
+			
         </ul>
       </nav>
-
       <div class="item" id="main-jsp">
         <jsp:include page="mypage-account.jsp" />
       </div>
       <div class="item" id="main-jsp">account jsp2</div>
       <div class="item" id="main-jsp">
         <jsp:include page="myComment.jsp" />
+      </div>
+
+      <div class="item" id="admin-jsp">
+        <jsp:include page="admin.jsp" />
       </div>
     </div>
     <script src="../../resources/js/mypage.js"></script>

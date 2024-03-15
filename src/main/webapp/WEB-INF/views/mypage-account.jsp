@@ -31,7 +31,29 @@ uri="http://www.springframework.org/security/tags" %>
       <div class="tab-content">
         <div class="innercontent0">
           <nav class="pigeon-account">
-            <div id="userImage"></div>
+            <div>
+              <div id="userImage">
+                <img src="../../resources/profile/2143305.png" />
+              </div>
+
+              <form id="uploadProfile" enctype="multipart/form-data">
+                <input
+                  class="form-control"
+                  type="file"
+                  id="userProfileUrl"
+                  name="userProfileUrl"
+                />
+                <input
+                  type="hidden"
+                  id="userCode"
+                  name="userCode"
+                  value="${user.userCode}"
+                />
+              </form>
+              <button id="uploadThisProfile" class="btn btn-outline-warning">
+                파일업로드
+              </button>
+            </div>
             <div id="userInfo">
               <ul>
                 <li id="nameChangeResult">이름 : ${user.nickname}님</li>
@@ -73,8 +95,6 @@ uri="http://www.springframework.org/security/tags" %>
                   type="button"
                   value="정보 수정하기"
                   id="nicknameChange"
-                  disabled
-                  onclick="return infoValidate()"
                 />
               </div>
               <span id="nicknameResult"></span>
@@ -120,7 +140,6 @@ uri="http://www.springframework.org/security/tags" %>
                   type="button"
                   id="pwdChangeFormButton"
                   value="비밀번호 변경하기"
-                  disabled="disabled"
                 />
               </div>
             </form>

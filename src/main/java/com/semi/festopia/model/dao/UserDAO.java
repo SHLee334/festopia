@@ -43,4 +43,8 @@ public class UserDAO {
 		return session.selectOne("userMapper.idCheck", id);
 	}
 	
+	// 유저 프로필 변경
+	public int changeProfile(User vo) {
+		return session.update("userMapper.userProfile", vo);
+	}
 }

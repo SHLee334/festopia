@@ -55,3 +55,7 @@ btn[2].addEventListener("click", function () {
     offDisplay(2);
   }
 });
+
+$("#button04").click(() => {
+  $("#admin-jsp").toggle();
+});

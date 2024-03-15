@@ -10,6 +10,7 @@
 	<result property="userEnrollDate" column="user_enroll_date"/>
 	<result property="userQuitDate" column="user_quit_date"/>
 	<result property="auth" column="user_role"/>
+	<result property="userProfileUrl" column="user_profile_url"/>
 	</resultMap>
 	
 	<insert id="registerUser" parameterType="User">
@@ -51,7 +52,13 @@
 		SELECT * FROM user WHERE user_id=#{id}
 	</select>
 	
-	<!-- 찜목록 리스트 불러오기 쿼리문 -->
+	<!-- 유저 프로필사진 변경 쿼리문 -->
+	<update id="userProfile" parameterType="User">
+	Update user
+	SET user_profile_url = #{userProfileUrl}
+	WHERE userCode = #{user_code}
+	</update>
+	
 	
 	<!-- 활동내역 리스트 불러오기 쿼리문 -->
 	

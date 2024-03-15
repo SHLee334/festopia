@@ -67,4 +67,8 @@ public class UserService implements UserDetailsService{
 		return dao.unableAccount(vo);
 	}
 	
+	// 프로필 사진 변경
+	public int changeProfile(User vo) {
+		return dao.changeProfile(vo);
+	}
 }

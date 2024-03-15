@@ -1,3 +1,38 @@
+// 유저프로필 변경 로직
+// --> formData 방식으로 data에 const formData = new FormData();
+// formData.append("file", );
+// formData.append("userCode", ) -> data로 전송!
+$("#uploadThisProfile").click(() => {
+  // form data 객체 생성
+  let formData = new FormData();
+
+  // 파일 업로드를 위한 파일 입력란의 파일 추가
+  let fileInput = $("#userProfileUrl");
+  formData.append("userProfileUrl", fileInput.files[0]);
+
+  // 다른 데이터 추가 : userCode
+  let userCode = $("#userCode").val();
+  formData.append("userCode", userCode);
+
+  $.ajax({
+    type: "post",
+    url: "/changeProfile",
+    data: formData,
+    contentType: false, // 필수
+    processData: false, // 필수
+    success: function (picture) {
+      if (picture !== null) {
+        alert("일단 사진 잘 들어온듯?");
+        $("#userImage").html(
+          '<img src="/festTest/' + picture.userProfileUrl + '" />'
+        );
+      } else {
+        alert("망함.");
+      }
+    },
+  });
+});
+
 // 유저 정보가 변경즉시 즉각적으로 변할수있도록 ajax로 update 로직 변경
 // 닉네임 변경란 로직
 $("#nicknameChange").click(() => {
@@ -104,10 +139,6 @@ function nicknameCheck() {
     return 3;
   }
 }
-$("#nicknameChangeInner").keyup((e) => {
-  inputHandler(e, nicknameCheck(), "* 닉네임은 최소 한글자 이상");
-});
-
 function userEmailCheck() {
   const regExp = /^\w+@\w+\.\w+$/;
   let result = regExp.test($("#emailChange").val());
@@ -119,29 +150,36 @@ function userEmailCheck() {
     return 3;
   }
 }
-$("#emailChange").keyup((e) => {
-  inputHandler(e, userEmailCheck(), "* 정확한 이메일 양식을 작성해주세요");
+// $("#nicknameChangeInner", "#emailChange").on({
+//   keyup: function (e) {
+//     inputHandler(e, nicknameCheck(), "* 닉네임은 최소 한글자 이상");
+//     console.log("namecheck : " + nicknameCheck());
+//   },
+//   keyup: function (e) {
+//     inputHandler(e, userEmailCheck(), "* 정확한 이메일 양식을 작성해주세요");
+//     console.log("mailcheck : " + userEmailCheck());
+//   },
+// });
+
+$("#nicknameChangeInner").keyup((e) => {
+  inputHandler(e, nicknameCheck(), "* 닉네임은 최소 한글자 이상");
+  console.log("namecheck : " + nicknameCheck());
+  if (nicknameCheck() === 1) {
+    $("#nicknameChange").attr("disabled", false);
+  } else {
+    $("#nicknameChange").attr("disabled", true);
+  }
 });
 
-const result = nicknameCheck()===1 && userEmailCheck()===1;
-console.log(result);
-if(result){
-  $("#pwdChangeFormButton").attr("disabled", false);
-} else{
-  $("#pwdChangeFormButton").attr("disabled", true);
-}
-
-// function infoValidate() {
-//   if (nicknameCheck() !== 1) {
-//     $("#nicknameChangeInner").focus();
-//     return false;
-//   } else if (userEmailCheck() !== 1) {
-//     $("#emailChange").focus();
-//     return false;
-//   }
-//   $("#nicknameChange").attr("disabled", false);
-//   return true;
-// }
+$("#emailChange").keyup((e) => {
+  inputHandler(e, userEmailCheck(), "* 정확한 이메일 양식을 작성해주세요");
+  console.log("mailcheck : " + userEmailCheck());
+  if (userEmailCheck() === 1) {
+    $("#nicknameChange").attr("disabled", false);
+  } else {
+    $("#nicknameChange").attr("disabled", true);
+  }
+});
 
 // ------------------------------------------------
 // 비밀번호 변경전 비번 한번 더 체크
