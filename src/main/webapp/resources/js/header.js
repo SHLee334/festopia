@@ -65,3 +65,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 });
+
+function OnSave() {
+  var fee_check = document.querySelectorAll(
+    'input[name="checkFeeStatus"]:checked'
+  ).length;
+  if (fee_check == 0) {
+    alert("최소 한개의 옵션을 선택");
+    return null;
+  }
+}

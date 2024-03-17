@@ -264,7 +264,7 @@ main section {
   margin: 10px;
   padding: 10px;
   position: fixed;
-  z-index: 9999;
+ 
 }
 
 .search__input:-webkit-autofill {

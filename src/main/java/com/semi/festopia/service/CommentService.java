@@ -20,6 +20,10 @@ public class CommentService {
 	public List<Comment> viewCom(int fesCode) {
 		return dao.viewCom(fesCode);
 	}
+	
+	public int deleteCom(int comCode) {
+		return dao.deleteCom(comCode);
+	}
 
 
 }

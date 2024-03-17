@@ -83,7 +83,7 @@ uri="http://www.springframework.org/security/tags"%>
                       url: '/addFav',
                       data: 'code=' + ${vo.fesCode},
                       success: function(data) {
-                        location.reload();
+                       location.reload();
                       }
                     });
            } else{
@@ -109,16 +109,30 @@ uri="http://www.springframework.org/security/tags"%>
         <form action="/writeCom" method="post">
           <textarea rows="5" cols="30" name="comText"></textarea>
           <input type="hidden" name="fesCode" value="${vo.fesCode}" />
-          <input type="submit" value="댓글 달기" />
+          <input type="submit" id="sendCom" value="댓글 달기" />
         </form>
       </div>
 
       <div>
         <h6>댓글 목록</h6>
         <c:forEach items="${com}" var="item">
-          <strong>${com.nickname}</strong>
-          <span> | </span>
-          <span>${item.comDate}</span>
+          <div id="comWriterInfo">
+            <strong>${item.user.nickname}</strong> <span> | </span>
+            <span>${item.comDate}</span>
+            <i class="fa-solid fa-trash-can delCom"></i>
+            <script>
+              $(".delCom").click(() => {
+              	$.ajax({
+              		type: 'post',
+              		url: '/delCom',
+              		data: 'comCode=' + ${item.comCode},
+              		success: function(data) {
+              			location.reload();
+              		}
+              	 });
+              });
+            </script>
+          </div>
           <p>${item.comText}</p>
         </c:forEach>
       </div>

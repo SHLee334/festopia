@@ -12,4 +12,5 @@ public class Comment {
 	private int userCode;
 	private int fesCode;
 
+	private User user;
 }

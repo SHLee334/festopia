@@ -249,17 +249,31 @@ uri="http://www.springframework.org/security/tags"%>
                 <div class="checkfeeStatus">
                   <h5>입장료</h5>
                   <label
-                    ><input type="checkbox" name="checkFeeStatus" value="1" />
+                    ><input
+                      type="checkbox"
+                      name="checkFeeStatus"
+                      value="1"
+                      checked
+                    />
                     유료</label
                   >
                   <label
-                    ><input type="checkbox" name="checkFeeStatus" value="2" />
+                    ><input
+                      type="checkbox"
+                      name="checkFeeStatus"
+                      value="2"
+                      checked
+                    />
                     무료</label
                   >
                 </div>
                 <hr />
                 <div id="searchFilterButton">
-                  <input type="submit" value="DIVE!!" />
+                  <input
+                    type="submit"
+                    value="DIVE!!"
+                    onclick="javascript:OnSave();"
+                  />
                   <i
                     class="fa-regular fa-rectangle-xmark closeSearchFilter"
                   ></i>
@@ -382,7 +396,5 @@ uri="http://www.springframework.org/security/tags"%>
         </div>
       </div>
     </header>
-
-    
   </body>
 </html>

@@ -54,4 +54,6 @@ public class User implements UserDetails{
 		
 		return enabled == 1 ? true : false;
 	}
+	
+
 }

@@ -92,3 +92,14 @@
   top: 2px;
   right: 45px;
 }
+
+
+#deleteBtn {
+	margin-left: auto;
+	border: none;
+	background: transparent;
+}
+
+.delCom {
+	cursor: pointer;
+}

@@ -7,10 +7,11 @@
 		<result property="comDeleteStatus" column="com_delete_status"/>
 		<result property="userCode" column="user_code"/>
 		<result property="fesCode" column="fes_code"/>
+		<association property="user" column="user_code" javaType="User" resultMap="userMap"></association>
 	</resultMap>
 	
 	<resultMap type="User" id="userMap">
-		<result property="userCode" column="user_code"/>
+		<id property="userCode" column="user_code"/>
 		<result property="id" column="user_id"/>
 		<result property="password" column="user_pwd"/>
 		<result property="nickname" column="user_nickname"/>
@@ -19,7 +20,6 @@
 		<result property="userEnrollDate" column="user_enroll_date"/>
 		<result property="userQuitDate" column="user_quit_date"/>
 		<result property="auth" column="user_role"/>
-		<collection property="user" resultMap="commentMap"></collection>
 	</resultMap>
 	
 	<insert id="insertCom" parameterType="Comment">
@@ -30,5 +30,10 @@
 	<select id="viewCom" parameterType="int" resultMap="commentMap">
 		SELECT * FROM comment 
 		JOIN user USING(user_code) WHERE fes_code = #{fesCode}
+		ORDER BY com_code
 	</select>
+	
+	<delete id="deleteCom" parameterType="int">
+		DELETE FROM comment WHERE com_code = #{comCode}
+	</delete>
 </mapper>

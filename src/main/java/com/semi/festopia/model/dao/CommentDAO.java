@@ -23,6 +23,11 @@ public class CommentDAO {
 		return session.selectList("commentMapper.viewCom", fesCode);
 	}
 	
+	// 댓글 삭제
+	public int deleteCom(int comCode) {
+		return session.delete("commentMapper.deleteCom", comCode);
+	}
+	
 	
 
 }

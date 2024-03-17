@@ -19,54 +19,53 @@ import com.semi.festopia.service.SearchService;
 
 @Controller
 public class FavoriteController {
-	
+
 	@Autowired
 	private FavoriteService favService;
-	
+
 	@Autowired
 	private SearchService searchService;
-	
+
 	@Autowired
 	private CommentService comService;
-	
-	/*========== 축제 상세 ==========*/
+
+	/* ========== 축제 상세 ========== */
 	@GetMapping("/detail")
 	public String detail(String code, Model model) {
-		
-		
+
 		model.addAttribute("vo", searchService.detail(Integer.parseInt(code)));
-		
+
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		
+
 		// 축제코드(fesCode), 유저코드(userCode) 보내기
-		if(!principal.equals("anonymousUser")) {
+		if (!principal.equals("anonymousUser")) {
 			User user = (User) principal;
 			Favorite vo = new Favorite();
 			vo.setFesCode(Integer.parseInt(code));
 			vo.setUserCode(user.getUserCode());
-			
-			Favorite favorite = favService.select(vo);	
-			
+
+			Favorite favorite = favService.select(vo);
+
 			model.addAttribute("favorite", favorite);
 		}
-		
+
 		List<Comment> com = comService.viewCom(Integer.parseInt(code));
 		model.addAttribute("com", com);
 		
+
 		return "festivalDetail";
 	}
-	
+
 	@ResponseBody
 	@PostMapping("/addFav")
 	public boolean addFav(String code) {
-		
+
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		User user = (User) principal;
 		Favorite vo = new Favorite();
 		vo.setFesCode(Integer.parseInt(code));
 		vo.setUserCode(user.getUserCode());
-		
-		
+
 		favService.insert(vo);
 
 		return true;
@@ -78,18 +77,28 @@ public class FavoriteController {
 		favService.delete(Integer.parseInt(code));
 		return true;
 	}
-	
+
 	@PostMapping("/writeCom")
 	public String insertCom(Comment vo) {
-		
+
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		User user = (User) principal;
 		
-		vo.setUserCode(user.getUserCode());
-		comService.insertCom(vo);
-		
-		return "redirect:/detail?code=" + vo.getFesCode();
+		if (!principal.equals("anonymousUser")) {
+			User user = (User) principal;
+			vo.setUserCode(user.getUserCode());
+			comService.insertCom(vo);
+			return "redirect:/detail?code=" + vo.getFesCode();
+		} else {
+			return "redirect:/detail?code=" + vo.getFesCode();
+		}	
 	}
+	
+	@ResponseBody
+	@PostMapping("/delCom")
+	public void deleteCom(int comCode) {
+		comService.deleteCom(comCode);
+	}
+	
 	
 
 }
