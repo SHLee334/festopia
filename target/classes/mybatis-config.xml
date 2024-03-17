@@ -11,6 +11,7 @@
 		<typeAlias type="com.semi.festopia.model.vo.Festival" alias="Festival" />
 		<typeAlias type="com.semi.festopia.model.dto.SearchDTO" alias="SearchDTO"/>
 		<typeAlias type="com.semi.festopia.model.vo.Favorite" alias="Favorite" />
+		<typeAlias type="com.semi.festopia.model.vo.NoticeBoard" alias="NoticeBoard"/>
 	</typeAliases>
 
 	<!-- mapper 파일들 등록하는 곳 -->
@@ -18,5 +19,6 @@
 		<mapper resource="mappers/user-mapper.xml" />
 		<mapper resource="mappers/search-mapper.xml" />
 		<mapper resource="mappers/favorite-mapper.xml"/>
+		<mapper resource="mappers/notice-mapper.xml"/>
 	</mappers>
 </configuration>

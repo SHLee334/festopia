@@ -2,7 +2,7 @@
 pageEncoding="UTF-8"%> <%@ taglib prefix="sec"
 uri="http://www.springframework.org/security/tags" %> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core"%>
-<sec:authorize access="isAuthenticated()">
+ <sec:authorize access="isAuthenticated()">
 <sec:authentication property="principal" var="user" />
 </sec:authorize>
 <!DOCTYPE html>
@@ -105,6 +105,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
+
     
     <jsp:include page="/header.jsp" />
     <div class="mypage-container">
@@ -127,15 +128,14 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           </li>
            <!-- 관리자 관련-->
 			
+		
 			<li class="li-nav">
 			 <button class="account-modify-button" id="button04">
 			    관리하기
 			 </button>
 		 </li>
-			
-			
-			
-			
+	
+	
 			
         </ul>
       </nav>

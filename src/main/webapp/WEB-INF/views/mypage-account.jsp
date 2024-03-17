@@ -2,9 +2,9 @@
 pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib prefix="sec"
 uri="http://www.springframework.org/security/tags" %>
-<sec:authorize access="isAuthenticated()">
+
   <sec:authentication property="principal" var="user" />
-</sec:authorize>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -32,16 +32,17 @@ uri="http://www.springframework.org/security/tags" %>
         <div class="innercontent0">
           <nav class="pigeon-account">
             <div>
+              ${user.userProfileUrl}
               <div id="userImage">
-                <img src="../../resources/profile/2143305.png" />
+                <img src="../../resources/profile/${user.userProfileUrl}" />
               </div>
 
-              <form id="uploadProfile" enctype="multipart/form-data">
+              <form action="/changeProfile" id="uploadProfile" method="post" enctype="multipart/form-data">
                 <input
                   class="form-control"
                   type="file"
-                  id="userProfileUrl"
-                  name="userProfileUrl"
+                  id="file"
+                  name="file"
                 />
                 <input
                   type="hidden"
@@ -49,10 +50,11 @@ uri="http://www.springframework.org/security/tags" %>
                   name="userCode"
                   value="${user.userCode}"
                 />
-              </form>
-              <button id="uploadThisProfile" class="btn btn-outline-warning">
+                <button id="uploadThisProfile" type="submit" class="btn btn-outline-warning">
                 파일업로드
               </button>
+              </form>
+              
             </div>
             <div id="userInfo">
               <ul>

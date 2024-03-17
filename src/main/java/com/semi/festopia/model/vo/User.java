@@ -4,6 +4,7 @@ package com.semi.festopia.model.vo;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -26,6 +27,10 @@ public class User implements UserDetails{
 	private String auth;
 	private String userProfileUrl;
 	private MultipartFile file;
+	
+	
+	
+	
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

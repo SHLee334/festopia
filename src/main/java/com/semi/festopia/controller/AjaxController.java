@@ -104,36 +104,36 @@ public class AjaxController {
 	private String path = "D:\\festTest\\";
 	
 	
-	// 마이페이지 유저 프로필 사진 변경 --> multipartfile 처리하는 변수로 담아올 수 있도록 
-	@ResponseBody
-	@PostMapping("/changeProfile")
-	public User changeProfile(@RequestParam("userProfileUrl") MultipartFile file, @RequestParam("userCode") String userCode, User user) throws IllegalStateException, IOException {
-		//@RequestParam("userProfileUrl") MultipartFile file, @RequestParam("userCode") String userCode
-		System.out.println(user);
-		System.out.println(service.changeProfile(user));
-		System.out.println(file);
-		System.out.println(userCode);
-		if(!user.getFile().isEmpty()) {
-			
-			if(user.getUserProfileUrl()!=null) {
-				File file1 = new File(path + user.getUserProfileUrl());
-				file1.delete();
-			}
-			String url = fileUpload(user.getFile());
-			user.setUserProfileUrl(url);
-		}
-		service.changeProfile(user);
-		return user;
-	}
-	//파일 업로드 기능
-	private String fileUpload(MultipartFile file) throws IllegalStateException, IOException {
-
-		// 중복방지를 위한 UUID 적용
-		UUID uuid = UUID.randomUUID();
-		String filename = uuid.toString() + "_" + file.getOriginalFilename();
-		File copyFile = new File(path + filename);
-		file.transferTo(copyFile); // 업로드한 지정한 path위치로 저장
-		return filename;
-	}
+//	// 마이페이지 유저 프로필 사진 변경 --> multipartfile 처리하는 변수로 담아올 수 있도록 
+//	@ResponseBody
+//	@PostMapping("/changeProfile")
+//	public User changeProfile(@RequestParam("userProfileUrl") MultipartFile file, @RequestParam("userCode") String userCode, User user) throws IllegalStateException, IOException {
+//		//@RequestParam("userProfileUrl") MultipartFile file, @RequestParam("userCode") String userCode
+//		System.out.println(user);
+//		System.out.println(service.changeProfile(user));
+//		System.out.println(file);
+//		System.out.println(userCode);
+//		if(!user.getFile().isEmpty()) {
+//			
+//			if(user.getUserProfileUrl()!=null) {
+//				File file1 = new File(path + user.getUserProfileUrl());
+//				file1.delete();
+//			}
+//			String url = fileUpload(user.getFile());
+//			user.setUserProfileUrl(url);
+//		}
+//		service.changeProfile(user);
+//		return user;
+//	}
+//	//파일 업로드 기능
+//	private String fileUpload(MultipartFile file) throws IllegalStateException, IOException {
+//
+//		// 중복방지를 위한 UUID 적용
+//		UUID uuid = UUID.randomUUID();
+//		String filename = uuid.toString() + "_" + file.getOriginalFilename();
+//		File copyFile = new File(path + filename);
+//		file.transferTo(copyFile); // 업로드한 지정한 path위치로 저장
+//		return filename;
+//	}
 
 }

@@ -2,36 +2,36 @@
 // --> formData 방식으로 data에 const formData = new FormData();
 // formData.append("file", );
 // formData.append("userCode", ) -> data로 전송!
-$("#uploadThisProfile").click(() => {
-  // form data 객체 생성
-  let formData = new FormData();
+// $("#uploadThisProfile").click(() => {
+//   // form data 객체 생성
+//   let formData = new FormData();
 
-  // 파일 업로드를 위한 파일 입력란의 파일 추가
-  let fileInput = $("#userProfileUrl");
-  formData.append("userProfileUrl", fileInput.files[0]);
+//   // 파일 업로드를 위한 파일 입력란의 파일 추가
+//   let fileInput = $("#userProfileUrl");
+//   formData.append("userProfileUrl", fileInput.files[0]);
 
-  // 다른 데이터 추가 : userCode
-  let userCode = $("#userCode").val();
-  formData.append("userCode", userCode);
+//   // 다른 데이터 추가 : userCode
+//   let userCode = $("#userCode").val();
+//   formData.append("userCode", userCode);
 
-  $.ajax({
-    type: "post",
-    url: "/changeProfile",
-    data: formData,
-    contentType: false, // 필수
-    processData: false, // 필수
-    success: function (picture) {
-      if (picture !== null) {
-        alert("일단 사진 잘 들어온듯?");
-        $("#userImage").html(
-          '<img src="/festTest/' + picture.userProfileUrl + '" />'
-        );
-      } else {
-        alert("망함.");
-      }
-    },
-  });
-});
+//   $.ajax({
+//     type: "post",
+//     url: "/changeProfile",
+//     data: formData,
+//     contentType: false, // 필수
+//     processData: false, // 필수
+//     success: function (picture) {
+//       if (picture !== null) {
+//         alert("일단 사진 잘 들어온듯?");
+//         $("#userImage").html(
+//           '<img src="/festTest/' + picture.userProfileUrl + '" />'
+//         );
+//       } else {
+//         alert("망함.");
+//       }
+//     },
+//   });
+// });
 
 // 유저 정보가 변경즉시 즉각적으로 변할수있도록 ajax로 update 로직 변경
 // 닉네임 변경란 로직
