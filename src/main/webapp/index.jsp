@@ -61,18 +61,21 @@ uri="http://www.springframework.org/security/tags"%>
           htmlCode +=
           
         	 
-            '<div class="card">' + 
+            '<div class="card-css">' + 
             '<a href="상세페이지">' + 
-              '<img src=' + item.poster +  ' class=" card-img" >' + 
+            '<div class = " card-css-image">' + 
+              '<img src=' + item.poster +  ' class=" card-css-img" >' + 
               '<button class="fav-btn" type="button" onclick="alert(\'찜 목록 추가!\')">' + 
               '</button>' + 
-              '<div class="card-body">' + 
-                '<p class="card-name">' + item.name + '</p>' + 
-                '<p class="card-date">' + item.startDate + ' ~ ' + item.endDate + '</p>' + 
-                '<p class="card-place">' + item.place + '</p>' + 
+              '<div class="card-body-css">' + 
+                '<p class="card-name-css">' + item.name + '</p>' + 
+                '<p class="card-date-css">' + item.startDate + ' ~ ' + item.endDate + '</p>' + 
+                '<p class="card-place-css">' + item.place + '</p>' + 
               '</div>' + 
-            '</a>' + 
+            
+            '</div>' +
             '</div>' + 
+            '</a>' + 
           '</div>' 
           ;
 
