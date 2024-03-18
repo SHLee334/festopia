@@ -3,7 +3,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib prefix="sec"
 uri="http://www.springframework.org/security/tags" %>
 
-  <sec:authentication property="principal" var="user" />
+<sec:authentication property="principal" var="user" />
 
 <!DOCTYPE html>
 <html>
@@ -37,24 +37,27 @@ uri="http://www.springframework.org/security/tags" %>
                 <img src="/profile/${user.userProfileUrl}" />
               </div>
 
-              <form action="/changeProfile" id="uploadProfile" method="post" enctype="multipart/form-data">
-                <input
-                  class="form-control"
-                  type="file"
-                  id="file"
-                  name="file"
-                />
+              <form
+                action="/changeProfile"
+                id="uploadProfile"
+                method="post"
+                enctype="multipart/form-data"
+              >
+                <input class="form-control" type="file" id="file" name="file" />
                 <input
                   type="hidden"
                   id="userCode"
                   name="userCode"
                   value="${user.userCode}"
                 />
-                <button id="uploadThisProfile" type="submit" class="btn btn-outline-warning">
-                파일업로드
-              </button>
+                <button
+                  id="uploadThisProfile"
+                  type="submit"
+                  class="btn btn-outline-warning"
+                >
+                  파일업로드
+                </button>
               </form>
-              
             </div>
             <div id="userInfo">
               <ul>
