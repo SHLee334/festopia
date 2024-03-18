@@ -1,3 +1,38 @@
+// 유저프로필 변경 로직
+// --> formData 방식으로 data에 const formData = new FormData();
+// formData.append("file", );
+// formData.append("userCode", ) -> data로 전송!
+// $("#uploadThisProfile").click(() => {
+//   // form data 객체 생성
+//   let formData = new FormData();
+
+//   // 파일 업로드를 위한 파일 입력란의 파일 추가
+//   let fileInput = $("#userProfileUrl");
+//   formData.append("userProfileUrl", fileInput.files[0]);
+
+//   // 다른 데이터 추가 : userCode
+//   let userCode = $("#userCode").val();
+//   formData.append("userCode", userCode);
+
+//   $.ajax({
+//     type: "post",
+//     url: "/changeProfile",
+//     data: formData,
+//     contentType: false, // 필수
+//     processData: false, // 필수
+//     success: function (picture) {
+//       if (picture !== null) {
+//         alert("일단 사진 잘 들어온듯?");
+//         $("#userImage").html(
+//           '<img src="/festTest/' + picture.userProfileUrl + '" />'
+//         );
+//       } else {
+//         alert("망함.");
+//       }
+//     },
+//   });
+// });
+
 // 유저 정보가 변경즉시 즉각적으로 변할수있도록 ajax로 update 로직 변경
 // 닉네임 변경란 로직
 $("#nicknameChange").click(() => {
@@ -15,7 +50,6 @@ $("#nicknameChange").click(() => {
       } else {
         alert("뭔가 잘못됐습니다. 다시 시도해주세요.");
       }
-      
     },
   });
 });
@@ -26,18 +60,23 @@ $("#pwdChangeFormButton").click(() => {
     type: "post",
     url: "/updateUserInfo",
     data: $("#pwdChangeForm").serialize(),
-    success: function (data) {
-      console.log(data);
-      if (data !== null) {
-        console.log($("#passwordChangeInner"));
+    success: function (user) {
+      // console.log(user);
+      if (user !== null) {
+        //console.log($("#passwordChangeInner"));
         $(".current-pwd-check").slideDown(200);
         $("#pwdChangeForm").hide();
         $("#wrongTry")
           .text("성공적으로 패스워드를 변경하였습니다!")
           .css("color", "green");
-        console.log($("#accountPwdCheck").val($("#passwordChangeInner").val()));
-        $("#accountPwdCheck").val($("#passwordChangeInner").val());
-        // location.reload();
+        setTimeout(function () {
+          alert(
+            "비밀번호변경이 확인되었습니다. 개인정보 보호를 위해 자동 로그아웃됩니다. 다시 로그인해주세요."
+          );
+          location.href = "/logout";
+        }, 1000);
+        //console.log($("#accountPwdCheck").val($("#passwordChangeInner").val()));
+        //$("#accountPwdCheck").val($("#passwordChangeInner").val());
       }
     },
   });
@@ -100,10 +139,6 @@ function nicknameCheck() {
     return 3;
   }
 }
-$("#nicknameChangeInner").keyup((e) => {
-  inputHandler(e, nicknameCheck(), "* 닉네임은 최소 한글자 이상");
-});
-
 function userEmailCheck() {
   const regExp = /^\w+@\w+\.\w+$/;
   let result = regExp.test($("#emailChange").val());
@@ -115,19 +150,37 @@ function userEmailCheck() {
     return 3;
   }
 }
+// $("#nicknameChangeInner", "#emailChange").on({
+//   keyup: function (e) {
+//     inputHandler(e, nicknameCheck(), "* 닉네임은 최소 한글자 이상");
+//     console.log("namecheck : " + nicknameCheck());
+//   },
+//   keyup: function (e) {
+//     inputHandler(e, userEmailCheck(), "* 정확한 이메일 양식을 작성해주세요");
+//     console.log("mailcheck : " + userEmailCheck());
+//   },
+// });
+
+$("#nicknameChangeInner").keyup((e) => {
+  inputHandler(e, nicknameCheck(), "* 닉네임은 최소 한글자 이상");
+  console.log("namecheck : " + nicknameCheck());
+  if (nicknameCheck() === 1) {
+    $("#nicknameChange").attr("disabled", false);
+  } else {
+    $("#nicknameChange").attr("disabled", true);
+  }
+});
+
 $("#emailChange").keyup((e) => {
   inputHandler(e, userEmailCheck(), "* 정확한 이메일 양식을 작성해주세요");
-});
-function infoValidate() {
-  if (nicknameCheck() !== 1) {
-    $("#nicknameChangeInner").focus();
-    return false;
-  } else if (userEmailCheck() !== 1) {
-    $("#emailChange").focus();
-    return false;
+  console.log("mailcheck : " + userEmailCheck());
+  if (userEmailCheck() === 1) {
+    $("#nicknameChange").attr("disabled", false);
+  } else {
+    $("#nicknameChange").attr("disabled", true);
   }
-  return true;
-}
+});
+
 // ------------------------------------------------
 // 비밀번호 변경전 비번 한번 더 체크
 $(".inneractive1").click(() => {

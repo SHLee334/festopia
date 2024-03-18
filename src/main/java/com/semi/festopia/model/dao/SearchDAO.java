@@ -19,6 +19,7 @@ public class SearchDAO {
 		return session.selectList("searchMapper.searchFestival", fesList);
 	}
 	
+	// 메인페이지 조회수 순
 	public List<Festival> popularFestival(){
 		
 		return session.selectList("searchMapper.popularFestival");
@@ -27,5 +28,8 @@ public class SearchDAO {
 	public Festival detail(int code) {
 		return session.selectOne("searchMapper.detail", code);
 	}
-	
+
+	public int updateViewCnt(int fesCode) {
+		return session.update("searchMapper.updateViewCnt", fesCode);
+	}
 }

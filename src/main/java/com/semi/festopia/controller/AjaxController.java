@@ -1,7 +1,10 @@
 package com.semi.festopia.controller;
 
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.semi.festopia.model.vo.User;
 import com.semi.festopia.service.UserService;
@@ -29,16 +33,12 @@ public class AjaxController {
 	
 	// AjaxController
 	
-	// 아이디 중복 체크
+	// 회원가입시 아이디 실시간 중복체크
 	@ResponseBody
-	@PostMapping("/idCheck")
-	public boolean idCheck(String id) {
+	@PostMapping("/isDuplicated")
+	public User idCheck(String id) {
 		User user = service.idCheck(id);
-		if (user != null) {
-			return false;
-		} else {
-			return true;
-		}
+		return user;
 	}
 	
 	// 로그인시 패스워드 마이페이지로 바인딩
@@ -49,6 +49,7 @@ public class AjaxController {
 		session.setAttribute("pwdBind", pwd);
 		return "/mypage-account";
 	}
+	
 	
 	// user정보 update로직들 userController -> ajaxController로 변경
 	@ResponseBody
@@ -100,5 +101,39 @@ public class AjaxController {
 		return newAuth;
 	}
 	
+	//private String path = "D:\\festTest\\";
+	
+	
+//	// 마이페이지 유저 프로필 사진 변경 --> multipartfile 처리하는 변수로 담아올 수 있도록 
+//	@ResponseBody
+//	@PostMapping("/changeProfile")
+//	public User changeProfile(@RequestParam("userProfileUrl") MultipartFile file, @RequestParam("userCode") String userCode, User user) throws IllegalStateException, IOException {
+//		//@RequestParam("userProfileUrl") MultipartFile file, @RequestParam("userCode") String userCode
+//		System.out.println(user);
+//		System.out.println(service.changeProfile(user));
+//		System.out.println(file);
+//		System.out.println(userCode);
+//		if(!user.getFile().isEmpty()) {
+//			
+//			if(user.getUserProfileUrl()!=null) {
+//				File file1 = new File(path + user.getUserProfileUrl());
+//				file1.delete();
+//			}
+//			String url = fileUpload(user.getFile());
+//			user.setUserProfileUrl(url);
+//		}
+//		service.changeProfile(user);
+//		return user;
+//	}
+//	//파일 업로드 기능
+//	private String fileUpload(MultipartFile file) throws IllegalStateException, IOException {
+//
+//		// 중복방지를 위한 UUID 적용
+//		UUID uuid = UUID.randomUUID();
+//		String filename = uuid.toString() + "_" + file.getOriginalFilename();
+//		File copyFile = new File(path + filename);
+//		file.transferTo(copyFile); // 업로드한 지정한 path위치로 저장
+//		return filename;
+//	}
 
 }

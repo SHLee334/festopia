@@ -61,7 +61,10 @@ uri="http://www.springframework.org/security/tags"%>
       <div class="progress-bar-container">
         <div class="progress-bar"></div>
       </div>
-      <h1>FESTOPIA</h1>
+      <div id="title">
+        <img src="./resources/css/FESTOPIA-removebg-preview.png">
+      </div>
+      
       <div id="btnPac">
         <div class="container">
           <form action="search" class="search" id="search-bar" name="name">
@@ -287,21 +290,30 @@ uri="http://www.springframework.org/security/tags"%>
             </div>
           </form>
 
+
+
+          <!--로그인, 회원가입 -->
           <button
             class="btn btn-secondary dropdown-toggle"
+            id = "anonymousUser"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <!--로그인, 회원가입 -->
-            <i class="fa-solid fa-circle-user"></i>
+
+            <i class="fa-solid fa-circle-user "></i>
           </button>
+
+
+
+
+          <!-- 공지사항 -->
           <a href="" id="inform">
-            <!-- 공지사항 -->
             <i class="fa-solid fa-circle-exclamation fa-2xl"></i
           ></a>
           <!-- <sec:authentication property="principal" var="user" /> -->
 
+        
           <ul class="dropdown-menu">
             <c:choose>
               <c:when test="${user == 'anonymousUser'}">
@@ -339,6 +351,12 @@ uri="http://www.springframework.org/security/tags"%>
           </ul>
         </div>
       </div>
+
+
+
+
+
+
 
       <!-- Modal -->
       <div

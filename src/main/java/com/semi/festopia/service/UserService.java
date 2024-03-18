@@ -45,6 +45,11 @@ public class UserService implements UserDetailsService{
 		return dao.registerUser(vo);
 	}
 	
+	// 회원가입시 로그인 중복체크(ajax 로직)
+	public User idCheck(String id) {
+		return dao.loginUser(id);
+	}
+	
 	// 아이디,이메일 변경
 	public int updateUserNickname(User vo) {
 		return dao.updateUserNickname(vo);
@@ -62,9 +67,8 @@ public class UserService implements UserDetailsService{
 		return dao.unableAccount(vo);
 	}
 	
-	// ajax, 유저 아이디 중복체크
-	public User idCheck(String id) {
-		return dao.idCheck(id);
+	// 프로필 사진 변경
+	public int changeProfile(User vo) {
+		return dao.changeProfile(vo);
 	}
-	
 }

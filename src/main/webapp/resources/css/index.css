@@ -9,11 +9,12 @@
   height: 5px;
   background: #ddd;
 }
+
 .progress-bar {
   width: 0;
   height: 100%;
   background: #00a8ff;
-  background-color: teal;
+  background-color: rgb(195, 126, 235);
 }
 
 html {
@@ -51,7 +52,6 @@ header {
 }
 
 /*검색창 위치...*/
-
 #list {
   list-style: none;
 }
@@ -66,7 +66,6 @@ header {
 .slider {
   position: relative;
   overflow: hidden;
-
   width: 100%;
   height: 100%;
 }
@@ -77,15 +76,12 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-
   background-size: cover;
   background-position: center;
-
   display: flex;
   display: block;
   justify-content: center;
   align-items: center;
-
   animation: slider 7.5s infinite linear;
 }
 
@@ -116,10 +112,12 @@ header {
   background-image: url(./3600945.jpg);
   animation-delay: 0;
 }
+
 .slide:nth-child(2) {
   background-image: url(./5256203.jpg);
   animation-delay: -2.5s;
 }
+
 .slide:nth-child(3) {
   background-image: url(./6364976.jpg);
   animation-delay: -5s;
@@ -140,16 +138,9 @@ header {
   93% {
     transform: translateX(100%);
   }
-
   100% {
     transform: translateX(0);
   }
-}
-
-header h1 {
-  font-size: 25px;
-  font-weight: bold;
-  color: rgb(234, 24, 223);
 }
 
 header {
@@ -158,13 +149,13 @@ header {
 
 main section {
   height: 100vh;
-  display: flex;
 }
 
 #section2 {
-  display: flex;
   justify-content: center;
   padding-top: 10px;
+  text-align: center;
+  padding-top: 18px;
 }
 
 #section3 {
@@ -179,7 +170,6 @@ main section {
 }
 
 /*스크롤*/
-
 .text-animation {
   /* animation:'textAni 1s 1 alternate'; */
   animation: textAni 1s forwards;
@@ -198,6 +188,7 @@ main section {
     opacity: 0;
     transform: translateY(0);
   }
+
   to {
     opacity: 1;
     transform: translateY(-10px);
@@ -229,14 +220,12 @@ main section {
 }
 
 /*=============== SEARCH ===============*/
-
 .search {
   position: relative;
   width: 75px;
   height: 75px;
   background-color: var(--white-color);
-
-  box-shadow: 0 4px 24px hsla(222, 68%, 12%, 0.1);
+  box-shadow: 0 4px 24px hsla(216, 5%, 20%, 0.1);
   border-radius: 4rem;
   padding: 10px;
   overflow: hidden;
@@ -264,16 +253,16 @@ main section {
   margin: 10px;
   padding: 10px;
   position: fixed;
- 
 }
 
 .search__input:-webkit-autofill {
   box-shadow: 0 0 0 100px var(--white-color) inset;
 }
+
 .search__button {
   width: 56px;
   height: 56px;
-  background-color: var(--dark-color);
+  background-color: pink;
   border-radius: 50%;
   position: absolute;
   top: 0;
@@ -293,6 +282,7 @@ main section {
   position: absolute;
   transition: opacity 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
 }
+
 .search__close {
   opacity: 0;
 }
@@ -301,16 +291,20 @@ main section {
 .show-search {
   width: 100%;
 }
+
 .show-search .search__input {
   opacity: 1;
   pointer-events: initial;
 }
+
 .show-search .search__button {
   transform: rotate(90deg);
 }
+
 .show-search .search__icon {
   opacity: 0;
 }
+
 .show-search .search__close {
   opacity: 1;
 }
@@ -324,7 +318,6 @@ main section {
 }
 
 /*============== SEARCHFILTER ===============*/
-
 .category {
   display: flex;
   flex-direction: column;
@@ -359,36 +352,54 @@ main section {
   size: 2rem;
 }
 
-
 /* 인기 축제 */
-
 .content-list {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  padding: 43px;
 }
-.card {
-  width: 18rem;
+
+.card-css {
+  width: 25%;
+  height: 650px;
   display: flex;
   justify-content: center;
-  margin: 20px;
   text-decoration: none;
   color: black;
+  margin: 20px;
+  top: 80px;
+  background-position: center;
+  border: 3px solid black;
+  box-shadow: 10px 10px 5px gray;
 }
-.card img {
+
+.card-css a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.card-css-img {
   position: relative;
-  height: 80%;
-  object-fit: cover;
-  border-bottom-left-radius: 0%;
-  border-bottom-right-radius: 0%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  height: 553px;
 }
-.card-body {
+
+.card-css-img img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+.card-body-css {
   display: inline;
-  height: 20%;
   padding: 5px;
 }
+
 .fav-btn {
-  /*background: url(file:///D:/spring-workspace/festopia/src/main/webapp/resources/resources/favicon.png) no-repeat;*/
   border: none;
   height: 30px;
   width: 30px;
@@ -397,20 +408,23 @@ main section {
   right: 10px;
   cursor: pointer;
 }
-.card-name {
+
+.card-name-css {
   font-weight: bolder;
   margin-bottom: 0px;
   white-space: nowrap;
   overflow: hidden;
 }
-.card-date {
+
+.card-date-css {
   font-size: 0.8rem;
   font-weight: bold;
   margin: 0 0 5px;
   white-space: nowrap;
   overflow: hidden;
 }
-.card-place {
+
+.card-place-css {
   font-size: 0.8rem;
   margin: 0px;
   white-space: nowrap;
@@ -418,7 +432,6 @@ main section {
 }
 
 /* 검색창 옆으로 아이콘 옮김*/
-
 .container {
   display: flex;
   margin-top: 20px;
@@ -432,6 +445,18 @@ main section {
 }
 
 #inform {
-  margin-top: 10px;
+  margin-top: 8px;
   padding: 20px;
+  margin-left: 15px;
+  color: gray;
+}
+
+#anonymousUser {
+  margin-left: 30px;
+}
+
+/*로고*/
+#title img {
+  width: 200px;
+  margin-left: 20px;
 }

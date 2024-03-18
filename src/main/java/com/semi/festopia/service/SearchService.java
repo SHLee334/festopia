@@ -27,16 +27,18 @@ public class SearchService {
 		return dao.searchFestival(dto);
 	}
 	
+	// 메인페이지 조회수 순 조회
 	public List<Festival> popularFestival(){
 		return dao.popularFestival();
-		
-		
 	}
 	
 	public Festival detail(int code) {
 		return dao.detail(code);
 	}
 
+	public int updateViewCnt(int fesCode){
+		return dao.updateViewCnt(fesCode);
+	}
 }
 
 	

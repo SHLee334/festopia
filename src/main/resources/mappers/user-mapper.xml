@@ -10,6 +10,7 @@
 	<result property="userEnrollDate" column="user_enroll_date"/>
 	<result property="userQuitDate" column="user_quit_date"/>
 	<result property="auth" column="user_role"/>
+	<result property="userProfileUrl" column="user_profile_url"/>
 	</resultMap>
 	
 	<insert id="registerUser" parameterType="User">
@@ -21,8 +22,9 @@
 	</select>
 	
 	
-	<!-- 회원정보 수정 ㅡㅡㅡㅡㅡㅡㅡ --> 
 	
+	
+	<!-- 회원정보 수정 ㅡㅡㅡㅡㅡㅡㅡ --> 
 	<!-- 개인정보 수정(닉네임, 이메일)(비밀번호 인증 필요 없음) 쿼리문 -->
 	<update id="updateUserNickname" parameterType="User" >
 		UPDATE user
@@ -50,9 +52,31 @@
 		SELECT * FROM user WHERE user_id=#{id}
 	</select>
 	
-	<!-- 찜목록 리스트 불러오기 쿼리문 -->
+	<!-- 유저 프로필사진 변경 쿼리문 -->
+	<update id="userProfile" parameterType="User">
+	UPDATE user
+	SET user_profile_url = #{userProfileUrl}
+	WHERE user_code = #{userCode}
+	</update>
 	
-	<!-- 활동내역 리스트 불러오기 쿼리문 -->
-	
+
+
+	<!-- 리스트 불러오기 -->
+	<select id="boardList" resultMap="userMap">
+		SELECT user_code, no, title, date, view_count, user_nickname FROM user JOIN
+		board USING (user_code);
+	</select>
+
+	<!-- 글쓰기 -->
+	<insert id="adminWrite" parameterType="NoticeBoard" useGeneratedKeys="true" keyProperty="no" keyColumn="no">
+		INSERT INTO board(user_code, title, content, url)
+		VALUES(#{userCode},#{noticeTitle}, #{noticeContent}, #{noticeUrl})
+	</insert>
+
+	<!-- 각 게시글 -->
+	<select id="viewNotice" parameterType="int" resultMap="userMap">
+		SELECT * FROM board JOIN user USING (user_code) WHERE user_code =
+		#{userCode} AND no = #{no};
+	</select>
 	
 </mapper>
