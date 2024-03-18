@@ -21,7 +21,6 @@ public class NoticeBoard {
 	
 	private User user;
 	
-	
 	private MultipartFile file;
 }
 

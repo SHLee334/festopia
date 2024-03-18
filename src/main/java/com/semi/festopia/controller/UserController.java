@@ -10,15 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.semi.festopia.model.vo.User;
+import com.semi.festopia.service.NoticeBoardService;
 import com.semi.festopia.service.UserService;
 
 
@@ -28,6 +31,9 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
+	
+	@Autowired
+	private NoticeBoardService noticeService;
 	
 	@GetMapping("/")
 	public String index() {
@@ -51,14 +57,27 @@ public class UserController {
 	public void favorite() {}
 	
 	@GetMapping("/mypage")
-	public void myPage(User user) {}
+	public void myPage(User user, Model model) {
+		model.addAttribute("board", noticeService.boardList());
+	}
 	
+	/*동준 학원 컴*/private String path = "D:\\spring-workspace\\festopia\\src\\main\\webapp\\resources\\profile\\";
+	/*동준 노트북 프로젝트 내부경로*/ //private String path = "C:\\Back_end_workspace\\spring-workspace\\festopia\\src\\main\\webapp\\resources\\profile\\";
+	/*동준 노트북 프로젝트 외부경로*/ //private String path = "C:\\Back_end_workspace\\festTest\\";
 	
-	private String path = "C:\\Back_end_workspace\\spring-workspace\\festopia\\src\\main\\webapp\\resources\\profile\\";
-	//private String path = "C:\\Back_end_workspace\\festTest\\";
+	private Authentication createNewAuthentication(Authentication currentAuth, String username) {
+		UserDetails newPrincipal = service.loadUserByUsername(username);
+		UsernamePasswordAuthenticationToken newAuth = new UsernamePasswordAuthenticationToken(newPrincipal, currentAuth.getCredentials(), newPrincipal.getAuthorities());
+		newAuth.setDetails(currentAuth.getDetails()); // 이 과정이 수정 버튼을 누르면 강제로 재 로그인 함으로써 모든 정보가 수정됨
+		return newAuth;
+	}
+	
 	//프로필사진 변경 로직
 	@PostMapping("/changeProfile")
 	public String changeProfile(User user) throws IllegalStateException, IOException {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // 인증정보
+		User userDetails = (User) authentication.getPrincipal(); // 사용자 정보
+		
 		if(!user.getFile().isEmpty()) {
 			if(user.getUserProfileUrl()!=null) {
 				File file = new File(path + user.getUserProfileUrl());
@@ -68,6 +87,7 @@ public class UserController {
 			user.setUserProfileUrl(url);
 		}
 		service.changeProfile(user);
+		SecurityContextHolder.getContext().setAuthentication(createNewAuthentication(authentication, userDetails.getUsername()));
 		
 		return "redirect:/mypage";
 	}

@@ -101,7 +101,7 @@ public class AjaxController {
 		return newAuth;
 	}
 	
-	private String path = "D:\\festTest\\";
+	//private String path = "D:\\festTest\\";
 	
 	
 //	// 마이페이지 유저 프로필 사진 변경 --> multipartfile 처리하는 변수로 담아올 수 있도록 
