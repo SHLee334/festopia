@@ -61,9 +61,8 @@ public class UserController {
 		model.addAttribute("board", noticeService.boardList());
 	}
 	
-	/*동준 학원 컴*/private String path = "D:\\spring-workspace\\festopia\\src\\main\\webapp\\resources\\profile\\";
-	/*동준 노트북 프로젝트 내부경로*/ //private String path = "C:\\Back_end_workspace\\spring-workspace\\festopia\\src\\main\\webapp\\resources\\profile\\";
-	/*동준 노트북 프로젝트 외부경로*/ //private String path = "C:\\Back_end_workspace\\festTest\\";
+
+	private String path = "D:\\festopia\\profile\\";
 	
 	private Authentication createNewAuthentication(Authentication currentAuth, String username) {
 		UserDetails newPrincipal = service.loadUserByUsername(username);

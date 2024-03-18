@@ -21,7 +21,7 @@
 		<div class="view-content">
 			<label>Content</label>
 			<textarea rows="10" cols="10" name="noticeContent" style="resize:none;">${vo.noticeContent}</textarea>
-			<a href="/adminUpload/${vo.noticeUrl}" download><img src="../../resources/adminUpload/${vo.noticeUrl}"></a>
+			<a href="/adminUpload/${vo.noticeUrl}" download><img src="/adminUpload/${vo.noticeUrl}"></a>
 		</div>
 		<div class="view-content">
 			<label for="file">Add File</label>
