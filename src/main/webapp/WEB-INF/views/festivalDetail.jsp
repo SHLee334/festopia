@@ -45,71 +45,72 @@ uri="http://www.springframework.org/security/tags"%>
     <sec:authentication var="user" property="principal" />
 
     <div class="fes-detail">
-        <div class="fes-detail-title">
-            <h2>축제상세 페이지</h2><br>
-        </div>
+      <div class="fes-detail-title">
+        <h2>축제상세 페이지</h2>
+        <br />
+      </div>
 
-        <!-- 축제정보 카드 -->
-        <div class="fes-detail-card">
-          <img src="${vo.poster}" class="detail-poster" />
-          <div class="detail-info">
-            <h5 class="detail-category">${vo.category}</h5>
-            <h5 class="detail-name">${vo.name}</h5>
-            <p class="detail-date">${vo.startDate}~ ${vo.endDate}</p>
-            <p class="detail-place">${vo.place}</p>
-            <p class="detail-fee">${vo.fee}</p>
+      <!-- 축제정보 카드 -->
+      <div class="fes-detail-card">
+        <img src="${vo.poster}" class="detail-poster" />
+        <div class="detail-info">
+          <h5 class="detail-category">${vo.category}</h5>
+          <h5 class="detail-name">${vo.name}</h5>
+          <p class="detail-date">${vo.startDate}~ ${vo.endDate}</p>
+          <p class="detail-place">${vo.place}</p>
+          <p class="detail-fee">${vo.fee}</p>
 
-            <c:choose>
-              <c:when test="${empty favorite}">
-                <h5><i class="fa-solid fa-heart" id="addFav"></i></h5>
-              </c:when>
-              <c:otherwise>
-                <h5><i class="fa-solid fa-heart" id="delFav"></i></h5>
+          <c:choose>
+            <c:when test="${empty favorite}">
+              <h5><i class="fa-solid fa-heart" id="addFav"></i></h5>
+            </c:when>
+            <c:otherwise>
+              <h5><i class="fa-solid fa-heart" id="delFav"></i></h5>
 
-                <script>
-                  console.log(${favorite.fvCode});
-                     $("#delFav").click(() => {
-                       $.ajax({
-                         type: 'post',
-                         url: '/delFav',
-                         data: 'code=' + ${favorite.fvCode},
-                         success: function (data) {
-                           location.reload();
-                         }
-                       });
+              <script>
+                console.log(${favorite.fvCode});
+                   $("#delFav").click(() => {
+                     $.ajax({
+                       type: 'post',
+                       url: '/delFav',
+                       data: 'code=' + ${favorite.fvCode},
+                       success: function (data) {
+                         location.reload();
+                       }
                      });
-                </script>
-              </c:otherwise>
-            </c:choose>
-            <script>
-              $('#addFav').click(() => {
-                $.ajax({
-                    type: 'post',
-                    url: '/addFav',
-                    data: 'code=' + ${vo.fesCode},
-                    success: function(data) {
-                        location.reload();
-                    }
-                });
+                   });
+              </script>
+            </c:otherwise>
+          </c:choose>
+          <script>
+            $('#addFav').click(() => {
+              $.ajax({
+                  type: 'post',
+                  url: '/addFav',
+                  data: 'code=' + ${vo.fesCode},
+                  success: function(data) {
+                      location.reload();
+                  }
               });
-            </script>
+            });
+          </script>
 
-            <!-- 공유(클립보드) -->
-            <div id="copy-toast-msg">❤️ url이 클립보드에 복사 되었습니다 ❤️</div>
-            <h5><i class="fa-solid fa-arrow-up-from-bracket" id="copyUrl" onclick="clip()"></i></h5>
-
-
-          </div>
+          <!-- 공유(클립보드) -->
+          <div id="copy-toast-msg">❤️ url이 클립보드에 복사 되었습니다 ❤️</div>
+          <h5>
+            <i
+              class="fa-solid fa-arrow-up-from-bracket"
+              id="copyUrl"
+              onclick="clip()"
+            ></i>
+          </h5>
         </div>
+      </div>
 
-        <!-- 맵 -->
-        <div class="fes-detail-map">
-        </div>
+      <!-- 맵 -->
+      <div class="fes-detail-map"></div>
 
-
-
-
-        <script src="../../resources/js/festivalDetail.js"></script>
-  </div>
+      <script src="../../resources/js/festivalDetail.js"></script>
+    </div>
   </body>
 </html>

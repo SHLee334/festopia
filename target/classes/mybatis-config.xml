@@ -21,6 +21,5 @@
 		<mapper resource="mappers/search-mapper.xml" />
 		<mapper resource="mappers/favorite-mapper.xml"/>
 		<mapper resource="mappers/comment-mapper.xml"/>
-		
 	</mappers>
 </configuration>

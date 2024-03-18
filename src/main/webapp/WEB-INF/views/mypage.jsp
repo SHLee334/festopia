@@ -117,7 +117,9 @@ uri="http://www.springframework.org/security/tags" %>
       <div class="item" id="main-jsp">
         <jsp:include page="mypage-account.jsp" />
       </div>
-      <div class="item" id="main-jsp">account jsp2</div>
+      <div class="item" id="main-jsp">
+      	<jsp:include page="mypage-favorite.jsp" />
+      </div>
       <div class="item" id="main-jsp">
       		<jsp:include page="myComment.jsp" />
       </div>
