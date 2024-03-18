@@ -34,12 +34,8 @@ public class FavoriteController {
 	/* ========== 축제 상세 ========== */
 	@GetMapping("/detail")
 	public String detail(String code, Model model) {
-		
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		User user = (User) principal;
-		
 		model.addAttribute("vo", searchService.detail(Integer.parseInt(code)));
-
+		
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 		// 축제코드(fesCode), 유저코드(userCode) 보내기

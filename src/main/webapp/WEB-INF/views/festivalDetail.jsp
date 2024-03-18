@@ -39,9 +39,6 @@ uri="http://www.springframework.org/security/tags"%>
     <jsp:include page="/header.jsp" />
 
     <div class="fes-detail">
-      <!--<div class="fes-detail-title">
-        <h2>축제상세 페이지</h2>
-      </div>-->
 
       <!-- 축제정보 카드 -->
       <div class="fes-detail-card">

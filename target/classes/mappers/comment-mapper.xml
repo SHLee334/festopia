@@ -1,0 +1,39 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="commentMapper">
+	<resultMap type="Comment" id="commentMap">
+		<id property="comCode" column="com_code"/>
+		<result property="comText" column="com_text"/>
+		<result property="comDate" column="com_date"/>
+		<result property="comDeleteStatus" column="com_delete_status"/>
+		<result property="userCode" column="user_code"/>
+		<result property="fesCode" column="fes_code"/>
+		<association property="user" column="user_code" javaType="User" resultMap="userMap"></association>
+	</resultMap>
+	
+	<resultMap type="User" id="userMap">
+		<id property="userCode" column="user_code"/>
+		<result property="id" column="user_id"/>
+		<result property="password" column="user_pwd"/>
+		<result property="nickname" column="user_nickname"/>
+		<result property="email" column="user_email"/>
+		<result property="enabled" column="user_enabled"/>
+		<result property="userEnrollDate" column="user_enroll_date"/>
+		<result property="userQuitDate" column="user_quit_date"/>
+		<result property="auth" column="user_role"/>
+	</resultMap>
+	
+	<insert id="insertCom" parameterType="Comment">
+		INSERT INTO comment (com_text, user_code, fes_code) 
+		VALUES (#{comText}, #{userCode}, #{fesCode})
+	</insert>
+	
+	<select id="viewCom" parameterType="int" resultMap="commentMap">
+		SELECT * FROM comment 
+		JOIN user USING(user_code) WHERE fes_code = #{fesCode}
+		ORDER BY com_code
+	</select>
+	
+	<delete id="deleteCom" parameterType="int">
+		DELETE FROM comment WHERE com_code = #{comCode}
+	</delete>
+</mapper>

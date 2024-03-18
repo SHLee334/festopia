@@ -1,0 +1,119 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchMapper">
+	<resultMap type="Festival" id="festivalMap">
+		<id property="fesCode" column="fes_code" />
+		<result property="name" column="fes_name" />
+		<result property="startDate" column="fes_start_date" />
+		<result property="endDate" column="fes_end_date" />
+		<result property="status" column="fes_status" />
+		<result property="place" column="fes_location" />
+		<result property="lat" column="fes_latitude" />
+		<result property="lot" column="fes_longitude" />
+		<result property="feeStatus" column="fes_fee_status" />
+		<result property="fee" column="fes_fee" />
+		<result property="age" column="fes_age" />
+		<result property="enrollDate" column="fes_enroll_date" />
+		<result property="operator" column="fes_operator" />
+		<result property="hmpgUrl" column="fes_url" />
+		<result property="poster" column="fes_poster" />
+		<result property="viewCount" column="fes_view_count" />
+		<result property="season" column="season_code" />
+		<result property="category" column="category_name" />
+	</resultMap>
+
+	<select id="searchFestival" parameterType="SearchDTO"
+		resultMap="festivalMap">
+
+		SELECT * FROM festival
+		<where>
+			<if test="noCategory == false">
+				category_code IN
+				<foreach collection="checkFesCate" item="item" open="("
+					close=")" separator=",">
+					#{item}
+				</foreach>
+			</if>
+
+			AND fes_fee_status IN
+			<foreach collection="checkFeeStatus" item="item" open="("
+				close=")" separator=",">
+				#{item}
+			</foreach>
+			
+			<if test="inputFesName != ''">
+				AND fes_name LIKE CONCAT('%',#{inputFesName},'%')
+			</if>
+
+			<choose>
+				<when test="checkStartDate != '' and checkEndDate==''">
+					<choose>
+						<when test="checkDateSelect == 'targetStart'">
+							AND fes_start_date >= '${checkStartDate}' ORDER BY
+							fes_start_date ASC
+						</when>
+
+						<when test="checkDateSelect == 'targetEnd'">
+							AND fes_end_date <![CDATA[<]]>=
+							'${checkStartDate}' ORDER BY fes_start_date ASC
+						</when>
+					</choose>
+				</when>
+				<when test="checkStartDate == '' and checkEndDate!=''">
+					<choose>
+						<when test="checkDateSelect == 'targetStart'">
+							AND fes_start_date >= '${checkEndDate}' ORDER BY
+							fes_end_date ASC
+						</when>
+
+						<when test="checkDateSelect == 'targetEnd'">
+							AND fes_end_date <![CDATA[<]]>=
+							'${checkEndDate}' ORDER BY fes_end_date ASC
+						</when>
+					</choose>
+				</when>
+				<when test="checkStartDate != '' and checkEndDate != ''">
+					<choose>
+						<when test="checkDateSelect == 'targetStart'">
+							AND fes_start_date BETWEEN '${checkStartDate}' AND
+							'${checkEndDate}' ORDER BY
+							fes_start_date ASC
+						</when>
+
+						<when test="checkDateSelect == 'targetEnd'">
+							AND fes_end_date BETWEEN '${checkStartDate}' AND
+							'${checkEndDate}' ORDER BY fes_end_date ASC
+						</when>
+					</choose>
+				</when>
+			</choose>
+			
+
+			
+
+		</where>
+
+	</select>
+	
+	<select id = "popularFestival" resultMap="festivalMap" >
+	
+	SELECT *
+	FROM festival
+	ORDER BY fes_view_count desc
+	LIMIT 4
+	
+	
+	</select>
+
+	<!-- 축제 상세페이지 -->
+	<select id="detail" parameterType="int" resultMap="festivalMap">
+		SELECT * FROM festival
+		WHERE fes_code = #{fesCode}
+	</select>
+
+	<!-- 축제 조회 수 -->
+	<update id="updateViewCnt" parameterType="int">
+		UPDATE festival
+		SET fes_view_count = fes_view_count + 1
+		WHERE fes_code = #{fesCode}
+	</update>
+</mapper>
