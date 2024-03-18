@@ -19,6 +19,7 @@ public class SearchDAO {
 		return session.selectList("searchMapper.searchFestival", fesList);
 	}
 	
+	// 메인페이지 조회수 순
 	public List<Festival> popularFestival(){
 		
 		return session.selectList("searchMapper.popularFestival");

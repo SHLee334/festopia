@@ -40,8 +40,9 @@ public class SearchController {
 	
 	@ResponseBody
 	@PostMapping("/search")
-	public List<Festival> search() {
-		List<Festival> list = searchService.popularFestival();
+	public List<Festival> search(Model model) {
+		List<Festival> list = service.popularFestival();
+		//model.addAttribute("list", list);
 		System.out.println(list);
 		return list;
 	}
