@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.semi.festopia.model.vo.Comment;
 import com.semi.festopia.model.vo.Favorite;
@@ -79,7 +80,7 @@ public class FavoriteController {
 	}
 
 	@PostMapping("/writeCom")
-	public String insertCom(Comment vo) {
+	public String insertCom(Comment vo, ModelAndView mav) {
 
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		

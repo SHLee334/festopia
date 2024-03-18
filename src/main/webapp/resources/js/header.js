@@ -63,6 +63,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
       yearSuffix: "년",
       buttonText: "선택",
     });
+    $("#startDatepicker").datepicker("setDate", "today");
+    $("#endDatepicker").datepicker("setDate", "+1D");
   });
 });
 

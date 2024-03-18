@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-비둘기는 밥을 먹습니다. 아주 맛있군요. 999
+
 </body>
 </html>
