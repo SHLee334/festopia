@@ -4,10 +4,12 @@ package com.semi.festopia.model.vo;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +25,13 @@ public class User implements UserDetails{
 	private Date userEnrollDate; //java.sql.Date로 import 함.
 	private Date userQuitDate;
 	private String auth;
+	private String userProfileUrl;
+	private MultipartFile file;
+	
+	
+	
+	
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		ArrayList<GrantedAuthority> authList = new ArrayList<>();

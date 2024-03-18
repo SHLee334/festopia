@@ -1,20 +1,29 @@
-$("#idCheck").click(() => {
+// 회원가입시 아이디 중복을 막기위한 로직
+//function isDuplicated() {
+$("#id").keyup(() => {
+  console.log($("#id").val());
   $.ajax({
     type: "post",
-    url: "/idCheck",
+    url: "/isDuplicated",
     data: "id=" + $("#id").val(),
-    success: function (result) {
-      if (result) {
-        // true, 중복 값있을때
-        $("#idCheckSpan").text("중복된 아이디입니다.").css("color", "red");
+    success: function (user) {
+      console.log(user.id);
+      let id = $("#id").val();
+      if (id === user.id) {
+        //중복값이 있음
+        $("#idCheckSpan2").text("중복된 아이디입니다.").css("color", "red");
+        return 3;
+      } else if (id === "") {
+        $("#idCheckSpan2").text("").css("color", "grey");
+        return 2;
       } else {
-        $("#idCheckSPan").text("사용가능 아이디").css("color", "green");
-        $("#id").attr("readonly", true);
-        $("#idCheck").attr("disabled", true);
+        $("#idCheckSpan2").text("사용가능 아이디").css("color", "green");
+        return 1;
       }
     },
   });
 });
+//}
 
 function userIdCheck() {
   const regExp = /^[a-zA-Z0-9]{5,20}$/;
@@ -27,7 +36,6 @@ function userIdCheck() {
   } else if (result === false) {
     return 3;
   }
-  //ifClause(result, $("#id").val());
 }
 function nicknameCheck() {
   const regExp = /^.{1,}$/;
@@ -108,6 +116,9 @@ $("#email").keyup((e) => {
 
 function validate() {
   if (userIdCheck() !== 1) {
+    $("#id").focus();
+    return false;
+  } else if (isDuplicated() !== 1) {
     $("#id").focus();
     return false;
   } else if (nicknameCheck() !== 1) {
