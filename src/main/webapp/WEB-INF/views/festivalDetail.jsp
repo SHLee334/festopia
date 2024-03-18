@@ -112,7 +112,7 @@ uri="http://www.springframework.org/security/tags"%>
 
           var map = new kakao.maps.Map(container, options);
 
-          var imageSrc = "resources/resources/pin.png",
+          var imageSrc = "resources/resources/pin-red.png",
               imageSize = new kakao.maps.Size(54, 59),
               imageOption = {offset: new kakao.maps.Point(27, 69)};
 

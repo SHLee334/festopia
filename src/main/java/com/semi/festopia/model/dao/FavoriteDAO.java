@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import com.semi.festopia.model.vo.Favorite;
 
+import java.util.List;
+
 @Repository
 public class FavoriteDAO {
 
@@ -23,5 +25,8 @@ public class FavoriteDAO {
 	public int delete(int code) {
 		return session.delete("favorite.delete", code);
 	}
-	
+
+	public List<Favorite> selectFvAll() {
+		return session.selectList("favorite.fvList");
+	}
 }

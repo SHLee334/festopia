@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
 /* ======== content-list ======== */
-.content-list {
+.result-sort {
   padding-top: 90px;
+}
+
+.content-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -31,7 +34,7 @@
 
 .card .card-poster {
   position: relative;
-  height: 75%;
+  height: 400px;
   object-fit: cover;
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
@@ -39,19 +42,19 @@
 
 .card-body {
   position: relative;
-  height: 25%;
-  display: flex;
-  align-items: center;
+  display: absolute;
+  height: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   padding: 5px 10px !important;
   border-top: 1px solid rgb(227, 222, 222);
 }
 
-.card-body-content {
-  position: absolute;
-  top: 50%;
-}
 .card-name {
   font-weight: bolder;
+  margin-top: 10px;
+  margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -60,7 +63,7 @@
 .card-date {
   font-size: 0.8rem;
   font-weight: bold;
-  margin: 0 0 5px;
+  margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

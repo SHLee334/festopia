@@ -2,6 +2,9 @@
 
 .fes-detail {
   padding-top: 90px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .fes-detail-title {
 	width: 100px;
@@ -13,8 +16,6 @@
   width: 1000px;
   height: 450px;
   align-items: flex-start;
-  border: 1px solid black;
-  background-color: yellow;
 }
 
 /* ===== 축제정보 ===== */

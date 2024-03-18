@@ -100,6 +100,9 @@ public class FavoriteController {
 		comService.deleteCom(comCode);
 	}
 	
-	
+	@GetMapping("/fvList")
+	public void list(Model model) {
+		model.addAttribute("fvList", favService.selectFvAll());
+	}
 
 }

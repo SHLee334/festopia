@@ -25,7 +25,20 @@
 <body>
 	<jsp:include page="/header.jsp" />
 
-	
+    <div class="dropdown result-sort">
+      <button class="btn btn-secondary dropdown-toggle sort-dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        시작일 내림차순
+      </button>
+      <ul class="dropdown-menu sort-dropdown-menu">
+        <li><a class="dropdown-item sort-dropdown-item" href="www.google.com">시작일 오름차순</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" href="#">종료일 오름차순</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" href="#">종료일 내림차순</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" href="#">축제명 오름차순</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" href="#">축제명 내림차순</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" href="#">인기순</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" href="#">조회순</a></li>
+      </ul>
+    </div>
 
 	<!-- 검색결과 축제 항목 카드 -->
 	<div class="content-list">
