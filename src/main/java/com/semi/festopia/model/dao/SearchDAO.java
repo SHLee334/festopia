@@ -28,5 +28,8 @@ public class SearchDAO {
 	public Festival detail(int code) {
 		return session.selectOne("searchMapper.detail", code);
 	}
-	
+
+	public int updateViewCnt(int fesCode) {
+		return session.update("searchMapper.updateViewCnt", fesCode);
+	}
 }

@@ -1,26 +1,31 @@
 @charset "UTF-8";
 
+.fes-detail {
+  padding-top: 90px;
+}
+
 .fes-detail-card {
   display: flex;
   flex-wrap: nowrap;
-  min-width: 80vw;
-  max-width: 60vw;
-  justify-content: center;
-  align-items: center;
+  width: 1000px;
+  height: 450px;
+  align-items: flex-start;
+  border: 1px solid black;
 }
 
 /* ===== 축제정보 ===== */
 .detail-poster {
   position: relative;
-  width: 45%;
+  width: 30%;
   border-radius: 2%;
   margin-right: 20px;
 }
 
 .detail-info {
   position: relative;
-  display: inline;
-  width: 55%;
+  height: 100%;
+  width: 70%;
+  margin-right: 20px;
 }
 
 .detail-category {
@@ -45,6 +50,9 @@
 
 /* ===== 찜 버튼 ===== */
 .fa-heart {
+  position: absolute;
+  top: 2px;
+  right: 10px;
   cursor: pointer;
 }
 #addFav {
@@ -52,18 +60,48 @@
 }
 #delFav {
   color: rgb(223, 33, 33);
-  position: absolute;
-  top: 2px;
-  right: 10px;
-  cursor: pointer;
 }
 
 /* ===== 공유 버튼 ===== */
 .fa-arrow-up-from-bracket {
+  position: absolute;
+  top: 2px;
+  right: 45px;
   cursor: pointer;
 }
-.fa-arrow-up-from-bracket :hover {
+.fa-arrow-up-from-bracket:hover {
   color: blue;
+}
+
+#copy-toast-msg {
+  opacity: 0;
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 10px 50px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 100px;
+  color: #fff;
+  box-shadow: 3px 4px 11px 0px #00000040;
+  transition: all 1s;
+  z-index: 100;
+}
+#copy-toast-msg.active {
+  opacity: 100%;
+  bottom: 50px;
+  z-index: 100;
+}
+
+/* ===== 맵 영역 ===== */
+.fes-detail-map {
+  position:relative;
+  overflow:hidden;
+}
+
+#map {
+  width: 840px;
+  height: 500px;
 }
 
 /* ===== 댓글 구역 ===== */

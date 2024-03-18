@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.semi.festopia.model.vo.Comment;
 import com.semi.festopia.model.vo.Favorite;
+import com.semi.festopia.model.vo.Festival;
 import com.semi.festopia.model.vo.User;
 import com.semi.festopia.service.CommentService;
 import com.semi.festopia.service.FavoriteService;
@@ -33,7 +34,10 @@ public class FavoriteController {
 	/* ========== 축제 상세 ========== */
 	@GetMapping("/detail")
 	public String detail(String code, Model model) {
-
+		
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		User user = (User) principal;
+		
 		model.addAttribute("vo", searchService.detail(Integer.parseInt(code)));
 
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
