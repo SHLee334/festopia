@@ -32,8 +32,8 @@ public class NoticeBoardController {
 	@GetMapping("/admin-write")
 	public void adminWrite() {}
 	
-	private String path ="D:\\spring-workspace\\festopia\\src\\main\\webapp\\resources\\adminUpload\\";
-	//private String path = "C:\\Back_end_workspace\\spring-workspace\\festopia\\src\\main\\webapp\\resources\\adminUpload\\";
+
+	private String path = "D:\\festopia\\adminUpload\\";
 	
 	// 파일 업로드 기능
 	public String fileUpload(MultipartFile file) throws IllegalStateException, IOException {

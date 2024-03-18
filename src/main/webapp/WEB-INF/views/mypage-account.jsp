@@ -34,7 +34,7 @@ uri="http://www.springframework.org/security/tags" %>
             <div>
               ${user.userProfileUrl}
               <div id="userImage">
-                <img src="../../resources/profile/${user.userProfileUrl}" />
+                <img src="/profile/${user.userProfileUrl}" />
               </div>
 
               <form action="/changeProfile" id="uploadProfile" method="post" enctype="multipart/form-data">
