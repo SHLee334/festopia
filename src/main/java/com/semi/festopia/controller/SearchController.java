@@ -17,6 +17,7 @@ import com.semi.festopia.model.vo.User;
 import com.semi.festopia.service.FavoriteService;
 import com.semi.festopia.service.FestivalService;
 import com.semi.festopia.service.SearchService;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SearchController {
@@ -42,6 +43,10 @@ public class SearchController {
 		return list;
 	}
 	
-	
+	@GetMapping("viewCount")
+	public String viewCount(int fesCode) {
+		searchService.updateViewCnt(fesCode);
+		return "redirect:/searchResult";
+	}
 
 }

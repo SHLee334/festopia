@@ -29,14 +29,15 @@ public class SearchService {
 	
 	public List<Festival> popularFestival(){
 		return dao.popularFestival();
-		
-		
 	}
 	
 	public Festival detail(int code) {
 		return dao.detail(code);
 	}
 
+	public int updateViewCnt(int fesCode){
+		return dao.updateViewCnt(fesCode);
+	}
 }
 
 	
