@@ -1,3 +1,5 @@
+<%@page import="com.semi.festopia.model.vo.Favorite"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -6,38 +8,50 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Favorite List</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-	crossorigin="anonymous" />
+<title>FESTOPIA | Find Seoul's Beat!</title>
+
+<!-- 파비콘 -->
+<link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
+
+<!-- 스타일 -->
+<link rel="stylesheet" href="../../resources/css/reset.css" />
+<link rel="stylesheet" href="../../resources/css/mypage-favorite.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 </head>
 <body>
-    <div class="fv-list-container">
-    		<div class="fv-list-header">
-    			<h1>List Page</h1>
-    		</div>
+<sec:authentication var="user" property="principal" />
+<%
+List<Favorite> fvList = (List<Favorite>) request.getAttribute("fvList");
+%>
+<div class="fv-list-content">
+    <h4>${user}님의 찜 목록</h4>
 
-    		<table class="fv-list-table">
-    			<thead>
-    				<tr>
-    					<th>#번호</th>
-    					<th>축제코드</th>
-    					<th>찜 날짜</th>
-    				</tr>
-    			</thead>
-    			<tbody>
-    				<c:forEach items="${fvList}" var="fvInfo" varStatus="status">
-    					<tr>
-    						<td>${status.count}</td>
-    						<td><a href="/detail?code=${fvInfo.fesCode}">${fvInfo.fesCode}</a></td>
-                            <th>${fvInfo.fvDate}</th>
-    					</tr>
-    				</c:forEach>
-    			</tbody>
-    		</table>
-    	</div>
-
+    <!-- 찜목록 테이블 -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col" class="tb-head-no">No</th>
+          <th scope="col" class="tb-head-name">축제명</th>
+          <th scope="col" class="tb-head-start-date">축제 시작일</th>
+          <th scope="col" class="tb-head-end-date">축제 종료일</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <c:forEach items="${fvList}" var="fvInfo" varStatus="status">
+            <tr>
+                <td class="tb-body-no">${status.count}</td>
+                <td class="tb-body-name"><a href="/detail?code=${fvInfo.festival.fesCode}">${fvInfo.festival.name}</a></td>
+                <td class="tb-body-start-date">${fvInfo.festival.startDate}</td>
+                <td class="tb-body-end-date">${fvInfo.festival.endDate}</td>
+            </tr>
+        </c:forEach>
+      </tbody>
+    </table>
+</div>
 </body>
 </html>

@@ -14,4 +14,5 @@ public class SearchDTO {
 	private String checkStartDate;
 	private String checkEndDate;
 	private String inputFesName;
+	private int sort;
 }

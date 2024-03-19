@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+.fv-list-content {
+  padding: 40px;
+}
+
+.table th {
+  text-align: center;
+  font-weight: bold;
+}
+
+.tb-head-no {
+  width: 100px;
+}
+
+.tb-head-name {
+  width: 400px;
+}
+
+.table tr {
+  text-align: center;
+}
+
+.tb-body-no {
+  font-weight: bold;
+}
+
+.tb-body-name {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tb-body-name a:hover {
+  color: pink;
+  cursor: pointer;
+}

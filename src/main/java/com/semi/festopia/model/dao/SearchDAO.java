@@ -15,7 +15,7 @@ public class SearchDAO {
 	@Autowired
 	private SqlSessionTemplate session;
 	public List<Festival> searchFestival(SearchDTO fesList) {
-		System.out.println(fesList);
+		//System.out.println(fesList);
 		return session.selectList("searchMapper.searchFestival", fesList);
 	}
 	

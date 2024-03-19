@@ -26,7 +26,8 @@ public class FavoriteDAO {
 		return session.delete("favorite.delete", code);
 	}
 
-	public List<Favorite> selectFvAll() {
-		return session.selectList("favorite.fvList");
+	public List<Favorite> selectFvAll(int userCode) {
+		//System.out.println(session.selectList("favorite.fvList"));
+		return session.selectList("favorite.fvList", userCode);
 	}
 }

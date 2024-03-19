@@ -12,5 +12,7 @@ public class Favorite {
 	private Date fvDate;
 	private int userCode;
 	private int fesCode;
-	
+
+	private Festival festival;
+	private User user;
 }
