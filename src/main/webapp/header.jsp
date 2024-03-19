@@ -341,9 +341,6 @@ uri="http://www.springframework.org/security/tags"%>
 
 
 
-
-
-
       <!-- Modal -->
       <div
         class="modal fade"
