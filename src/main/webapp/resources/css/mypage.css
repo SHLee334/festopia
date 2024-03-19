@@ -1,3 +1,46 @@
+@keyframes fadeInDown {
+  0% {
+    opacity: 0.5;
+    transform: translate3d(0, -50%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+:is(#button01, #button02, #button03, #button04) {
+  animation: fadeInDown 0.8s;
+}
+#button01 {
+  position: relative;
+  animation-delay: 0.1s;
+}
+#button02 {
+  position: relative;
+  animation-delay: 0.2s;
+}
+#button03 {
+  position: relative;
+  animation-delay: 0.3s;
+}
+#button04 {
+  position: relative;
+  animation-delay: 0.2s;
+}
+@keyframes fadeInSide {
+  0% {
+    opacity: 0.5;
+    transform: translate3d(-10%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+:is(#main-jsp1, #main-jsp2, #main-jsp3, #admin-jsp) {
+  animation: fadeInSide 0.3s;
+}
+
 .mypage-container {
   height: 100vh;
   display: flex;
@@ -98,5 +141,14 @@
 
 /* 임시로 z-index 활성화 */
 #admin-jsp {
+  z-index: 10000;
+}
+#main-jsp1 {
+  z-index: 10000;
+}
+#main-jsp2 {
+  z-index: 10000;
+}
+#main-jsp3 {
   z-index: 10000;
 }

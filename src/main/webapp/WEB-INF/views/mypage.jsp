@@ -24,10 +24,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   </head>
   <body>
     <jsp:include page="/header.jsp" />
+
     <div class="mypage-container">
       <nav class="item">
         <ul>
-          <li class="li-nav">${user.nickname}님,반갑습니다. ${user.auth}</li>
+          <li class="li-nav">${user.nickname}님,반갑습니다.</li>
 
           <li class="li-nav">
             <button class="account-modify-button" id="button01">
@@ -75,9 +76,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <div class="notice-main" id="notice">
             <jsp:include page="admin.jsp" />
           </div>
-          <!-- <div class="notice-detail" id="noticeInner">
-          <jsp:include page="noticeView.jsp" />
-        </div> -->
         </div>
       </c:if>
     </div>

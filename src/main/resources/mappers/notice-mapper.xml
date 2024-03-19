@@ -29,7 +29,8 @@
 <!-- 리스트 불러오기 -->
 	<select id="boardList" resultMap="noticeMap" >
 		SELECT user_code, no, title, date, view_count, user_nickname FROM board JOIN
-		user USING (user_code);
+		user USING (user_code)
+		ORDER BY no DESC;
 	</select>
 <!-- 글쓰기 -->
 <insert id="adminWrite" parameterType="NoticeBoard" useGeneratedKeys="true" keyProperty="no" keyColumn="no">

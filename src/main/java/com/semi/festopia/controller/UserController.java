@@ -53,12 +53,11 @@ public class UserController {
 	}
 	
 	
-	@GetMapping("/mypage-favorite")
-	public void favorite() {}
 	
 	@GetMapping("/mypage")
 	public void myPage(User user, Model model) {
 		model.addAttribute("board", noticeService.boardList());
+		
 	}
 	
 
@@ -85,12 +84,13 @@ public class UserController {
 			String url = fileUpload(user.getFile());
 			user.setUserProfileUrl(url);
 		}
+
+		
 		service.changeProfile(user);
 		SecurityContextHolder.getContext().setAuthentication(createNewAuthentication(authentication, userDetails.getUsername()));
 		
 		return "redirect:/mypage";
 	}
-	
 	// 파일 업로드 기능
 	public String fileUpload(MultipartFile file) throws IllegalStateException, IOException {
 
