@@ -2,10 +2,18 @@
 pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+  <head>
+      <meta charset="UTF-8">
+      <title></title>
+      <link rel="stylesheet" href="../../resources/css/register.css">
+      <link rel="stylesheet" href="../../resources/css/reset.css">
+  </head>
   <body>
-    <h1>회원가입 세션</h1>
+    <div class="user-register">
     <form action="signUp" method="post" onsubmit="return validate()">
-      <div>
+      <div class="regi-line">
+        <label> 아이디  </label>
+        <div id="for-span">
         <input
           type="text"
           name="id"
@@ -15,16 +23,22 @@ pageEncoding="UTF-8"%>
         <span id="idCheckSpan"></span>
         <span id="idCheckSpan2"></span>
       </div>
-      <div>
+      </div>
+      <div id="for-span">
+      <div class="regi-line">
+        <label> 닉네임  </label>
         <input
           type="text"
           name="nickname"
           id="nickname"
           placeholder="닉네임을 입력해주세요"
         />
-        <span></span>
+        <span>ddddd</span>
       </div>
+      </div>
+      <div class="regi-line" id="we-need-pwd">
       <div>
+        <label> 비밀번호  </label>
         <input
           type="password"
           name="password"
@@ -33,7 +47,8 @@ pageEncoding="UTF-8"%>
         />
         <span></span>
       </div>
-      <div>
+      <div >
+        <label>비밀번호 확인</label>
         <input
           type="password"
           name="passwordCheck"
@@ -42,7 +57,9 @@ pageEncoding="UTF-8"%>
         />
         <span></span>
       </div>
-      <div>
+    </div>
+      <div class="regi-line">
+        <label> 이메일  </label>
         <input
           type="text"
           name="email"
@@ -53,6 +70,7 @@ pageEncoding="UTF-8"%>
       </div>
       <div><input type="submit" value="회원가입" /></div>
     </form>
+  </div>
 
     <script src="../../resources/js/register.js"></script>
   </body>
