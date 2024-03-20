@@ -120,7 +120,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
+  	<div style="display: none">
     <jsp:include page="/header.jsp" />
+    </div>
     <div class="mypage-container">
       <nav class="item">
         <ul>

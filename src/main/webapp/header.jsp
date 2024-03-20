@@ -320,7 +320,7 @@ uri="http://www.springframework.org/security/tags"%>
                 <li>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    class="btn btn-primary btn-my"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                   >
@@ -331,7 +331,7 @@ uri="http://www.springframework.org/security/tags"%>
                 <li>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    class="btn btn-primary btn-my"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal2"
                   >

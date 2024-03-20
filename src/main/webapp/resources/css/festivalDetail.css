@@ -4,8 +4,8 @@
   padding-top: 90px;
 }
 .fes-detail-title {
-	width: 100px;
-	height: 100px;
+  width: 100px;
+  height: 100px;
 }
 .fes-detail-card {
   display: flex;
@@ -99,8 +99,8 @@
 
 /* ===== 맵 영역 ===== */
 .fes-detail-map {
-  position:relative;
-  overflow:hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 #map {
@@ -110,38 +110,67 @@
 
 /* ===== 댓글 구역 ===== */
 .commentZone {
-  border: 1px solid black;
-  width: 1000px;
-  height: 500px;
-  background: pink;
-  display: flex;
+  width: 900px;
+  display: inline-block;
+  border-radius: 15px;
 }
 
 #inputCom {
-  width: 50%;
-  height: 100%;
-  border-right: 1px solid black;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#com {
-  width: 50%;
-  height: 50px;
+#inputCom-2 {
+  display: flex;
+  justify-content: center;
 }
 
 #comList {
-  width: 50%;
-  height: 100%;
-  top: 2px;
-  right: 45px;
+  height: 300px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow-y: auto;
+}
+/* ===== 댓글리스트 스크롤바 스타일 ===== */
+#comList::-webkit-scrollbar {
+  width: 15px;
+}
+#comList::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+#comList::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
 }
 
+#comWriterInfo {
+  display: flex;
+}
+
+#inputZone {
+  width: 80%;
+  height: 35px;
+}
+#sendCom {
+  height: 35px;
+  border: none;
+  background-color: transparent;
+}
 
 #deleteBtn {
-	margin-left: auto;
-	border: none;
-	background: transparent;
+  margin-left: auto;
+  border: none;
+  background: transparent;
 }
 
 .delCom {
-	cursor: pointer;
+  cursor: pointer;
+  margin-left: auto;
 }

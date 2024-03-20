@@ -247,14 +247,6 @@ main section {
   transition: opacity 1.5s;
 }
 
-.cateFilter {
-  width: 1140px;
-  background-color: white;
-  margin: 10px;
-  padding: 10px;
-  position: fixed;
-}
-
 .search__input:-webkit-autofill {
   box-shadow: 0 0 0 100px var(--white-color) inset;
 }
@@ -318,11 +310,25 @@ main section {
 }
 
 /*============== SEARCHFILTER ===============*/
+
+.cateFilter {
+  width: 1140px;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  position: fixed;
+  border: 1px solid grey;
+  border-radius: 20px;
+}
+
 .category {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+.category-1 {
+  height: 100px;
 }
 
 .dateSetting {
@@ -335,15 +341,8 @@ main section {
 
 .category-btn {
   background-color: lightgray;
-}
-
-.btn-check:checked + .btn,
-.btn.active,
-.btn.show,
-.btn:first-child:active,
-:not(.btn-check) + .btn:active {
-  background-color: lightblue;
-  border: none;
+  width: 170px;
+  height: 60px;
 }
 
 #searchFilterButton {
@@ -439,7 +438,7 @@ main section {
 }
 
 /*로그인, 회원가입 버튼 위치*/
-.btn {
+.btn-my {
   margin-top: 20px;
   height: 40px;
 }
