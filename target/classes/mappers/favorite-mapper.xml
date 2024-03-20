@@ -2,10 +2,48 @@
 <mapper namespace="favorite">
 	<resultMap type="Favorite" id="favoriteMap">
 		<id property="fvCode" column="fv_code" />
+		<result property="fvDate" column="fv_date" />
 		<result property="userCode" column="user_code_fk" />
 		<result property="fesCode" column="fes_code_fk" />
+		<association property="festival" column="{fes_code = fes_code_fk}" javaType="Festival" resultMap="festivalMap"/>
+		<association property="user" column="{user_code = user_code_fk}" javaType="User" resultMap="userMap"/>
 	</resultMap>
-	
+
+    <resultMap type="Festival" id="festivalMap">
+        <id property="fesCode" column="fes_code"/>
+        <result property="name" column="fes_name"/>
+        <result property="startDate" column="fes_start_date"/>
+        <result property="endDate" column="fes_end_date"/>
+        <result property="status" column="fes_status"/>
+        <result property="place" column="fes_location"/>
+        <result property="lat" column="fes_latitude"/>
+        <result property="lot" column="fes_longitude"/>
+        <result property="feeStatus" column="fes_fee_status"/>
+        <result property="fee" column="fes_fee"/>
+        <result property="age" column="fes_age"/>
+        <result property="enrollDate" column="fes_enroll_date"/>
+        <result property="operator" column="fes_operator"/>
+        <result property="hmpgUrl" column="fes_url"/>
+        <result property="poster" column="fes_poster"/>
+        <result property="viewCount" column="fes_view_count"/>
+        <result property="season" column="season_code"/>
+        <result property="categoryCode" column="category_code"/>
+        <result property="category" column="category_name" />
+    </resultMap>
+
+	<resultMap type="User" id="userMap">
+		<id property="userCode" column="user_code" />
+		<result property="id" column="user_id"/>
+		<result property="password" column="user_pwd"/>
+		<result property="nickname" column="user_nickname"/>
+		<result property="email" column="user_email"/>
+		<result property="enabled" column="user_enabled"/>
+		<result property="userEnrollDate" column="user_enroll_date"/>
+		<result property="userQuitDate" column="user_quit_date"/>
+		<result property="auth" column="user_role"/>
+		<result property="userProfileUrl" column="user_profile_url"/>
+	</resultMap>
+
 	<select id="select" parameterType="Favorite" resultMap="favoriteMap">
 		SELECT fv_code FROM favorite
 		WHERE user_code_fk = #{userCode} AND fes_code_fk = #{fesCode}
@@ -20,4 +58,14 @@
 		DELETE FROM favorite
 		WHERE fv_code = #{code}
 	</delete>
+
+	<!-- 찜 목록 조회 -->
+	<select id="fvList" parameterType="int" resultMap="favoriteMap">
+		SELECT *
+		FROM favorite fv, festival fes, user u
+		WHERE fv.fes_code_fk = fes.fes_code
+		AND fv.user_code_fk = u.user_code
+		AND user_code_fk = #{userCode};
+	</select>
+
 </mapper>
