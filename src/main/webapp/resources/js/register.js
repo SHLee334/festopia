@@ -1,29 +1,49 @@
 // 회원가입시 아이디 중복을 막기위한 로직
-//function isDuplicated() {
-$("#id").keyup(() => {
-  console.log($("#id").val());
-  $.ajax({
-    type: "post",
-    url: "/isDuplicated",
-    data: "id=" + $("#id").val(),
-    success: function (user) {
-      console.log(user.id);
-      let id = $("#id").val();
-      if (id === user.id) {
-        //중복값이 있음
-        $("#idCheckSpan2").text("중복된 아이디입니다.").css("color", "red");
-        return 3;
-      } else if (id === "") {
-        $("#idCheckSpan2").text("").css("color", "grey");
-        return 2;
-      } else {
-        $("#idCheckSpan2").text("사용가능 아이디").css("color", "green");
-        return 1;
-      }
-    },
-  });
+
+$("#id").keyup((e) => {
+  inputHandler(e, userIdCheck(), "* 영어 대/소문자 5 ~ 20 글자까지 등록 가능");
+    console.log("기본조건 : " + userIdCheck());
+    $.ajax({
+      type: "post",
+      url: "/isDuplicated",
+      data: "id=" + $("#id").val(),
+      success: function isDuplicated (user) {
+        // 받는 값은 유저
+        let id = $("#id").val();
+        if (id === user.id) {
+          //중복값이 있음
+          $("#idCheckSpan2").text("중복된 아이디입니다.").css("color", "red");
+          return false;
+        } else {
+          $("#idCheckSpan2").text("사용가능 아이디").css("color", "green");
+          return true;
+        }
+        
+      },
+    });
+  
+  
 });
-//}
+
+//  inputHandler(e, userIdCheck(), "* 영어 대/소문자 5 ~ 20 글자까지 등록 가능");
+//console.log(isDuplicated());
+
+// 모든 것을 처리해줄 inputHandler
+function inputHandler(e, check, text) {
+  if (check === 1) {
+    $(e.target).next().text(text).css("color", "green");
+  } else if (check === 2) {
+    $(e.target).next().text(text).css("color", "grey");
+  } else {
+    $(e.target).next().text(text).css("color", "red");
+  }
+}
+// $("#id").keyup((e) => {
+//   inputHandler(e, userIdCheck(), "* 영어 대/소문자 5 ~ 20 글자까지 등록 가능");
+// });
+
+
+
 
 function userIdCheck() {
   const regExp = /^[a-zA-Z0-9]{5,20}$/;
@@ -79,21 +99,9 @@ function userEmailCheck() {
   }
 }
 
-function inputHandler(e, check, text) {
-  if (check === 1) {
-    $(e.target).next().text(text).css("color", "green");
-  } else if (check === 2) {
-    $(e.target).next().text(text).css("color", "grey");
-  } else {
-    $(e.target).next().text(text).css("color", "red");
-  }
-}
+
 
 // regex 조건들 체크
-$("#id").keyup((e) => {
-  inputHandler(e, userIdCheck(), "* 영어 대/소문자 5 ~ 20 글자까지 등록 가능");
-});
-
 $("#nickname").keyup((e) => {
   inputHandler(e, nicknameCheck(), "* 닉네임은 최소 한글자 이상");
 });
@@ -115,13 +123,13 @@ $("#email").keyup((e) => {
 });
 
 function validate() {
-  if (userIdCheck() !== 1) {
+  if(userIdCheck() !==1){
     $("#id").focus();
     return false;
-  } else if (isDuplicated() !== 1) {
+  } else if (isDuplicated()){
     $("#id").focus();
     return false;
-  } else if (nicknameCheck() !== 1) {
+  }else if (nicknameCheck() !== 1) {
     $("#nickname").focus();
     return false;
   } else if (userPwdCheck() !== 1) {
@@ -132,7 +140,8 @@ function validate() {
     return false;
   } else if (userEmailCheck() !== 1) {
     $("#email").focus();
-    return false;
-  }
+    return false;;
+  } 
   return true; // 모든 조건 완료
-}
+};
+

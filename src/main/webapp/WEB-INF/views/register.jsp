@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%>
   </head>
   <body>
     <div class="user-register">
-      <form action="signUp" method="post" onsubmit="return validate()">
+      <form action="signUp" method="post" onsubmit="return validate();">
         <div class="form-content">
             <label for="id"> 아이디 </label>
           <div>
@@ -75,10 +75,10 @@ pageEncoding="UTF-8"%>
             <span></span>
         </div>
         </div>
-        <div><button type="submit" >회원가입</button></div>
+        <button type="submit" id="regi-button">회원가입</button>
       </form>
     </div>
 
-    <script src="../../resources/js/register.js"></script>
+    <script src="/resources/js/register.js"></script>
   </body>
 </html>

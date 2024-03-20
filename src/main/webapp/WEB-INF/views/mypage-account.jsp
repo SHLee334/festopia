@@ -20,6 +20,7 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="../../resources/css/mypage-account.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        
   </head>
   <body>
     <div class="tabs">
@@ -43,7 +44,11 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
                 method="post"
                 enctype="multipart/form-data"
               >
-                <input class="form-control" type="file" id="file" name="file" />
+                <div class="filebox">
+                  <!-- <input class="upload-name" value="첨부파일" placeholder="첨부파일"> -->
+                  <label for="file"><i class="fa-solid fa-camera"></i></label>
+                  <input class="form-control" type="file" id="file" name="file"/>
+                </div>
                 <!-- 이부분이 choose file 부분 -->
                 <input
                   type="hidden"
@@ -54,9 +59,9 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
                 <button
                   id="uploadThisProfile"
                   type="submit"
-                  class="btn btn-outline-warning"
+                  class="change-btn"
                 >
-                  파일업로드
+                <i class="fa-solid fa-pen"></i>
                 </button>
               </form>
             </div>
