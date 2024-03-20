@@ -20,7 +20,21 @@
 <script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
 </head>
 
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
 <body>
+<script src="resources/js/confetti.js"></</script>
+<div class="buttonContainer">
+    <button class="canvasBtn" id="stopButton">Stop Confetti</button>
+    <button class="canvasBtn" id="startButton">Start Confetti</button>
+</div>
+<canvas id="canvas"></canvas>
+
+
+
+
 	<jsp:include page="/header.jsp" />
 
   <div class="body-content">
@@ -65,6 +79,26 @@
 
   </div>
 
+
+
+  <script>
+    $(document).ready(function(){
+      function reAction(){
+        $("#startButton").trigger("click");
+        setTimeout(function(){
+          $("stopButton").trigger("click");
+          }, 2000);
+      }
+      $("#startButton").on('click', function(){
+      reAction();
+      });
+    });
+
+    copyBtn.addEventListener('click',function(){
+        console.log("이벤트 연결 확인");
+        copyToastOn()
+    });
+  </script>
   <script src="/resources/js/searchResult.js"></script>
 </body>
 </html>

@@ -29,6 +29,11 @@
 
 .tb-body-name {
   text-align: left;
+}
+
+.tb-body-name a {
+  text-decoration: none;
+  color: black;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -37,4 +42,7 @@
 .tb-body-name a:hover {
   color: pink;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

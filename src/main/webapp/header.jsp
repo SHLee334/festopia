@@ -1,36 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib prefix="sec"
-uri="http://www.springframework.org/security/tags"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+
+    <!-- =============== Jquery =============== -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Jquery UI JS파일 -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- Jquery UI CSS파일 -->
-    <link
-      rel="stylesheet"
-      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-    />
-    <!-- 파비콘 -->
-    <link
-      rel="icon"
-      href="resources/resources/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+
+    <!-- =============== favicon =============== -->
+    <link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
 
     <!-- =============== REMIXICONS =============== -->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
 
-    <title>header부분만 따로</title>
-
+    <!-- =============== bootstrap =============== -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -44,25 +37,24 @@ uri="http://www.springframework.org/security/tags"%>
     ></script>
 
     <!-- 스타일 적용 -->
-    <link rel="stylesheet" href="./resources/css/index.css" />
+    <link rel="stylesheet" href="./resources/css/header.css" />
 
     <!-- js 적용 -->
     <script src="resources/js/header.js"></script>
 
     <!-- 아이콘 추가 -->
-    <script
-      src="https://kit.fontawesome.com/4602e82315.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
   </head>
+
   <body>
     <header>
       <!-- 스크롤 기능-->
       <div class="progress-bar-container">
         <div class="progress-bar"></div>
       </div>
+
       <div id="title">
-        <img src="./resources/css/FESTOPIA-removebg-preview.png">
+        <a hrf="index.jsp"><img src="./resources/css/FESTOPIA-removebg-preview.png"></a>
       </div>
       
       <div id="btnPac">
@@ -289,8 +281,6 @@ uri="http://www.springframework.org/security/tags"%>
               <i class="ri-close-line search__close closeAllSearchFilter"></i>
             </div>
           </form>
-
-
 
           <!--로그인, 회원가입 -->
           <button

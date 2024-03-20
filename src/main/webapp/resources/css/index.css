@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 .progress-bar-container {
   position: fixed;
   left: 0;
@@ -17,26 +16,6 @@
   background-color: rgb(195, 126, 235);
 }
 
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
-  margin: 0;
-  border: 0;
-  padding: 0;
-  /* overflow: hidden; */
-}
-
-.wrap {
-  position: relative;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transition: 0.5s;
-}
-
 header {
   position: fixed;
   display: flex;
@@ -47,12 +26,32 @@ header {
   z-index: 9999;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.wrap {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+
 .searchButton {
   background-color: transparent;
   border: none;
 }
 
-/*검색창 위치...*/
+/* 메인 스크롤 버튼 */
 #list {
   list-style: none;
 }
@@ -144,10 +143,6 @@ header {
   }
 }
 
-header {
-  display: flex;
-}
-
 main section {
   height: 100vh;
 }
@@ -165,23 +160,14 @@ main section {
   padding-top: 10px;
 }
 
-.row {
+/*.row {
   display: flex;
   padding-left: 300px;
-}
+}*/
 
-/*스크롤*/
+/* 스크롤 */
 .text-animation {
-  /* animation:'textAni 1s 1 alternate'; */
   animation: textAni 1s forwards;
-
-  /* animation: boxAni 2s linear;
-  animation: boxAni 2s linear 3;
-  animation: boxAni 3s linear infinite;
-  animation: boxAni 3s linear infinite alternate;
-  animation: boxAni 3s linear infinite reverse;
-  animation: boxAni 3s linear infinite alternate-reverse;
-  animation: boxAni 3s linear forwards; */
 }
 
 @keyframes textAni {
@@ -196,7 +182,7 @@ main section {
   }
 }
 
-/*검색창 애니메이션*/
+/* 검색창 애니메이션 */
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 /*=============== VARIABLES CSS ===============*/
@@ -460,4 +446,11 @@ main section {
 #title img {
   width: 200px;
   margin-left: 20px;
+  height: 90px;
+  display: absolute;
+}
+
+#calendar {
+  max-width: 1100px;
+  margin: 40px auto;
 }

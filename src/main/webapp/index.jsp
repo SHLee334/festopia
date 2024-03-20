@@ -114,6 +114,8 @@ uri="http://www.springframework.org/security/tags"%>
             &#128197;
           </span>
           <h2>이번 달 축제 일정</h2>
+
+          <div id='calendar'></div>
         </section>
       </div>
 

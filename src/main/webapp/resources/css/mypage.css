@@ -3,7 +3,7 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    background-image: url(../../resources/css/mypage.jpg);
+    background-image: url(../../resources/resources/mypage.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;

@@ -2,6 +2,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
@@ -29,7 +30,7 @@
 List<Favorite> fvList = (List<Favorite>) request.getAttribute("fvList");
 %>
 <div class="fv-list-content">
-    <h4>${user}님의 찜 목록</h4>
+    <h4>${user.nickname}님의 찜 목록</h4>
 
     <!-- 찜목록 테이블 -->
     <table class="table table-hover">

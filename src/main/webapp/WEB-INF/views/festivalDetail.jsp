@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib prefix="sec"
-uri="http://www.springframework.org/security/tags"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -40,7 +39,7 @@ uri="http://www.springframework.org/security/tags"%>
 
     <div class="fes-detail">
 
-      <!-- 축제정보 카드 -->
+      <!-- ========== 축제정보 카드 ========== -->
       <div class="fes-detail-card">
         <img src="${vo.poster}" class="detail-poster" />
         <div class="detail-info">
@@ -50,13 +49,13 @@ uri="http://www.springframework.org/security/tags"%>
           <p class="detail-place">${vo.place}</p>
           <p class="detail-fee">${vo.fee}</p>
 
+          <!-- 찜 -->
           <c:choose>
             <c:when test="${empty favorite}">
               <h5><i class="fa-solid fa-heart" id="addFav"></i></h5>
             </c:when>
             <c:otherwise>
               <h5><i class="fa-solid fa-heart" id="delFav"></i></h5>
-
               <script>
                 console.log(${favorite.fvCode});
                    $("#delFav").click(() => {
@@ -87,19 +86,21 @@ uri="http://www.springframework.org/security/tags"%>
           </script>
 
           <!-- 공유(클립보드) -->
-          <div id="copy-toast-msg">❤️ url이 클립보드에 복사 되었습니다 ❤️</div>
+          <div id="copy-toast-msg">❤️ url이 복사 되었습니다 ❤️</div>
           <h5>
             <i class="fa-solid fa-arrow-up-from-bracket" id="copyUrl" onclick="clip()"></i>
           </h5>
+
         </div>
       </div>
 
-      <!-- 맵 -->
+    <hr>
+
+      <!-- ========== 맵 ========== -->
       <div class="fes-detail-map">
         <h4>축제 위치</h4>
 
         <div id="map"></div>
-
         <script
           type="text/javascript"
           src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7e14271e9bb22881d526647d971ad171"
@@ -129,6 +130,8 @@ uri="http://www.springframework.org/security/tags"%>
         </script>
       </div>
 
+
+      <!-- ========== 댓글 ========== -->
       <div class="commentZone">
         <div id="inputCom">
           <p>댓글 입력</p>
