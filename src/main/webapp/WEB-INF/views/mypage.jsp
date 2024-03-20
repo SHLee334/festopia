@@ -18,115 +18,18 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       type="image/x-icon"
     />
     <link rel="stylesheet" href="../../resources/css/reset.css" />
-    <style>
-      .mypage-container {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        background-image: url(../../resources/css/mypage.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: bottom;
-        flex-shrink: 0;
-      }
+    <link rel="stylesheet" href="../../resources/css/mypage.css" />
 
-      .item {
-        height: 80vh;
-        display: flex;
-        align-items: center;
-      }
-
-      /* nav section */
-      .item:nth-child(1) {
-        background-color: none;
-        width: 30vh;
-        margin-left: 10rem;
-      }
-
-      .li-nav {
-        margin-bottom: 50px;
-      }
-
-      .account-modify-button {
-        border: none;
-        border-radius: 5px;
-        width: 12rem;
-        height: 5rem;
-      }
-      .admin-modify-button {
-        border: none;
-        border-radius: 5px;
-        width: 12rem;
-        height: 5rem;
-      }
-
-      /* main jsp section */
-      #main-jsp1 {
-        background-color: white;
-        width: 130vh;
-        border-radius: 20px;
-        display: none;
-        overflow: auto;
-        flex-shrink: 0;
-      }
-
-      #main-jsp2 {
-        background-color: blue;
-        width: 130vh;
-        border-radius: 20px;
-        display: none;
-        overflow: auto;
-        flex-shrink: 0;
-      }
-
-      #main-jsp3 {
-        background-color: aqua;
-        width: 130vh;
-        border-radius: 20px;
-        display: none;
-        overflow: auto;
-        flex-shrink: 0;
-      }
-
-      #admin-jsp {
-        background-color: yellowgreen;
-        width: 130vh;
-        border-radius: 20px;
-        display: none;
-        overflow: auto;
-        flex-shrink: 0;
-      }
-
-      /* 구간 별 색깔 */
-      #button01 {
-        background-color: #01579b;
-        /* flex-shrink: 0; */
-      }
-
-      #button02 {
-        background-color: blue;
-        /* flex-shrink: 0; */
-      }
-
-      #button03 {
-        background-color: aqua;
-        /* flex-shrink: 0; */
-      }
-
-      #button04 {
-        background-color: yellowgreen;
-      }
-    </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
-  	<div style="display: none">
-    <jsp:include page="/header.jsp" />
+    <div style="display: none">
+      <jsp:include page="/header.jsp" />
     </div>
     <div class="mypage-container">
       <nav class="item">
         <ul>
-          <li class="li-nav">${user.nickname}님,반갑습니다. ${user.auth}</li>
+          <li class="li-nav">${user.nickname}님,반갑습니다.</li>
 
           <li class="li-nav">
             <button class="account-modify-button" id="button01">
@@ -174,9 +77,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <div class="notice-main" id="notice">
             <jsp:include page="admin.jsp" />
           </div>
-          <!-- <div class="notice-detail" id="noticeInner">
-          <jsp:include page="noticeView.jsp" />
-        </div> -->
         </div>
       </c:if>
     </div>

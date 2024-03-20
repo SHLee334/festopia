@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib prefix="sec"
-uri="http://www.springframework.org/security/tags" %>
+uri="http://www.springframework.org/security/tags" %> <%@ taglib prefix="fmt"
+uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-  <sec:authentication property="principal" var="user" />
+<sec:authentication property="principal" var="user" />
 
 <!DOCTYPE html>
 <html>
@@ -32,36 +33,44 @@ uri="http://www.springframework.org/security/tags" %>
         <div class="innercontent0">
           <nav class="pigeon-account">
             <div>
-              ${user.userProfileUrl}
               <div id="userImage">
                 <img src="/profile/${user.userProfileUrl}" />
               </div>
 
-              <form action="/changeProfile" id="uploadProfile" method="post" enctype="multipart/form-data">
-                <input
-                  class="form-control"
-                  type="file"
-                  id="file"
-                  name="file"
-                />
+              <form
+                action="/changeProfile"
+                id="uploadProfile"
+                method="post"
+                enctype="multipart/form-data"
+              >
+                <input class="form-control" type="file" id="file" name="file" />
+                <!-- 이부분이 choose file 부분 -->
                 <input
                   type="hidden"
                   id="userCode"
                   name="userCode"
                   value="${user.userCode}"
                 />
-                <button id="uploadThisProfile" type="submit" class="btn btn-outline-warning">
-                파일업로드
-              </button>
+                <button
+                  id="uploadThisProfile"
+                  type="submit"
+                  class="btn btn-outline-warning"
+                >
+                  파일업로드
+                </button>
               </form>
-              
             </div>
             <div id="userInfo">
               <ul>
                 <li id="nameChangeResult">이름 : ${user.nickname}님</li>
                 <li id="emailChangeResult">이메일 : ${user.email}</li>
                 <li>아이디 : ${user.id}</li>
-                <li>회원가입일 : ${user.userEnrollDate}</li>
+                <li>
+                  회원가입일 :<fmt:formatDate
+                    value="${user.userEnrollDate}"
+                    pattern="yyyy-MM-dd"
+                  />
+                </li>
               </ul>
             </div>
           </nav>

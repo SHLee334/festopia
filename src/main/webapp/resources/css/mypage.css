@@ -1,0 +1,154 @@
+@keyframes fadeInDown {
+  0% {
+    opacity: 0.5;
+    transform: translate3d(0, -50%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+:is(#button01, #button02, #button03, #button04) {
+  animation: fadeInDown 0.8s;
+}
+#button01 {
+  position: relative;
+  animation-delay: 0.1s;
+}
+#button02 {
+  position: relative;
+  animation-delay: 0.2s;
+}
+#button03 {
+  position: relative;
+  animation-delay: 0.3s;
+}
+#button04 {
+  position: relative;
+  animation-delay: 0.2s;
+}
+@keyframes fadeInSide {
+  0% {
+    opacity: 0.5;
+    transform: translate3d(-10%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+:is(#main-jsp1, #main-jsp2, #main-jsp3, #admin-jsp) {
+  animation: fadeInSide 0.3s;
+}
+
+.mypage-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url(../../resources/css/mypage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  flex-shrink: 0;
+}
+
+.item {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+/* nav section */
+.item:nth-child(1) {
+  background-color: none;
+  width: 30vh;
+  margin-left: 10rem;
+}
+
+.li-nav {
+  margin-bottom: 50px;
+}
+
+.account-modify-button {
+  border: none;
+  border-radius: 5px;
+  width: 12rem;
+  height: 5rem;
+}
+.admin-modify-button {
+  border: none;
+  border-radius: 5px;
+  width: 12rem;
+  height: 5rem;
+}
+
+/* main jsp section */
+#main-jsp1 {
+  background-color: white;
+  width: 130vh;
+  border-radius: 20px;
+  display: none;
+  overflow: auto;
+  flex-shrink: 0;
+}
+
+#main-jsp2 {
+  background-color: blue;
+  width: 130vh;
+  border-radius: 20px;
+  display: none;
+  overflow: auto;
+  flex-shrink: 0;
+}
+
+#main-jsp3 {
+  background-color: aqua;
+  width: 130vh;
+  border-radius: 20px;
+  display: none;
+  overflow: auto;
+  flex-shrink: 0;
+}
+
+#admin-jsp {
+  background-color: white;
+  width: 130vh;
+  border-radius: 20px;
+  display: none;
+  overflow: auto;
+  flex-shrink: 0;
+}
+
+/* 구간 별 색깔 */
+#button01 {
+  background-color: #01579b;
+  /* flex-shrink: 0; */
+}
+
+#button02 {
+  background-color: blue;
+  /* flex-shrink: 0; */
+}
+
+#button03 {
+  background-color: aqua;
+  /* flex-shrink: 0; */
+}
+
+#button04 {
+  background-color: yellowgreen;
+}
+
+/* 임시로 z-index 활성화 */
+#admin-jsp {
+  z-index: 10000;
+}
+#main-jsp1 {
+  z-index: 10000;
+}
+#main-jsp2 {
+  z-index: 10000;
+}
+#main-jsp3 {
+  z-index: 10000;
+}

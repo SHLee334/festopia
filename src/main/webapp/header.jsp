@@ -62,9 +62,9 @@ uri="http://www.springframework.org/security/tags"%>
         <div class="progress-bar"></div>
       </div>
       <div id="title">
-        <img src="./resources/css/FESTOPIA-removebg-preview.png">
+        <img src="./resources/css/FESTOPIA-removebg-preview.png" />
       </div>
-      
+
       <div id="btnPac">
         <div class="container">
           <form action="search" class="search" id="search-bar" name="name">
@@ -290,22 +290,16 @@ uri="http://www.springframework.org/security/tags"%>
             </div>
           </form>
 
-
-
           <!--로그인, 회원가입 -->
           <button
             class="btn btn-secondary dropdown-toggle"
-            id = "anonymousUser"
+            id="anonymousUser"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-
-            <i class="fa-solid fa-circle-user "></i>
+            <i class="fa-solid fa-circle-user"></i>
           </button>
-
-
-
 
           <!-- 공지사항 -->
           <a href="" id="inform">
@@ -313,14 +307,13 @@ uri="http://www.springframework.org/security/tags"%>
           ></a>
           <!-- <sec:authentication property="principal" var="user" /> -->
 
-        
           <ul class="dropdown-menu">
             <c:choose>
               <c:when test="${user == 'anonymousUser'}">
                 <li>
                   <button
                     type="button"
-                    class="btn btn-primary btn-my"
+                    class="dropdown-item"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                   >
@@ -331,7 +324,7 @@ uri="http://www.springframework.org/security/tags"%>
                 <li>
                   <button
                     type="button"
-                    class="btn btn-primary btn-my"
+                    class="dropdown-item"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal2"
                   >
@@ -352,12 +345,6 @@ uri="http://www.springframework.org/security/tags"%>
         </div>
       </div>
 
-
-
-
-
-
-
       <!-- Modal -->
       <div
         class="modal fade"
@@ -369,9 +356,7 @@ uri="http://www.springframework.org/security/tags"%>
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Modal title
-              </h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">로그인</h1>
               <button
                 type="button"
                 class="btn-close"
@@ -394,12 +379,10 @@ uri="http://www.springframework.org/security/tags"%>
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Modal title
-              </h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">회원가입</h1>
               <button
                 type="button"
                 class="btn-close"

@@ -53,7 +53,7 @@ public class NoticeBoardController {
 			board.setNoticeUrl(url);
 		}
 		service.adminWrite(board);
-		return "redirect:/admin";
+		return "redirect:/mypage";
 	}
 	// 특정 게시물 상세정보
 	@GetMapping("/noticeView")
