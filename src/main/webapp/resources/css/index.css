@@ -1,456 +1,319 @@
 @charset "UTF-8";
-.progress-bar-container {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 100;
-  width: 100vw;
-  height: 5px;
-  background: #ddd;
-}
-
-.progress-bar {
-  width: 0;
-  height: 100%;
-  background: #00a8ff;
-  background-color: rgb(195, 126, 235);
-}
-
-header {
-  position: fixed;
-  display: flex;
-  width: 98%;
-  height: 90px;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 9999;
-}
 
 html {
-  height: 100%;
+	height: 100%;
 }
 
 body {
-  height: 100%;
-  margin: 0;
-  border: 0;
-  padding: 0;
+	height: 100%;
+	margin: 0;
+	border: 0;
+	padding: 0;
 }
 
 .wrap {
-  position: relative;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transition: 0.5s;
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	transition: 0.5s;
 }
 
-
-.searchButton {
-  background-color: transparent;
-  border: none;
-}
-
-/* 메인 스크롤 버튼 */
-#list {
-  list-style: none;
-}
-
-.emoji {
-  position: fixed;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
 .slider {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
 }
 
 .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  display: block;
-  justify-content: center;
-  align-items: center;
-  animation: slider 7.5s infinite linear;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	display: block;
+	justify-content: center;
+	align-items: center;
+	animation: slider 7.5s infinite linear;
 }
 
 .slide h1 {
-  font-size: 130px;
-  color: white;
-  text-shadow: 5px 5px 5px rgb(114, 114, 106);
-  font-family: "Lilita One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  display: flex;
-  justify-content: center;
-  margin-top: 350px;
+	font-size: 130px;
+	color: white;
+	text-shadow: 5px 5px 5px rgb(114, 114, 106);
+	font-family: "Lilita One", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	display: flex;
+	justify-content: center;
+	margin-top: 350px;
 }
 
 .slide p {
-  font-size: 60px;
-  color: white;
-  text-shadow: 5px 5px 5px rgb(114, 114, 106);
-  font-family: "Lilita One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  display: flex;
-  justify-content: center;
+	font-size: 60px;
+	color: white;
+	text-shadow: 5px 5px 5px rgb(114, 114, 106);
+	font-family: "Lilita One", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	display: flex;
+	justify-content: center;
 }
 
+/*
 .slide:nth-child(1) {
-  background-image: url(./3600945.jpg);
-  animation-delay: 0;
+	background-image: url(./3600945.jpg);
+	animation-delay: 0;
 }
 
 .slide:nth-child(2) {
-  background-image: url(./5256203.jpg);
-  animation-delay: -2.5s;
+	background-image: url(./5256203.jpg);
+	animation-delay: -2.5s;
 }
 
 .slide:nth-child(3) {
-  background-image: url(./6364976.jpg);
-  animation-delay: -5s;
+	background-image: url(./6364976.jpg);
+	animation-delay: -5s;
 }
 
 @keyframes slider {
-  0% {
-    transform: translateX(0);
-  }
-
-  26% {
-    transform: translateX(0);
-  }
-  33% {
-    transform: translateX(-100%);
-    animation-timing-function: step-end;
-  }
-  93% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+    0% {
+      transform: translateX(0);
+    }
+    26% {
+      transform: translateX(0);
+    }
+    33% {
+      transform: translateX(-100%);
+      animation-timing-function: step-end;
+    }
+    93% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
 }
+*/
 
-main section {
-  height: 100vh;
+/* ========== 메인 슬라이더 ========== */
+#carouselExampleFade {
+	height: 100vh;
 }
 
 #section2 {
-  justify-content: center;
-  padding-top: 10px;
-  text-align: center;
-  padding-top: 18px;
+	justify-content: center;
+	padding-top: 10px;
+	text-align: center;
 }
 
 #section3 {
-  display: flex;
-  justify-content: center;
-  padding-top: 10px;
+	justify-content: center;
+    padding-top: 10px;
+    text-align: center;
 }
 
-/*.row {
-  display: flex;
-  padding-left: 300px;
-}*/
+/*
+.row {
+	display: flex;
+	padding-left: 300px;
+}
+*/
 
-/* 스크롤 */
+/* 스크롤
 .text-animation {
-  animation: textAni 1s forwards;
+	animation: textAni 1s forwards;
 }
 
 @keyframes textAni {
   from {
-    opacity: 0;
-    transform: translateY(0);
+    opacity:0;
+	transform: translateY(0);
   }
-
   to {
-    opacity: 1;
-    transform: translateY(-10px);
+	opacity: 1;
+	transform: translateY(-10px);
   }
 }
+*/
 
-/* 검색창 애니메이션 */
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
-/*=============== VARIABLES CSS ===============*/
-:root {
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(222, 80%, 58%);
-  --dark-color: hsl(222, 24%, 8%);
-  --title-color: hsl(222, 8%, 8%);
-  --text-color-light: hsl(222, 8%, 65%);
-  --white-color: #fff;
-  --body-color: hsl(222, 100%, 99%);
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: "Poppins", sans-serif;
-  --small-font-size: 0.813rem;
-}
-@media screen and (min-width: 968px) {
-  :root {
-    --small-font-size: 0.875rem;
-  }
-}
 
-/*=============== SEARCH ===============*/
-.search {
-  position: relative;
-  width: 75px;
-  height: 75px;
-  background-color: var(--white-color);
-  box-shadow: 0 4px 24px hsla(216, 5%, 20%, 0.1);
-  border-radius: 4rem;
-  padding: 10px;
-  overflow: hidden;
-  transition: width 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
-}
-
-.search__input {
-  border: none;
-  outline: none;
-  width: calc(100% - 64px);
-  height: 100%;
-  border-radius: 4rem;
-  padding-left: 14px;
-  font-family: var(--body-font);
-  font-size: var(--small-font-size);
-  font-weight: 500;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1.5s;
-}
-
-.cateFilter {
-  width: 1140px;
-  background-color: white;
-  margin: 10px;
-  padding: 10px;
-  position: fixed;
-}
-
-.search__input:-webkit-autofill {
-  box-shadow: 0 0 0 100px var(--white-color) inset;
-}
-
-.search__button {
-  width: 56px;
-  height: 56px;
-  background-color: pink;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 10px;
-  margin: auto;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  transition: transform 0.6s cubic-bezier(0.9, 0, 0.3, 0.9);
-}
-
-.search__icon,
-.search__close {
-  color: var(--white-color);
-  font-size: 1.5rem;
-  position: absolute;
-  transition: opacity 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
-}
-
-.search__close {
-  opacity: 0;
-}
-
-/* Search animated */
-.show-search {
-  width: 100%;
-}
-
-.show-search .search__input {
-  opacity: 1;
-  pointer-events: initial;
-}
-
-.show-search .search__button {
-  transform: rotate(90deg);
-}
-
-.show-search .search__icon {
-  opacity: 0;
-}
-
-.show-search .search__close {
-  opacity: 1;
-}
-
-/*=============== BREAKPOINTS ===============*/
-/* For medium devices */
-@media screen and (min-width: 576px) {
-  .show-search {
-    width: 1140px;
-  }
-}
-
-/*============== SEARCHFILTER ===============*/
-.category {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.dateSetting {
-  border: 1px solid black;
-}
-
-.feeStatus {
-  border: 1px solid black;
-}
-
-.category-btn {
-  background-color: lightgray;
-}
-
-.btn-check:checked + .btn,
-.btn.active,
-.btn.show,
-.btn:first-child:active,
-:not(.btn-check) + .btn:active {
-  background-color: lightblue;
-  border: none;
-}
-
-#searchFilterButton {
-  display: flex;
-  justify-content: space-between;
-  size: 2rem;
-}
-
-/* 인기 축제 */
-.content-list {
-  display: flex;
-  justify-content: center;
-  padding: 43px;
+/* ========== section2 : popular ========== */
+.popular-festival-list {
+	display: flex;
+	justify-content: center;
+	padding:43px;
 }
 
 .card-css {
-  width: 25%;
-  height: 650px;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-  color: black;
-  margin: 20px;
-  top: 80px;
-  background-position: center;
-  border: 3px solid black;
-  box-shadow: 10px 10px 5px gray;
+	width:25%;
+	height:650px;
+	display: flex;
+	justify-content: center;
+	text-decoration: none;
+	color: black;
+	margin: 20px;
+	top: 80px;
+	background-position: center;
+	border: 3px solid black;
+	box-shadow: 10px 10px 5px gray;
 }
 
 .card-css a {
-  display: block;
-  width: 100%;
-  height: 100%;
+	display:block;
+	width:100%;
+	height:100%;
 }
 
 .card-css-img {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin: auto;
-  height: 553px;
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin: auto;
+	height: 553px;
 }
 
 .card-css-img img {
-  width: 100%;
-  height: 400px;
-  object-fit: contain;
+	width: 100%;
+	height: 400px;
+	object-fit: contain;
 }
 
 .card-body-css {
-  display: inline;
-  padding: 5px;
-}
-
-.fav-btn {
-  border: none;
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
+	display: inline;
+	padding: 5px;
 }
 
 .card-name-css {
-  font-weight: bolder;
-  margin-bottom: 0px;
-  white-space: nowrap;
-  overflow: hidden;
+	font-weight: bolder;
+	margin-bottom: 0px;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .card-date-css {
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin: 0 0 5px;
-  white-space: nowrap;
-  overflow: hidden;
+	font-size: 0.8rem;
+	font-weight: bold;
+	margin: 0 0 5px;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .card-place-css {
-  font-size: 0.8rem;
-  margin: 0px;
-  white-space: nowrap;
-  overflow: hidden;
+	font-size: 0.8rem;
+	margin: 0px;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
-/* 검색창 옆으로 아이콘 옮김*/
-.container {
-  display: flex;
-  margin-top: 20px;
-  margin-right: 80px;
+
+/* ========== section3 : calendar ==========
+* {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    box-sizing: border-box;
 }
 
-/*로그인, 회원가입 버튼 위치*/
-.btn {
-  margin-top: 20px;
-  height: 40px;
+.calendar {
+    width:600px;
+    margin:50px;
 }
 
-#inform {
-  margin-top: 8px;
-  padding: 20px;
-  margin-left: 15px;
-  color: gray;
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#anonymousUser {
-  margin-left: 30px;
+.year-month {
+    font-size:35px;
 }
 
-/*로고*/
-#title img {
-  width: 200px;
-  margin-left: 20px;
-  height: 90px;
-  display: absolute;
+.nav {
+    display:flex;
+    border:1px solid #333333;
+    border-radius: 5px;
 }
 
-#calendar {
-  max-width: 1100px;
-  margin: 40px auto;
+.nav-btn {
+    width:28px;
+    height: 30px;
+    border:none;
+    font-size:16px;
+    line-height: 34px;
+    background-color: transparent;
+    cursor:pointer;
 }
+
+.go-today {
+    width: 75px;
+    border-left : 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+
+.days {
+    display:flex;
+    margin:25px 0 10px;
+}
+
+.day {
+    width: calc(100% / 7);
+    text-align: center;
+}
+
+.dates {
+    display:flex;
+    flex-flow: row wrap;
+    height: 500px;
+    border-top:1px solid #333333;
+    border-right: 1px solid #333333;
+}
+
+.date {
+    width: calc(100% / 7);
+    padding: 15px;
+    text-align: right;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #333333;
+}
+
+.day:nth-child(7n + 1),
+.date:nth-child(7n + 1) {
+    color:#D13E3E;
+}
+
+.day:nth-child(7n),
+.date:nth-child(7n) {
+    color: #396EE2;
+}
+
+.other {
+    opacity : 0.3;
+}
+
+.today {
+    position : relative;
+    color: #FFFFFF;
+}
+
+.today::before {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width:30px;
+    height:30px;
+    display:block;
+    background-color: #FF0000;
+    border-radius: 50%;
+    content: '';
+}
+*/

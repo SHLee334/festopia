@@ -54,7 +54,7 @@
       </div>
 
       <div id="title">
-        <a hrf="index.jsp"><img src="./resources/css/FESTOPIA-removebg-preview.png"></a>
+        <a hrf="index.jsp"><img src="./resources/resources/logo.png"></a>
       </div>
       
       <div id="btnPac">
