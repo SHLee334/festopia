@@ -93,7 +93,7 @@
 }
 
 #main-jsp2 {
-  background-color: blue;
+  background-color: orange;
   width: 130vh;
   border-radius: 20px;
   display: none;
@@ -126,7 +126,7 @@
 }
 
 #button02 {
-  background-color: blue;
+  background-color: white;
   /* flex-shrink: 0; */
 }
 

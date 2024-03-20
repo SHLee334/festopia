@@ -165,7 +165,7 @@ header {
 }
 
 /*로그인, 회원가입 버튼 위치*/
-.btn {
+.btn-user {
   margin-top: 20px;
   height: 40px;
 }
@@ -191,30 +191,24 @@ header {
 .cateFilter {
   width: 1140px;
   background-color: white;
-  margin: 10px;
-  padding: 10px;
   position: fixed;
-  border: 1px solid grey;
+  border: none;
   border-radius: 20px;
+  padding-left: 35px;
+  padding-right: 35px;
+  box-shadow: 0 4px 24px hsla(216, 5%, 20%, 0.1);
 }
 
 .category {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 .category-1,
 .category-2 {
   height: 100px;
-}
-
-.dateSetting {
-  border: 1px solid black;
-}
-
-.feeStatus {
-  border: 1px solid black;
+  align-content: center;
 }
 
 .category-btn {
@@ -223,17 +217,44 @@ header {
   height: 60px;
 }
 
-#searchFilterButton {
+.btn category-btn {
   display: flex;
-  justify-content: space-between;
-  size: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.fesDate {
+  display: block;
+  width: 100%;
+}
+
+.dateSetting {
+  border: 1px solid black;
 }
 
 #dateSetParty {
   display: flex;
+  margin-right: 15px;
 }
 
-.fesDate {
+#endDatepicker {
+  margin-right: 95px;
+}
+
+.dateSetBtn {
+  width: 80px;
+  height: 40px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 50px;
+}
+
+.feeStatus {
+  border: 1px solid black;
+}
+
+#searchFilterButton {
   display: flex;
-  width: 100%;
+  justify-content: space-between;
+  size: 2rem;
 }

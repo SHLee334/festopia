@@ -133,6 +133,7 @@
 
 		<div class="commentZone">
 			<div id="comList">
+			<div>
 				<c:forEach items="${com}" var="item">
 					<div id="comWriterInfo">
 						<p>
@@ -167,6 +168,7 @@
                     });   
                  });
                 </script>
+			</div>
 			</div>
 
 			<div id="inputCom">

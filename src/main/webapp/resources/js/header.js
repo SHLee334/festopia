@@ -68,26 +68,36 @@ window.addEventListener("DOMContentLoaded", (event) => {
   $("#totalDate").click(function () {
     $("#startDatepicker").datepicker("setDate", "2020-01-01");
     $("#endDatepicker").datepicker("setDate", "2024-12-31");
+    $(".dateSetBtn").css("background-color", "lightgrey");
+    $("#totalDate").css("background-color", "red");
   });
 
   $("#today").click(function () {
     $("#startDatepicker").datepicker("setDate", "today");
     $("#endDatepicker").datepicker("setDate", "today");
+    $(".dateSetBtn").css("background-color", "lightgrey");
+    $("#today").css("background-color", "red");
   });
 
   $("#1week").click(function () {
     $("#startDatepicker").datepicker("setDate", "today");
     $("#endDatepicker").datepicker("setDate", "today+7");
+    $(".dateSetBtn").css("background-color", "lightgrey");
+    $("#1week").css("background-color", "red");
   });
 
   $("#1month").click(function () {
     $("#startDatepicker").datepicker("setDate", "today");
     $("#endDatepicker").datepicker("setDate", "today+30");
+    $(".dateSetBtn").css("background-color", "lightgrey");
+    $("#1month").css("background-color", "red");
   });
 
   $("#1year").click(function () {
     $("#startDatepicker").datepicker("setDate", "today");
     $("#endDatepicker").datepicker("setDate", "today+364");
+    $(".dateSetBtn").css("background-color", "lightgrey");
+    $("#1year").css("background-color", "red");
   });
 });
 

@@ -228,7 +228,7 @@ uri="http://www.springframework.org/security/tags"%>
                       <option value="targetStart">시작일</option>
                       <option value="targetEnd">종료일</option>
                     </select>
-                    &nbsp;
+                    &nbsp; &nbsp;
                     <input
                       type="text"
                       class="datepicker"
@@ -236,7 +236,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkStartDate"
                       autocomplete="off"
                     />
-                    &nbsp; ~ &nbsp;
+                    &nbsp;~&nbsp;
                     <input
                       type="text"
                       class="datepicker"
@@ -309,7 +309,7 @@ uri="http://www.springframework.org/security/tags"%>
 
           <!--로그인, 회원가입 -->
           <button
-            class="btn btn-secondary dropdown-toggle"
+            class="btn btn-secondary dropdown-toggle btn-user"
             id="anonymousUser"
             type="button"
             data-bs-toggle="dropdown"

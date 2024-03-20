@@ -26,7 +26,7 @@ form {
 .form-content span {
   height: 20px;
 }
-form button {
+#regi-button {
   border: none;
   cursor: pointer;
   width: 100%;
