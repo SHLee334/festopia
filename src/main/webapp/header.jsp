@@ -44,7 +44,7 @@ uri="http://www.springframework.org/security/tags"%>
     ></script>
 
     <!-- 스타일 적용 -->
-    <link rel="stylesheet" href="./resources/css/index.css" />
+    <link rel="stylesheet" href="./resources/css/header.css" />
 
     <!-- js 적용 -->
     <script src="resources/js/header.js"></script>
@@ -62,9 +62,9 @@ uri="http://www.springframework.org/security/tags"%>
         <div class="progress-bar"></div>
       </div>
       <div id="title">
-        <img src="./resources/css/FESTOPIA-removebg-preview.png">
+        <img src="./resources/css/FESTOPIA-removebg-preview.png" />
       </div>
-      
+
       <div id="btnPac">
         <div class="container">
           <form action="search" class="search" id="search-bar" name="name">
@@ -78,7 +78,6 @@ uri="http://www.springframework.org/security/tags"%>
             <div class="cateFilter" style="display: none">
               <div class="searchFilter">
                 <div class="category">
-                  <br />
                   <div class="category-1">
                     <input
                       type="checkbox"
@@ -147,7 +146,6 @@ uri="http://www.springframework.org/security/tags"%>
                       >뮤지컬/오페라</label
                     >
                   </div>
-                  <br />
                   <div class="category-2">
                     <input
                       type="checkbox"
@@ -217,37 +215,52 @@ uri="http://www.springframework.org/security/tags"%>
                     >
                   </div>
                 </div>
-                <br />
                 <hr />
-                <br />
 
                 <div class="fesDate">
                   <h5>기간</h5>
-                  <select name="checkDateSelect" id="">
-                    <option value="targetStart">시작일</option>
-                    <option value="targetEnd">종료일</option>
-                  </select>
-                  &nbsp;
-                  <input
-                    type="text"
-                    class="datepicker"
-                    id="startDatepicker"
-                    name="checkStartDate"
-                    autocomplete="off"
-                  />
-                  &nbsp; ~ &nbsp;
-                  <input
-                    type="text"
-                    class="datepicker"
-                    id="endDatepicker"
-                    name="checkEndDate"
-                    autocomplete="off"
-                  />
+                  <div id="dateSetParty">
+                    <select name="checkDateSelect" id="">
+                      <option value="targetStart">시작일</option>
+                      <option value="targetEnd">종료일</option>
+                    </select>
+                    &nbsp;
+                    <input
+                      type="text"
+                      class="datepicker"
+                      id="startDatepicker"
+                      name="checkStartDate"
+                      autocomplete="off"
+                    />
+                    &nbsp; ~ &nbsp;
+                    <input
+                      type="text"
+                      class="datepicker"
+                      id="endDatepicker"
+                      name="checkEndDate"
+                      autocomplete="off"
+                    />
+                    <div>
+                      <button type="button" class="dateSetBtn" id="totalDate">
+                        전체
+                      </button>
+                      <button type="button" class="dateSetBtn" id="today">
+                        오늘
+                      </button>
+                      <button type="button" class="dateSetBtn" id="1week">
+                        일주일
+                      </button>
+                      <button type="button" class="dateSetBtn" id="1month">
+                        한달
+                      </button>
+                      <button type="button" class="dateSetBtn" id="1year">
+                        일년
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
-                <br />
                 <hr />
-                <br />
 
                 <div class="checkfeeStatus">
                   <h5>입장료</h5>
@@ -290,22 +303,16 @@ uri="http://www.springframework.org/security/tags"%>
             </div>
           </form>
 
-
-
           <!--로그인, 회원가입 -->
           <button
             class="btn btn-secondary dropdown-toggle"
-            id = "anonymousUser"
+            id="anonymousUser"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-
-            <i class="fa-solid fa-circle-user "></i>
+            <i class="fa-solid fa-circle-user"></i>
           </button>
-
-
-
 
           <!-- 공지사항 -->
           <a href="" id="inform">
@@ -313,7 +320,6 @@ uri="http://www.springframework.org/security/tags"%>
           ></a>
           <!-- <sec:authentication property="principal" var="user" /> -->
 
-        
           <ul class="dropdown-menu">
             <c:choose>
               <c:when test="${user == 'anonymousUser'}">
@@ -351,12 +357,6 @@ uri="http://www.springframework.org/security/tags"%>
           </ul>
         </div>
       </div>
-
-
-
-
-
-
 
       <!-- Modal -->
       <div
