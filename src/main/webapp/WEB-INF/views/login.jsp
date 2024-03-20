@@ -2,17 +2,26 @@
 pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" href="../../resources/css/login.css" /> 
+  </head>
   <body>
-    <h1>로그인세션</h1>
-    <form action="/login" method="post">
-      <div>
+    <form action="/login" method="post" id="login-form">
+      <div class="login-content">
+        <label for="login">로그인</label>
+        <div>
         <input
           type="text"
           name="username"
           placeholder="아이디를 입력해주세요"
         />
       </div>
-      <div>
+      </div>
+      <div class="login-content">
+        <label for="pwd">비밀번호</label>
+        <div>
         <input
           type="password"
           name="password"
@@ -20,9 +29,10 @@ pageEncoding="UTF-8"%>
           placeholder="패스워드를 입력해주세요"
         />
       </div>
+      </div>
       <div>
+        <span>${requestScope.loginFail}</span>
         <input type="submit" value="로그인" id="bindPwd" />
-        ${requestScope.loginFail}
       </div>
     </form>
 

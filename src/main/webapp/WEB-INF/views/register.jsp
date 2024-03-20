@@ -5,15 +5,14 @@ pageEncoding="UTF-8"%>
   <head>
     <meta charset="UTF-8" />
     <title></title>
-    <link rel="stylesheet" href="../../resources/css/register.css" />
-    <link rel="stylesheet" href="../../resources/css/reset.css" />
+    <link rel="stylesheet" href="../../resources/css/register.css" /> 
   </head>
   <body>
     <div class="user-register">
       <form action="signUp" method="post" onsubmit="return validate()">
-        <div class="regi-line">
-          <label> 아이디 </label>
-          <div id="for-span">
+        <div class="form-content">
+            <label for="id"> 아이디 </label>
+          <div>
             <input
               type="text"
               name="id"
@@ -24,9 +23,10 @@ pageEncoding="UTF-8"%>
             <span id="idCheckSpan2"></span>
           </div>
         </div>
-        <div id="for-span">
-          <div class="regi-line" id="whynot">
-            <label> 닉네임 </label>
+        
+        <div class="form-content">
+            <label for="nickname"> 닉네임 </label>
+          <div>
             <input
               type="text"
               name="nickname"
@@ -36,9 +36,11 @@ pageEncoding="UTF-8"%>
             <span></span>
           </div>
         </div>
-        <div class="regi-line" id="we-need-pwd">
-          <div>
+        
+     
+        <div class="form-content">
             <label> 비밀번호 </label>
+          <div>
             <input
               type="password"
               name="password"
@@ -47,8 +49,10 @@ pageEncoding="UTF-8"%>
             />
             <span></span>
           </div>
-          <div>
+        </div>
+          <div class="form-content">
             <label>비밀번호 확인</label>
+            <div>
             <input
               type="password"
               name="passwordCheck"
@@ -57,18 +61,21 @@ pageEncoding="UTF-8"%>
             />
             <span></span>
           </div>
+          </div>
+       
+        <div class="form-content">
+            <label> 이메일 </label>
+          <div>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="이메일을 입력해주세요"
+            />
+            <span></span>
         </div>
-        <div class="regi-line">
-          <label> 이메일 </label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="이메일을 입력해주세요"
-          />
-          <span></span>
         </div>
-        <div><input type="submit" value="회원가입" /></div>
+        <div><button type="submit" >회원가입</button></div>
       </form>
     </div>
 
