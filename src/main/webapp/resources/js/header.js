@@ -65,6 +65,30 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
     $("#startDatepicker").datepicker("setDate", "2020-01-01");
   });
+  $("#totalDate").click(function () {
+    $("#startDatepicker").datepicker("setDate", "2020-01-01");
+    $("#endDatepicker").datepicker("setDate", "2024-12-31");
+  });
+
+  $("#today").click(function () {
+    $("#startDatepicker").datepicker("setDate", "today");
+    $("#endDatepicker").datepicker("setDate", "today");
+  });
+
+  $("#1week").click(function () {
+    $("#startDatepicker").datepicker("setDate", "today");
+    $("#endDatepicker").datepicker("setDate", "today+7");
+  });
+
+  $("#1month").click(function () {
+    $("#startDatepicker").datepicker("setDate", "today");
+    $("#endDatepicker").datepicker("setDate", "today+30");
+  });
+
+  $("#1year").click(function () {
+    $("#startDatepicker").datepicker("setDate", "today");
+    $("#endDatepicker").datepicker("setDate", "today+364");
+  });
 });
 
 function OnSave() {
