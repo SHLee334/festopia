@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import com.semi.festopia.model.dao.FavoriteDAO;
 import com.semi.festopia.model.vo.Favorite;
 
+import java.util.List;
+
 @Service
 public class FavoriteService {
 
@@ -22,5 +24,10 @@ public class FavoriteService {
 	
 	public int delete(int code) {
 		return dao.delete(code);
+	}
+
+	public List<Favorite> selectFvAll(int userCode) {
+		//System.out.println("service" + userCode);
+		return dao.selectFvAll(userCode);
 	}
 }

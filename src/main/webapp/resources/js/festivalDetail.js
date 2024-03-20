@@ -26,3 +26,6 @@ copyBtn.addEventListener('click',function(){
     console.log("이벤트 연결 확인");
     copyToastOn()
 });
+
+/* ========== 찜 ========== */
+// 찜 추가 성공했을 때 토스트 노출

@@ -15,8 +15,6 @@ uri="http://www.springframework.org/security/tags"%>
       type="image/x-icon"
     />
 
-    <!--  부트스트랩 또 적용하면 안됨  -->
-
     <!-- 스타일 적용 -->
     <link rel="stylesheet" href="./resources/css/index.css" />
 
@@ -27,15 +25,8 @@ uri="http://www.springframework.org/security/tags"%>
       href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lilita+One&display=swap"
       rel="stylesheet"
     />
-
-    <!-- 글꼴 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lilita+One&display=swap"
-      rel="stylesheet"
-    />
   </head>
+
   <body>
     <jsp:include page="/header.jsp" />
 
@@ -80,82 +71,87 @@ uri="http://www.springframework.org/security/tags"%>
       });
     </script>
 
+
+
+
     <main>
-      <div class="wrap">
-        <section class="size" id="section1">
-          <div class="slider">
-            FESTOPIA
+        <!-- ========== section1 ========== -->
+        <div
+              id="carouselExampleFade section1"
+              class="carousel slide carousel-fade"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./resources/resources/bg-3d-balloons.jpeg" class="d-block w-100"/>
+                  <h1>FESTOPIA</h1>
+                  <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
+                </div>
+                <div class="carousel-item">
+                  <img src="./resources/resources/bg-balloon-column.jpeg" class="d-block w-100"/>
+                  <h1>FESTOPIA</h1>
+                  <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
+                </div>
+                <div class="carousel-item">
+                  <img src="././resources/resources/bg-3d-flowers2.jpeg" class="d-block w-100"/>
+                  <h1>FESTOPIA</h1>
+                  <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
 
-            <div class="slide">
-              <h1>FESTOPIA</h1>
-              <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
-            </div>
-            <div class="slide">
-              <h1>FESTOPIA</h1>
-              <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
-            </div>
-            <div class="slide">
-              <h1>FESTOPIA</h1>
-              <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
-            </div>
-          </div>
+        <!-- ========== section2 ========== -->
+        <section class="popular" id="section2">
+          <h2><span style="font-size: 2em"> &#128293;</span>인기 축제</h2>
+          <div class="popular-festival-list"></div>
         </section>
 
-        <section class="size" id="section2">
-          <h2><span style="font-size: 2em"> &#128293; </span> 인기 축제</h2>
-
-          <div class="content-list"></div>
+        <!-- ========== section3 ========== -->
+        <section class="calendar" id="section3">
+          <h2><span style="background: rgb(255, 255, 255); font-size: 2em">&#128197;</span>이번 달 축제 일정</h2>
+          <div id="calendar"></div>
         </section>
 
-        <section class="size" id="section3">
-          <span style="background: rgb(255, 255, 255); font-size: 2em">
-            &#128197;
-          </span>
-          <h2>이번 달 축제 일정</h2>
-        </section>
       </div>
 
-      <div class="emoji">
-        <ul id="list">
-          <li>
-            <a href="#section1"
-              ><img
-                src="./resources/css/free-icon-firework-8939197.png"
-                alt="Logo"
-                width="50"
-                height="50"
-                class="d-inline-block align-text-top"
-            /></a>
-          </li>
-          <br />
-          <br />
-          <br />
-          <br />
-          <li>
-            <a href="#section2"
-              ><img
-                src="./resources/css/free-icon-ballons-5089869.png"
-                alt="Logo"
-                width="50"
-                height="50"
-                class="d-inline-block align-text-top"
-            /></a>
-          </li>
-          <br />
-          <br />
-          <br />
-          <br />
-          <li>
-            <a href="#section3"
-              ><img
-                src="./resources/css/free-icon-parade-5257560.png"
-                alt="Logo"
-                width="50"
-                height="50"
-                class="d-inline-block align-text-top"
-            /></a>
-          </li>
-        </ul>
+      <div class="section-btn">
+        <a href="#section1">
+          <img
+            src="./resources/resources/white-cookie1.png"
+            alt="Logo"
+            width="50"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+
+        <a href="#section2">
+          <img
+            src="./resources/resources/white-cookie2.png"
+            alt="Logo"
+            width="50"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+
+        <a href="#section3">
+          <img
+            src="./resources/resources/white-cookie3.png"
+            alt="Logo"
+            width="50"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
+        </a>
       </div>
     </main>
   </body>

@@ -8,6 +8,8 @@ uri="http://www.springframework.org/security/tags"%>
   <head>
     <meta charset="UTF-8" />
     <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+
+    <!-- =============== Jquery =============== -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Jquery UI JS파일 -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -16,7 +18,8 @@ uri="http://www.springframework.org/security/tags"%>
       rel="stylesheet"
       href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
-    <!-- 파비콘 -->
+
+    <!-- =============== favicon =============== -->
     <link
       rel="icon"
       href="resources/resources/favicon.png"
@@ -29,8 +32,7 @@ uri="http://www.springframework.org/security/tags"%>
       rel="stylesheet"
     />
 
-    <title>header부분만 따로</title>
-
+    <!-- =============== bootstrap =============== -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -55,14 +57,16 @@ uri="http://www.springframework.org/security/tags"%>
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <header>
       <!-- 스크롤 기능-->
       <div class="progress-bar-container">
         <div class="progress-bar"></div>
       </div>
+
       <div id="title">
-        <img src="./resources/css/FESTOPIA-removebg-preview.png" />
+        <a hrf="index.jsp"><img src="./resources/resources/logo.png" /></a>
       </div>
 
       <div id="btnPac">

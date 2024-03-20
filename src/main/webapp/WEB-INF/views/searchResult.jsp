@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+<title>FESTOPIA | Find Seoul's Beat!</title>
 <!-- 파비콘 -->
 <link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
 
@@ -16,68 +16,89 @@
 <link rel="stylesheet" href="../../resources/css/reset.css">
 <link rel="stylesheet" href="../../resources/css/searchResult.css">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
 <!-- 아이콘 추가 : fontawesome -->
 <script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
 </head>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
 <body>
+<script src="resources/js/confetti.js"></</script>
+<div class="buttonContainer">
+    <button class="canvasBtn" id="stopButton">Stop Confetti</button>
+    <button class="canvasBtn" id="startButton">Start Confetti</button>
+</div>
+<canvas id="canvas"></canvas>
+
+
+
+
 	<jsp:include page="/header.jsp" />
 
-	
+  <div class="body-content">
+
+    <!-- 정렬 드롭다운 -->
+    <div class="dropdown result-sort">
+      <button class="btn btn-secondary dropdown-toggle sort-dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        정렬선택
+      </button>
+      <ul class="dropdown-menu sort-dropdown-menu">
+        <li><a class="dropdown-item sort-dropdown-item" href="/search?sort=2&checkStartDate=${param.checkStartDate}&checkDateSelect=${param.checkDateSelect}&checkFesCate=${param.checkFesCate}&inputFesName=${param.inputFesName}&checkFeeStatus=${param.checkFeeStatus}&checkEndDate=${param.checkEndDate}">축제명</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" href="/search?sort=3&checkStartDate=${param.checkStartDate}&checkDateSelect=${param.checkDateSelect}&checkFesCate=${param.checkFesCate}&inputFesName=${param.inputFesName}&checkFeeStatus=${param.checkFeeStatus}&checkEndDate=${param.checkEndDate}">축제시작일</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" href="/search?sort=4&checkStartDate=${param.checkStartDate}&checkDateSelect=${param.checkDateSelect}&checkFesCate=${param.checkFesCate}&inputFesName=${param.inputFesName}&checkFeeStatus=${param.checkFeeStatus}&checkEndDate=${param.checkEndDate}">축제종료일</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" href="/search?sort=6&checkStartDate=${param.checkStartDate}&checkDateSelect=${param.checkDateSelect}&checkFesCate=${param.checkFesCate}&inputFesName=${param.inputFesName}&checkFeeStatus=${param.checkFeeStatus}&checkEndDate=${param.checkEndDate}">축제장소</a></li>
+      </ul>
+    </div>
 
 	<!-- 검색결과 축제 항목 카드 -->
 	<div class="content-list">
 		<c:forEach items="${list}" var="item">
 			<a href="/detail?code=${item.fesCode}" class="card">
-
 				<img src="${item.poster}" class="card-poster" >
-
 				<div class="card-body">
                     <p class="card-name">${item.name}</p>
                     <p class="card-date">${item.startDate} ~ ${item.endDate}</p>
                     <p class="card-place">${item.place}</p>
 				</div>
-
-				<!-- 찜 -->
-				<c:choose>
-				<c:when test="${empty favorite}">
-					<h3><i class="fa-solid fa-heart" id="addFav"></i></h3>
-				</c:when>
-				<c:otherwise>
-					<h3><i class="fa-solid fa-heart" id="delFav"></i></h3>
-
-					<script>
-					console.log(${favorite.fvCode});
-		              $("#delFav").click(() => {
-		                $.ajax({
-		                  type: 'post',
-		                  url: '/delFav',
-		                  data: 'code=' + ${favorite.fvCode},
-		                  success: function (data) {
-		                    location.reload();
-		                  }
-		                });
-		              });
-		            </script>
-				</c:otherwise>
-				</c:choose>
-				<script>
-				console.log(`${item.fesCode}`);
-					$('#addFav').click(() => {
-						$.ajax({
-							type: 'post',
-							url: '/addFav',
-							data: 'code=' + ${item.fesCode},
-							success: function(data) {
-								location.reload();
-							}
-						});
-					});
-				</script>
 			 </a>
 		</c:forEach>
 	</div>
+
+
+	<!-- 지도로 보기 버튼
+	<a href="/searchResultMap" class="map-view-btn">
+	    지도로 보기
+	</a> -->
+
+	<!-- 위로가기 버튼 -->
+    <a href="#" class="top-btn">
+        <img class="top-icon" src="././resources/resources/green-rocket.png">
+    </a>
+
+  </div>
+
+
+
+  <script>
+    $(document).ready(function(){
+      function reAction(){
+        $("#startButton").trigger("click");
+        setTimeout(function(){
+          $("stopButton").trigger("click");
+          }, 2000);
+      }
+      $("#startButton").on('click', function(){
+      reAction();
+      });
+    });
+
+    copyBtn.addEventListener('click',function(){
+        console.log("이벤트 연결 확인");
+        copyToastOn()
+    });
+  </script>
+  <script src="/resources/js/searchResult.js"></script>
 </body>
 </html>

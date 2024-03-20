@@ -24,6 +24,7 @@ public class Festival {
 	private String poster;
 	private int viewCount;
 	private String season;
+	private int categoryCode;
 	private String category;
 	
 

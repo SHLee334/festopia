@@ -1,7 +1,11 @@
 package com.semi.festopia.controller;
 
-import java.util.List;
-
+import com.semi.festopia.model.vo.Comment;
+import com.semi.festopia.model.vo.Favorite;
+import com.semi.festopia.model.vo.User;
+import com.semi.festopia.service.CommentService;
+import com.semi.festopia.service.FavoriteService;
+import com.semi.festopia.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -11,13 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.semi.festopia.model.vo.Comment;
-import com.semi.festopia.model.vo.Favorite;
-import com.semi.festopia.model.vo.Festival;
-import com.semi.festopia.model.vo.User;
-import com.semi.festopia.service.CommentService;
-import com.semi.festopia.service.FavoriteService;
-import com.semi.festopia.service.SearchService;
+import java.util.List;
 
 @Controller
 public class FavoriteController {
@@ -100,6 +98,6 @@ public class FavoriteController {
 		comService.deleteCom(comCode);
 	}
 	
-	
+
 
 }

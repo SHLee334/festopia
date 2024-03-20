@@ -1,14 +1,11 @@
 package com.semi.festopia.controller;
 
 
-
-import java.io.File;
-import java.io.IOException;
-import java.util.UUID;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
+import com.semi.festopia.model.vo.Favorite;
+import com.semi.festopia.model.vo.User;
+import com.semi.festopia.service.FavoriteService;
+import com.semi.festopia.service.NoticeBoardService;
+import com.semi.festopia.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -20,10 +17,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.semi.festopia.model.vo.User;
-import com.semi.festopia.service.NoticeBoardService;
-import com.semi.festopia.service.UserService;
-
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.UUID;
 
 
 @Controller
@@ -34,6 +33,9 @@ public class UserController {
 	
 	@Autowired
 	private NoticeBoardService noticeService;
+
+	@Autowired
+	private FavoriteService favService;
 	
 	@GetMapping("/")
 	public String index() {
@@ -56,10 +58,17 @@ public class UserController {
 	
 	@GetMapping("/mypage")
 	public void myPage(User user, Model model) {
+
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // 인증정보
+		User userDetails = (User) authentication.getPrincipal(); // 사용자 정보
+
 		model.addAttribute("board", noticeService.boardList());
 		
+
+		// 찜 목록
+		List<Favorite> fvList = favService.selectFvAll(userDetails.getUserCode());
+		model.addAttribute("fvList", fvList);
 	}
-	
 
 	private String path = "D:\\festopia\\profile\\";
 	

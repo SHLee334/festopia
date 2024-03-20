@@ -10,13 +10,16 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+    <title>FESTOPIA | Find Seoul's Beat!</title>
+
     <!-- 파비콘 -->
     <link
       rel="icon"
       href="resources/resources/favicon.png"
       type="image/x-icon"
     />
+
+    <!-- 스타일 -->
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="../../resources/css/mypage.css" />
 
