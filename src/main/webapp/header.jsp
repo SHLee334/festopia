@@ -262,38 +262,40 @@ uri="http://www.springframework.org/security/tags"%>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <hr />
+                <hr />
 
-              <div class="checkfeeStatus">
-                <h5>입장료</h5>
-                <label
-                  ><input
-                    type="checkbox"
-                    name="checkFeeStatus"
-                    value="1"
-                    checked
-                  />
-                  유료</label
-                >
-                <label
-                  ><input
-                    type="checkbox"
-                    name="checkFeeStatus"
-                    value="2"
-                    checked
-                  />
-                  무료</label
-                >
-              </div>
-              <hr />
-              <div id="searchFilterButton">
-                <input type="submit" value="D I V E !!" id="diveButton" />
-                <i class="fa-regular fa-rectangle-xmark closeSearchFilter"></i>
+                <div class="checkfeeStatus">
+                  <h5>입장료</h5>
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="checkFeeStatus"
+                      value="1"
+                      checked
+                    />
+                    유료</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="checkFeeStatus"
+                      value="2"
+                      checked
+                    />
+                    무료</label
+                  >
+                </div>
+
+                <hr />
+                <div id="searchFilterButton">
+                  <input type="submit" value="D I V E !!" id="diveButton" />
+                  <i
+                    class="fa-regular fa-rectangle-xmark closeSearchFilter"
+                  ></i>
+                </div>
               </div>
             </div>
-
             <div class="search__button" id="search-button">
               <i class="ri-search-2-line search__icon"></i>
               <i class="ri-close-line search__close closeAllSearchFilter"></i>
@@ -407,7 +409,6 @@ uri="http://www.springframework.org/security/tags"%>
         </div>
       </div>
     </header>
-
     <!-- js 적용 -->
     <script src="resources/js/header.js"></script>
   </body>

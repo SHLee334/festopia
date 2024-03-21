@@ -171,6 +171,7 @@ header {
   box-shadow: 0 4px 24px hsla(216, 5%, 20%, 0.1);
   margin-top: 30px;
   margin-right: 15px;
+  position: fixed;
 }
 .category {
   display: flex;
