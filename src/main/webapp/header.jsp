@@ -291,8 +291,9 @@ uri="http://www.springframework.org/security/tags"%>
                 <div id="searchFilterButton">
                   <input
                     type="submit"
-                    value="DIVE!!"
+                    value="D I V E !!"
                     onclick="javascript:OnSave();"
+                    id="diveButton"
                   />
                   <i
                     class="fa-regular fa-rectangle-xmark closeSearchFilter"

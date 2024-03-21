@@ -48,7 +48,7 @@ public class SearchController {
 		if(dto.getCheckFeeStatus() != null) {
 			List<Festival> list = searchService.searchFestival(dto);
 			model.addAttribute("list", list);
-			return "searchResultㅡ";
+			return "searchResult";
 		} else {
 			return "redirect:/";
 		}

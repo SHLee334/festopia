@@ -29,3 +29,8 @@ copyBtn.addEventListener('click',function(){
 
 /* ========== 찜 ========== */
 // 찜 추가 성공했을 때 토스트 노출
+
+/* ========== 미로그인상태 댓글 작성시 경고 ========== */
+function handleOnClick()  {
+  alert('로그인이 필요합니다.');
+}

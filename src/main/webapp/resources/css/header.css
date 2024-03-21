@@ -189,14 +189,16 @@ header {
 
 /*============== SEARCHFILTER ===============*/
 .cateFilter {
-  width: 1140px;
+  width: 1120px;
   background-color: white;
   position: fixed;
   border: none;
   border-radius: 20px;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
   box-shadow: 0 4px 24px hsla(216, 5%, 20%, 0.1);
+  top: 150px;
+  left: 466px;
 }
 
 .category {
@@ -212,9 +214,23 @@ header {
 }
 
 .category-btn {
-  background-color: lightgray;
+  background-color: white;
   width: 170px;
   height: 60px;
+  line-height: 45px;
+  line-height: 45px;
+  font-weight: bold;
+  border: 1px solid lightgrey;
+}
+
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  background-color: rgb(255, 192, 203);
+  color: white;
+  border: none;
 }
 
 .btn category-btn {
@@ -235,6 +251,12 @@ header {
 #dateSetParty {
   display: flex;
   margin-right: 15px;
+  text-align: center;
+}
+
+#startDatepicker,
+#endDatepicker {
+  text-align: center;
 }
 
 #endDatepicker {
@@ -244,9 +266,10 @@ header {
 .dateSetBtn {
   width: 80px;
   height: 40px;
-  background-color: lightgray;
-  border: none;
+  background-color: white;
+  border: 1px solid lightgrey;
   border-radius: 50px;
+  font-weight: bold;
 }
 
 .feeStatus {
@@ -257,4 +280,19 @@ header {
   display: flex;
   justify-content: space-between;
   size: 2rem;
+}
+
+#diveButton {
+  color: white;
+  border: none;
+  background-color: black;
+  border-radius: 50px;
+  width: 270px;
+  height: 40px;
+}
+
+.closeSearchFilter {
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
 }

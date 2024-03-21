@@ -175,9 +175,25 @@
 					<form action="/writeCom" method="post" id="inputCom-2">
 						<textarea rows="1" cols="300" name="comText" id="inputZone"></textarea>
 						<input type="hidden" name="fesCode" value="${vo.fesCode}" id="comInputBtn" />
-						<button type="submit" id="sendCom"><i class="fa-solid fa-comment-dots"></i></button>
+						<c:choose>
+							<c:when test="${user eq 'anonymousUser'}">
+								<button type="button" id="sendCom"
+								       onclick="handleOnClick()" 
+								       value="alert">
+								       <i class="fa-solid fa-comment-dots"></i>
+								</button>
+							</c:when>
+							
+							<c:otherwise>
+								<button type="submit" id="sendCom"><i class="fa-solid fa-comment-dots"></i></button>
+							</c:otherwise>
+						</c:choose>
 						
 					</form>
+					
+					<script>
+					
+					</script>
 			</div>
 		</div>
 

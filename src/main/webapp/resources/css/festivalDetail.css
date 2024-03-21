@@ -149,7 +149,7 @@ body::after {
   align-items: center;
 }
 #comList > div {
-	width: 70%;
+  width: 65%;
 }
 
 #inputCom {
@@ -165,7 +165,6 @@ body::after {
   display: flex;
   justify-content: center;
 }
-
 
 /* ===== 댓글리스트 스크롤바 스타일 ===== */
 #comList::-webkit-scrollbar {
@@ -187,6 +186,7 @@ body::after {
 }
 
 #inputZone {
+  width: 90%;
   height: 35px;
 }
 #sendCom {
