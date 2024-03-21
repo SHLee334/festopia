@@ -49,9 +49,6 @@ uri="http://www.springframework.org/security/tags"%>
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="./resources/css/header.css" />
 
-    <!-- js 적용 -->
-    <script src="resources/js/header.js"></script>
-
     <!-- 아이콘 추가 -->
     <script
       src="https://kit.fontawesome.com/4602e82315.js"
@@ -61,14 +58,19 @@ uri="http://www.springframework.org/security/tags"%>
 
   <body>
     <header>
-
       <div id="logo">
         <a href="/">FESTOPIA</a>
       </div>
 
       <div id="btnPac">
         <div class="container">
-          <form action="search" class="search" id="search-bar" name="name">
+          <form
+            action="search"
+            class="search"
+            id="search-bar"
+            name="name"
+            onsubmit="return OnClick()"
+          >
             <input
               type="search"
               placeholder="Type something..."
@@ -221,11 +223,11 @@ uri="http://www.springframework.org/security/tags"%>
                 <div class="fesDate">
                   <h5>기간</h5>
                   <div id="dateSetParty">
-                    <select name="checkDateSelect" id="">
+                    <select name="checkDateSelect" id="checkDateSelect">
                       <option value="targetStart">시작일</option>
                       <option value="targetEnd">종료일</option>
                     </select>
-                    &nbsp;
+                    &nbsp; &nbsp;
                     <input
                       type="text"
                       class="datepicker"
@@ -233,7 +235,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkStartDate"
                       autocomplete="off"
                     />
-                    &nbsp; ~ &nbsp;
+                    &nbsp;~&nbsp;
                     <input
                       type="text"
                       class="datepicker"
@@ -260,41 +262,35 @@ uri="http://www.springframework.org/security/tags"%>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <hr />
+              <hr />
 
-                <div class="checkfeeStatus">
-                  <h5>입장료</h5>
-                  <label
-                    ><input
-                      type="checkbox"
-                      name="checkFeeStatus"
-                      value="1"
-                      checked
-                    />
-                    유료</label
-                  >
-                  <label
-                    ><input
-                      type="checkbox"
-                      name="checkFeeStatus"
-                      value="2"
-                      checked
-                    />
-                    무료</label
-                  >
-                </div>
-                <hr />
-                <div id="searchFilterButton">
-                  <input
-                    type="submit"
-                    value="DIVE!!"
-                    onclick="javascript:OnSave();"
+              <div class="checkfeeStatus">
+                <h5>입장료</h5>
+                <label
+                  ><input
+                    type="checkbox"
+                    name="checkFeeStatus"
+                    value="1"
+                    checked
                   />
-                  <i
-                    class="fa-regular fa-rectangle-xmark closeSearchFilter"
-                  ></i>
-                </div>
+                  유료</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="checkFeeStatus"
+                    value="2"
+                    checked
+                  />
+                  무료</label
+                >
+              </div>
+              <hr />
+              <div id="searchFilterButton">
+                <input type="submit" value="D I V E !!" id="diveButton" />
+                <i class="fa-regular fa-rectangle-xmark closeSearchFilter"></i>
               </div>
             </div>
 
@@ -411,5 +407,8 @@ uri="http://www.springframework.org/security/tags"%>
         </div>
       </div>
     </header>
+
+    <!-- js 적용 -->
+    <script src="resources/js/header.js"></script>
   </body>
 </html>

@@ -45,11 +45,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 찜목록
               </button>
             </li>
-            <li class="li-nav">
-              <button class="account-modify-button" id="button03">
-                조회내역
-              </button>
-            </li>
           </c:if>
           <!-- 관리자 관련-->
 
@@ -70,9 +65,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <c:if test="${user.auth == 'ROLE_MEMBER'}">
         <div class="item" id="main-jsp2">
           <jsp:include page="mypage-favorite.jsp" />
-        </div>
-        <div class="item" id="main-jsp3">
-          <jsp:include page="myComment.jsp" />
         </div>
       </c:if>
       <c:if test="${user.auth == 'ROLE_ADMIN'}">
