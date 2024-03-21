@@ -71,6 +71,7 @@ uri="http://www.springframework.org/security/tags"%>
 
       <div id="btnPac">
         <div class="container">
+          <div>
           <form action="search" class="search" id="search-bar" name="name">
             <input
               type="search"
@@ -261,6 +262,7 @@ uri="http://www.springframework.org/security/tags"%>
                         일년
                       </button>
                     </div>
+                    </div>
                   </div>
                 </div>
 
@@ -300,12 +302,13 @@ uri="http://www.springframework.org/security/tags"%>
                   ></i>
                 </div>
               </div>
-            </div>
+            
 
             <div class="search__button" id="search-button">
               <i class="ri-search-2-line search__icon"></i>
               <i class="ri-close-line search__close closeAllSearchFilter"></i>
             </div>
+          </div>
           </form>
 
           <!--로그인, 회원가입 -->
