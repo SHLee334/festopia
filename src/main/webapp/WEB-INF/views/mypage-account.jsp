@@ -20,7 +20,6 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="../../resources/css/mypage-account.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        
   </head>
   <body>
     <div class="tabs">
@@ -82,7 +81,7 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
 
           <div class="modify-second-page" id="content-page">
             <form id="nicknameChangeForm">
-              <div>
+              <div id="changeNickForm">
                 <input
                   type="text"
                   name="nickname"
@@ -92,7 +91,7 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
                 />
                 <span></span>
               </div>
-              <div>
+              <div id="changeMailForm">
                 <input
                   type="text"
                   name="email"
@@ -107,11 +106,10 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
                 <input type="hidden" name="auth" value="${user.auth}" />
               </div>
               <div>
-                <input
-                  type="button"
-                  value="정보 수정하기"
+                <button
+                  type="button" 
                   id="nicknameChange"
-                />
+                >정보 수정하기</button>
               </div>
               <span id="nicknameResult"></span>
             </form>
@@ -121,14 +119,17 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
         <div class="innercontent1">
           <div class="modify-second-page" id="content-page">
             <div class="current-pwd-check">
-              <input
-                type="password"
-                name="password"
-                id="accountCheck"
-                placeholder="현재 비밀번호를 입력하세요."
-              />
-              <input type="hidden" id="accountPwdCheck" value="${pwdBind}" />
-              <span id="wrongTry"></span>
+              
+                <input
+                  type="password"
+                  name="password"
+                  id="accountCheck"
+                  placeholder="현재 비밀번호를 입력하세요."
+                />
+                  <input type="hidden" id="accountPwdCheck" value="${pwdBind}" />
+                  <span id="wrongTry"></span>
+                
+              
               <input type="button" id="checkThisAccount" value="확인" />
             </div>
             <form id="pwdChangeForm">
@@ -185,5 +186,6 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
     </div>
 
     <script src="../../resources/js/mypage-account.js"></script>
+
   </body>
 </html>

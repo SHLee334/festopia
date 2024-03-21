@@ -84,7 +84,7 @@ public class UserController {
 	public String changeProfile(User user) throws IllegalStateException, IOException {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // 인증정보
 		User userDetails = (User) authentication.getPrincipal(); // 사용자 정보
-		
+	
 		if(!user.getFile().isEmpty()) {
 			if(user.getUserProfileUrl()!=null) {
 				File file = new File(path + user.getUserProfileUrl());

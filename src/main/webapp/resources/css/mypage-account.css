@@ -59,8 +59,9 @@ body {
 .pigeon-account {
   display: flex;
   align-items: center;
-  background-color: beige;
+  background-color: white;
   height: 20rem;
+  border-bottom: 2px solid #ccc;
 }
 #userImage {
   border-radius: 50%;
@@ -78,6 +79,7 @@ body {
   margin-left: 100px;
   line-height: 50px;
 }
+/* 비밀번호 변경전 확인 */
 #pwdChangeForm {
   background-color: aquamarine;
   height: 70vh;
@@ -85,14 +87,43 @@ body {
   justify-content: center;
   align-items: center;
 }
+.current-pwd-check{
+  display: flex;
+  flex-direction: column;
+}
+/* 틀렸을때 span 태그 아래로 보내기 */
+#accountCheck{
+  background-color: rgb(240, 240, 240);
+  width: 400px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
+#wrongTry{
+  height: 20px;
+  width: 400px;
+  text-align: left;
+}
+#checkThisAccount{
+  background-color: black;
+  color: white;
+  width: 400px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
 
 .current-pwd-check {
-  background-color: beige;
   height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 #userImage img {
   width: 200px;
   height: 200px;
@@ -128,4 +159,46 @@ body {
   padding: 0;
   overflow: hidden;
   border: 0;
+}
+#changeNickForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#changeNickForm span{
+  width: 50%;
+  text-align: left;
+  height: 20px;
+}
+#changeMailForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#changeMailForm span{
+  width: 50%;
+  text-align: left;
+  height: 20px;
+}
+#nicknameChangeForm{
+  padding-top: 30px;
+}
+#nicknameChangeForm input{
+  width: 50%;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(240, 240, 240);
+}
+#nicknameChange{
+  background-color: black;
+  color: white;
+  width: 50%;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
 }

@@ -51,8 +51,9 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
   </style>
   <body>
     <% NoticeBoard board = (NoticeBoard) request.getAttribute("vo"); %>
-    <c:choose>
-    	<c:when test="${user == 'anonymousUser' || 'ROLE_MEMBER'}">
+  <sec:authentication property="principal" var="user" />
+    <c:if test="${user.auth == 'ROLE_MEMBER'}">  
+    
     	 <!-- 여기는 일반 유저가 볼수 있는 화면 -->
 	    <div class="write-container">
 	      <h1 id="main-notice">공지사항 상세정보</h1>
@@ -77,12 +78,13 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
 	        /></a>
 	      </div>
 	    </div>
-    	</c:when>
-    	<c:otherwise>
-    		<sec:authorize access="hasRole('ROLE_ADMIN') and isAuthenticated()">
+    	</c:if>
+ 
+    	
+    
     			<!--  여기부터 관리자가 볼 수 있는 화면 -->
 
-   
+   <c:if test="${user.auth == 'ROLE_ADMIN'}">
       <div class="write-container">
        <form action="/updateNotice" method="post" enctype="multipart/form-data">
        <input type="hidden" name="no" value="${vo.no}" />
@@ -122,10 +124,12 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
       </div>
        </form>
        </div> 
+       
+       </c:if>
     			
-    		</sec:authorize>
-    	</c:otherwise>
-    </c:choose>
+    
+    
+ 
    
 
 
