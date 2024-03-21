@@ -24,14 +24,9 @@ public class SearchController {
 	
 	@GetMapping("search")
 	public String search(SearchDTO dto, Model model) {
-		if(dto.getCheckFeeStatus() != null) {
-			List<Festival> list = searchService.searchFestival(dto);
-			model.addAttribute("list", list);
-			return "searchResult";			
-		} else {
-			return "redirect:/";
-		}
-
+		List<Festival> list = searchService.searchFestival(dto);
+		model.addAttribute("list", list);
+		return "searchResult";
 	}
 	
 	@ResponseBody
