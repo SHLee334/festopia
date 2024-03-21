@@ -75,7 +75,7 @@ pageEncoding="UTF-8"%>
             <span></span>
         </div>
         </div>
-        <div><button type="submit" >회원가입</button></div>
+        <div><button type="submit" id="regi-button">회원가입</button></div>
       </form>
     </div>
 

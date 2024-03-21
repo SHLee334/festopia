@@ -37,10 +37,7 @@ public class SearchController {
 	@ResponseBody
 	@PostMapping("/search")
 	public List<Festival> search(Model model) {
-		List<Festival> list = searchService.popularFestival();
-		//model.addAttribute("list", list);
-		//System.out.println(list);
-		return list;
+		return searchService.popularFestival();
 	}
 
 	@GetMapping("searchResultMap")
@@ -58,6 +55,12 @@ public class SearchController {
 	public String viewCount(int fesCode) {
 		searchService.updateViewCnt(fesCode);
 		return "redirect:/searchResult";
+	}
+
+	@ResponseBody
+	@GetMapping("calendar")
+	public List<Festival> calendarFes(String startDate) {
+		return searchService.calendarFes(startDate);
 	}
 
 }

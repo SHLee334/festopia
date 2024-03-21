@@ -11,127 +11,77 @@ body {
   padding: 0;
 }
 
-.wrap {
-  position: relative;
+/* ========== 프로그레스 바 ========== */
+.progress-bar-container {
+  position: fixed;
+  left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  transition: 0.5s;
+  z-index: 100;
+  width: 100vw;
+  height: 5px;
+  background: #ddd;
 }
 
-.emoji {
+.progress-bar {
+  width: 0;
+  height: 100%;
+  background: #00a8ff;
+  background-color: rgb(195, 126, 235);
+}
+
+
+/* ========== 섹션이동 버튼 ========== */
+.section-btn-container {
   position: fixed;
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 9999;
 }
 
-.slider {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
+.section-btn {
+  margin: 30px;
 }
 
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  display: block;
-  justify-content: center;
-  align-items: center;
-  animation: slider 7.5s infinite linear;
+.section-btn img {
+  width: 50px;
+  height: 50px;
 }
 
-.slide h1 {
-  font-size: 130px;
-  color: white;
-  text-shadow: 5px 5px 5px rgb(114, 114, 106);
-  font-family: "Lilita One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  display: flex;
-  justify-content: center;
-  margin-top: 350px;
-}
 
-.slide p {
-  font-size: 60px;
-  color: white;
-  text-shadow: 5px 5px 5px rgb(114, 114, 106);
-  font-family: "Lilita One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  display: flex;
-  justify-content: center;
-}
-
-/*
-.slide:nth-child(1) {
-	background-image: url(./3600945.jpg);
-	animation-delay: 0;
-}
-
-.slide:nth-child(2) {
-	background-image: url(./5256203.jpg);
-	animation-delay: -2.5s;
-}
-
-.slide:nth-child(3) {
-	background-image: url(./6364976.jpg);
-	animation-delay: -5s;
-}
-
-@keyframes slider {
-    0% {
-      transform: translateX(0);
-    }
-    26% {
-      transform: translateX(0);
-    }
-    33% {
-      transform: translateX(-100%);
-      animation-timing-function: step-end;
-    }
-    93% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-}
-*/
-
-/* ========== 메인 슬라이더 ========== */
-#carouselExampleFade {
+/* ========== section1 : slide ========== */
+.carousel-inner {
   height: 100vh;
+  z-index: -1;
 }
 
-#section2 {
+.carousel-item {
+  display: relative;
+}
+
+.carousel-inner-text {
+  display: absolute;
+  color: white;
+  text-shadow: 5px 5px 5px rgb(114, 114, 106);
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
+}
+
+.carousel-inner-text h1 {
+  font-size: 130px;
+  font-weight: 400;
+  margin-top: 350px;
   justify-content: center;
-  padding-top: 10px;
-  text-align: center;
 }
 
-#section3 {
+.carousel-inner-text p {
+  font-size: 60px;
+  font-weight: 350;
   justify-content: center;
-  padding-top: 10px;
-  text-align: center;
 }
 
-/*
-.row {
-	display: flex;
-	padding-left: 300px;
-}
-*/
 
-/* 스크롤
+/* 스크롤 */
 .text-animation {
   animation: textAni 1s forwards;
 }
@@ -146,178 +96,133 @@ body {
 	transform: translateY(-10px);
   }
 }
-*/
+
 
 /* ========== section2 : popular ========== */
+#section2 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding-top: 90px;
+  text-align: center;
+}
+
 .popular-festival-list {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
-  padding: 43px;
+  padding: 45px;
 }
 
-.card-css {
-  width: 25%;
-  height: 650px;
+.main-card {
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex: 0 0 auto;
+  flex-direction: column;
+  width: 18rem;
+  height: 500px;
+  justify-content: space-between;
+  padding: 0;
+  margin: 20px;
   text-decoration: none;
   color: black;
-  margin: 20px;
-  top: 80px;
-  background-position: center;
-  border: 3px solid black;
-  box-shadow: 10px 10px 5px gray;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.4s cubic-bezier(0.66, -0.39, 0.4, 1.3);
 }
 
-.card-css a {
-  display: block;
-  width: 100%;
-  height: 100%;
+.main-card:hover {
+  color: black !important;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.3), 0 15px 15px rgba(0, 0, 0, 0.3);
 }
 
-.card-css-img {
+.main-card:hover .main-card-name {
+  animation-play-state: paused;
+}
+
+.main-card img {
   position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin: auto;
-  height: 553px;
-}
-
-.card-css-img img {
-  width: 100%;
   height: 400px;
-  object-fit: contain;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
-.card-body-css {
-  display: inline;
-  padding: 5px;
-}
-
-.card-name-css {
-  font-weight: bolder;
-  margin-bottom: 0px;
-  white-space: nowrap;
+.main-card-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100px;
+  padding: 5px 10px !important;
+  border-top: 1px solid rgb(227, 222, 222);
   overflow: hidden;
 }
 
-.card-date-css {
+.main-card-name {
+  font-weight: bolder;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: textLoop 10s linear infinite;
+}
+
+/* main-card-body 내 축제명 텍스트에 반영 */
+@keyframes textLoop {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.main-card-date {
   font-size: 0.8rem;
   font-weight: bold;
-  margin: 0 0 5px;
+  margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.card-place-css {
+.main-card-place {
   font-size: 0.8rem;
   margin: 0px;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* ========== section3 : calendar ==========
-* {
-    margin:0;
-    padding:0;
-    font-family: sans-serif;
-    box-sizing: border-box;
+/* ========== section3 : calendar ========== */
+#section3 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 90px;
 }
 
-.calendar {
-    width:600px;
-    margin:50px;
+#calendar {
+  display: flex;
+  width: 100%;
+  height: 95%;
+  justify-content: center;
+  padding: 45px;
+
 }
 
-.head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.fc .fc-daygrid-day-frame {
+    height: 50px;
+    overflow: hidden;
 }
-
-.year-month {
-    font-size:35px;
-}
-
-.nav {
-    display:flex;
-    border:1px solid #333333;
-    border-radius: 5px;
-}
-
-.nav-btn {
-    width:28px;
-    height: 30px;
-    border:none;
-    font-size:16px;
-    line-height: 34px;
-    background-color: transparent;
-    cursor:pointer;
-}
-
-.go-today {
-    width: 75px;
-    border-left : 1px solid #333333;
-    border-right: 1px solid #333333;
-}
-
-.days {
-    display:flex;
-    margin:25px 0 10px;
-}
-
-.day {
-    width: calc(100% / 7);
-    text-align: center;
-}
-
-.dates {
-    display:flex;
-    flex-flow: row wrap;
-    height: 500px;
-    border-top:1px solid #333333;
-    border-right: 1px solid #333333;
-}
-
-.date {
-    width: calc(100% / 7);
-    padding: 15px;
-    text-align: right;
-    border-bottom: 1px solid #333333;
-    border-left: 1px solid #333333;
-}
-
-.day:nth-child(7n + 1),
-.date:nth-child(7n + 1) {
-    color:#D13E3E;
-}
-
-.day:nth-child(7n),
-.date:nth-child(7n) {
-    color: #396EE2;
-}
-
-.other {
-    opacity : 0.3;
-}
-
-.today {
-    position : relative;
-    color: #FFFFFF;
-}
-
-.today::before {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    width:30px;
-    height:30px;
-    display:block;
-    background-color: #FF0000;
-    border-radius: 50%;
-    content: '';
-}
-*/

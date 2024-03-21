@@ -31,13 +31,20 @@ public class SearchService {
 	public List<Festival> popularFestival(){
 		return dao.popularFestival();
 	}
-	
+
+	// 축제 상세페이지
 	public Festival detail(int code) {
 		return dao.detail(code);
 	}
 
+	// 축제 조회 수
 	public int updateViewCnt(int fesCode){
 		return dao.updateViewCnt(fesCode);
+	}
+
+	// 이번달 축제
+	public List<Festival> calendarFes(String startDate) {
+		return dao.calendarFes(startDate);
 	}
 }
 

@@ -89,15 +89,13 @@
 			ORDER BY #{sort}
 		</if>
 	</select>
-	
+
+	<!-- ========== 메인 인기축제 ========== -->
 	<select id = "popularFestival" resultMap="festivalMap" >
-	
 	SELECT *
 	FROM festival
 	ORDER BY fes_view_count desc
 	LIMIT 4
-	
-	
 	</select>
 
 	<!-- ========== 축제 상세페이지 ========== -->
@@ -143,5 +141,9 @@
 	<select id="endDateD" resultMap="festivalMap">
 		SELECT * FROM festival
 		ORDER BY fes_end_date DESC
+	</select>
+
+	<select id="calendarFes" parameterType="String" resultMap="festivalMap">
+		SELECT * FROM festival
 	</select>
 </mapper>

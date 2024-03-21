@@ -7,7 +7,7 @@ uri="http://www.springframework.org/security/tags"%>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+    <title>FESTOPIA | Find Seoul's Beat!</title>
     <!-- 파비콘 -->
     <link
       rel="icon"
@@ -16,6 +16,7 @@ uri="http://www.springframework.org/security/tags"%>
     />
 
     <!-- 스타일 적용 -->
+    <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="./resources/css/index.css" />
 
     <!-- 글꼴 -->
@@ -25,134 +26,132 @@ uri="http://www.springframework.org/security/tags"%>
       href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lilita+One&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Full Calendar -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
   </head>
 
   <body>
     <jsp:include page="/header.jsp" />
 
-    <script>
-      $.ajax({
-        // 요청
-        type: "post",
-        url: "/search",
-        // 응답
-        success: function (list) {
-          console.log(list);
-          let htmlCode = "";
-          for (const item of list) {
-            htmlCode +=
-              '<div class="card-css">' +
-              '<a href="상세페이지">' +
-              '<div class = " card-css-image">' +
-              "<img src=" +
-              item.poster +
-              ' class=" card-css-img" >' +
-              '<div class="card-body-css">' +
-              '<p class="card-name-css">' +
-              item.name +
-              "</p>" +
-              '<p class="card-date-css">' +
-              item.startDate +
-              " ~ " +
-              item.endDate +
-              "</p>" +
-              '<p class="card-place-css">' +
-              item.place +
-              "</p>" +
-              "</div>" +
-              "</div>" +
-              "</div>" +
-              "</a>" +
-              "</div>";
-          }
-
-          $(".content-list").append(htmlCode);
-        },
-      });
-    </script>
-
-
-
+    <!-- ========== 프로그레스 바 ========== -->
+    <div class="progress-bar-container">
+      <div class="progress-bar"></div>
+    </div>
 
     <main>
+        <!-- ========== 섹션이동 버튼 ========== -->
+        <div class="section-btn-container">
+          <div class="section-btn">
+            <a href="#section1">
+              <img src="./resources/resources/white-cookie1.png"/>
+            </a>
+          </div>
+          <div class="section-btn">
+            <a href="#section2">
+              <img src="./resources/resources/white-cookie2.png"/>
+            </a>
+          </div>
+          <div class="section-btn">
+            <a href="#section3">
+              <img src="./resources/resources/white-cookie3.png"/>
+            </a>
+          </div>
+        </div>
+
+
         <!-- ========== section1 ========== -->
-        <div
-              id="carouselExampleFade section1"
-              class="carousel slide carousel-fade"
-              data-bs-ride="carousel"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="./resources/resources/bg-3d-balloons.jpeg" class="d-block w-100"/>
-                  <h1>FESTOPIA</h1>
-                  <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
-                </div>
-                <div class="carousel-item">
-                  <img src="./resources/resources/bg-balloon-column.jpeg" class="d-block w-100"/>
-                  <h1>FESTOPIA</h1>
-                  <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
-                </div>
-                <div class="carousel-item">
-                  <img src="././resources/resources/bg-3d-flowers2.jpeg" class="d-block w-100"/>
-                  <h1>FESTOPIA</h1>
-                  <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
-                </div>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner" id="section1">
+            <div class="carousel-item active slider1">
+              <img src="./resources/resources/bg-3d-balloons.jpeg" class="d-block w-100"/>
+              <div class="carousel-inner-text">
+                <h1>FESTOPIA</h1>
+                <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
+            <div class="carousel-item slider2">
+              <img src="./resources/resources/bg-blue-cloud.jpeg" class="d-block w-100"/>
+            </div>
+            <div class="carousel-item slider3">
+              <img src="././resources/resources/bg-3d-flowers2.jpeg" class="d-block w-100"/>
+            </div>
+          </div>
+        </div>
+
 
         <!-- ========== section2 ========== -->
         <section class="popular" id="section2">
-          <h2><span style="font-size: 2em"> &#128293;</span>인기 축제</h2>
+          <h2>인기 축제</h2>
           <div class="popular-festival-list"></div>
         </section>
 
+
         <!-- ========== section3 ========== -->
-        <section class="calendar" id="section3">
-          <h2><span style="background: rgb(255, 255, 255); font-size: 2em">&#128197;</span>이번 달 축제 일정</h2>
+        <section id="section3">
+          <h2>이번 달 축제 일정</h2>
           <div id="calendar"></div>
         </section>
-
-      </div>
-
-      <div class="section-btn">
-        <a href="#section1">
-          <img
-            src="./resources/resources/white-cookie1.png"
-            alt="Logo"
-            width="50"
-            height="50"
-            class="d-inline-block align-text-top"
-          />
-        </a>
-
-        <a href="#section2">
-          <img
-            src="./resources/resources/white-cookie2.png"
-            alt="Logo"
-            width="50"
-            height="50"
-            class="d-inline-block align-text-top"
-          />
-        </a>
-
-        <a href="#section3">
-          <img
-            src="./resources/resources/white-cookie3.png"
-            alt="Logo"
-            width="50"
-            height="50"
-            class="d-inline-block align-text-top"
-          />
-        </a>
-      </div>
     </main>
+
+        <script>
+          $.ajax({
+            type: "post",
+            url: "/search",
+            success: function (list) {
+              console.log(list);
+              let htmlCode = "";
+              for (const item of list) {
+                console.log(item);
+                htmlCode +=
+                  '<a href="/detail?code=' + item.fesCode + ' "class="main-card">' +
+                    '<img src=' + item.poster + 'class="main-card-poster">' +
+                    '<div class="main-card-body">' +
+                      '<p class="main-card-name">' + item.name + '</p>' +
+                      '<p class="main-card-date">' + item.startDate + " ~ " + item.endDate + '</p>' +
+                      '<p class="main-card-place">' + item.place + '</p>' +
+                    '</div>' +
+                  '</a>';
+              }
+              $(".popular-festival-list").append(htmlCode);
+            },
+          });
+
+          $.ajax({
+            type: "get",
+            url: "/calendar",
+            success: function(list) {
+                const calArr = [];
+                for(const item of list) {
+                    const cal = {
+                        "title": item.name,
+                        "start": item.startDate,
+                        "end": item.startDate
+                    }
+                    calArr.push(cal);
+                }
+
+                var calendarEl = document.getElementById('calendar');
+
+                    var calendar = new FullCalendar.Calendar(calendarEl, {
+                      timeZone: 'UTC',
+                      initialView: 'dayGridMonth',
+                      events: calArr,
+                      editable: true,
+                      selectable: true,
+                      dateClick: function(info) {
+                          // alert(info.dateStr);
+                          location.href="search?inputFesName=&checkDateSelect=targetStart" +
+                                        "&checkStartDate=" + info.dateStr +
+                                        "&checkEndDate=&checkFeeStatus=1&checkFeeStatus=2"
+                        }
+                    });
+                    calendar.render();
+            }
+          });
+        </script>
+
+
+        <script src="resources/js/index.js"></script>
   </body>
 </html>

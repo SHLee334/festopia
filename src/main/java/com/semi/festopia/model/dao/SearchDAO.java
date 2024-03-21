@@ -15,13 +15,11 @@ public class SearchDAO {
 	@Autowired
 	private SqlSessionTemplate session;
 	public List<Festival> searchFestival(SearchDTO fesList) {
-		//System.out.println(fesList);
 		return session.selectList("searchMapper.searchFestival", fesList);
 	}
 	
-	// 메인페이지 조회수 순
+	// 메인 인기축제
 	public List<Festival> popularFestival(){
-		
 		return session.selectList("searchMapper.popularFestival");
 	}
 	
@@ -32,4 +30,9 @@ public class SearchDAO {
 	public int updateViewCnt(int fesCode) {
 		return session.update("searchMapper.updateViewCnt", fesCode);
 	}
+
+	public List<Festival> calendarFes(String startDate) {
+		return session.selectList("searchMapper.calendarFes", startDate);
+	}
+
 }

@@ -46,6 +46,7 @@ uri="http://www.springframework.org/security/tags"%>
     ></script>
 
     <!-- 스타일 적용 -->
+    <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="./resources/css/header.css" />
 
     <!-- js 적용 -->
@@ -60,13 +61,9 @@ uri="http://www.springframework.org/security/tags"%>
 
   <body>
     <header>
-      <!-- 스크롤 기능-->
-      <div class="progress-bar-container">
-        <div class="progress-bar"></div>
-      </div>
 
-      <div id="title">
-        <a hrf="index.jsp"><img src="./resources/resources/logo.png" /></a>
+      <div id="logo">
+        <a href="/">FESTOPIA</a>
       </div>
 
       <div id="btnPac">
@@ -307,9 +304,9 @@ uri="http://www.springframework.org/security/tags"%>
             </div>
           </form>
 
-          <!--로그인, 회원가입 -->
+          <!-- ========== 로그인 ========== -->
           <button
-            class="btn btn-secondary dropdown-toggle"
+            class="btn btn-secondary dropdown-toggle accountBtn"
             id="anonymousUser"
             type="button"
             data-bs-toggle="dropdown"
@@ -318,7 +315,7 @@ uri="http://www.springframework.org/security/tags"%>
             <i class="fa-solid fa-circle-user"></i>
           </button>
 
-          <!-- 공지사항 -->
+          <!-- ========== 공지사항 ========== -->
           <a href="" id="inform">
             <i class="fa-solid fa-circle-exclamation fa-2xl"></i
           ></a>
@@ -362,7 +359,7 @@ uri="http://www.springframework.org/security/tags"%>
         </div>
       </div>
 
-      <!-- Modal -->
+      <!-- ========== 로그인 Modal ========== -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -388,7 +385,7 @@ uri="http://www.springframework.org/security/tags"%>
         </div>
       </div>
 
-      <!-- Modal 2-->
+      <!-- ========== 회원가입 Modal ========== -->
       <div
         class="modal fade"
         id="exampleModal2"
