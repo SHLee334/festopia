@@ -137,7 +137,7 @@
 				<c:forEach items="${com}" var="item">
 					<div id="comWriterInfo">
 						<p>
-						<strong>${item.user.nickname}</strong> <span> | </span> <span>${item.comDate}</span>
+						<span>${item.user.nickname}</span> <span> | </span> <span>${item.comDate}</span>
 						</p>
 						<c:choose>
 							<c:when test="${user ne 'anonymousUser'}">

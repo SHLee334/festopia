@@ -289,7 +289,7 @@ uri="http://www.springframework.org/security/tags"%>
 
                 <hr />
                 <div id="searchFilterButton">
-                  <input type="submit" value="D I V E !!" id="diveButton" />
+                  <input type="submit" value="D  I  V  E  !!" id="diveButton" />
                   <i
                     class="fa-regular fa-rectangle-xmark closeSearchFilter"
                   ></i>

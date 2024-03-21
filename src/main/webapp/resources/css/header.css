@@ -162,7 +162,7 @@ header {
 /*============== SEARCHFILTER ===============*/
 /* search filter category */
 .cateFilter {
-  width: 1080px;
+  width: 1095px;
   background-color: white;
   border: none;
   border-radius: 20px;
@@ -262,12 +262,22 @@ header {
 .fesDate {
   display: flex;
   width: 100%;
+  flex-direction: column;
 }
+
+.fesDate > h5 {
+  margin-bottom: 10px;
+}
+
 #dateSetParty {
   display: flex;
 }
 
 /* search filter fee status */
+.checkfeeStatus > h5 {
+  margin-bottom: 10px;
+}
+
 .feeStatus {
   border: 1px solid black;
 }
@@ -277,6 +287,7 @@ header {
   display: flex;
   justify-content: space-between;
   size: 2rem;
+  margin-bottom: 17px;
 }
 
 #diveButton {
