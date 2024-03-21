@@ -154,5 +154,6 @@ uri="http://www.springframework.org/security/tags"%>
         </a>
       </div>
     </main>
+    <script src="resources/js/index.js"></script>
   </body>
 </html>

@@ -146,8 +146,8 @@ body::after {
   overflow-y: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
+
 #comList > div {
   width: 65%;
 }

@@ -142,7 +142,7 @@
 						<c:choose>
 							<c:when test="${user ne 'anonymousUser'}">
 								<c:choose>
-									<c:when test="${item.userCode eq user.userCode}">
+									<c:when test="${item.userCode eq user.userCode || user.auth eq 'ROLE_ADMIN'}">
 										<i class="fa-solid fa-trash-can delCom"
 											data-value="${item.comCode}"></i>
 									</c:when>
@@ -190,7 +190,6 @@
 						</c:choose>
 						
 					</form>
-					
 					<script>
 					
 					</script>

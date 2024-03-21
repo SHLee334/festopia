@@ -15,20 +15,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
   window.addEventListener("resize", resizeHandler);
   resizeHandler();
 
-  // menu click event
-  const nav = document.querySelector("#btnPac");
-  let currentNav;
-
-  function navHandler(e) {
-    if (currentNav) {
-      currentNav.classList.remove("nav-active");
-    }
-    e.target.classList.add("nav-active");
-    currentNav = e.target;
-  }
-
-  nav.addEventListener("click", navHandler);
-
   // section - 높이 확인해서 event 구현.. 여러가지 이벤트가 들어가는 상황
   // section2에만 적용해보기!
   const section1 = document.querySelector("#section1");

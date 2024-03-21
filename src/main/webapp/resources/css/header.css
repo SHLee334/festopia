@@ -189,7 +189,7 @@ header {
 
 /*============== SEARCHFILTER ===============*/
 .cateFilter {
-  width: 1100px;
+  width: 1080px;
   background-color: white;
   border: none;
   border-radius: 20px;
@@ -214,7 +214,7 @@ header {
 
 .category-btn {
   background-color: white;
-  width: 170px;
+  width: 160px;
   height: 60px;
   line-height: 45px;
   line-height: 45px;
@@ -243,6 +243,11 @@ header {
   width: 100%;
 }
 
+#checkDateSelect {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
 .dateSetting {
   border: 1px solid black;
 }
@@ -256,10 +261,12 @@ header {
 #startDatepicker,
 #endDatepicker {
   text-align: center;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
 }
 
 #endDatepicker {
-  margin-right: 95px;
+  margin-right: 114px;
 }
 
 .dateSetBtn {
@@ -283,7 +290,7 @@ header {
 
 #diveButton {
   color: white;
-  border: none;
+  border: lightgrey;
   background-color: black;
   border-radius: 50px;
   width: 270px;
