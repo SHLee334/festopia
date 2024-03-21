@@ -25,7 +25,7 @@ uri="http://www.springframework.org/security/tags" %>
 <body>
 <% List<NoticeBoard> board = (List<NoticeBoard>) request.getAttribute("board"); %>
 	<div class="tabs">
-
+		<c:if test='${user.auth == "ROLE_ADMIN"}'>
 		<div class="tab-header">
 			<div class="pigeon-account-small">
 				
@@ -40,9 +40,13 @@ uri="http://www.springframework.org/security/tags" %>
 		  <div class="inneractive1">게시글 작성</div>
 		  <div class="inneractive2">festopia</div>
 		</div>
+		</c:if>
+		
 		
 		<div class="tab-content">
 		  <div class="innercontent0">
+		  
+		  
 			<div class="modify-second-page" id="content-page">
 				<h1 id="view-title">공지사항</h1>
 				<table class="boardTable">
@@ -70,12 +74,14 @@ uri="http://www.springframework.org/security/tags" %>
 			</div>
 			
 		  </div>
-  
-		  <div class="innercontent1">
-			<div class="modify-second-page" id="content-page">
-				<jsp:include page="admin-write.jsp" />
-			</div>
-		  </div>
+  			<c:if test="${user.auth == 'ROLE_ADMIN'}">
+  			<div class="innercontent1">
+				<div class="modify-second-page" id="content-page">
+					<jsp:include page="admin-write.jsp" />
+				</div>
+		 	 </div>
+  			
+		  
   
 		  <div class="innercontent2">
 			<div class="modify-second-page" id="content-page">
@@ -83,6 +89,7 @@ uri="http://www.springframework.org/security/tags" %>
 			  
 			</div>
 		  </div>
+		  </c:if>
 		</div>
 	  </div>
 

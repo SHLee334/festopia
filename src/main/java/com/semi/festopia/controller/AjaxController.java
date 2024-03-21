@@ -38,6 +38,7 @@ public class AjaxController {
 	@PostMapping("/isDuplicated")
 	public User idCheck(String id) {
 		User user = service.idCheck(id);
+		System.out.println("user : " + user);
 		return user;
 	}
 	

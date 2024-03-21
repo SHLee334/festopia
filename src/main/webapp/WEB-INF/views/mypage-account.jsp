@@ -43,7 +43,11 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
                 method="post"
                 enctype="multipart/form-data"
               >
-                <input class="form-control" type="file" id="file" name="file" />
+                <div class="filebox">
+                  <!-- <input class="upload-name" value="첨부파일" placeholder="첨부파일"> -->
+                  <label for="file"><i class="fa-solid fa-camera"></i></label>
+                  <input class="form-control" type="file" id="file" name="file"/>
+                </div>
                 <!-- 이부분이 choose file 부분 -->
                 <input
                   type="hidden"
@@ -54,9 +58,9 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
                 <button
                   id="uploadThisProfile"
                   type="submit"
-                  class="btn btn-outline-warning"
+                  class="change-btn"
                 >
-                  파일업로드
+                <i class="fa-solid fa-pen"></i>
                 </button>
               </form>
             </div>
@@ -77,7 +81,7 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
 
           <div class="modify-second-page" id="content-page">
             <form id="nicknameChangeForm">
-              <div>
+              <div id="changeNickForm">
                 <input
                   type="text"
                   name="nickname"
@@ -87,7 +91,7 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
                 />
                 <span></span>
               </div>
-              <div>
+              <div id="changeMailForm">
                 <input
                   type="text"
                   name="email"
@@ -102,11 +106,10 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
                 <input type="hidden" name="auth" value="${user.auth}" />
               </div>
               <div>
-                <input
-                  type="button"
-                  value="정보 수정하기"
+                <button
+                  type="button" 
                   id="nicknameChange"
-                />
+                >정보 수정하기</button>
               </div>
               <span id="nicknameResult"></span>
             </form>
@@ -116,14 +119,17 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
         <div class="innercontent1">
           <div class="modify-second-page" id="content-page">
             <div class="current-pwd-check">
-              <input
-                type="password"
-                name="password"
-                id="accountCheck"
-                placeholder="현재 비밀번호를 입력하세요."
-              />
-              <input type="hidden" id="accountPwdCheck" value="${pwdBind}" />
-              <span id="wrongTry"></span>
+              
+                <input
+                  type="password"
+                  name="password"
+                  id="accountCheck"
+                  placeholder="현재 비밀번호를 입력하세요."
+                />
+                  <input type="hidden" id="accountPwdCheck" value="${pwdBind}" />
+                  <span id="wrongTry"></span>
+                
+              
               <input type="button" id="checkThisAccount" value="확인" />
             </div>
             <form id="pwdChangeForm">
@@ -180,5 +186,6 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
     </div>
 
     <script src="../../resources/js/mypage-account.js"></script>
+
   </body>
 </html>

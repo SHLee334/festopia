@@ -24,6 +24,10 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <link rel="stylesheet" href="../../resources/css/mypage.css" />
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4602e82315.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div style="display: none">

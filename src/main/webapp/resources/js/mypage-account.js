@@ -83,7 +83,7 @@ $("#pwdChangeFormButton").click(() => {
 });
 
 //default
-$(".inneractive0").css("color", "#00acee");
+$(".inneractive0").css("color", "rgb(255, 138, 157)");
 $(".innercontent0").css("display", "block");
 // 첫번째
 $(".inneractive0").click(() => {
@@ -91,7 +91,7 @@ $(".inneractive0").click(() => {
   $(".innercontent1").css("display", "none");
   $(".innercontent2").css("display", "none");
 
-  $(".inneractive0").css("color", "#00acee");
+  $(".inneractive0").css("color", "rgb(255, 138, 157)");
   $(".inneractive1").css("color", "#888");
   $(".inneractive2").css("color", "#888");
 });
@@ -101,7 +101,7 @@ $(".inneractive1").click(() => {
   $(".innercontent0").css("display", "none");
   $(".innercontent2").css("display", "none");
 
-  $(".inneractive1").css("color", "#00acee");
+  $(".inneractive1").css("color", "rgb(255, 138, 157)");
   $(".inneractive0").css("color", "#888");
   $(".inneractive2").css("color", "#888");
 });
@@ -111,7 +111,7 @@ $(".inneractive2").click(() => {
   $(".innercontent1").css("display", "none");
   $(".innercontent0").css("display", "none");
 
-  $(".inneractive2").css("color", "#00acee");
+  $(".inneractive2").css("color", "rgb(255, 138, 157)");
   $(".inneractive1").css("color", "#888");
   $(".inneractive0").css("color", "#888");
 });
@@ -128,6 +128,9 @@ function inputHandler(e, check, text) {
   }
 }
 // -----------------------------------------
+let nicknameCheckBool = true;
+let userEmailCheckBool = true;
+
 function nicknameCheck() {
   const regExp = /^.{1,}$/;
   let result = regExp.test($("#nicknameChangeInner").val());
@@ -150,36 +153,43 @@ function userEmailCheck() {
     return 3;
   }
 }
-// $("#nicknameChangeInner", "#emailChange").on({
-//   keyup: function (e) {
-//     inputHandler(e, nicknameCheck(), "* 닉네임은 최소 한글자 이상");
-//     console.log("namecheck : " + nicknameCheck());
-//   },
-//   keyup: function (e) {
-//     inputHandler(e, userEmailCheck(), "* 정확한 이메일 양식을 작성해주세요");
-//     console.log("mailcheck : " + userEmailCheck());
-//   },
-// });
 
 $("#nicknameChangeInner").keyup((e) => {
   inputHandler(e, nicknameCheck(), "* 닉네임은 최소 한글자 이상");
   console.log("namecheck : " + nicknameCheck());
   if (nicknameCheck() === 1) {
-    $("#nicknameChange").attr("disabled", false);
+    nicknameCheckBool = true;
   } else {
-    $("#nicknameChange").attr("disabled", true);
+    nicknameCheckBool = false;
   }
+  
+  checkBool();
 });
 
 $("#emailChange").keyup((e) => {
   inputHandler(e, userEmailCheck(), "* 정확한 이메일 양식을 작성해주세요");
   console.log("mailcheck : " + userEmailCheck());
   if (userEmailCheck() === 1) {
+    userEmailCheckBool = true;
+  } else {
+    userEmailCheckBool = false;
+  }
+  if(nicknameCheckBool && userEmailCheckBool) {
     $("#nicknameChange").attr("disabled", false);
   } else {
     $("#nicknameChange").attr("disabled", true);
   }
+  checkBool();
 });
+
+function checkBool() {
+  if(nicknameCheckBool && userEmailCheckBool) {
+    $("#nicknameChange").attr("disabled", false);
+  } else {
+    $("#nicknameChange").attr("disabled", true);
+  }
+}
+
 
 // ------------------------------------------------
 // 비밀번호 변경전 비번 한번 더 체크
@@ -209,8 +219,10 @@ $("#checkThisAccount").click(() => {
       }, 60000);
     }, 500);
   } else {
-    $("#wrongTry").text("기존비밀번호를 입력해주세요").css("color", "red");
+    $("#wrongTry").text("* 기존비밀번호를 입력해주세요").css("color", "red");
     $("#accountCheck").val("");
+    $("#accountCheck").effect("shake");
+    
   }
 });
 // 비밀번호 변경을 위한 regExp

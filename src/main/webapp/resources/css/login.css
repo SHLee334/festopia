@@ -1,17 +1,36 @@
 #login-form{
     width: 80%;
 }
+.login-content{
+    margin-top: 10px;
+}
 .login-content label{
     margin-bottom: 10px;
 }
 #bindPwd{
+	margin-top: 20px;
  border: none;
+  width: 100%;
+  color: white;
+  background-color: rgb(255, 138, 157);
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 10px;
+}
+#sugestSingUp{
+    margin-top: 20px;
+    border: none;
   width: 100%;
   color: white;
   background-color: black;
   padding: 20px;
   font-size: 1.2rem;
   font-weight: bold;
+  border-radius: 10px;
+}
+.login-content {
+    margin-top: 10px;
 }
 .login-content input{
     width: 100%;

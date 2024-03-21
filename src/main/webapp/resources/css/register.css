@@ -31,8 +31,9 @@ form {
   cursor: pointer;
   width: 100%;
   color: white;
-  background-color: black;
+  background-color: rgb(255, 138, 157);
   padding: 20px;
   font-size: 1.2rem;
   font-weight: bold;
+  border-radius: 10px;
 }
