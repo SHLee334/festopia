@@ -165,7 +165,7 @@ body::after {
 }
 
 #map {
-  width: 1000px;
+  width: 100%;
   height: 500px;
   border-radius: 7px;
   /* 그림자 */
