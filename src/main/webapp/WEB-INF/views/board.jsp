@@ -24,12 +24,20 @@ uri="http://www.springframework.org/security/tags" %>
 </head>
 <body>
 <% List<NoticeBoard> board = (List<NoticeBoard>) request.getAttribute("board"); %>
-	<c:if test="${user.auth == 'ROLE_MEMBER' || user.auth == 'anonymousUser'}">
+	<c:if test="${user.auth == 'ROLE_MEMBER' || user == 'anonymousUser'}">
 	<jsp:include page="/header.jsp"/>
 	</c:if>
 	<div class="tabs">
 		<div class="bSection-main">
-			여기에 뭔가가 들어갈거예요
+		
+			<c:forEach items="${favInBoard}" var="inBoard">
+			<ul>
+				<li>${inBoard.festival.name}</li>
+				<li>${inBoard.festival.startDate}</li>
+				<li>${inBoard.festival.endDate}</li>
+			</ul>
+			</c:forEach>
+			<div>추가로 사진이랑 위치 정도 다시 조인해서 가져오기</div>
 		</div>
 		<c:if test="${user.auth == 'ROLE_MEMBER'}">
 			<div class="modify-second-page user-board" id="content-page">

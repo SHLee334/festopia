@@ -2,21 +2,28 @@ package com.semi.festopia.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 import org.springframework.web.multipart.MultipartFile;
+
+
+import com.semi.festopia.model.vo.Favorite;
 
 import com.semi.festopia.model.vo.NoticeBoard;
 import com.semi.festopia.model.vo.User;
+import com.semi.festopia.service.FavoriteService;
 import com.semi.festopia.service.NoticeBoardService;
+
 
 @Controller
 public class NoticeBoardController {
@@ -24,9 +31,19 @@ public class NoticeBoardController {
 	@Autowired
 	private NoticeBoardService service;
 	
+	@Autowired
+	private FavoriteService favService;
+	
 	@GetMapping("board")
 	public void boardList(Model model) {
 		model.addAttribute("board", service.boardList());
+		
+		// board로 축제 찜목록 바운딩
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // 인증정보
+		User userDetails = (User) authentication.getPrincipal(); // 사용자 정보
+		
+		List<Favorite> fvList = favService.selectFvAll(userDetails.getUserCode());
+		model.addAttribute("favInBoard", fvList);
 	}
 	
 	@GetMapping("/admin-write")
