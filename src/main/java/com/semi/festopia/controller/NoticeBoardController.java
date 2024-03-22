@@ -24,7 +24,7 @@ public class NoticeBoardController {
 	@Autowired
 	private NoticeBoardService service;
 	
-	@GetMapping("admin")
+	@GetMapping("board")
 	public void boardList(Model model) {
 		model.addAttribute("board", service.boardList());
 	}

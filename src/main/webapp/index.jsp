@@ -67,22 +67,31 @@ uri="http://www.springframework.org/security/tags"%>
       >
         <div class="carousel-inner" id="section1">
           <div class="carousel-item active slider1">
-            <img
-              src="./resources/resources/bg-3d-balloons.jpeg"
-              class="d-block w-100"
-            />
             <div class="carousel-inner-text">
               <h1>FESTOPIA</h1>
               <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
             </div>
+            <img
+              src="./resources/resources/bg-3d-balloons.jpeg"
+              class="d-block w-100"
+            />
           </div>
+
           <div class="carousel-item slider2">
+            <div class="carousel-inner-text">
+              <h1>FESTOPIA</h1>
+              <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
+            </div>
             <img
               src="./resources/resources/bg-pink-blue-water.jpeg"
               class="d-block w-100"
             />
           </div>
           <div class="carousel-item slider3">
+            <div class="carousel-inner-text">
+              <h1>FESTOPIA</h1>
+              <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
+            </div>
             <img
               src="././resources/resources/bg-purple-mirror.jpeg"
               class="d-block w-100"

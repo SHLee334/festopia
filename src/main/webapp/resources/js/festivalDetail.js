@@ -34,3 +34,11 @@ copyBtn.addEventListener("click", function () {
 function handleOnClick() {
   alert("로그인이 필요합니다.");
 }
+
+function emptyComClick() {
+	if(inputZone.value.length != 0) {
+		return true;
+	}
+	alert("공백은 입력 불가능합니다.");
+    return false;
+}

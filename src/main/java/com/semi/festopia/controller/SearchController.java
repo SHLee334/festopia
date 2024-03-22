@@ -1,5 +1,7 @@
 package com.semi.festopia.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.semi.festopia.model.dto.SearchDTO;
 import com.semi.festopia.model.vo.Festival;
 import com.semi.festopia.service.FavoriteService;
@@ -23,9 +25,13 @@ public class SearchController {
 	private FavoriteService favService;
 	
 	@GetMapping("search")
-	public String search(SearchDTO dto, Model model) {
+	public String search(SearchDTO dto, Model model) throws JsonProcessingException {
 		List<Festival> list = searchService.searchFestival(dto);
 		model.addAttribute("list", list);
+		
+		ObjectMapper mapper = new ObjectMapper();
+		String dtoJson = mapper.writeValueAsString(dto);
+		model.addAttribute("dto", dtoJson);
 		return "searchResult";
 	}
 	

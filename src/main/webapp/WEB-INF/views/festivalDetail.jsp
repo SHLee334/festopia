@@ -142,7 +142,7 @@
 				<c:forEach items="${com}" var="item">
 					<div id="comWriterInfo">
 						<p>
-						<strong>${item.user.nickname}</strong> <span> | </span> <span>${item.comDate}</span>
+						<span>${item.user.nickname}</span> <span> | </span> <span>${item.comDate}</span>
 						</p>
 						<c:choose>
 							<c:when test="${user ne 'anonymousUser'}">
@@ -177,7 +177,7 @@
 			</div>
 
 			<div id="inputCom">
-					<form action="/writeCom" method="post" id="inputCom-2">
+					<form action="/writeCom" method="post" id="inputCom-2" onsubmit="return emptyComClick()">
 						<textarea rows="1" cols="300" name="comText" id="inputZone"></textarea>
 						<input type="hidden" name="fesCode" value="${vo.fesCode}" id="comInputBtn" />
 						<c:choose>
@@ -188,12 +188,11 @@
 								       <i class="fa-solid fa-comment-dots"></i>
 								</button>
 							</c:when>
-							
+
 							<c:otherwise>
 								<button type="submit" id="sendCom"><i class="fa-solid fa-comment-dots"></i></button>
 							</c:otherwise>
 						</c:choose>
-						
 					</form>
 					<script>
 					

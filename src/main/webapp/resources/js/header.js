@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   };
 
-  toggleSearch("search-bar", "search-button");
+  toggleSearch("search-bar", "search-button"); 
 
   // searchFilter 보이기
   $(".search__input").click(function () {
@@ -29,6 +29,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
   $(".closeAllSearchFilter").click(function () {
     $(".cateFilter").hide(500);
   });
+  $(".dropdown-item").click(function () {
+    $(".cateFilter").hide(500);
+  });
+  
 
   // datepicker 설정
   $(document).ready(function () {
@@ -168,7 +172,7 @@ function OnClick() {
     'input[name="checkFeeStatus"]:checked'
   ).length;
   if (fee_check == 0) {
-    alert("최소 한개의 옵션을 선택");
+    alert("유/무료 선택은 필수입니다!");
     return false;
   }
   return true;

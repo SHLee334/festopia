@@ -58,26 +58,33 @@ body {
 /* ========== section1 : slide ========== */
 .carousel-inner {
   height: 100vh;
+  width: 100%;
+  text-align: center;
   z-index: -1;
 }
 
 .carousel-item {
-  display: relative;
-  object-fit: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .carousel-inner-text {
-  display: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   color: white;
   text-shadow: 5px 5px 5px rgb(114, 114, 106);
   font-family: "Lilita One", sans-serif;
   font-style: normal;
+  position: absolute;
+  height: 100%;
+  justify-content: center;
 }
 
 .carousel-inner-text h1 {
   font-size: 130px;
   font-weight: 400;
-  margin-top: 350px;
   justify-content: center;
 }
 
@@ -247,7 +254,6 @@ body {
   inset: 0;
   opacity: 0.8;
 }
-
 
 #calendar {
   display: flex;

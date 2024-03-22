@@ -21,7 +21,7 @@ header {
 /* 버튼 전체 div */
 .container {
   display: flex;
-  margin-top: 20px;
+  align-items: center;
 }
 
 /*검색창 애니메이션*/
@@ -143,7 +143,6 @@ header {
 
 /* ========== 로그인 버튼 ========== */
 .accountBtn {
-  margin-top: 20px;
   height: 40px;
 }
 
@@ -153,16 +152,16 @@ header {
 
 /* ========== 공지사항 버튼 ========== */
 #inform {
-  margin-top: 8px;
   padding: 20px;
   margin-left: 15px;
+  margin-right: 15px;
   color: gray;
 }
 
 /*============== SEARCHFILTER ===============*/
 /* search filter category */
 .cateFilter {
-  width: 1080px;
+  width: 1095px;
   background-color: white;
   border: none;
   border-radius: 20px;
@@ -262,12 +261,22 @@ header {
 .fesDate {
   display: flex;
   width: 100%;
+  flex-direction: column;
 }
+
+.fesDate > h5 {
+  margin-bottom: 10px;
+}
+
 #dateSetParty {
   display: flex;
 }
 
 /* search filter fee status */
+.checkfeeStatus > h5 {
+  margin-bottom: 10px;
+}
+
 .feeStatus {
   border: 1px solid black;
 }
@@ -277,6 +286,7 @@ header {
   display: flex;
   justify-content: space-between;
   size: 2rem;
+  margin-bottom: 17px;
 }
 
 #diveButton {
