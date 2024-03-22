@@ -9,7 +9,7 @@ uri="http://www.springframework.org/security/tags" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Insert title here</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
   </head>
   <style>
     .write-container {

@@ -14,7 +14,7 @@ uri="http://www.springframework.org/security/tags" %>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../resources/css/admin.css">
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 <style>
 .boardTable {
 	width: 100%;
