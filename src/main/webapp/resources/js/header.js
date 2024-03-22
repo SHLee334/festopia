@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   };
 
-  toggleSearch("search-bar", "search-button");
+  toggleSearch("search-bar", "search-button"); 
 
   // searchFilter 보이기
   $(".search__input").click(function () {
@@ -29,6 +29,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
   $(".closeAllSearchFilter").click(function () {
     $(".cateFilter").hide(500);
   });
+  $(".dropdown-item").click(function () {
+    $(".cateFilter").hide(500);
+  });
+  
 
   // datepicker 설정
   $(document).ready(function () {
@@ -159,9 +163,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
       color: "black",
       border: "1px solid lightgrey",
     });
-  });
-  $(".accountBtn").click(function () {
-    alert("버튼 클릭!");
   });
 });
 
