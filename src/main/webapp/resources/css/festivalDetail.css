@@ -121,7 +121,6 @@ body::after {
 .fes-detail-map {
   position: relative;
   width: 1000px;
-  /*overflow:hidden;*/
   margin: 20px 50px 50px 50px;
   border: 1px solid black;
 }
@@ -188,6 +187,7 @@ body::after {
 #inputZone {
   width: 90%;
   height: 35px;
+  resize: none;
 }
 #sendCom {
   height: 35px;

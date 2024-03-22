@@ -160,6 +160,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
       border: "1px solid lightgrey",
     });
   });
+  $(".accountBtn").click(function () {
+    alert("버튼 클릭!");
+  });
 });
 
 // 검색필터 유/무료 필수선택 경고, 날짜 선택 오류 경고
@@ -168,7 +171,7 @@ function OnClick() {
     'input[name="checkFeeStatus"]:checked'
   ).length;
   if (fee_check == 0) {
-    alert("최소 한개의 옵션을 선택");
+    alert("유/무료 선택은 필수입니다!");
     return false;
   }
   return true;

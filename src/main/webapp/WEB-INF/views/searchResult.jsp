@@ -44,10 +44,10 @@
         정렬선택
       </button>
       <ul class="dropdown-menu sort-dropdown-menu">
-        <li><a class="dropdown-item sort-dropdown-item" href="/search?sort=2&checkStartDate=${param.checkStartDate}&checkDateSelect=${param.checkDateSelect}&checkFesCate=${param.checkFesCate}&inputFesName=${param.inputFesName}&checkFeeStatus=${param.checkFeeStatus}&checkEndDate=${param.checkEndDate}">축제명</a></li>
-        <li><a class="dropdown-item sort-dropdown-item" href="/search?sort=3&checkStartDate=${param.checkStartDate}&checkDateSelect=${param.checkDateSelect}&checkFesCate=${param.checkFesCate}&inputFesName=${param.inputFesName}&checkFeeStatus=${param.checkFeeStatus}&checkEndDate=${param.checkEndDate}">축제시작일</a></li>
-        <li><a class="dropdown-item sort-dropdown-item" href="/search?sort=4&checkStartDate=${param.checkStartDate}&checkDateSelect=${param.checkDateSelect}&checkFesCate=${param.checkFesCate}&inputFesName=${param.inputFesName}&checkFeeStatus=${param.checkFeeStatus}&checkEndDate=${param.checkEndDate}">축제종료일</a></li>
-        <li><a class="dropdown-item sort-dropdown-item" href="/search?sort=6&checkStartDate=${param.checkStartDate}&checkDateSelect=${param.checkDateSelect}&checkFesCate=${param.checkFesCate}&inputFesName=${param.inputFesName}&checkFeeStatus=${param.checkFeeStatus}&checkEndDate=${param.checkEndDate}">축제장소</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" onclick="sort(2)">축제명</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" onclick="sort(3)">축제시작일</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" onclick="sort(4)">축제종료일</a></li>
+        <li><a class="dropdown-item sort-dropdown-item" onclick="sort(6)">축제장소</a></li>
       </ul>
     </div>
 
@@ -81,6 +81,24 @@
 
 
   <script>
+  	const dto = JSON.parse(`${dto}`);
+  	let link = "/search?sort=";
+  	
+  	function sort(sortValue) {
+  		
+  		link += sortValue;
+  		link += "&checkStartDate=" + dto.checkStartDate;
+  		link += "&checkEndDate=" + dto.checkEndDate;
+  		link += "&checkDateSelect=" + dto.checkDateSelect;
+  		if(dto.checkFesCate != null) {
+  			link += "&checkFesCate=" + dto.checkFesCate;
+  			}
+  		link += "&inputFesName=" + dto.inputFesName;
+  		link += "&checkFeeStatus=" + dto.checkFeeStatus;
+  		
+  		location.href = link;
+  	}
+  	
     $(document).ready(function(){
       function reAction(){
         $("#startButton").trigger("click");

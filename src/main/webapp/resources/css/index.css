@@ -72,7 +72,8 @@ body {
   font-family: "Lilita One", sans-serif;
   font-style: normal;
   position: absolute;
-  margin-top: 350px;
+  height: 100%;
+  justify-content: center;
 }
 
 .carousel-inner-text h1 {
