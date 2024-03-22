@@ -8,7 +8,7 @@
   transform: scale(1.1);
 }
 
-/* ======== body ======== */
+/* ========== body ========== */
 body {
   background-image: url(../../resources/resources/bg-pink-cloud.jpeg);
   position: relative;
@@ -37,7 +37,7 @@ body::after {
 /* ======== sort ======== */
 .result-sort {
   margin-left: 90px;
-  z-index: 999999;
+  // box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 /* ======== content-list ======== */

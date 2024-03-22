@@ -14,7 +14,7 @@ body::after {
   background: white;
   z-index: -1;
   inset: 0;
-  opacity: 0.8;
+  opacity: 0.4;
 }
 
 .fes-detail {
@@ -28,17 +28,25 @@ body::after {
 .fes-detail-card {
   display: flex;
   flex-wrap: nowrap;
-  width: 1000px;
-  height: 450px;
+  width: 1200px;
   align-items: flex-start;
   margin: 20px 50px 50px 50px;
-  border: 1px solid black;
-  background: white;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 7px;
+  /* 그림자 */
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    -o-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.detail-poster {
+.fes-detail-card img {
   position: relative;
+  display: block;
   width: 30%;
+  height: auto;
   border: 1px solid rgb(227, 222, 222);
   border-radius: 2%;
   margin-right: 20px;
@@ -58,18 +66,44 @@ body::after {
   background-color: rgb(134, 17, 125);
   color: white;
   padding: 3px 5px;
-  margin: 0 0 10px 0;
+  margin: 10px 0 20px 0;
   border-radius: 5px;
 }
 
 .detail-name {
   font-weight: bold;
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   border-bottom: 2px solid purple;
   padding-bottom: 10px;
   width: 100%;
   word-break: break-all;
+}
+
+.detail-body {
+  font-size: 1.1rem;
+  margin: 0 15px;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid rgb(240, 240, 240);
+  padding-bottom: 15px;
+}
+
+.detail-body span {
+  font-weight: bold;
+  display: inline-block;
+  width: 110px;
+}
+
+/* 기관 홈페이지 이동 아이콘 */
+.fa-house {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.fa-house:hover {
+  color: pink;
 }
 
 /* ===== 찜 버튼 ===== */
@@ -77,24 +111,26 @@ body::after {
   position: absolute;
   top: 2px;
   right: 10px;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 #addFav {
   color: rgb(71, 71, 71);
 }
 #delFav {
-  color: rgb(223, 33, 33);
+  color: pink;
 }
 
 /* ===== 공유 버튼 ===== */
 .fa-arrow-up-from-bracket {
   position: absolute;
   top: 2px;
-  right: 45px;
+  right: 55px;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 .fa-arrow-up-from-bracket:hover {
-  color: blue;
+  color: pink;
 }
 
 #copy-toast-msg {
@@ -120,15 +156,20 @@ body::after {
 /* ========== 맵 영역 ========== */
 .fes-detail-map {
   position: relative;
-  width: 1000px;
-  /*overflow:hidden;*/
+  width: 1200px;
   margin: 20px 50px 50px 50px;
-  border: 1px solid black;
 }
 
 #map {
   width: 1000px;
   height: 500px;
+  border-radius: 7px;
+  /* 그림자 */
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    -o-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 /* ===== 댓글 구역 ===== */

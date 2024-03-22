@@ -26,8 +26,8 @@
 
 <body>
 <!-- confetti -->
-<script src="resources/js/confetti.js"></</script>
-<div class="buttonContainer">
+<script src="resources/js/confetti.js"></script>
+<div class="buttonContainer" style="display:none">
     <button class="canvasBtn" id="stopButton">Stop Confetti</button>
     <button class="canvasBtn" id="startButton">Start Confetti</button>
 </div>
@@ -38,7 +38,7 @@
 
   <div class="body-content">
 
-    <!-- 정렬 드롭다운 -->
+    <!-- ========== 정렬 드롭다운 ========== -->
     <div class="dropdown result-sort">
       <button class="btn btn-secondary dropdown-toggle sort-dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         정렬선택
@@ -51,11 +51,11 @@
       </ul>
     </div>
 
-	<!-- 검색결과 축제 항목 카드 -->
+	<!-- ========== 검색결과 축제 항목 카드 ========== -->
 	<div class="content-list">
 		<c:forEach items="${list}" var="item">
 			<a href="/detail?code=${item.fesCode}" class="card">
-				<img src="${item.poster}" class="card-poster" >
+				<img src="${item.poster}" class="card-poster" onerror="this.onerror=null; this.src='./resources/resources/favicon.png';">
 				<div class="card-body">
                     <p class="card-name">${item.name}</p>
                     <p class="card-date">${item.startDate} ~ ${item.endDate}</p>
@@ -81,17 +81,12 @@
 
 
   <script>
-    $(document).ready(function(){
-      function reAction(){
-        $("#startButton").trigger("click");
-        setTimeout(function(){
-          $("#stopButton").trigger("click");
-          }, 2000);
-      }
-      $("#startButton").on('click', function(){
-      reAction();
-      });
-    });
+    window.onload=function(){
+      $("#startButton").trigger("click");
+      setTimeout(function(){
+        $("#stopButton").trigger("click");
+      }, 6000);
+    }
   </script>
   <script src="/resources/js/searchResult.js"></script>
 </body>

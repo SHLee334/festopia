@@ -27,7 +27,7 @@ uri="http://www.springframework.org/security/tags"%>
       rel="stylesheet"
     />
 
-    <!-- Full Calendar -->
+    <!-- ========== Full Calendar ========== -->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
   </head>
 
@@ -78,13 +78,13 @@ uri="http://www.springframework.org/security/tags"%>
           </div>
           <div class="carousel-item slider2">
             <img
-              src="./resources/resources/bg-blue-cloud.jpeg"
+              src="./resources/resources/bg-pink-blue-water.jpeg"
               class="d-block w-100"
             />
           </div>
           <div class="carousel-item slider3">
             <img
-              src="././resources/resources/bg-3d-flowers2.jpeg"
+              src="././resources/resources/bg-purple-mirror.jpeg"
               class="d-block w-100"
             />
           </div>
@@ -93,13 +93,13 @@ uri="http://www.springframework.org/security/tags"%>
 
       <!-- ========== section2 ========== -->
       <section class="popular" id="section2">
-        <h2>인기 축제</h2>
+        <h2 id="section-title">인기 축제</h2>
         <div class="popular-festival-list"></div>
       </section>
 
       <!-- ========== section3 ========== -->
       <section id="section3">
-        <h2>이번 달 축제 일정</h2>
+        <h2 id="section-title">월별 축제</h2>
         <div id="calendar"></div>
       </section>
     </main>

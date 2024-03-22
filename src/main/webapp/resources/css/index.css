@@ -11,6 +11,14 @@ body {
   padding: 0;
 }
 
+/* section2, section3 타이틀 텍스트 */
+#section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px rgb(114, 114, 106);
+  font-family: "Lilita One", sans-serif;
+}
+
 /* ========== 프로그레스 바 ========== */
 .progress-bar-container {
   position: fixed;
@@ -28,7 +36,6 @@ body {
   background: #00a8ff;
   background-color: rgb(195, 126, 235);
 }
-
 
 /* ========== 섹션이동 버튼 ========== */
 .section-btn-container {
@@ -48,7 +55,6 @@ body {
   height: 50px;
 }
 
-
 /* ========== section1 : slide ========== */
 .carousel-inner {
   height: 100vh;
@@ -57,6 +63,7 @@ body {
 
 .carousel-item {
   display: relative;
+  object-fit: cover;
 }
 
 .carousel-inner-text {
@@ -80,8 +87,7 @@ body {
   justify-content: center;
 }
 
-
-/* 스크롤 */
+/* 스크롤
 .text-animation {
   animation: textAni 1s forwards;
 }
@@ -95,11 +101,15 @@ body {
 	opacity: 1;
 	transform: translateY(-10px);
   }
-}
-
+}*/
 
 /* ========== section2 : popular ========== */
 #section2 {
+  background-image: url(../../resources/resources/bg-flower.webp);
+  position: relative;
+  isolation: isolate;
+  background-size: cover;
+  background-size: center;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -108,6 +118,15 @@ body {
   justify-content: center;
   padding-top: 90px;
   text-align: center;
+}
+
+#section2::after {
+  content: "";
+  position: absolute;
+  background: white;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.8;
 }
 
 .popular-festival-list {
@@ -153,6 +172,8 @@ body {
 }
 
 .main-card-body {
+  background: white;
+  background-opacity: 0.7;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -203,6 +224,11 @@ body {
 
 /* ========== section3 : calendar ========== */
 #section3 {
+  background-image: url(../../resources/resources/bg-flower.webp);
+  position: relative;
+  isolation: isolate;
+  background-size: cover;
+  background-size: center;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -213,16 +239,25 @@ body {
   padding-top: 90px;
 }
 
+#section3::after {
+  content: "";
+  position: absolute;
+  background: white;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.8;
+}
+
+
 #calendar {
   display: flex;
   width: 100%;
   height: 95%;
   justify-content: center;
   padding: 45px;
-
 }
 
 .fc .fc-daygrid-day-frame {
-    height: 50px;
-    overflow: hidden;
+  height: 50px;
+  overflow: hidden;
 }

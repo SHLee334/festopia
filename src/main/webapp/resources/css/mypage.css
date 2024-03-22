@@ -1,3 +1,28 @@
+@charset "UTF-8";
+
+.mypage-container {
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   background-image: url(../../resources/resources/bg-color-pattern.jpeg);
+   position: relative;
+   isolation: isolate;
+   background-size: cover;
+   background-size: center;
+   background-position: bottom;
+   flex-shrink: 0;
+ }
+
+.mypage-container::after {
+   content: "";
+   position: absolute;
+   background: white;
+   z-index: -1;
+   inset: 0;
+   opacity: 0.5;
+ }
+
+
 @keyframes fadeInDown {
   0% {
     opacity: 0.5;
@@ -11,6 +36,7 @@
 :is(#button01, #button02, #button03, #button04) {
   animation: fadeInDown 0.8s;
 }
+
 #button01 {
   position: relative;
   animation-delay: 0.1s;
@@ -52,17 +78,6 @@
 }
 :is(#main-jsp1, #main-jsp2, #main-jsp3, #admin-jsp) {
   animation: fadeInSide 0.3s;
-}
-
-.mypage-container {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  background-image: url(../../resources/css/mypage.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-  flex-shrink: 0;
 }
 
 .item {
