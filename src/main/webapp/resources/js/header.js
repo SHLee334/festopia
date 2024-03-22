@@ -177,3 +177,8 @@ function OnClick() {
   }
   return true;
 }
+
+
+$("#sugestSingUp").click(()=>{
+	$("#regi-trigger").trigger("click");
+})

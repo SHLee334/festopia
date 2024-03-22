@@ -314,7 +314,7 @@ uri="http://www.springframework.org/security/tags"%>
           </button>
 
           <!-- ========== 공지사항 ========== -->
-          <a href="" id="inform">
+          <a href="/admin" id="inform">
             <i class="fa-solid fa-circle-exclamation fa-2xl"></i
           ></a>
           <!-- <sec:authentication property="principal" var="user" /> -->
@@ -339,6 +339,7 @@ uri="http://www.springframework.org/security/tags"%>
                     class="dropdown-item"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal2"
+                    id="regi-trigger"
                   >
                     회원가입
                   </button>

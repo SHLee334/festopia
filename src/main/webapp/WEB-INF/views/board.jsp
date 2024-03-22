@@ -24,7 +24,42 @@ uri="http://www.springframework.org/security/tags" %>
 </head>
 <body>
 <% List<NoticeBoard> board = (List<NoticeBoard>) request.getAttribute("board"); %>
+	<c:if test="${user.auth == 'ROLE_MEMBER' || user.auth == 'anonymousUser'}">
+	<jsp:include page="/header.jsp"/>
+	</c:if>
 	<div class="tabs">
+		<div class="bSection-main">
+			여기에 뭔가가 들어갈거예요
+		</div>
+		<c:if test="${user.auth == 'ROLE_MEMBER'}">
+			<div class="modify-second-page user-board" id="content-page">
+				<h1 id="view-title-user">공지사항</h1>
+				<table class="boardTable-user">
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>제목</th>
+							<th>작성자</th>
+							<th>날짜</th>
+							<th>조회수</th>
+						</tr>
+					</thead>
+					<tbody>
+					<c:forEach items="${board}" var="b" varStatus="status">
+						<tr onclick="location.href='noticeView?no=${b.no}&userCode=${b.userCode}'" style="cursor:hand">
+							<td>${fn:length(board) -  status.index}</td>
+							<td >${b.noticeTitle }</a></td>
+							<td>${b.user.nickname}</td>
+							<td><fmt:formatDate value="${b.noticeDate}" pattern="yyyy-MM-dd"/></td>
+							<td id="viewCount">${b.viewCount}</td>
+						</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</c:if>
+	
+	
 		<c:if test='${user.auth == "ROLE_ADMIN"}'>
 		<div class="tab-header">
 			<div class="pigeon-account-small">
@@ -40,7 +75,7 @@ uri="http://www.springframework.org/security/tags" %>
 		  <div class="inneractive1">게시글 작성</div>
 		  <div class="inneractive2">festopia</div>
 		</div>
-		</c:if>
+		
 		
 		
 		<div class="tab-content">
@@ -74,7 +109,7 @@ uri="http://www.springframework.org/security/tags" %>
 			</div>
 			
 		  </div>
-  			<c:if test="${user.auth == 'ROLE_ADMIN'}">
+  		
   			<div class="innercontent1">
 				<div class="modify-second-page" id="content-page">
 					<jsp:include page="admin-write.jsp" />
@@ -89,9 +124,9 @@ uri="http://www.springframework.org/security/tags" %>
 			  
 			</div>
 		  </div>
-		  </c:if>
 		</div>
-	  </div>
+		</c:if>
+	</div>
 
 
 	  <script src="../../resources/js/admin.js"></script>

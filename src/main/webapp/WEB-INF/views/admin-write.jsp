@@ -9,6 +9,7 @@ uri="http://www.springframework.org/security/tags" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <style>
     .write-container {
@@ -41,13 +42,52 @@ uri="http://www.springframework.org/security/tags" %>
     .end-container {
       width: 75%;
       display: flex;
-      justify-content: space-between;
+      justify-content: end;
       align-items: center;
     }
-    #image_container {
-      width: 200px;
-      height: 200px;
-    }
+    .end-container label {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+  .end-container input[type="file"]{
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+  }
+  .image_container{
+    width: 300px;
+    height: 300px;
+    display: none;
+    border: 1px solid grey;
+    border-radius: 10px;
+  }
+  #image_container img{
+    max-width: 80%;
+    border: 1px solid grey;
+    border-radius: 10px;
+  }
+  /* 버튼 */
+  .write-submit{
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    color: white;
+    background-color: rgb(255, 138, 157);
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+  }
   </style>
   <body>
     <div class="write-container">
@@ -66,6 +106,7 @@ uri="http://www.springframework.org/security/tags" %>
 
         <!-- 쓰는 곳 -->
         <div class="write-group">
+          <!-- <div id="editor" contenteditable="true" class="write-control" name="noticeContent" ></div> -->
           <textarea
             class="write-control"
             rows="10"
@@ -73,21 +114,27 @@ uri="http://www.springframework.org/security/tags" %>
             placeholder="본문글을 입력해주세요."
           ></textarea>
         </div>
+        
         <div class="end-container">
-          <input
-            class="write-input"
-            type="file"
-            id="file"
-            name="file"
-            accept="image/*"
-            onchange="setThumbnail(event);"
-          />
+          
+            <label for="writeFile" id="inputImg"><i class="fa-solid fa-camera" ></i></label>
+            <input
+              class="write-input"
+              type="file"
+              id="writeFile"
+              name="file"
+              accept="image/*"
+              onchange="setThumbnail(event);"
+            />
+          
           <!-- 버튼 등록 -->
-          <button type="submit" class="btn btn-outline-warning">등록</button>
+          <button type="submit" class="write-submit">등록</button>
+          
         </div>
+        <div id="image_container"></div>
       </form>
     </div>
-    <div id="image_container"></div>
+    
     <script>
       function setThumbnail(event) {
         var reader = new FileReader();
@@ -100,6 +147,16 @@ uri="http://www.springframework.org/security/tags" %>
 
         reader.readAsDataURL(event.target.files[0]);
       }
+
+      $("#inputImg").on({
+        mouseenter: ()=>{
+          $("#image_container").show();
+        },
+        mouseleave: ()=>{
+          $("#image_container").hide();
+        },
+      }
+      )
     </script>
   </body>
 </html>

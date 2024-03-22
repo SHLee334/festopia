@@ -221,7 +221,8 @@ $("#checkThisAccount").click(() => {
   } else {
     $("#wrongTry").text("* 기존비밀번호를 입력해주세요").css("color", "red");
     $("#accountCheck").val("");
-    $("#accountCheck").effect("shake");
+    // 비밀번호 틀리면 절레절레
+    $( ".current-pwd-check" ).effect( "shake" );
     
   }
 });
