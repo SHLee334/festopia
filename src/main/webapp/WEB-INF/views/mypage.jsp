@@ -74,7 +74,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <c:if test="${user.auth == 'ROLE_ADMIN'}">
         <div class="item" id="admin-jsp">
           <div class="notice-main" id="notice">
-            <jsp:include page="admin.jsp" />
+            <jsp:include page="board.jsp" />
           </div>
         </div>
       </c:if>
