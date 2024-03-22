@@ -339,6 +339,7 @@ uri="http://www.springframework.org/security/tags"%>
                     class="dropdown-item"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal2"
+                    id="regi-trigger"
                   >
                     회원가입
                   </button>

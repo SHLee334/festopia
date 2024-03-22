@@ -48,6 +48,11 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
     }
 
     /* readonly!! */
+
+    #editor{
+      border: 1px solid grey;
+      height: 200px;
+    }
   </style>
   <body>
     <% NoticeBoard board = (NoticeBoard) request.getAttribute("vo"); %>
@@ -69,8 +74,7 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
 	
 	      <!-- 쓰는 곳 -->
 	      <div class="write-group">
-	        <textarea class="write-control" rows="10" name="noticeContent" readonly>${vo.noticeContent}</textarea
-	        >
+           <div id="editor" contenteditable="true" class="write-control" name="noticeContent" >${vo.noticeContent}</div>
 	      </div>
 	      <div id="image_container">
 	        <a href="/adminUpload/${vo.noticeUrl}" download

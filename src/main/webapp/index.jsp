@@ -90,7 +90,6 @@ uri="http://www.springframework.org/security/tags"%>
           </div>
         </div>
       </div>
-
       <!-- ========== section2 ========== -->
       <section class="popular" id="section2">
         <h2>인기 축제</h2>

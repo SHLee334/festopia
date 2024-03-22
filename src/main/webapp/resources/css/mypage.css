@@ -131,6 +131,9 @@
   overflow: auto;
   flex-shrink: 0;
 }
+#admin-jsp::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
 
 /* 구간 별 색깔 */
 #button01 {

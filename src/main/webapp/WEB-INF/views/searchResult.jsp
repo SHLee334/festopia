@@ -26,7 +26,7 @@
 
 <body>
 <!-- confetti -->
-<script src="resources/js/confetti.js"></</script>
+<script src="resources/js/confetti.js"></script>
 <div class="buttonContainer">
     <button class="canvasBtn" id="stopButton">Stop Confetti</button>
     <button class="canvasBtn" id="startButton">Start Confetti</button>

@@ -19,7 +19,9 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
     />
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="../../resources/css/mypage-account.css" />
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
     <div class="tabs">
@@ -186,6 +188,5 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
     </div>
 
     <script src="../../resources/js/mypage-account.js"></script>
-
   </body>
 </html>

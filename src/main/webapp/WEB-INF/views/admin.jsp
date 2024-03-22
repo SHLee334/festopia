@@ -24,12 +24,15 @@ uri="http://www.springframework.org/security/tags" %>
 </head>
 <body>
 <% List<NoticeBoard> board = (List<NoticeBoard>) request.getAttribute("board"); %>
-	<c:if test="${user.auth == 'ROLE_MEMBER'}">
+	<c:if test="${user.auth == 'ROLE_MEMBER' || user.auth == 'anonymousUser'}">
 	<jsp:include page="/header.jsp"/>
 	</c:if>
 	<div class="tabs">
+		<div class="bSection-main">
+			여기에 뭔가가 들어갈거예요
+		</div>
 		<c:if test="${user.auth == 'ROLE_MEMBER'}">
-			<div class="modify-second-page" id="content-page">
+			<div class="modify-second-page user-board" id="content-page">
 				<h1 id="view-title-user">공지사항</h1>
 				<table class="boardTable-user">
 					<thead>
@@ -45,7 +48,7 @@ uri="http://www.springframework.org/security/tags" %>
 					<c:forEach items="${board}" var="b" varStatus="status">
 						<tr onclick="location.href='noticeView?no=${b.no}&userCode=${b.userCode}'" style="cursor:hand">
 							<td>${fn:length(board) -  status.index}</td>
-							<td><a href="noticeView?no=${b.no}&userCode=${b.userCode}" id="adminDetail"> ${b.noticeTitle }</a></td>
+							<td >${b.noticeTitle }</a></td>
 							<td>${b.user.nickname}</td>
 							<td><fmt:formatDate value="${b.noticeDate}" pattern="yyyy-MM-dd"/></td>
 							<td id="viewCount">${b.viewCount}</td>
@@ -123,7 +126,7 @@ uri="http://www.springframework.org/security/tags" %>
 		  </div>
 		</div>
 		</c:if>
-	  </div>
+	</div>
 
 
 	  <script src="../../resources/js/admin.js"></script>
