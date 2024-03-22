@@ -111,38 +111,6 @@
 		WHERE fes_code = #{fesCode}
 	</update>
 
-	<!-- ========== 검색결과 정렬 ========== -->
-	<!-- 축제명 오름차순 -->
-	<select id="fesNameA" resultMap="festivalMap">
-		SELECT * FROM festival
-		ORDER BY fes_name ASC
-	</select>
-	<!-- 축제명 내림차순 -->
-	<select id="fesNameD" resultMap="festivalMap">
-		SELECT * FROM festival
-		ORDER BY fes_name DESC
-	</select>
-	<!-- 사작일 오름차순 -->
-	<select id="startDateA" resultMap="festivalMap">
-		SELECT * FROM festival
-		ORDER BY fes_start_date ASC
-	</select>
-	<!-- 시작일 내림차순 -->
-	<select id="startDateD" resultMap="festivalMap">
-		SELECT * FROM festival
-		ORDER BY fes_start_date DESC
-	</select>
-	<!-- 종료일 오름차순 -->
-	<select id="endDateA" resultMap="festivalMap">
-		SELECT * FROM festival
-		ORDER BY fes_end_date ASC
-	</select>
-	<!-- 종료일 내림차순 -->
-	<select id="endDateD" resultMap="festivalMap">
-		SELECT * FROM festival
-		ORDER BY fes_end_date DESC
-	</select>
-
 	<select id="calendarFes" parameterType="String" resultMap="festivalMap">
 		SELECT * FROM festival
 	</select>
