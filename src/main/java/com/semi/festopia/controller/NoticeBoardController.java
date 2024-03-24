@@ -50,7 +50,8 @@ public class NoticeBoardController {
 	public void adminWrite() {}
 	
 
-	private String path = "D:\\festopia\\adminUpload\\";
+//	private String path = "D:\\festopia\\adminUpload\\";
+	private String path = "C:\\festopia\\adminUpload\\";
 	
 	// 파일 업로드 기능
 	public String fileUpload(MultipartFile file) throws IllegalStateException, IOException {
@@ -76,6 +77,13 @@ public class NoticeBoardController {
 	@GetMapping("/noticeView")
 	public void noticeView(Model model, String no) {
 		model.addAttribute("vo", service.noticeView(Integer.parseInt(no)));
+		
+		// board로 축제 찜목록 바운딩
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // 인증정보
+		User userDetails = (User) authentication.getPrincipal(); // 사용자 정보
+
+		List<Favorite> fvList = favService.selectFvAll(userDetails.getUserCode());
+		model.addAttribute("favInBoard", fvList);
 	}
 	
 //	// 조회수

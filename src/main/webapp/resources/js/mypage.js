@@ -18,3 +18,11 @@ $("#button04").click(() => {
   $("#admin-jsp").toggle();
   $("#main-jsp1").css("display", "none");
 });
+
+// 공지사항, 로그인
+$("#button03").click(()=>{
+  location.href = "/board";
+});
+$("#button05").click(()=>{
+  location.href = "/logout";
+});

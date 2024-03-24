@@ -81,16 +81,58 @@ body {
 }
 /* 비밀번호 변경전 확인 */
 #pwdChangeForm {
-  background-color: aquamarine;
+  background-color: white;
+  width: 100%;
   height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.current-pwd-check{
+#pwdChangeForm span{
+  text-align: left;
+  height: 20px;
+}
+#innerPwdChangeForm{
   display: flex;
   flex-direction: column;
 }
+.current-pwd-check{
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#passwordChangeInner{
+  background-color: rgb(240, 240, 240);
+  width: 400px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
+#passwordCheckInner{
+  background-color: rgb(240, 240, 240);
+  width: 400px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
+#pwdChangeFormButton{
+  background-color: black;
+  color: white;
+  width: 400px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
 /* 틀렸을때 span 태그 아래로 보내기 */
 #accountCheck{
   background-color: rgb(240, 240, 240);
@@ -116,14 +158,6 @@ body {
   border: none;
   border-radius: 10px;
 }
-
-.current-pwd-check {
-  height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 #userImage img {
   width: 200px;
   height: 200px;
@@ -196,6 +230,40 @@ body {
   background-color: black;
   color: white;
   width: 50%;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+/*  회원탈퇴 */
+.unableAccountContainer{
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#deleteCheck{
+  background-color: rgb(240, 240, 240);
+  width: 400px;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
+.unableAccountContainer span{
+  width: 50%;
+  text-align: left;
+  height: 20px;
+}
+#deleteThisAccount{
+  background-color: black;
+  color: white;
+  width: 400px;
   padding: 15px 10px;
   margin-bottom: 5px;
   margin-top: 10px;

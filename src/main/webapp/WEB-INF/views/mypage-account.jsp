@@ -135,7 +135,7 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
               <input type="button" id="checkThisAccount" value="확인" />
             </div>
             <form id="pwdChangeForm">
-              <div>
+              <div id="innerPwdChangeForm">
                 <input
                   type="password"
                   name="password"
@@ -150,38 +150,56 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
                   placeholder="변경할 비밀번호를 한번 더 입력해주세요"
                 />
                 <span></span>
-              </div>
 
-              <div>
                 <input type="hidden" name="userCode" value="${user.userCode}" />
                 <input type="hidden" name="auth" value="${user.auth}" />
-                <input
+                <button
                   type="button"
                   id="pwdChangeFormButton"
-                  value="비밀번호 변경하기"
-                />
+                > 비밀번호변경하기</button>     
               </div>
             </form>
           </div>
         </div>
 
         <div class="innercontent2">
-          <div class="modify-second-page" id="content-page">
-            회원탈퇴
-            <form action="/unableAccount" method="post">
-              <div>
+          <div class="modify-second-page " id="content-page">
+      
+            <div class="unableAccountContainer">
+              
+              <input
+                type="password"
+                name="password"
+                id="accountCheck"
+                placeholder="현재 비밀번호를 입력하세요."
+              />
+                <input type="hidden" id="accountPwdCheck_delete" value="${pwdBind}" />
+                <span id="deleteTry"></span>
+              
+            
+                <form action="/unableAccount" method="post" id="goodbye"></form>
+                <input type="hidden" name="userCode" id="goodbyeCheck" value="${user.userCode}" />
+                <button type="submit" id="deleteThisAccount">계정삭제</button>
+              
+              </form>
+          </div>      
+            <!-- <div class="unableAccountContainer">
                 <input
                   type="password"
                   name="password"
-                  placeholder="비밀번호를 입력해주세요"
+                  id="deleteCheck"
+                  placeholder="현재 비밀번호를 입력하세요"
                 />
-                <input type="hidden" name="pwdCheck" value="${user.password}" />
+                <input type="hidden" name="pwdCheck" value="${pwdBind}" />
 
-                <span>인증완료!(패스워드 인증시 뜨는 문자)</span>
+                <span>ㄴㄴㄴ</span>
+              <form action="/unableAccount" method="post" id="goodbye"></form>
                 <input type="hidden" name="userCode" value="${user.userCode}" />
-                <input type="submit" value="계정삭제" />
-              </div>
-            </form>
+                <button type="submit" id="deleteThisAccount">계정삭제</button>
+              
+              </form>
+            </div> -->
+          
           </div>
         </div>
       </div>
