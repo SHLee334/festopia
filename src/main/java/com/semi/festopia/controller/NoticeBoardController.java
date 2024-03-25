@@ -13,7 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -86,13 +86,13 @@ public class NoticeBoardController {
 		model.addAttribute("favInBoard", fvList);
 	}
 	
-//	// 조회수
-//	@ResponseBody
-//	@PostMapping("/viewCount")
-//	public int viewCount(String count) {
-//		System.out.println("controller" + Integer.parseInt(count));
-//	return service.viewCount(Integer.parseInt(count));
-//	}
+	// 조회수
+	@ResponseBody
+	@PostMapping("/viewCount")
+	public int viewCount(String viewCount) {
+		System.out.println("controller 제발" +Integer.parseInt(viewCount));
+	return service.viewCount(Integer.parseInt(viewCount));
+	}
 	
 	// 글 수정
 	@PostMapping("/updateNotice")

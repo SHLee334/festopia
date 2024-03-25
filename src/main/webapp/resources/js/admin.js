@@ -1,11 +1,14 @@
-$("#adminDetail").click(() => {
+this.$("#tableDetail").click(() => {
+  alert("!");
   $.ajax({
     type: "post",
     url: "/viewCount",
-    data: "viewCount=" + this.$("#viewCount").val(),
+    data: $("#countForm").serialize(),
     success: function (count) {
+      alert("!");
       console.log(count);
       this.$("#viewCount").text(count);
+      this.$("#actualCount").text(count);
     },
   });
 });
