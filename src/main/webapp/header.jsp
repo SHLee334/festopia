@@ -377,7 +377,7 @@ uri="http://www.springframework.org/security/tags"%>
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body login-modal">
               <jsp:include page="/WEB-INF/views/login.jsp" />
             </div>
           </div>

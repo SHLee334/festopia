@@ -37,3 +37,8 @@ form {
   font-weight: bold;
   border-radius: 10px;
 }
+
+.user-register {
+	display: flex;
+    justify-content: center;
+}
