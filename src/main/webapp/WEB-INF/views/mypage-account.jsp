@@ -177,7 +177,7 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
                 <span id="deleteTry"></span>
               
             
-                <form action="/unableAccount" method="post" id="goodbye"></form>
+                <form action="/unableAccount" method="post" id="goodbye">
                 <input type="hidden" name="userCode" id="goodbyeCheck" value="${user.userCode}" />
                 <button type="submit" id="deleteThisAccount">계정삭제</button>
               
