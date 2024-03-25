@@ -50,8 +50,8 @@ public class NoticeBoardController {
 	public void adminWrite() {}
 	
 
-//	private String path = "D:\\festopia\\adminUpload\\";
-	private String path = "C:\\festopia\\adminUpload\\";
+	private String path = "D:\\festopia\\adminUpload\\";
+//	private String path = "C:\\festopia\\adminUpload\\";
 	
 	// 파일 업로드 기능
 	public String fileUpload(MultipartFile file) throws IllegalStateException, IOException {

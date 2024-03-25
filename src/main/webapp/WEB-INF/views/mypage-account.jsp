@@ -170,7 +170,7 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
               <input
                 type="password"
                 name="password"
-                id="accountCheck"
+                id="accountCheck_delete"
                 placeholder="현재 비밀번호를 입력하세요."
               />
                 <input type="hidden" id="accountPwdCheck_delete" value="${pwdBind}" />
@@ -183,23 +183,6 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
               
               </form>
           </div>      
-            <!-- <div class="unableAccountContainer">
-                <input
-                  type="password"
-                  name="password"
-                  id="deleteCheck"
-                  placeholder="현재 비밀번호를 입력하세요"
-                />
-                <input type="hidden" name="pwdCheck" value="${pwdBind}" />
-
-                <span>ㄴㄴㄴ</span>
-              <form action="/unableAccount" method="post" id="goodbye"></form>
-                <input type="hidden" name="userCode" value="${user.userCode}" />
-                <button type="submit" id="deleteThisAccount">계정삭제</button>
-              
-              </form>
-            </div> -->
-          
           </div>
         </div>
       </div>

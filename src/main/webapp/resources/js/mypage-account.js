@@ -278,22 +278,20 @@ function pwdChangeBool(){
     $("#pwdChangeFormButton").attr("disabled", true).css("background-color","grey");
   }
 }
-
+$("#deleteThisAccount").css("display", "none");
 function userPwdDoubleCheck_delete() {
-  let result = $("#accountPwdCheck_delete").val() === $("#goodbyeCheck").val();
+  let result = $("#accountCheck_delete").val() === $("#accountPwdCheck_delete").val();
   if (result === true) {
     return 1;
   } else if (result === false) {
     return 3;
   }
 }
-$("#accountPwdCheck_delete").keyup((e) => {
-  inputHandler(
-    e,
-    userPwdDoubleCheck_delete(),
-    "* 기존 비밀번호와 일치하지않습니다.");
+$("#accountCheck_delete").keyup((e) => {
+  console.log(userPwdDoubleCheck_delete());
+  inputHandler(e, userPwdDoubleCheck_delete(), "* 기존 비밀번호와 일치하지않습니다.");
     if(userPwdDoubleCheck_delete() == 1){
-      $("#deleteThisAccount").css("display", "black");
+      $("#deleteThisAccount").css("display", "block");
     }else{
       $("#deleteThisAccount").css("display", "none");
     }
