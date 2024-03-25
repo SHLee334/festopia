@@ -7,60 +7,35 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
   <head>
     <meta charset="UTF-8" />
     <title>Insert title here</title>
+    <link rel="stylesheet" href="../../resources/css/Image_Gallery.css">
+    <link rel="stylesheet" href="../../resources/css/noticeView.css">
   </head>
-  <style>
-    .write-container {
-      display: flex;
-      flex-direction: column;
-    }
-    .write-group {
-      border-top: 1px solid grey;
-      /* background-color: red; */
-      width: 75%;
-    }
-    .write-control {
-      /* background-color: red; */
-      width: 100%;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-    #top-title {
-      border-top: 3px solid;
-    }
-    #main-notice {
-      font-size: 2rem;
-      padding-bottom: 15px;
-      text-align: left;
-    }
-    #file {
-      display: flex;
-      align-items: center;
-    }
-    .end-container {
-      width: 75%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    #image_container {
-      width: 200px;
-      height: 200px;
-    }
-
-    /* readonly!! */
-
-    #editor{
-      border: 1px solid grey;
-      height: 200px;
-    }
-  </style>
   <body>
     <% NoticeBoard board = (NoticeBoard) request.getAttribute("vo"); %>
   <sec:authentication property="principal" var="user" />
-    <c:if test="${user.auth == 'ROLE_MEMBER'}">  
+
+  <c:if test="${user.auth == 'ROLE_MEMBER' || user == 'anonymousUser'}">
+	<jsp:include page="/header.jsp"/>
+	</c:if>
+		<c:if test="${user.auth == 'ROLE_MEMBER'}">
+		<div class="bSection-main">
+			<div class="Container">
+	
+			<c:forEach items="${favInBoard}" var="inBoard">
+				<div class="Picture">
+					<img class="Picture-img card-poster " src='${inBoard.festival.poster}'/>
+					<div class="Picture-note card-body">
+						<p class="card-name">${inBoard.festival.name}</p>
+						<p class="card-date">${inBoard.festival.startDate} ~ ${inBoard.festival.endDate}</p>
+						<p class="card-place">${inBoard.festival.endDate}</p>
+					</div>
+				  </div>
+			</c:forEach>
+			</div>
+		</div>
     
     	 <!-- 여기는 일반 유저가 볼수 있는 화면 -->
-	    <div class="write-container">
+	    <div class="write-container view-user">
 	      <h1 id="main-notice">공지사항 상세정보</h1>
 	      <!-- 제목 부분 -->
 	      <div class="write-group" id="top-title">
@@ -130,13 +105,6 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
        </div> 
        
        </c:if>
-    			
-    
-    
- 
-   
-
-
-    
+       <script src="../../resources/js/Image_Gallery.js"></script>
   </body>
 </html>

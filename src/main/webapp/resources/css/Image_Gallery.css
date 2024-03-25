@@ -1,0 +1,122 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Caveat"); */
+
+
+.Container {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+}
+
+.Picture {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 5px solid #fff;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+  user-select: none;
+  cursor: pointer;
+  text-overflow: ellipsis;
+}
+
+.Picture-img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+}
+.card-poster {
+  position: relative;
+  height: 400px;
+  object-fit: cover;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  text-overflow: ellipsis;
+}
+.Picture-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 70px;
+  padding: 12px 24px;
+  font-size: 1.5rem;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+/* .card-body {
+  position: relative;
+  display: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100px;
+  padding: 5px 10px !important;
+  border-top: 1px solid rgb(227, 222, 222);
+} */
+.card-name {
+  font-size: 1rem;
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-date {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-place {
+  font-size: 0.8rem;
+  margin: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Network {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.Network img {
+  width: 1.5rem;
+  aspect-ratio: 1 / 1;
+  vertical-align: middle;
+}
+
+/* --------------------- */
+/* Other styles          */
+/* --------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+/* body {
+  margin: 0;
+  font-family: 'Caveat', serif;
+  overflow: hidden;
+} */
+
+.Me {
+  position: fixed;
+  z-index: 15;
+  bottom: 20px;
+  left: 50%;
+  color: #111;
+  transform: translateX(-50%);
+  font-weight: 700;
+  text-align: center;
+  opacity: 0.7;
+}

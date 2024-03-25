@@ -35,6 +35,8 @@ public class SearchController {
 		return "searchResult";
 	}
 	
+	
+	
 	@ResponseBody
 	@PostMapping("/search")
 	public List<Festival> search(Model model) {

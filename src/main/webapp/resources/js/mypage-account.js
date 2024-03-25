@@ -174,19 +174,14 @@ $("#emailChange").keyup((e) => {
   } else {
     userEmailCheckBool = false;
   }
-  if(nicknameCheckBool && userEmailCheckBool) {
-    $("#nicknameChange").attr("disabled", false);
-  } else {
-    $("#nicknameChange").attr("disabled", true);
-  }
   checkBool();
 });
 
 function checkBool() {
   if(nicknameCheckBool && userEmailCheckBool) {
-    $("#nicknameChange").attr("disabled", false);
+    $("#nicknameChange").attr("disabled", false).css("background-color","black");
   } else {
-    $("#nicknameChange").attr("disabled", true);
+    $("#nicknameChange").attr("disabled", true).css("background-color","grey");
   }
 }
 
@@ -213,7 +208,7 @@ $("#checkThisAccount").click(() => {
         $("#accountCheck").val("");
         $("#wrongTry")
           .text(
-            "제한시간 내 비밀번호를 변경하지 못하였습니다. 다시 비밀번호를 입력하여 진행해주세요."
+            "제한시간 초과! 다시 시도해주세요."
           )
           .css("color", "red");
       }, 60000);
@@ -238,12 +233,21 @@ function userPwdCheck() {
     return 3;
   }
 }
+let pwdCheckBool = false;
+let pwdDoubleCheckBool = false;
 $("#passwordChangeInner").keyup((e) => {
+  console.log(userPwdCheck());
   inputHandler(e, userPwdCheck(), "* 영어 대/소문자 5 ~ 20 글자까지 등록 가능");
+  if(userPwdCheck() === 1){
+    pwdCheckBool = true;
+  } else{
+    pwdCheckBool = false;
+  }
+  pwdChangeBool();
 });
 
 function userPwdDoubleCheck() {
-  let result = $("#password").val() === $("#passwordCheck").val();
+  let result = $("#passwordChangeInner").val() === $("#passwordCheckInner").val();
   if (result === true) {
     return 1;
   } else if (result === false) {
@@ -251,20 +255,54 @@ function userPwdDoubleCheck() {
   }
 }
 $("#passwordCheckInner").keyup((e) => {
+  console.log(userPwdDoubleCheck());
   inputHandler(
     e,
     userPwdDoubleCheck(),
     "* 입력하신 비밀번호와 일치하지않습니다."
   );
-});
-
-function pwdValidate() {
-  if (userPwdCheck() !== 1) {
-    $("#passwordChangeInner").focus();
-    return false;
-  } else if (userPwdDoubleCheck() !== 1) {
-    $("#passwordCheckInner").focus();
-    return false;
+  if(userPwdDoubleCheck() === 1){
+    pwdDoubleCheckBool = true;
+  } else{
+    pwdDoubleCheckBool = false;
   }
-  return true;
+  pwdChangeBool();
+});
+$("#pwdChangeFormButton").attr("disabled", true).css("background-color","grey");
+function pwdChangeBool(){
+  console.log("Boolfunction pwd: " + pwdCheckBool);
+  console.log("Boolfunction double: " + pwdDoubleCheckBool);
+  if(pwdCheckBool && pwdDoubleCheckBool){
+    $("#pwdChangeFormButton").attr("disabled", false).css("background-color","black");
+  } else{
+    $("#pwdChangeFormButton").attr("disabled", true).css("background-color","grey");
+  }
 }
+$("#deleteThisAccount").css("display", "none");
+function userPwdDoubleCheck_delete() {
+  let result = $("#accountCheck_delete").val() === $("#accountPwdCheck_delete").val();
+  if (result === true) {
+    return 1;
+  } else if (result === false) {
+    return 3;
+  }
+}
+$("#accountCheck_delete").keyup((e) => {
+  console.log(userPwdDoubleCheck_delete());
+  inputHandler(e, userPwdDoubleCheck_delete(), "* 기존 비밀번호와 일치하지않습니다.");
+    if(userPwdDoubleCheck_delete() == 1){
+      $("#deleteThisAccount").css("display", "block");
+    }else{
+      $("#deleteThisAccount").css("display", "none");
+    }
+  });
+// function pwdValidate() {
+//   if (userPwdCheck() !== 1) {
+//     $("#passwordChangeInner").focus();
+//     return false;
+//   } else if (userPwdDoubleCheck() !== 1) {
+//     $("#passwordCheckInner").focus();
+//     return false;
+//   }
+//   return true;
+// }

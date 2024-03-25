@@ -49,6 +49,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 찜목록
               </button>
             </li>
+            <li class="li-nav">
+              <button class="account-modify-button" id="button03">
+                공지사항
+              </button>
+            </li>
+           
           </c:if>
           <!-- 관리자 관련-->
 
@@ -59,6 +65,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               </button>
             </li>
           </c:if>
+          <li class="li-nav">
+            <button class="account-modify-button" id="button05">
+              로그아웃
+            </button>
+          </li>
         </ul>
       </nav>
 

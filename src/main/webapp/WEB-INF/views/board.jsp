@@ -14,23 +14,40 @@ uri="http://www.springframework.org/security/tags" %>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../resources/css/admin.css">
-
+<link rel="stylesheet" href="../../resources/css/Image_Gallery.css">
 <style>
 .boardTable {
 	width: 100%;
 	text-align: center;
 }
+.bSection-main{
+	overflow: hidden;
+}
 </style>
 </head>
 <body>
 <% List<NoticeBoard> board = (List<NoticeBoard>) request.getAttribute("board"); %>
-	<c:if test="${user.auth == 'ROLE_MEMBER' || user.auth == 'anonymousUser'}">
+	<c:if test="${user.auth == 'ROLE_MEMBER' || user == 'anonymousUser'}">
 	<jsp:include page="/header.jsp"/>
 	</c:if>
 	<div class="tabs">
+		<c:if test="${user.auth == 'ROLE_MEMBER'}">
 		<div class="bSection-main">
-			여기에 뭔가가 들어갈거예요
+			<div class="Container">
+	
+			<c:forEach items="${favInBoard}" var="inBoard">
+				<div class="Picture">
+					<img class="Picture-img card-poster " src='${inBoard.festival.poster}'/>
+					<div class="Picture-note card-body">
+						<p class="card-name">${inBoard.festival.name}</p>
+						<p class="card-date">${inBoard.festival.startDate} ~ ${inBoard.festival.endDate}</p>
+						<p class="card-place">${inBoard.festival.endDate}</p>
+					</div>
+				  </div>
+			</c:forEach>
+			</div>
 		</div>
+		</c:if>
 		<c:if test="${user.auth == 'ROLE_MEMBER'}">
 			<div class="modify-second-page user-board" id="content-page">
 				<h1 id="view-title-user">공지사항</h1>
@@ -130,8 +147,6 @@ uri="http://www.springframework.org/security/tags" %>
 
 
 	  <script src="../../resources/js/admin.js"></script>
-
-	
-
+	  <script src="../../resources/js/Image_Gallery.js"></script>
 </body>
 </html>
