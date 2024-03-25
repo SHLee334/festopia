@@ -19,7 +19,7 @@ uri="http://www.springframework.org/security/tags" %>
     .write-group {
       border-top: 1px solid grey;
       /* background-color: red; */
-      width: 75%;
+      width: 100%;
     }
     .write-control {
       /* background-color: red; */
@@ -40,7 +40,7 @@ uri="http://www.springframework.org/security/tags" %>
       align-items: center;
     }
     .end-container {
-      width: 75%;
+      width: 100%;
       display: flex;
       justify-content: end;
       align-items: center;

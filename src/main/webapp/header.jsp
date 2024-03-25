@@ -99,7 +99,7 @@ uri="http://www.springframework.org/security/tags"%>
                     autocomplete="off"
                     checked="checked"
                   />
-                  <label class="btn category-btn" for="btn-check-1"
+                  <label class="btn category-btn" for="btn-check-1" 
                     >교육/체험</label
                   >
                   <input

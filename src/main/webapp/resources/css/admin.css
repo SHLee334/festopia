@@ -116,7 +116,7 @@ body {
 }
 /* 관리자 게시판 틀 크기 */
 .innercontent0{
-  width: 80%;
+  width: 100%;
 }
 /* 일반 유저가 보는 환경 */
 .bSection-main{

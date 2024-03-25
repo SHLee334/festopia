@@ -265,3 +265,13 @@ body::after {
   cursor: pointer;
   margin-left: auto;
 }
+
+/*요금 줄내림*/
+#detailFee {
+	width: 600px;
+}
+
+.detail-body {
+	display: flex;
+	align-items: center;
+}

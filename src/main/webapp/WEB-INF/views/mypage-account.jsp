@@ -31,8 +31,8 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
         <div class="inneractive2">회원탈퇴</div>
       </div>
 
-      <div class="tab-content">
-        <div class="innercontent0">
+      <div class="tab-content" >
+        <div class="innercontent0" id="tab-content-user">
           <nav class="pigeon-account">
             <div>
               <div id="userImage">

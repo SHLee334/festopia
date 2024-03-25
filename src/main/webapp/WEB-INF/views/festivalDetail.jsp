@@ -43,7 +43,7 @@
           <h5 class="detail-name">${vo.name}</h5>
           <p class="detail-body date"><span>기간</span>${vo.startDate} ~ ${vo.endDate}</p>
           <p class="detail-body place"><span>장소</span>${vo.place}</p>
-          <p class="detail-body fee"><span>요금</span>${vo.fee}</p>
+          <p class="detail-body fee"><span id="detailFeeHead">요금</span><span id="detailFee">${vo.fee}</span></span></p>
           <p class="detail-body age"><span>연령</span>${vo.age}</p>
           <p class="detail-body operator"><span>기관</span>${vo.operator}
             <a class="hmpg-link" href=${vo.hmpgUrl}><i class="fa-solid fa-house"></i></a>

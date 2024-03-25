@@ -150,8 +150,9 @@ header {
 }
 /* ========== 로그인/회원가입 모달 ========== */
 .dropdown-menu.show {
-  transform: translate(-114px, 80px) !important;
+/*  transform: translate(-114px, 80px) !important; */
 }
+
 
 /* ========== 로그인 버튼 ========== */
 #bindPwd:hover,
@@ -222,7 +223,7 @@ header {
   // background-color: white;
   background-color: white;
   position: fixed;
-  width: 1095px;
+  width: 1118px;
   padding: 20px;
   margin-top: 20px;
   border-radius: 10px;
@@ -253,8 +254,8 @@ header {
 
 .category {
   display: flex;
-  /*flex-direction: row;
-  justify-content: center;*/
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -267,7 +268,6 @@ header {
   height: 60px;
   margin: 10px;
   line-height: 45px;
-  border: 1px solid lightgrey;
 }
 
 .btn-check:checked + .btn,
@@ -276,7 +276,7 @@ header {
 .btn:first-child:active,
 :not(.btn-check) + .btn:active {
   background-color: transparent;
-  color: white;
+  color: pink;
   border: none;
 }
 
@@ -284,6 +284,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#cateName {
+	color: black;
 }
 
 /* =============== 날짜, 요금 검색조건 =============== */

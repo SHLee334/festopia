@@ -28,6 +28,12 @@ body {
   margin-left: 10px;
   margin-right: 5px;
 }
+
+.tab-content-user {
+	display: flex;
+    justify-content: center;
+}
+
 .tabs .tab-content {
   position: relative;
   height: 100%;
@@ -59,6 +65,7 @@ body {
 .pigeon-account {
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: white;
   height: 20rem;
   border-bottom: 2px solid #ccc;
