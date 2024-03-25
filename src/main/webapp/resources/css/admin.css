@@ -151,7 +151,9 @@ body {
 .boardTable-user {
   width: 70%;
   margin-top: 10px;
+  margin-bottom: 20px;
   text-align: center;
+  border-bottom: 1px solid gray;
 }
 .boardTable-user thead tr {
   background-color: #f5f3f3;

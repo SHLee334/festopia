@@ -13,8 +13,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <title>FESTOPIA | Find Seoul's Beat!</title>
 
     <!-- 파비콘 -->
-    <link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
-
+    <link
+      rel="icon"
+      href="resources/resources/favicon.png"
+      type="image/x-icon"
+    />
 
     <!-- 스타일 -->
     <link rel="stylesheet" href="../../resources/css/reset.css" />
@@ -23,11 +26,17 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <!-- ========== 글꼴 ========== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Sunflower:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- ========== jquery ========== -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/cbb1359000.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="mypage-container">
@@ -37,18 +46,22 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
       <nav class="item">
         <ul>
-
-
           <li class="li-nav">
             <button class="account-modify-button" id="button01">
-              <img id="account-modify-button-icon" src="./resources/resources/green-setting.png"/>
+              <img
+                id="account-modify-button-icon"
+                src="./resources/resources/green-setting.png"
+              />
               ACCOUNT
             </button>
           </li>
           <c:if test="${user.auth == 'ROLE_MEMBER'}">
             <li class="li-nav">
               <button class="account-modify-button" id="button02">
-                <img id="account-modify-button-icon" src="./resources/resources/green-bulb.png"/>
+                <img
+                  id="account-modify-button-icon"
+                  src="./resources/resources/green-bulb.png"
+                />
                 FAVORITE
               </button>
             </li>
@@ -57,7 +70,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 공지사항
               </button>
             </li>
-           
           </c:if>
           <!-- ========== 관리자 관련 ========== -->
 

@@ -50,7 +50,10 @@ uri="http://www.springframework.org/security/tags"%>
     <link rel="stylesheet" href="./resources/css/header.css" />
 
     <!-- ========== 아이콘 추가 ========== -->
-	<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/cbb1359000.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -323,10 +326,11 @@ uri="http://www.springframework.org/security/tags"%>
           </button>
 
           <!-- ========== 공지사항 ========== -->
+          <sec:authentication property="principal" var="user" />
+
           <a href="/board" id="inform">
             <i class="fa-solid fa-circle-exclamation fa-2xl"></i
           ></a>
-          <!-- <sec:authentication property="principal" var="user" /> -->
 
           <ul class="dropdown-menu">
             <c:choose>
