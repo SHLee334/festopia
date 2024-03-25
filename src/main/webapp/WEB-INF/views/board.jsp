@@ -38,11 +38,14 @@ uri="http://www.springframework.org/security/tags" %>
 			<c:forEach items="${favInBoard}" var="inBoard">
 				<div class="Picture">
 					<img class="Picture-img card-poster " src='${inBoard.festival.poster}'/>
-					<div class="Picture-note card-body">
-						<p class="card-name">${inBoard.festival.name}</p>
-						<p class="card-date">${inBoard.festival.startDate} ~ ${inBoard.festival.endDate}</p>
-						<p class="card-place">${inBoard.festival.endDate}</p>
-					</div>
+					<a href="detail?code=${inBoard.festival.fesCode}">
+						<div class="Picture-note card-body">
+							<p class="card-name">${inBoard.festival.name}</p>
+							<p class="card-date">${inBoard.festival.startDate} ~ ${inBoard.festival.endDate}</p>
+							<p class="card-place">${inBoard.festival.endDate}</p>
+						</div>
+					</a>
+					
 				  </div>
 			</c:forEach>
 			</div>

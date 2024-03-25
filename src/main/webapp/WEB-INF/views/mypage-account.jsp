@@ -47,7 +47,7 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
               >
                 <div class="filebox">
                   <!-- <input class="upload-name" value="첨부파일" placeholder="첨부파일"> -->
-                  <label for="file"><i class="fa-solid fa-camera"></i></label>
+                  <label for="file"><i class="fa-solid fa-pen"></i></label>
                   <input class="form-control" type="file" id="file" name="file"/>
                 </div>
                 <!-- 이부분이 choose file 부분 -->
@@ -62,7 +62,7 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
                   type="submit"
                   class="change-btn"
                 >
-                <i class="fa-solid fa-pen"></i>
+                변경!
                 </button>
               </form>
             </div>

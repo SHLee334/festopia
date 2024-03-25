@@ -24,11 +24,14 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
 			<c:forEach items="${favInBoard}" var="inBoard">
 				<div class="Picture">
 					<img class="Picture-img card-poster " src='${inBoard.festival.poster}'/>
-					<div class="Picture-note card-body">
-						<p class="card-name">${inBoard.festival.name}</p>
-						<p class="card-date">${inBoard.festival.startDate} ~ ${inBoard.festival.endDate}</p>
-						<p class="card-place">${inBoard.festival.endDate}</p>
-					</div>
+          <a href="detail?code=${inBoard.festival.fesCode}">
+            <div class="Picture-note card-body">
+              <p class="card-name">${inBoard.festival.name}</p>
+              <p class="card-date">${inBoard.festival.startDate} ~ ${inBoard.festival.endDate}</p>
+              <p class="card-place">${inBoard.festival.endDate}</p>
+            </div>
+          </a>
+					
 				  </div>
 			</c:forEach>
 			</div>
@@ -46,17 +49,50 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
 	          readonly
 	        />
 	      </div>
-	
+         <!-- Button trigger modal -->
+         <label for="imageModel" id="label-expand">
+          <div id="image-expand"><i class="fa-regular fa-image"></i></div>
+          <span id="imageSpan">이미지 자세히 보기</span>
+         </label>
+<button type="button" class="btn btn-primary" id="imageModel" name="imageModel" data-bs-toggle="modal" data-bs-target="#img-expandModal">
+</button>
+        
 	      <!-- 쓰는 곳 -->
 	      <div class="write-group">
-           <div id="editor" contenteditable="true" class="write-control" name="noticeContent" >${vo.noticeContent}</div>
-	      </div>
-	      <div id="image_container">
-	        <a href="/adminUpload/${vo.noticeUrl}" download
-	          ><img src="/adminUpload/${vo.noticeUrl}"
-	        /></a>
-	      </div>
+           <div id="editor" contenteditable="true" class="write-control view-textarea" name="noticeContent"><img src="/adminUpload/${vo.noticeUrl}"
+            /><br>${vo.noticeContent} </div>
+        </div>
+        
+	      
+
+        <h2 id="comment-here">댓글</h2>
+        <div class="view-comment">
+          <input type="text" id="no-comment" value="관리자 권한으로 해당 페이지에서는 댓글을 작성하실 수 없습니다." readonly/>
+        </div>
 	    </div>
+
+     
+
+<!-- Modal -->
+<div class="modal fade" id="img-expandModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">사진 확대</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img id="model-main-image" src="/adminUpload/${vo.noticeUrl}"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="khAd">
+        <img src="../../resources/resources/khAd03.png">
+        <i class="fa-regular fa-rectangle-xmark"></i>
+      </div>
+
     	</c:if>
  
     	
@@ -106,5 +142,6 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
        
        </c:if>
        <script src="../../resources/js/Image_Gallery.js"></script>
+       <script src="../../resources/js/noticeView.js"></script>
   </body>
 </html>

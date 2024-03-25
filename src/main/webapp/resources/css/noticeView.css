@@ -33,15 +33,13 @@
       align-items: center;
     }
     #image_container {
-      width: 200px;
-      height: 200px;
+      display: none;
     }
 
     /* readonly!! */
 
     #editor{
       border: 1px solid grey;
-      height: 200px;
     }
     .bSection-main{
         background-color: #888;
@@ -49,16 +47,100 @@
       }
     .view-user{
         width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  position: relative;
-  z-index: 5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        position: relative;
+        z-index: 5;
     }
     .view-user h1{
         margin-top: 40px;
-  margin-bottom: 10px;
-  width: 70%;
-  text-align: left;
+        margin-bottom: 10px;
+        width: 70%;
+        text-align: left;
     }
+    .view-user input{
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .view-textarea{
+      margin-top: 20px;
+      border-radius: 5px;
+      padding: 5px;
+      margin-bottom: 200px;
+    }
+    #editor img{
+      max-width: 300px;
+      margin-top: 10px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+    #image-expand i{
+      font-size: 3rem;
+      cursor: pointer;
+    }
+    #label-expand{
+      width: 75%;
+      display: flex;
+      justify-content: flex-start;
+      
+    }
+    #image-expand i:hover{
+      color: rgb(255,192,203);
+    }
+    #imageSpan{
+      display: none;
+      border: none;
+      padding: 3px;
+      border-radius: 5px;
+      background-color: rgb(240, 240, 240);
+    }
+    #model-main-image{
+      max-width: 1100px;
+      object-fit: cover;
+    }
+    #imageModel{
+      display:  none;
+    }
+    /* 댓글 부분 */
+    .view-comment{
+      width: 75%;
+      border-top: 1px solid;
+      margin-bottom: 30px;
+    }
+    #no-comment{
+      margin-top: 10px;
+      width: 100%;
+      background-color: rgb(240, 240, 240);
+    }
+    #comment-here{
+      margin-bottom: 10px;
+      width: 70%;
+      text-align: left;
+      font-size: 2rem;
+    }
+    /* 광고시작이닷 */
+    .khAd{
+      border: 1px solid grey;
+      border-radius: 3px;
+      display: flex;
+      justify-content: end;
+      width: 370px;
+      height: 100px;
+      background-color: white;
+      background-image: url(../../resources/resources/khAd03.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      font-style: italic;
+      position: fixed;
+      position: fixed;
+      z-index: 20;
+      top: 945px;
+      right: 850px;
+    }
+    .khAd i{
+      font-size: 3rem;
+    }
+   

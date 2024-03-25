@@ -17,9 +17,7 @@ public class CustomLoginFailureHandler implements AuthenticationFailureHandler{
 	@Override
 	public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
 			AuthenticationException exception) throws IOException, ServletException {
-	
-		
-		
+		System.out.println("Login failed for user: " + request.getParameter("username"));
 		if(exception instanceof AuthenticationServiceException) {
 			request.setAttribute("loginFail", "존재하지않는 사용자입니다.");
 			
@@ -32,7 +30,7 @@ public class CustomLoginFailureHandler implements AuthenticationFailureHandler{
 		} 
 		
 		// 관련된것을 다시 로그인jsp로 이동시키기
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/login?error=true");
 		dispatcher.forward(request, response);
 	}
 
