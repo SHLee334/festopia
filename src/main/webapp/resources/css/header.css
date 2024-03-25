@@ -140,6 +140,10 @@ header {
     width: 1140px;
   }
 }
+/* ========== 로그인/회원가입 모달 ========== */
+.dropdown-menu.show {
+	transform: translate(-114px, 80px) !important; 
+}
 
 /* ========== 로그인 버튼 ========== */
 .accountBtn {
@@ -303,3 +307,4 @@ header {
   height: 40px;
   font-size: 2rem;
 }
+
