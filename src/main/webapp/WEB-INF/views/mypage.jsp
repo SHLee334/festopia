@@ -27,10 +27,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
     <!-- ========== jquery ========== -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/4602e82315.js"
-      crossorigin="anonymous"
-    ></script>
+	<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="mypage-container">

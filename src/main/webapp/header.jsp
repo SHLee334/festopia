@@ -50,10 +50,7 @@ uri="http://www.springframework.org/security/tags"%>
     <link rel="stylesheet" href="./resources/css/header.css" />
 
     <!-- ========== 아이콘 추가 ========== -->
-    <script
-      src="https://kit.fontawesome.com/4602e82315.js"
-      crossorigin="anonymous"
-    ></script>
+	<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
