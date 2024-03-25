@@ -8,28 +8,24 @@ uri="http://www.springframework.org/security/tags"%>
   <head>
     <meta charset="UTF-8" />
     <title>FESTOPIA | Find Seoul's Beat!</title>
-    <!-- 파비콘 -->
-    <link
-      rel="icon"
-      href="resources/resources/favicon.png"
-      type="image/x-icon"
-    />
+    <!-- ========== 파비콘 ========== -->
+    <link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
 
-    <!-- 스타일 적용 -->
+    <!-- ========== 스타일 적용 ========== -->
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="./resources/css/index.css" />
 
-    <!-- 글꼴 -->
+    <!-- ========== 글꼴 ========== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lilita+One&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+
 
     <!-- ========== Full Calendar ========== -->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
   </head>
+
+
 
   <body>
     <jsp:include page="/header.jsp" />
@@ -44,17 +40,17 @@ uri="http://www.springframework.org/security/tags"%>
       <div class="section-btn-container">
         <div class="section-btn">
           <a href="#section1">
-            <img src="./resources/resources/white-cookie1.png" />
+            <img src="./resources/resources/favicon.png" />
           </a>
         </div>
         <div class="section-btn">
           <a href="#section2">
-            <img src="./resources/resources/white-cookie2.png" />
+            <img src="./resources/resources/favicon.png" />
           </a>
         </div>
         <div class="section-btn">
           <a href="#section3">
-            <img src="./resources/resources/white-cookie3.png" />
+            <img src="./resources/resources/favicon.png" />
           </a>
         </div>
       </div>
@@ -93,7 +89,7 @@ uri="http://www.springframework.org/security/tags"%>
               <p>Find Seoul's Beat, Dive into FESTOPIA!</p>
             </div>
             <img
-              src="././resources/resources/bg-purple-mirror.jpeg"
+              src="././resources/resources/bg-pink-3d-balls.jpeg"
               class="d-block w-100"
             />
           </div>
@@ -101,17 +97,24 @@ uri="http://www.springframework.org/security/tags"%>
       </div>
       <!-- ========== section2 ========== -->
       <section class="popular" id="section2">
-        <h2 id="section-title">인기 축제</h2>
+        <h2 id="section-title">
+          <img id="section-title-img" src="./resources/resources/best.png" />
+          THE 4 BEST Seoul Festivals
+        </h2>
         <div class="popular-festival-list"></div>
       </section>
 
       <!-- ========== section3 ========== -->
       <section id="section3">
-        <h2 id="section-title">월별 축제</h2>
+        <h2 id="section-title">
+          <img id="section-title-img" src="./resources/resources/yellow-calendar.png" />
+          The Month-by-Month Calendar
+        </h2>
         <div id="calendar"></div>
       </section>
     </main>
 
+    <!-- ========== ajax : section2 & section3 ========= -->
     <script>
       $.ajax({
         type: "post",
@@ -122,24 +125,12 @@ uri="http://www.springframework.org/security/tags"%>
           for (const item of list) {
             console.log(item);
             htmlCode +=
-              '<a href="/detail?code=' +
-              item.fesCode +
-              ' "class="main-card">' +
-              "<img src=" +
-              item.poster +
-              'class="main-card-poster">' +
-              '<div class="main-card-body">' +
-              '<p class="main-card-name">' +
-              item.name +
-              "</p>" +
-              '<p class="main-card-date">' +
-              item.startDate +
-              " ~ " +
-              item.endDate +
-              "</p>" +
-              '<p class="main-card-place">' +
-              item.place +
-              "</p>" +
+              '<a href="/detail?code=' + item.fesCode + ' "class="main-card">' +
+              "<img src=" + item.poster + 'class="main-card-poster">' +
+              '<div class="main-card-overlay">' +
+              '<p class="main-card-name">' + item.name + "</p>" +
+              '<p class="main-card-date">' + item.startDate + " ~ " + item.endDate + "</p>" +
+              '<p class="main-card-place">' + item.place + "</p>" +
               "</div>" +
               "</a>";
           }
