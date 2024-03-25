@@ -162,6 +162,12 @@ header {
   height: 60px;
   width: 60px;
   border-radius: 50px;
+  background-color: transparent;
+}
+
+.accountBtn:hover {
+	background-color: transparent;
+	color: pink;
 }
 
 #anonymousUser {
@@ -251,7 +257,7 @@ header {
 .btn.show,
 .btn:first-child:active,
 :not(.btn-check) + .btn:active {
-  background-color: rgb(255, 192, 203);
+  background-color: transparent;
   color: white;
   border: none;
 }
