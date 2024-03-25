@@ -54,6 +54,7 @@
           <c:choose>
             <c:when test="${empty favorite}">
               <h5><i class="fa-solid fa-heart" id="addFav"></i></h5>
+              
             </c:when>
             <c:otherwise>
               <h5><i class="fa-solid fa-heart" id="delFav"></i></h5>
@@ -73,17 +74,19 @@
 					</c:otherwise>
 				</c:choose>
 				<script>
-            $('#addFav').click(() => {
-              $.ajax({
-                  type: 'post',
-                  url: '/addFav',
-                  data: 'code=' + ${vo.fesCode},
-                  success: function(data) {
-                      location.reload();
-                      alert("찜 추가");
-                  }
-              });
-            });
+		            $('#addFav').click(() => {
+		              $.ajax({
+		                  type: 'post',
+		                  url: '/addFav',
+		                  data: 'code=' + ${vo.fesCode},
+		                  success: function(data) {
+		                      location.reload();
+		                  },
+		                  error: function() {
+		                	  alert('로그인이 필요합니다!');
+		                  }
+		              });
+		            });
           </script>
 
           <!-- 공유(클립보드) -->

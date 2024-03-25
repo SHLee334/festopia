@@ -32,13 +32,13 @@ copyBtn.addEventListener("click", function () {
 
 /* ========== 미로그인상태 댓글 작성시 경고 ========== */
 function handleOnClick() {
-  alert("로그인이 필요합니다.");
+  alert("로그인이 필요합니다!");
 }
 
 function emptyComClick() {
 	if(inputZone.value.length != 0) {
 		return true;
 	}
-	alert("공백은 입력 불가능합니다.");
+	alert("공백은 입력 불가능합니다!");
     return false;
 }

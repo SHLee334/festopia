@@ -73,7 +73,7 @@ uri="http://www.springframework.org/security/tags"%>
           >
             <input
               type="search"
-              placeholder="Type something..."
+              placeholder="즐거움을 찾아보세요!"
               name="inputFesName"
               class="search__input"
               autocomplete="off"
@@ -89,6 +89,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkFesCate"
                       value="1"
                       autocomplete="off"
+                      checked="checked"
                     />
                     <label class="btn category-btn" for="btn-check-1"
                       >교육/체험</label
@@ -100,6 +101,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkFesCate"
                       value="2"
                       autocomplete="off"
+                      checked="checked"
                     />
                     <label class="btn category-btn" for="btn-check-2"
                       >국악</label
@@ -111,6 +113,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkFesCate"
                       value="3"
                       autocomplete="off"
+                      checked="checked"
                     />
                     <label class="btn category-btn" for="btn-check-3"
                       >기타</label
@@ -122,6 +125,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkFesCate"
                       value="4"
                       autocomplete="off"
+                      checked="checked"
                     />
                     <label class="btn category-btn" for="btn-check-4"
                       >독주/독창회</label
@@ -133,6 +137,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkFesCate"
                       value="5"
                       autocomplete="off"
+                      checked="checked"
                     />
                     <label class="btn category-btn" for="btn-check-5"
                       >무용</label
@@ -144,6 +149,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkFesCate"
                       value="6"
                       autocomplete="off"
+                      checked="checked"
                     />
                     <label class="btn category-btn" for="btn-check-6"
                       >뮤지컬/오페라</label
@@ -157,6 +163,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkFesCate"
                       value="7"
                       autocomplete="off"
+                      checked="checked"
                     />
                     <label class="btn category-btn" for="btn-check-7"
                       >연극</label
@@ -168,6 +175,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkFesCate"
                       value="8"
                       autocomplete="off"
+                      checked="checked"
                     />
                     <label class="btn category-btn" for="btn-check-8"
                       >영화</label
@@ -179,6 +187,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkFesCate"
                       value="9"
                       autocomplete="off"
+                      checked="checked"
                     />
                     <label class="btn category-btn" for="btn-check-9"
                       >전시/미술</label
@@ -190,6 +199,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkFesCate"
                       value="10"
                       autocomplete="off"
+                      checked="checked"
                     />
                     <label class="btn category-btn" for="btn-check-10"
                       >축제</label
@@ -201,6 +211,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkFesCate"
                       value="11"
                       autocomplete="off"
+                      checked="checked"
                     />
                     <label class="btn category-btn" for="btn-check-11"
                       >콘서트</label
@@ -212,6 +223,7 @@ uri="http://www.springframework.org/security/tags"%>
                       name="checkFesCate"
                       value="12"
                       autocomplete="off"
+                      checked="checked"
                     />
                     <label class="btn category-btn" for="btn-check-12"
                       >클래식</label
@@ -349,7 +361,7 @@ uri="http://www.springframework.org/security/tags"%>
                 <sec:authorize
                   access="hasRole('ROLE_ADMIN') and isAuthenticated()"
                 />
-                <li>${user.nickname}님,환영합니다</li>
+                <li id="currentNick">${user.nickname}님, 환영합니다</li>
                 <li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
                 <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
               </c:otherwise>

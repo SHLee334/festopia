@@ -55,7 +55,6 @@ public class UserController {
 	}
 	
 	
-	
 	@GetMapping("/mypage")
 	public void myPage(User user, Model model) {
 

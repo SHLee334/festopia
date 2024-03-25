@@ -109,7 +109,7 @@ header {
   font-weight: 500;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 1.5s;
+  transition: opacity 0.5s;
 }
 
 .search__input:-webkit-autofill {
@@ -151,8 +151,17 @@ header {
 }
 
 /* ========== 로그인 버튼 ========== */
+#bindPwd:hover,
+#regi-button:hover {
+	background-color: rgb(255,192,203);
+}
+
 .accountBtn {
-  height: 40px;
+  font-size: 2rem;
+  border: none;
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
 }
 
 #anonymousUser {
@@ -161,6 +170,10 @@ header {
 
 .dropdown-item {
 	text-align: center;
+}
+
+.dropdown-toggle::after {
+	display: none;
 }
 
 .login-modal {
@@ -343,3 +356,7 @@ header {
   font-size: 2rem;
 }
 
+/* 로그인 후 모달 스타일 */
+#currentNick {
+	padding: 10px 5px 10px 5px;
+}
