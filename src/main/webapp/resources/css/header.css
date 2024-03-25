@@ -1,6 +1,4 @@
 @charset "UTF-8";
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
 header {
   position: fixed;
@@ -13,7 +11,8 @@ header {
   z-index: 9999;
 }
 
-#logo > a{
+/* ========== 로고(홈) ========== */
+#logo > a {
   font-family: "Lilita One", sans-serif;
   font-style: normal;
   font-size: 1.7rem;
@@ -23,7 +22,7 @@ header {
   color: black;
 }
 
-/* 버튼 전체 div */
+/* ========== 헤더 버튼 div ========== */
 .container {
   display: flex;
   align-items: center;
@@ -109,7 +108,15 @@ header {
   font-weight: 500;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.5s;
+  transition: opacity 1.5s;
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.search__input::placeholder {
+  font-family: "Dongle", sans-serif;
+  font-size: 1.5rem;
+  color: lightgrey;
 }
 
 .search__input:-webkit-autofill {
@@ -119,11 +126,6 @@ header {
 /* Search animated */
 .show-search {
   width: 100%;
-}
-
-.show-search .search__input {
-  opacity: 1;
-  pointer-events: initial;
 }
 
 .show-search .search__button {
@@ -147,13 +149,13 @@ header {
 }
 /* ========== 로그인/회원가입 모달 ========== */
 .dropdown-menu.show {
-	transform: translate(-114px, 80px) !important; 
+  transform: translate(-114px, 80px) !important;
 }
 
 /* ========== 로그인 버튼 ========== */
 #bindPwd:hover,
 #regi-button:hover {
-	background-color: rgb(255,192,203);
+  background-color: rgb(255, 192, 203);
 }
 
 .accountBtn {
@@ -166,8 +168,8 @@ header {
 }
 
 .accountBtn:hover {
-	background-color: transparent;
-	color: pink;
+  background-color: transparent;
+  color: pink;
 }
 
 #anonymousUser {
@@ -175,19 +177,18 @@ header {
 }
 
 .dropdown-item {
-	text-align: center;
+  text-align: center;
 }
 
 .dropdown-toggle::after {
-	display: none;
+  display: none;
 }
 
 .login-modal {
-	display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 .modal-content {
   background-image: url(../../resources/resources/bg-pink-cloud.jpeg);
@@ -195,8 +196,6 @@ header {
   isolation: isolate;
   background-size: cover;
   object-fit: cover;
-  /*border-radius: 5%;*/
-
 }
 
 .modal-content::after {
@@ -219,36 +218,54 @@ header {
 /*============== SEARCHFILTER ===============*/
 /* search filter category */
 .cateFilter {
-  width: 1095px;
+  // background-color: white;
   background-color: white;
-  border: none;
-  border-radius: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-shadow: 0 4px 24px hsla(216, 5%, 20%, 0.1);
-  margin-top: 30px;
-  margin-right: 15px;
   position: fixed;
+  width: 1095px;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: none;
+  /* 그림자 */
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  -o-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
+
+.search-filter-title {
+  font-family: "Poor Story", system-ui;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+  background: pink;
+  border-radius: 5px;
+  margin: 10px 0 10px 0;
+  padding: 5px 0;
+}
+
 .category {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /*flex-direction: row;
+  justify-content: center;*/
   align-items: center;
-}
-.category-1,
-.category-2 {
-  height: 100px;
-  align-content: center;
+  flex-wrap: wrap;
 }
 
 .category-btn {
+  font-family: "Poor Story", system-ui;
   background-color: white;
-  width: 160px;
+  color: lightgrey;
+  width: 150px;
   height: 60px;
+  margin: 10px;
   line-height: 45px;
-  line-height: 45px;
-  font-weight: bold;
   border: 1px solid lightgrey;
 }
 
@@ -268,44 +285,71 @@ header {
   align-items: center;
 }
 
+/* =============== 날짜, 요금 검색조건 =============== */
+.search-option-2 {
+  display: flex;
+  margin-bottom: 40px;
+}
+
 .fesDate {
-  display: block;
-  width: 100%;
-}
-
-#checkDateSelect {
-  border: 1px solid lightgrey;
-  border-radius: 10px;
-}
-
-.dateSetting {
-  border: 1px solid black;
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 20px;
 }
 
 #dateSetParty {
   display: flex;
-  margin-right: 15px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.date-select-wrap {
+  margin: 0 10px;
+}
+
+#checkDateSelect {
+  font-family: "Poor Story", system-ui;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+#checkDateSelect:hover {
+  cursor: pointer;
+}
+
+#checkDateSelect > option {
   text-align: center;
 }
 
 #startDatepicker,
 #endDatepicker {
+  font-family: "Poor Story", system-ui;
   text-align: center;
+  width: 150px;
+  height: 40px;
   border: 1px solid lightgrey;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
-#endDatepicker {
-  margin-right: 114px;
+.period-select-wrap {
+  margin-left: 10px;
 }
 
 .dateSetBtn {
-  width: 80px;
-  height: 40px;
+  font-family: "Poor Story", system-ui;
+  font-size: 0.8rem;
+  width: 50px;
+  height: 30px;
   background-color: white;
   border: 1px solid lightgrey;
   border-radius: 50px;
-  font-weight: bold;
 }
 
 .feeStatus {
@@ -316,43 +360,49 @@ header {
 .dateSetting {
   border: 1px solid black;
 }
-.fesDate {
+
+/* =============== fee status =============== */
+.checkfeeStatus {
+  width: 25%;
   display: flex;
-  width: 100%;
   flex-direction: column;
+  align-items: center;
 }
 
-.fesDate > h5 {
-  margin-bottom: 10px;
-}
-
-#dateSetParty {
+.fee-chk-box {
+  font-family: "Poor Story", system-ui;
   display: flex;
+  padding: 20px 10px;
 }
 
-/* search filter fee status */
-.checkfeeStatus > h5 {
-  margin-bottom: 10px;
+.fee-chk-box > label,
+input:hover {
+  cursor: pointer;
 }
 
-.feeStatus {
-  border: 1px solid black;
+.fee-chk-box > input {
+  margin-right: 10px;
 }
 
-/* search btn */
+.fee-chk-box01 {
+  margin-right: 80px;
+}
+
+/* =============== search btn =============== */
 #searchFilterButton {
   display: flex;
   justify-content: space-between;
   size: 2rem;
-  margin-bottom: 17px;
+  margin: 30px 10px 15px 10px;
 }
 
 #diveButton {
+  font-family: "Dongle", sans-serif;
+  font-size: 2rem;
   color: white;
-  border: lightgrey;
   background-color: black;
-  border-radius: 50px;
-  width: 270px;
+  border-radius: 10px;
+  width: 975px;
   height: 40px;
 }
 
@@ -364,5 +414,8 @@ header {
 
 /* 로그인 후 모달 스타일 */
 #currentNick {
-	padding: 10px 5px 10px 5px;
+  padding: 10px 5px 10px 5px;
+}
+.closeSearchFilter:hover {
+  cursor: pointer;
 }

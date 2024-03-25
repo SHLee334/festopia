@@ -78,7 +78,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       border: "1px solid lightgrey",
     });
     $("#totalDate").css({
-      "background-color": "rgb(255,192,203)",
+      "background-color": "black",
       color: "white",
       border: "none",
       "font-weight": "bold",
@@ -94,7 +94,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       border: "1px solid lightgrey",
     });
     $("#today").css({
-      "background-color": "rgb(255,192,203)",
+      "background-color": "black",
       color: "white",
       border: "none",
       "font-weight": "bold",
@@ -110,7 +110,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       border: "1px solid lightgrey",
     });
     $("#1week").css({
-      "background-color": "rgb(255,192,203)",
+      "background-color": "black",
       color: "white",
       border: "none",
       "font-weight": "bold",
@@ -126,7 +126,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       border: "1px solid lightgrey",
     });
     $("#1month").css({
-      "background-color": "rgb(255,192,203)",
+      "background-color": "black",
       color: "white",
       border: "none",
       "font-weight": "bold",
@@ -142,7 +142,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       border: "1px solid lightgrey",
     });
     $("#1year").css({
-      "background-color": "rgb(255,192,203)",
+      "background-color": "black",
       color: "white",
       border: "none",
       "font-weight": "bold",
