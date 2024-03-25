@@ -26,6 +26,7 @@ header {
 .container {
   display: flex;
   align-items: center;
+  margin-right: 105px;
 }
 
 /*검색창 애니메이션*/

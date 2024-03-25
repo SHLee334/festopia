@@ -333,9 +333,11 @@ uri="http://www.springframework.org/security/tags"%>
           <!-- ========== 공지사항 ========== -->
           <sec:authentication property="principal" var="user" />
 
+			<div style="display: none">
           <a href="/board" id="inform">
             <i class="fa-solid fa-circle-exclamation fa-2xl"></i
           ></a>
+          </div>
 
           <ul class="dropdown-menu">
             <c:choose>
