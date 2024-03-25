@@ -10,13 +10,9 @@
 
 /* ========== body ========== */
 body {
-  background-image: url(../../resources/resources/bg-pink-cloud.jpeg);
-  position: relative;
-  isolation: isolate;
-  background-size: cover;
-  background-size: center;
+  background-image: url(../../resources/resources/bg-white-paper.jpeg);
 }
-
+/*
 body::after {
   content: "";
   position: absolute;
@@ -25,19 +21,18 @@ body::after {
   inset: 0;
   opacity: 0.8;
 }
-
+*/
 .body-content {
   padding-top: 90px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  min-height: calc(100vh - 10rem);
+  height: 100%;
 }
 
 /* ======== sort ======== */
 .result-sort {
   margin-left: 90px;
-  /* box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); */
+  font-family: "Lilita One", sans-serif;
 }
 
 /* ======== content-list ======== */
@@ -85,6 +80,7 @@ body::after {
   height: 100px;
   padding: 5px 10px !important;
   border-top: 1px solid rgb(227, 222, 222);
+  font-family: "Lilita One", sans-serif;
 }
 
 .card-name {

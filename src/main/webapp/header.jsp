@@ -45,11 +45,11 @@ uri="http://www.springframework.org/security/tags"%>
       crossorigin="anonymous"
     ></script>
 
-    <!-- 스타일 적용 -->
+    <!-- ========== 스타일 적용 ========== -->
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="./resources/css/header.css" />
 
-    <!-- 아이콘 추가 -->
+    <!-- ========== 아이콘 추가 ========== -->
     <script
       src="https://kit.fontawesome.com/4602e82315.js"
       crossorigin="anonymous"

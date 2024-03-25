@@ -9,35 +9,43 @@
 <head>
 <meta charset="UTF-8">
 <title>FESTOPIA | Find Seoul's Beat!</title>
-<!-- 파비콘 -->
-<link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
+<!-- ========== 파비콘 ========== -->
+    <link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
 
-<!-- 스타일 적용 -->
+<!-- ========== 스타일 적용 ========== -->
 <link rel="stylesheet" href="../../resources/css/reset.css">
 <link rel="stylesheet" href="../../resources/css/searchResult.css">
 
-<!-- 아이콘 추가 : fontawesome -->
+<!-- ========== 글꼴 ========== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lilita+One&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- ========== fontawesome ========== -->
 <script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
 </head>
 
-<!-- jQuery -->
+<!-- ========== jQuery ========== -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 
 <body>
-<!-- confetti -->
-<script src="resources/js/confetti.js"></script>
-<div class="buttonContainer" style="display:none">
+
+<jsp:include page="/header.jsp" />
+
+  <!-- ========== confetti ========== -->
+  <script src="resources/js/confetti.js"></script>
+  <div class="buttonContainer" style="display:none">
     <button class="canvasBtn" id="stopButton">Stop Confetti</button>
     <button class="canvasBtn" id="startButton">Start Confetti</button>
-</div>
-<canvas id="canvas"></canvas>
+  </div>
+  <canvas id="canvas"></canvas>
 
-
-	<jsp:include page="/header.jsp" />
 
   <div class="body-content">
-
     <!-- ========== 정렬 드롭다운 ========== -->
     <div class="dropdown result-sort">
       <button class="btn btn-secondary dropdown-toggle sort-dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,19 +73,16 @@
 		</c:forEach>
 	</div>
 
-
 	<!-- 지도로 보기 버튼
 	<a href="/searchResultMap" class="map-view-btn">
 	    지도로 보기
 	</a> -->
 
-	<!-- 위로가기 버튼 -->
+	<!-- ========== TOP 버튼 ========== -->
     <a href="#" class="top-btn">
         <img class="top-icon" src="././resources/resources/green-rocket.png">
     </a>
-
   </div>
-
 
 
   <script>
@@ -87,24 +92,22 @@
         $("#stopButton").trigger("click");
       }, 6000);
     }
+
+
   	const dto = JSON.parse(`${dto}`);
   	let link = "/search?sort=";
-  	
   	function sort(sortValue) {
-  		
-  		link += sortValue;
-  		link += "&checkStartDate=" + dto.checkStartDate;
-  		link += "&checkEndDate=" + dto.checkEndDate;
-  		link += "&checkDateSelect=" + dto.checkDateSelect;
-  		if(dto.checkFesCate != null) {
-  			link += "&checkFesCate=" + dto.checkFesCate;
-  			}
-  		link += "&inputFesName=" + dto.inputFesName;
-  		link += "&checkFeeStatus=" + dto.checkFeeStatus;
-  		
-  		location.href = link;
+  	  link += sortValue;
+  	  link += "&checkStartDate=" + dto.checkStartDate;
+  	  link += "&checkEndDate=" + dto.checkEndDate;
+  	  link += "&checkDateSelect=" + dto.checkDateSelect;
+  	  if(dto.checkFesCate != null) {
+  		link += "&checkFesCate=" + dto.checkFesCate;
+  	  }
+  	  link += "&inputFesName=" + dto.inputFesName;
+  	  link += "&checkFeeStatus=" + dto.checkFeeStatus;
+  	  location.href = link;
   	}
-  	
   </script>
   <script src="/resources/js/searchResult.js"></script>
 </body>

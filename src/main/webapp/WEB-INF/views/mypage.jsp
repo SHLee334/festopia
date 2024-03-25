@@ -13,16 +13,19 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <title>FESTOPIA | Find Seoul's Beat!</title>
 
     <!-- 파비콘 -->
-    <link
-      rel="icon"
-      href="resources/resources/favicon.png"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
+
 
     <!-- 스타일 -->
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="../../resources/css/mypage.css" />
 
+    <!-- ========== 글꼴 ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+
+    <!-- ========== jquery ========== -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script
       src="https://kit.fontawesome.com/4602e82315.js"
@@ -30,23 +33,26 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     ></script>
   </head>
   <body>
-    <div style="display: none">
-      <jsp:include page="/header.jsp" />
-    </div>
     <div class="mypage-container">
+      <div id="logo"><a href="/">FESTOPIA</a></div>
+
+      <div class="nickname">Hello, <span>${user.nickname}!</span></div>
+
       <nav class="item">
         <ul>
-          <li class="li-nav">${user.nickname}님,반갑습니다.</li>
+
 
           <li class="li-nav">
             <button class="account-modify-button" id="button01">
-              계정설정
+              <img id="account-modify-button-icon" src="./resources/resources/green-setting.png"/>
+              ACCOUNT
             </button>
           </li>
           <c:if test="${user.auth == 'ROLE_MEMBER'}">
             <li class="li-nav">
               <button class="account-modify-button" id="button02">
-                찜목록
+                <img id="account-modify-button-icon" src="./resources/resources/green-bulb.png"/>
+                FAVORITE
               </button>
             </li>
             <li class="li-nav">
@@ -56,7 +62,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             </li>
            
           </c:if>
-          <!-- 관리자 관련-->
+          <!-- ========== 관리자 관련 ========== -->
 
           <c:if test="${user.auth == 'ROLE_ADMIN'}">
             <li class="li-nav">

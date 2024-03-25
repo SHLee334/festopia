@@ -11,14 +11,6 @@ body {
   padding: 0;
 }
 
-/* section2, section3 타이틀 텍스트 */
-#section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 2px rgb(114, 114, 106);
-  font-family: "Lilita One", sans-serif;
-}
-
 /* ========== 프로그레스 바 ========== */
 .progress-bar-container {
   position: fixed;
@@ -40,22 +32,23 @@ body {
 /* ========== 섹션이동 버튼 ========== */
 .section-btn-container {
   position: fixed;
-  right: 20px;
+  right: 15px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 9999;
+  z-index: 1;
 }
 
 .section-btn {
-  margin: 30px;
+  margin: 50px 20px;
 }
 
 .section-btn img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
 
 /* ========== section1 : slide ========== */
+/* slide area */
 .carousel-inner {
   height: 100vh;
   width: 100%;
@@ -63,19 +56,21 @@ body {
   z-index: -1;
 }
 
+/* each slide div */
 .carousel-item {
   height: 100vh;
   display: flex;
   align-items: center;
 }
 
+/* logo & slogan text */
 .carousel-inner-text {
+  font-family: "Lilita One", sans-serif;
   width: 100%;
   display: flex;
   flex-direction: column;
   color: white;
   text-shadow: 5px 5px 5px rgb(114, 114, 106);
-  font-family: "Lilita One", sans-serif;
   font-style: normal;
   position: absolute;
   height: 100%;
@@ -86,6 +81,7 @@ body {
   font-size: 130px;
   font-weight: 400;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .carousel-inner-text p {
@@ -94,21 +90,22 @@ body {
   justify-content: center;
 }
 
-/* 스크롤
-.text-animation {
-  animation: textAni 1s forwards;
+
+
+/* section2, section3 타이틀 */
+#section-title {
+  font-family: "Dongle", sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-start;
 }
 
-@keyframes textAni {
-  from {
-    opacity:0;
-	transform: translateY(0);
-  }
-  to {
-	opacity: 1;
-	transform: translateY(-10px);
-  }
-}*/
+#section-title-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+}
 
 /* ========== section2 : popular ========== */
 #section2 {
@@ -116,15 +113,13 @@ body {
   position: relative;
   isolation: isolate;
   background-size: cover;
-  background-size: center;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  align-items: center;
   justify-content: center;
-  padding-top: 90px;
   text-align: center;
+  align-items: center;
+  padding-top: 90px;
 }
 
 #section2::after {
@@ -133,21 +128,20 @@ body {
   background: white;
   z-index: -1;
   inset: 0;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .popular-festival-list {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  padding: 45px;
+  padding: 20px 45px 45px 45px;
 }
 
 .main-card {
   position: relative;
   display: flex;
   flex: 0 0 auto;
-  flex-direction: column;
   width: 18rem;
   height: 500px;
   justify-content: space-between;
@@ -155,78 +149,60 @@ body {
   margin: 20px;
   text-decoration: none;
   color: black;
-  border-radius: 3px;
+  border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.4s cubic-bezier(0.66, -0.39, 0.4, 1.3);
 }
 
-.main-card:hover {
-  color: black !important;
+.main-card img {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.main-card-overlay {
+  font-family: "Nanum Gothic Coding", monospace;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background: rgb(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: white !important;
+  border-radius: 10px;
+}
+
+.main-card:hover .main-card-overlay {
+  opacity: 1;
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.3), 0 15px 15px rgba(0, 0, 0, 0.3);
 }
 
-.main-card:hover .main-card-name {
-  animation-play-state: paused;
-}
-
-.main-card img {
-  position: relative;
-  height: 400px;
-  object-fit: cover;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.main-card-body {
-  background: white;
-  background-opacity: 0.7;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100px;
-  padding: 5px 10px !important;
-  border-top: 1px solid rgb(227, 222, 222);
-  overflow: hidden;
-}
-
 .main-card-name {
-  font-weight: bolder;
-  margin-bottom: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: textLoop 10s linear infinite;
-}
-
-/* main-card-body 내 축제명 텍스트에 반영 */
-@keyframes textLoop {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
+  font-size: 1rem;
+  line-height: 25px;
+  margin-bottom: 20px;
 }
 
 .main-card-date {
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 0.9rem;
+  font-weight: lighter;
+  margin-bottom: 20px;
 }
 
 .main-card-place {
-  font-size: 0.8rem;
-  margin: 0px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 0.9rem;
 }
 
 /* ========== section3 : calendar ========== */
@@ -235,14 +211,12 @@ body {
   position: relative;
   isolation: isolate;
   background-size: cover;
-  background-size: center;
   height: 100vh;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  align-content: center;
-  align-items: center;
+  justify-content: center;
   text-align: center;
+  align-items: center;
   padding-top: 90px;
 }
 
@@ -260,10 +234,44 @@ body {
   width: 100%;
   height: 95%;
   justify-content: center;
-  padding: 45px;
+  padding: 0 45px 45px 45px;
 }
 
+/* calendar(달력 전체 div) */
+.fc .fc-view-harness {
+  font-family: "Dongle", sans-serif;
+  background: white;
+}
+
+/* 선택 년월, 오늘 버튼 그룹 */
+.fc .fc-toolbar {
+  justify-content: flex-end;
+}
+
+/* 선택 년월 */
+.fc .fc-toolbar-title {
+  font-family: "Dongle", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  padding-right: 20px;
+}
+
+/* 오늘 버튼 */
+.fc .fc-button-primary {
+  font-family: "Dongle", sans-serif;
+  font-size: 1.3rem;
+  background: pink;
+  border-color: pink;
+  color: black;
+}
+
+/* 달력 일 별 각 칸 */
 .fc .fc-daygrid-day-frame {
   height: 50px;
   overflow: hidden;
+}
+
+/* 일(each day) 숫자 */
+.fc .fc-daygrid-day-number:hover {
+  color: pink;
 }
