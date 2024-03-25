@@ -7,7 +7,7 @@ uri="http://www.springframework.org/security/tags"%>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+    <title>FESTOPIA | Find Seoul's Beat!</title>
 
     <!-- =============== Jquery =============== -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -49,11 +49,13 @@ uri="http://www.springframework.org/security/tags"%>
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="./resources/css/header.css" />
 
+    <!-- ========== 글꼴 ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+
     <!-- ========== 아이콘 추가 ========== -->
-    <script
-      src="https://kit.fontawesome.com/4602e82315.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -81,7 +83,7 @@ uri="http://www.springframework.org/security/tags"%>
             <div class="cateFilter" style="display: none">
               <div class="searchFilter">
                 <div class="category">
-                  <div class="category-1">
+                  <h5 class="search-filter-title">카테고리</h5>
                     <input
                       type="checkbox"
                       class="btn-check"
@@ -147,9 +149,7 @@ uri="http://www.springframework.org/security/tags"%>
                     />
                     <label class="btn category-btn" for="btn-check-6"
                       >뮤지컬/오페라</label
-                    >
-                  </div>
-                  <div class="category-2">
+                    ><br>
                     <input
                       type="checkbox"
                       class="btn-check"
@@ -216,34 +216,38 @@ uri="http://www.springframework.org/security/tags"%>
                     <label class="btn category-btn" for="btn-check-12"
                       >클래식</label
                     >
-                  </div>
                 </div>
-                <hr />
 
+                <br>
+                <br>
+
+              <div class="search-option-2">
                 <div class="fesDate">
-                  <h5>기간</h5>
+                  <h5 class="search-filter-title">기간</h5>
                   <div id="dateSetParty">
-                    <select name="checkDateSelect" id="checkDateSelect">
-                      <option value="targetStart">시작일</option>
-                      <option value="targetEnd">종료일</option>
-                    </select>
-                    &nbsp; &nbsp;
-                    <input
-                      type="text"
-                      class="datepicker"
-                      id="startDatepicker"
-                      name="checkStartDate"
-                      autocomplete="off"
-                    />
-                    &nbsp;~&nbsp;
-                    <input
-                      type="text"
-                      class="datepicker"
-                      id="endDatepicker"
-                      name="checkEndDate"
-                      autocomplete="off"
-                    />
-                    <div>
+                    <div class="date-select-wrap">
+                        <select name="checkDateSelect" id="checkDateSelect">
+                          <option value="targetStart">시작일</option>
+                          <option value="targetEnd">종료일</option>
+                        </select>
+                        &nbsp; &nbsp;
+                        <input
+                          type="text"
+                          class="datepicker"
+                          id="startDatepicker"
+                          name="checkStartDate"
+                          autocomplete="off"
+                        />
+                        &nbsp;~&nbsp;
+                        <input
+                          type="text"
+                          class="datepicker"
+                          id="endDatepicker"
+                          name="checkEndDate"
+                          autocomplete="off"
+                        />
+                    </div>
+                    <div class="period-select-wrap">
                       <button type="button" class="dateSetBtn" id="totalDate">
                         전체
                       </button>
@@ -263,33 +267,38 @@ uri="http://www.springframework.org/security/tags"%>
                   </div>
                 </div>
 
-                <hr />
+                <br>
+                <br>
 
                 <div class="checkfeeStatus">
-                  <h5>입장료</h5>
-                  <label
-                    ><input
-                      type="checkbox"
-                      name="checkFeeStatus"
-                      value="1"
-                      checked
-                    />
-                    유료</label
-                  >
-                  <label
-                    ><input
-                      type="checkbox"
-                      name="checkFeeStatus"
-                      value="2"
-                      checked
-                    />
-                    무료</label
-                  >
+                  <h5 class="search-filter-title">입장료</h5>
+                  <div class="fee-chk-box">
+                      <label class="fee-chk-box01"
+                        ><input
+                          type="checkbox"
+                          name="checkFeeStatus"
+                          value="1"
+                          checked
+                        />
+                        유료</label
+                      >
+                      <label
+                        ><input
+                          type="checkbox"
+                          name="checkFeeStatus"
+                          value="2"
+                          checked
+                        />
+                          무료</label
+                      >
+                  </div>
                 </div>
+              </div>
 
                 <hr />
+
                 <div id="searchFilterButton">
-                  <input type="submit" value="D  I  V  E  !!" id="diveButton" />
+                  <input type="submit" value="DIVE!!" id="diveButton" />
                   <i
                     class="fa-regular fa-rectangle-xmark closeSearchFilter"
                   ></i>

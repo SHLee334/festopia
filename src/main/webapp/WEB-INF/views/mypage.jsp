@@ -12,11 +12,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FESTOPIA | Find Seoul's Beat!</title>
 
-    <!-- 파비콘 -->
+    <!-- ========== 파비콘 ========== -->
     <link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
 
 
-    <!-- 스타일 -->
+    <!-- ========== 스타일 ========== -->
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="../../resources/css/mypage.css" />
 
@@ -36,28 +36,27 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <div class="mypage-container">
       <div id="logo"><a href="/">FESTOPIA</a></div>
 
-      <div class="nickname">Hello, <span>${user.nickname}!</span></div>
+      <div class="nickname">Hello, <span>${user.nickname}</span>!</div>
 
       <nav class="item">
         <ul>
-
-
           <li class="li-nav">
             <button class="account-modify-button" id="button01">
-              <img id="account-modify-button-icon" src="./resources/resources/green-setting.png"/>
+              <img id="account-modify-button-icon" src="./resources/resources/profile-blue-yellowhat-boy.png"/>
               ACCOUNT
             </button>
           </li>
           <c:if test="${user.auth == 'ROLE_MEMBER'}">
             <li class="li-nav">
               <button class="account-modify-button" id="button02">
-                <img id="account-modify-button-icon" src="./resources/resources/green-bulb.png"/>
+                <img id="account-modify-button-icon" src="./resources/resources/green-notebook.png"/>
                 FAVORITE
               </button>
             </li>
             <li class="li-nav">
               <button class="account-modify-button" id="button03">
-                공지사항
+                <img id="account-modify-button-icon" src="./resources/resources/green-energy.png"/>
+                NOTICE
               </button>
             </li>
            
@@ -67,13 +66,15 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <c:if test="${user.auth == 'ROLE_ADMIN'}">
             <li class="li-nav">
               <button class="admin-modify-button" id="button04">
-                관리하기
+                <img id="account-modify-button-icon" src="./resources/resources/green-setting.png"/>
+                SETTING
               </button>
             </li>
           </c:if>
           <li class="li-nav">
             <button class="account-modify-button" id="button05">
-              로그아웃
+              <img id="account-modify-button-icon" src="./resources/resources/green-ghost.png"/>
+              LOGOUT
             </button>
           </li>
         </ul>

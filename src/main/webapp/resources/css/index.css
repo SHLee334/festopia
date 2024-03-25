@@ -259,7 +259,8 @@ body {
 /* 오늘 버튼 */
 .fc .fc-button-primary {
   font-family: "Dongle", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  padding: 3px 10px;
   background: pink;
   border-color: pink;
   color: black;
