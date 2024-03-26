@@ -341,6 +341,7 @@ uri="http://www.springframework.org/security/tags"%>
                     class="dropdown-item"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
+                    id="login-trigger"
                   >
                     Login
                   </button>

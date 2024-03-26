@@ -33,6 +33,7 @@ copyBtn.addEventListener("click", function () {
 /* ========== 미로그인상태 댓글 작성시 경고 ========== */
 function handleOnClick() {
   alert("로그인이 필요합니다!");
+  $("#login-trigger").trigger("click");
 }
 
 function emptyComClick() {

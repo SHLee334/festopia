@@ -19,7 +19,10 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
     <!-- ========== 글꼴 ========== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Poor+Story&family=Sunflower:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="../../resources/css/Image_Gallery.css">
     <link rel="stylesheet" href="../../resources/css/noticeView.css">

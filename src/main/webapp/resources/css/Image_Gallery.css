@@ -1,6 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Caveat"); */
-
-
 .Container {
   position: absolute;
   top: 35%;
@@ -37,17 +34,19 @@
   text-overflow: ellipsis;
 }
 .Picture-note {
+  font-family: "Poor Story", system-ui;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
   width: 300px;
   height: 70px;
   padding: 12px 24px;
   font-size: 1.5rem;
-  text-align: center;
-  text-overflow: ellipsis;
 }
-/* .card-body {
+.card-body {
+  font-family: "Poor Story", system-ui;
   position: relative;
   display: absolute;
   flex-direction: column;
@@ -56,7 +55,13 @@
   height: 100px;
   padding: 5px 10px !important;
   border-top: 1px solid rgb(227, 222, 222);
-} */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-body:hover {
+  color: pink !important;
+}
 .card-name {
   font-size: 1rem;
   font-weight: bolder;

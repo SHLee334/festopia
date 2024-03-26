@@ -9,7 +9,6 @@
 <!-- ========== 파비콘 ========== -->
     <link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
 
-
 <!-- ========== jQuery ========== -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -86,6 +85,7 @@
 		                  },
 		                  error: function() {
 		                	  alert('로그인이 필요합니다!');
+                        $("#login-trigger").trigger("click");
 		                  }
 		              });
 		            });
