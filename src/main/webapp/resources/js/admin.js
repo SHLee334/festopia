@@ -1,17 +1,16 @@
-this.$("#tableDetail").click(() => {
-  alert("!");
-  $.ajax({
-    type: "post",
-    url: "/viewCount",
-    data: $("#countForm").serialize(),
-    success: function (count) {
-      alert("!");
-      console.log(count);
-      this.$("#viewCount").text(count);
-      this.$("#actualCount").text(count);
-    },
-  });
-});
+// this.$("#tableDetail").click(() => {
+//   $.ajax({
+//     type: "post",
+//     url: "/viewCount",
+//     data: $("#countForm").serialize(),
+//     success: function (count) {
+//       alert("!");
+//       console.log(count);
+//       this.$("#viewCount").text(count);
+//       this.$("#actualCount").text(count);
+//     },
+//   });
+// });
 
 //default
 $(".inneractive0").css("color", "rgb(255, 138, 157)");
