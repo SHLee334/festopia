@@ -21,9 +21,6 @@ public class SearchController {
 	@Autowired
 	private SearchService searchService;
 	
-	@Autowired
-	private FavoriteService favService;
-	
 	@GetMapping("search")
 	public String search(SearchDTO dto, Model model) throws JsonProcessingException {
 		List<Festival> list = searchService.searchFestival(dto);
@@ -34,8 +31,6 @@ public class SearchController {
 		model.addAttribute("dto", dtoJson);
 		return "searchResult";
 	}
-	
-	
 	
 	@ResponseBody
 	@PostMapping("/search")

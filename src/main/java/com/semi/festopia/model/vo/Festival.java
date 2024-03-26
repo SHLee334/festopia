@@ -1,7 +1,5 @@
 package com.semi.festopia.model.vo;
 
-import java.util.Date;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -26,6 +24,4 @@ public class Festival {
 	private String season;
 	private int categoryCode;
 	private String category;
-	
-
 }

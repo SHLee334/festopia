@@ -390,12 +390,11 @@ header {
 .fee-chk-box {
   font-family: "Poor Story", system-ui;
   display: flex;
-  padding: 20px 10px;
+  padding: 20px 20px;
 }
 
 .fee-chk-box > label,
 input:hover {
-  padding-left: 20px;
   cursor: pointer;
 }
 

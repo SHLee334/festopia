@@ -242,6 +242,7 @@ body::after {
 
 #comWriterInfo {
   display: flex;
+  margin-bottom: 5px;
 }
 
 #inputZone {
