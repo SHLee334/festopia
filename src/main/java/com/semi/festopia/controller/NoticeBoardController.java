@@ -75,25 +75,20 @@ public class NoticeBoardController {
 	}
 	// 특정 게시물 상세정보
 	@GetMapping("/noticeView")
-	public void noticeView(Model model, String no) {
+	public void noticeView(Model model, String no, int userCode) {
 		model.addAttribute("vo", service.noticeView(Integer.parseInt(no)));
-		
+		System.out.println(no);
+		System.out.println(userCode);
 		// board로 축제 찜목록 바운딩
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // 인증정보
 		User userDetails = (User) authentication.getPrincipal(); // 사용자 정보
 
 		List<Favorite> fvList = favService.selectFvAll(userDetails.getUserCode());
 		model.addAttribute("favInBoard", fvList);
+		
+		int num = Integer.parseInt(no);
+		service.viewCount(num);
 	}
-	
-	// 조회수
-	@ResponseBody
-	@PostMapping("/viewCount")
-	public int viewCount(String viewCount) {
-		System.out.println("controller 제발" +Integer.parseInt(viewCount));
-	return service.viewCount(Integer.parseInt(viewCount));
-	}
-	
 	// 글 수정
 	@PostMapping("/updateNotice")
 	public String updateView(NoticeBoard b) throws IllegalStateException, IOException {

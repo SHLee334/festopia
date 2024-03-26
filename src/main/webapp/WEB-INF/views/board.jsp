@@ -74,17 +74,13 @@ uri="http://www.springframework.org/security/tags" %>
 					</thead>
 					<tbody>
 					<c:forEach items="${board}" var="b" varStatus="status">
-						<tr onclick="location.href='noticeView?no=${b.no}&userCode=${b.userCode}'"id="tableDetail" style="cursor:hand">
+						<tr onclick="location.href='noticeView?no=${b.no}&userCode=${b.userCode}&viewCount=${b.viewCount}'" style="cursor:hand">
 							<td>${fn:length(board) -  status.index}</td>
 							<td >${b.noticeTitle }</a></td>
 							<td>${b.user.nickname}</td>
 							<td><fmt:formatDate value="${b.noticeDate}" pattern="yyyy-MM-dd"/></td>
 							<td id="viewCount">${b.viewCount}</td>
 						</tr>
-						<form id="countForm">
-							<input type="hidden" id="viewCount" name="viewCount" value="${b.viewCount}">
-							<input type="hidden" id="viewName" name="no" value="${b.no}">
-						</form>
 						</c:forEach>
 					</tbody>
 				</table>

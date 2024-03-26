@@ -43,7 +43,7 @@
 	<!-- 회원탈퇴 쿼리문 -->
 	<update id="unableAccount" parameterType="int">
 		Update user
-		SET user_enabled = 0
+		SET user_enabled = 0, user_quit_date = current_date()
 		WHERE user_code = #{userCode}
 	</update>
 	

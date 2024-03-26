@@ -124,6 +124,7 @@ uri="http://www.springframework.org/security/tags" %>
         <div class="end-container">
           
             <label for="writeFile" id="inputImg"><i class="fa-solid fa-camera" ></i></label>
+            <!-- <label for="writeFile" id="imageModel-admin"><i class="fa-solid fa-camera" ></i></label> -->
             <input
               class="write-input"
               type="file"
@@ -135,12 +136,36 @@ uri="http://www.springframework.org/security/tags" %>
           
           <!-- 버튼 등록 -->
           <button type="submit" class="write-submit">등록</button>
-          
         </div>
         <div id="image_container"></div>
       </form>
     </div>
+  
     
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <script>
       function setThumbnail(event) {
         var reader = new FileReader();
