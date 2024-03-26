@@ -11,6 +11,10 @@ body {
   padding: 0;
 }
 
+#main-wrap {
+  min-height: calc(100vh - 10rem);
+}
+
 /* ========== 프로그레스 바 ========== */
 .progress-bar-container {
   position: fixed;
@@ -90,8 +94,6 @@ body {
   justify-content: center;
 }
 
-
-
 /* section2, section3 타이틀 */
 #section-title {
   font-family: "Dongle", sans-serif;
@@ -164,7 +166,7 @@ body {
 }
 
 .main-card-overlay {
-  font-family: "Nanum Gothic Coding", monospace;
+  font-family: "Poor Story", system-ui;
   position: absolute;
   top: 0;
   left: 0;
@@ -279,10 +281,20 @@ body {
 }
 
 .fc-event-title-container {
-	background-color: white;
-	border: none;
-	color: black;
+  background-color: white;
+  border: none;
+  color: black;
 }
 .fc-event {
-	border: none;
+  border: none;
+}
+
+/* ========== footer ========== */
+#footer-wrap {
+  background: black;
+}
+
+footer {
+  height: 10rem;
+  background: rgba(0, 0, 0, 0.9);
 }

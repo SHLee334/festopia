@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Lilita+One&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Poor+Story&family=Sunflower:wght@300&display=swap"
   rel="stylesheet"
 />
 
@@ -72,11 +72,6 @@
 			 </a>
 		</c:forEach>
 	</div>
-
-	<!-- 지도로 보기 버튼
-	<a href="/searchResultMap" class="map-view-btn">
-	    지도로 보기
-	</a> -->
 
 	<!-- ========== TOP 버튼 ========== -->
     <a href="#" class="top-btn">

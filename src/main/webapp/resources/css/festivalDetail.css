@@ -63,7 +63,7 @@ body::after {
 }
 
 .detail-category {
-  font-family: "Nanum Gothic Coding", monospace;
+  font-family: "Poor Story", system-ui;
   display: inline-block;
   font-size: 1rem;
   font-weight: bold;
@@ -75,7 +75,7 @@ body::after {
 }
 
 .detail-name {
-  font-family: "Nanum Gothic Coding", monospace;
+  font-family: "Poor Story", system-ui;
   font-weight: bold;
   font-size: 1.5rem;
   line-height: 30px;
@@ -87,7 +87,7 @@ body::after {
 }
 
 .detail-body {
-  font-family: "Nanum Gothic Coding", monospace;
+  font-family: "Poor Story", system-ui;
   font-size: 1.1rem;
   margin: 0 15px;
   padding: 0 10px;
@@ -168,7 +168,7 @@ body::after {
 }
 
 .fes-detail-map > h4 {
-  font-family: "Nanum Gothic Coding", monospace;
+  font-family: "Poor Story", system-ui;
   font-weight: bold;
   font-size: 1.3rem;
   margin-bottom: 20px;

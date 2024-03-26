@@ -1,42 +1,51 @@
-#login-form{
-    width: 80%;
+#login-form {
+  width: 100%;
 }
-.login-content{
-    margin-top: 10px;
+.login-content {
+  margin-bottom: 20px;
 }
-.login-content label{
-    margin-bottom: 10px;
+.login-content label {
+  margin-bottom: 10px;
+  font-weigh: bold;
 }
-#bindPwd{
-	margin-top: 20px;
- border: none;
+#bindPwd {
+  margin-top: 30px;
+  border: none;
   width: 100%;
   color: white;
   background-color: rgb(255, 138, 157);
-  padding: 20px;
+  padding: 12px;
   font-size: 1.2rem;
   font-weight: bold;
   border-radius: 10px;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.25), 1px 2px 1px 0px rgba(0, 0, 0, 0.22);
+
 }
-#sugestSingUp{
-    margin-top: 20px;
-    border: none;
+#sugestSingUp {
+  margin-top: 20px;
+  border: none;
   width: 100%;
   color: white;
   background-color: black;
-  padding: 20px;
+  padding: 12px;
   font-size: 1.2rem;
   font-weight: bold;
   border-radius: 10px;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.25), 1px 2px 1px 0px rgba(0, 0, 0, 0.22);
 }
 .login-content {
-    margin-top: 10px;
+  margin-top: 10px;
 }
-.login-content input{
-    width: 100%;
-    padding: 15px 10px;
-    margin-bottom: 5px;
-    border: none;
-    border-radius: 10px;
-    background-color: rgb(240, 240, 240);
+.login-content input {
+  width: 100%;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.25), 1px 2px 1px 0px rgba(0, 0, 0, 0.22);
+}
+
+.login-content input::placeholder {
+  color: rgb(170, 169, 169);
 }

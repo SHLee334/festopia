@@ -90,7 +90,8 @@
   background-color: transparent;
 }
 
-.account-modify-button {
+.account-modify-button,
+.admin-modify-button {
   font-family: "Dongle", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
