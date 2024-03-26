@@ -3,16 +3,16 @@
 }
 
 .fv-list-title {
-  font-family: "Dongle", sans-serif;
+  font-family: "Poor Story", system-ui;
   font-weight: bold;
   font-size: 2.5rem;
   margin: 0;
 }
 
 .fv-list-content {
+  font-family: "Poor Story", system-ui;
   padding: 40px;
   background: white;
-  font-family: "Nanum Gothic Coding", monospace;
 }
 
 .table th {

@@ -140,7 +140,7 @@
 			<div>
 				<c:forEach items="${com}" var="item">
 					<div id="comWriterInfo">
-						<p>
+						<p class="writer">
 						<span>${item.user.nickname}</span> <span> | </span> <span>${item.comDate}</span>
 						</p>
 						<c:choose>
@@ -154,7 +154,7 @@
 							</c:when>
 						</c:choose>
 					</div>
-					<p>${item.comText}</p>
+					<p class="text">${item.comText}</p>
 					<hr>
 				</c:forEach>
 

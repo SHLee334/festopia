@@ -192,6 +192,8 @@ body::after {
 
 /* ===== 댓글 구역 ===== */
 .commentZone {
+  font-family: "Poor Story", system-ui;
+  line-height: 30px;
   width: 1600px;
   display: inline-block;
   border-radius: 15px;
@@ -242,10 +244,19 @@ body::after {
 
 #comWriterInfo {
   display: flex;
+  align-items: center;
+}
+
+.writer {
+  font-weight: bold;
+}
+
+.text {
+  padding-left: 10px;
 }
 
 #inputZone {
-  width: 90%;
+  width: 80%;
   height: 35px;
   resize: none;
 }
@@ -263,5 +274,5 @@ body::after {
 
 .delCom {
   cursor: pointer;
-  margin-left: auto;
+  margin-left: 12px;;
 }

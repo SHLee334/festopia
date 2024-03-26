@@ -27,10 +27,6 @@ public class SearchDAO {
 		return session.selectOne("searchMapper.detail", code);
 	}
 
-	public int updateViewCnt(int fesCode) {
-		return session.update("searchMapper.updateViewCnt", fesCode);
-	}
-
 	public List<Festival> calendarFes(String startDate) {
 		return session.selectList("searchMapper.calendarFes", startDate);
 	}
