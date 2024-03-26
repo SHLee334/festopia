@@ -15,6 +15,14 @@ uri="http://www.springframework.org/security/tags" %>
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../resources/css/admin.css">
 <link rel="stylesheet" href="../../resources/css/Image_Gallery.css">
+<!-- ========== 글꼴 ========== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Poor+Story&family=Sunflower:wght@300&display=swap"
+  rel="stylesheet"
+/>
+
 <style>
 .boardTable {
 	width: 100%;

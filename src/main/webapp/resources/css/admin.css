@@ -138,10 +138,9 @@ body {
   width: 70%;
   text-align: left;
 }
-/* #inner-title{
-  text-align: left;
-} */
+
 #view-title-user {
+  font-family: "Poor Story", system-ui;
   font-size: 2rem;
   border-bottom: 2px solid;
   padding-bottom: 10px;
@@ -149,6 +148,7 @@ body {
 }
 /* 실제 테이블 */
 .boardTable-user {
+  font-family: "Poor Story", system-ui;
   width: 70%;
   margin-top: 10px;
   margin-bottom: 20px;
