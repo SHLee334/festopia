@@ -18,8 +18,10 @@ uri="http://www.springframework.org/security/tags"%>
     <!-- ========== 글꼴 ========== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Poor+Story&family=Sunflower:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- ========== Full Calendar ========== -->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
@@ -33,7 +35,7 @@ uri="http://www.springframework.org/security/tags"%>
       <div class="progress-bar"></div>
     </div>
 
-    <main>
+    <main id="main-wrap">
       <!-- ========== 섹션이동 버튼 ========== -->
       <div class="section-btn-container">
         <div class="section-btn">
@@ -111,6 +113,10 @@ uri="http://www.springframework.org/security/tags"%>
         <div id="calendar"></div>
       </section>
     </main>
+
+    <!-- ========== footer ========== -->
+    <footer> FESTOPIA </footer>
+
 
     <!-- ========== ajax : section2 & section3 ========= -->
     <script>

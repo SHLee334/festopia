@@ -101,12 +101,6 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
     </div>
   </div>
 </div>
-
-      <div class="khAd">
-        <img src="../../resources/resources/khAd03.png">
-        <i class="fa-regular fa-rectangle-xmark"></i>
-      </div>
-
     	</c:if>
  
     	

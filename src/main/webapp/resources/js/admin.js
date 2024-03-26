@@ -1,14 +1,16 @@
-$("#adminDetail").click(() => {
-  $.ajax({
-    type: "post",
-    url: "/viewCount",
-    data: "viewCount=" + this.$("#viewCount").val(),
-    success: function (count) {
-      console.log(count);
-      this.$("#viewCount").text(count);
-    },
-  });
-});
+// this.$("#tableDetail").click(() => {
+//   $.ajax({
+//     type: "post",
+//     url: "/viewCount",
+//     data: $("#countForm").serialize(),
+//     success: function (count) {
+//       alert("!");
+//       console.log(count);
+//       this.$("#viewCount").text(count);
+//       this.$("#actualCount").text(count);
+//     },
+//   });
+// });
 
 //default
 $(".inneractive0").css("color", "rgb(255, 138, 157)");

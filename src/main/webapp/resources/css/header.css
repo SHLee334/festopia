@@ -150,9 +150,8 @@ header {
 }
 /* ========== 로그인/회원가입 모달 ========== */
 .dropdown-menu.show {
-/*  transform: translate(-114px, 80px) !important; */
+  /*  transform: translate(-114px, 80px) !important; */
 }
-
 
 /* ========== 로그인 버튼 ========== */
 #bindPwd:hover,
@@ -179,7 +178,9 @@ header {
 }
 
 .dropdown-item {
+  font-family: "Poor Story", system-ui;
   text-align: center;
+  padding: 10px;
 }
 
 .dropdown-toggle::after {
@@ -193,11 +194,14 @@ header {
 }
 
 .modal-content {
+  font-family: "Poor Story", system-ui;
   background-image: url(../../resources/resources/bg-pink-cloud.jpeg);
   position: relative;
   isolation: isolate;
   background-size: cover;
   object-fit: cover;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 .modal-content::after {
@@ -207,6 +211,7 @@ header {
   z-index: -1;
   inset: 0;
   opacity: 0.7;
+  border-radius: 15px;
 }
 
 /* ========== 공지사항 버튼 ========== */
@@ -220,13 +225,16 @@ header {
 /*============== SEARCHFILTER ===============*/
 /* search filter category */
 .cateFilter {
-  // background-color: white;
-  background-color: white;
+  /*background-image: url(../../resources/resources/bg-utopia.jpg);
+  position: relative;
+  isolation: isolate;
+  background-size: cover;*/
   position: fixed;
   width: 1118px;
   padding: 20px;
+  background: rgba(252, 239, 241, 0.947);
   margin-top: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   border: none;
   /* 그림자 */
   -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
@@ -244,18 +252,15 @@ header {
   font-family: "Poor Story", system-ui;
   font-weight: bold;
   font-size: 1.5rem;
-  text-align: center;
+  padding-left: 0px;
   width: 100%;
-  background: pink;
-  border-radius: 5px;
-  margin: 10px 0 10px 0;
-  padding: 5px 0;
+  margin: 0 0 10px 0;
+  padding: 15px 10px;
+  border-bottom: 1px solid darkgray;
 }
 
 .category {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -275,9 +280,16 @@ header {
 .btn.show,
 .btn:first-child:active,
 :not(.btn-check) + .btn:active {
-  background-color: transparent;
-  color: pink;
-  border: none;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  /* 그림자 */
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .btn category-btn {
@@ -287,7 +299,7 @@ header {
 }
 
 #cateName {
-	color: black;
+  color: black;
 }
 
 /* =============== 날짜, 요금 검색조건 =============== */
@@ -319,7 +331,7 @@ header {
 #checkDateSelect {
   font-family: "Poor Story", system-ui;
   text-align: center;
-  width: 100px;
+  width: 90px;
   height: 40px;
   border: 1px solid lightgrey;
   border-radius: 5px;
@@ -337,7 +349,7 @@ header {
 #endDatepicker {
   font-family: "Poor Story", system-ui;
   text-align: center;
-  width: 150px;
+  width: 140px;
   height: 40px;
   border: 1px solid lightgrey;
   border-radius: 5px;
@@ -371,7 +383,8 @@ header {
   width: 25%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  padding-left: 5px;
 }
 
 .fee-chk-box {
@@ -382,6 +395,7 @@ header {
 
 .fee-chk-box > label,
 input:hover {
+  padding-left: 20px;
   cursor: pointer;
 }
 
@@ -390,14 +404,15 @@ input:hover {
 }
 
 .fee-chk-box01 {
-  margin-right: 80px;
+  margin-right: 50px;
 }
 
 /* =============== search btn =============== */
 #searchFilterButton {
   display: flex;
-  justify-content: space-between;
   size: 2rem;
+  align-items: center;
+  justify-content: space-between;
   margin: 30px 10px 15px 10px;
 }
 
@@ -407,20 +422,26 @@ input:hover {
   color: white;
   background-color: black;
   border-radius: 10px;
-  width: 975px;
+  width: 980px;
   height: 40px;
 }
 
 .closeSearchFilter {
-  width: 40px;
-  height: 40px;
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
 /* 로그인 후 모달 스타일 */
 #currentNick {
+  font-family: "Poor Story", system-ui;
+  text-align: center;
+  font-weight: bold;
   padding: 10px 5px 10px 5px;
 }
 .closeSearchFilter:hover {
   cursor: pointer;
+}
+
+.modal-header > h1 {
+  font-weight: bold;
+  font-size: 4rem;
 }

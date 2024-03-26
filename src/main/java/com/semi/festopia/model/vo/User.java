@@ -28,10 +28,6 @@ public class User implements UserDetails{
 	private String userProfileUrl;
 	private MultipartFile file;
 	
-	
-	
-	
-	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		ArrayList<GrantedAuthority> authList = new ArrayList<>();
