@@ -52,10 +52,12 @@
           <p class="detail-body enrollDate"><span>등록일</span>${vo.enrollDate}</p>
 
           <!-- 찜 -->
+          
           <c:choose>
             <c:when test="${empty favorite}">
+            <c:if test="${user.auth eq 'ROLE_MEMBER'}">
               <h5><i class="fa-solid fa-heart" id="addFav"></i></h5>
-              
+              </c:if>
             </c:when>
             <c:otherwise>
               <h5><i class="fa-solid fa-heart" id="delFav"></i></h5>
@@ -90,6 +92,7 @@
 		              });
 		            });
           </script>
+			
 
           <!-- 공유(클립보드) -->
           <div id="copy-toast-msg">❤️ url이 복사 되었습니다 ❤️</div>
