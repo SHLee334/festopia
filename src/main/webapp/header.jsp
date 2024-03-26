@@ -81,7 +81,7 @@ uri="http://www.springframework.org/security/tags"%>
           >
             <input
               type="search"
-              placeholder="즐거움을 찾아보세요!"
+              placeholder="Dive into FESTOPIA!"
               name="inputFesName"
               class="search__input"
               autocomplete="off"
@@ -226,8 +226,8 @@ uri="http://www.springframework.org/security/tags"%>
                   >
                 </div>
 
-                <br />
-                <br />
+                <br>
+                <br>
 
                 <div class="search-option-2">
                   <div class="fesDate">
@@ -275,9 +275,6 @@ uri="http://www.springframework.org/security/tags"%>
                     </div>
                   </div>
 
-                  <br />
-                  <br />
-
                   <div class="checkfeeStatus">
                     <h5 class="search-filter-title">입장료</h5>
                     <div class="fee-chk-box">
@@ -303,13 +300,9 @@ uri="http://www.springframework.org/security/tags"%>
                   </div>
                 </div>
 
-                <hr />
-
                 <div id="searchFilterButton">
                   <input type="submit" value="DIVE!!" id="diveButton" />
-                  <i
-                    class="fa-regular fa-rectangle-xmark closeSearchFilter"
-                  ></i>
+                  <i class="fa-solid fa-xmark closeSearchFilter"></i>
                 </div>
               </div>
             </div>
@@ -349,7 +342,7 @@ uri="http://www.springframework.org/security/tags"%>
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                   >
-                    로그인
+                    Login
                   </button>
                 </li>
 
@@ -361,7 +354,7 @@ uri="http://www.springframework.org/security/tags"%>
                     data-bs-target="#exampleModal2"
                     id="regi-trigger"
                   >
-                    회원가입
+                    Sign up
                   </button>
                 </li>
               </c:when>
@@ -389,7 +382,7 @@ uri="http://www.springframework.org/security/tags"%>
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">로그인</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Hello!</h1>
               <button
                 type="button"
                 class="btn-close"
@@ -415,7 +408,7 @@ uri="http://www.springframework.org/security/tags"%>
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">회원가입</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Welcome!</h1>
               <button
                 type="button"
                 class="btn-close"

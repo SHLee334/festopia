@@ -13,16 +13,7 @@ body {
   background-image: url(../../resources/resources/bg-white-paper.jpeg);
   background-size: cover;
 }
-/*
-body::after {
-  content: "";
-  position: absolute;
-  background: white;
-  z-index: -1;
-  inset: 0;
-  opacity: 0.8;
-}
-*/
+
 .body-content {
   padding-top: 90px;
   display: flex;
@@ -33,7 +24,7 @@ body::after {
 /* ======== sort ======== */
 .result-sort {
   margin-left: 90px;
-  font-family: "Lilita One", sans-serif;
+  font-family: "Poor Story", system-ui;
 }
 
 /* ======== content-list ======== */
@@ -73,6 +64,7 @@ body::after {
 }
 
 .card-body {
+  font-family: "Poor Story", system-ui;
   position: relative;
   display: absolute;
   flex-direction: column;
@@ -81,7 +73,6 @@ body::after {
   height: 100px;
   padding: 5px 10px !important;
   border-top: 1px solid rgb(227, 222, 222);
-  font-family: "Lilita One", sans-serif;
 }
 
 .card-name {
