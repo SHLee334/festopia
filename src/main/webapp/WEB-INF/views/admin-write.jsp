@@ -9,7 +9,13 @@ uri="http://www.springframework.org/security/tags" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Insert title here</title>
-    
+    <!-- ========== 글꼴 ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Poor+Story&family=Sunflower:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <style>
     .write-container {

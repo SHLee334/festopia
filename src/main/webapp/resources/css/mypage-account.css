@@ -5,6 +5,7 @@ body {
   background: white;
 }
 .tabs .tab-header {
+  font-family: "Poor Story", system-ui;
   float: left;
   width: 180px;
   height: 80vh;
@@ -15,6 +16,7 @@ body {
   justify-content: center;
 }
 .tabs .tab-header > div {
+  font-family: "Poor Story", system-ui;
   height: 50px;
   line-height: 50px;
   font-size: 16px;
@@ -35,6 +37,7 @@ body {
 }
 
 .tabs .tab-content {
+  font-family: "Poor Story", system-ui;
   position: relative;
   height: 100%;
   overflow: hidden;
@@ -53,10 +56,8 @@ body {
 }
 .tabs .tab-content > div {
   display: none;
-  /* position: absolute; */
   text-align: center;
   padding: 40px 20px;
-  /* top: -200%; */
   transition: all 500ms ease-in-out;
 }
 .tabs .tab-content > div.active {
@@ -171,6 +172,7 @@ body {
   object-fit: cover;
 }
 #uploadThisProfile{
+  font-family: "Poor Story", system-ui;
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -224,6 +226,7 @@ body {
   height: 20px;
 }
 #changeMailForm{
+  font-family: "Poor Story", system-ui;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -237,6 +240,7 @@ body {
   padding-top: 30px;
 }
 #nicknameChangeForm input{
+  font-family: "Poor Story", system-ui;
   width: 400px;
   padding: 15px 10px;
   margin-bottom: 5px;
@@ -246,6 +250,7 @@ body {
   background-color: rgb(240, 240, 240);
 }
 #nicknameChange{
+  font-family: "Poor Story", system-ui;
   background-color: black;
   color: white;
   width: 400px;
