@@ -71,7 +71,7 @@ function inputHandler(e, check, text) {
 
 
 function nicknameCheck() {
-  const regExp = /^.{1,}$/;
+  const regExp = /^.{1,20}$/;
   let result = regExp.test($("#nickname").val());
   if (result === true) {
     return 1;
@@ -116,7 +116,7 @@ function userEmailCheck() {
 
 // regex 조건들 체크
 $("#nickname").keyup((e) => {
-  inputHandler(e, nicknameCheck(), "* 닉네임은 최소 한글자 이상");
+  inputHandler(e, nicknameCheck(), "* 닉네임은 최소 한글자 이상, 20자이하");
 });
 
 $("#password").keyup((e) => {
