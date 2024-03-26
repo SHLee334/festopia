@@ -18,6 +18,7 @@
 
 	<security:http>
 		<security:intercept-url pattern="/mypage" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')" /> <!-- 회원/관리자만 마이페이지 접속가능 -->
+		<security:intercept-url pattern="/board" access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')"/>
 		<security:form-login default-target-url="/login"
 							
 							 authentication-success-handler-ref="customLoginSuccess"

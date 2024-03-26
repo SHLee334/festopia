@@ -33,7 +33,7 @@ pageEncoding="UTF-8"%>
       <div>
         <span>${requestScope.loginFail}</span>
         <input type="submit" value="로그인" id="bindPwd" />
-        <button type="button" id="sugestSingUp" >뭐요? 회원이 아니라고??</button>
+        <button type="button" id="sugestSingUp" >회원이 아니신가요?</button>
       </div>
     </form>
    
