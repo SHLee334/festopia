@@ -19,6 +19,15 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
     />
     <link rel="stylesheet" href="../../resources/css/reset.css" />
     <link rel="stylesheet" href="../../resources/css/mypage-account.css" />
+
+    <!-- ========== 글꼴 ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Dongle&family=Poor+Story&family=Poor+Story&family=Sunflower:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
