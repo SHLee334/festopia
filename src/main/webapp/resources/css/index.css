@@ -290,11 +290,65 @@ body {
 }
 
 /* ========== footer ========== */
-#footer-wrap {
-  background: black;
-}
-
-footer {
+.footer {
+  font-family: "Poor Story", system-ui;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 60px;
   height: 10rem;
   background: rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.728);
+}
+
+.footer-section1 {
+  margin-right: 40px;
+  line-height: 25px;
+}
+
+#footer-logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+#footer-slogan {
+  margin-bottom: 10px;
+}
+
+#footer-national {
+  font-weight: bold;
+}
+
+.footer-section2 {
+  margin-right: 40px;
+  line-height: 30px;
+}
+
+.fa-solid {
+  margin-right: 10px;
+}
+
+#footer-addr-wrap {
+  display: flex;
+  align-items: center;
+}
+
+#footer-phone-wrap {
+  display: flex;
+  align-items: center;
+}
+
+#footer-email-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.footer-section3 {
+  line-height: 30px;
+}
+
+.footer-section3 p:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }

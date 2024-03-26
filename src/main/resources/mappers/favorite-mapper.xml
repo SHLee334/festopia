@@ -68,4 +68,11 @@
 		AND user_code_fk = #{userCode};
 	</select>
 
+	<!-- ========== 축제 조회 수 ========== -->
+	<update id="updateViewCnt" parameterType="int">
+		UPDATE festival
+		SET fes_view_count = fes_view_count + 1
+		WHERE fes_code = #{fesCode}
+	</update>
+
 </mapper>

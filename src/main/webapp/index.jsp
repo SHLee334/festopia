@@ -115,7 +115,34 @@ uri="http://www.springframework.org/security/tags"%>
     </main>
 
     <!-- ========== footer ========== -->
-    <footer> FESTOPIA </footer>
+    <footer class="footer">
+      <div class="footer-section1">
+        <p id="footer-logo">FESTOPIA</p>
+        <p id="footer-slogan">Find Seoul's Beat</p>
+        <p id="footer-national">South Korea</p>
+      </div>
+      <div class="footer-section2">
+        <div id="footer-addr-wrap">
+          <i class="fa-solid fa-location-dot"></i>
+          <p id="footer-addr">6, Teheran-ro 14-gil, Gangnam-gu, Seoul, Republic of Korea</p>
+        </div>
+        <div id="footer-phone-wrap">
+          <i class="fa-solid fa-phone"></i>
+          <p id="footer-phone">+82 2.6952.0337</p>
+        </div>
+        <div id="footer-email-wrap">
+          <i class="fa-solid fa-envelope"></i>
+          <p id="footer-email">support@festopia.co.kr</p>
+        </div>
+      </div>
+      <div class="footer-section3">
+        <div id="footer-policy-wrap">
+          <p id="footer-policy">Privacy Policy</p>
+          <p id="footer-policy">Terms of Use</p>
+          <p id="footer-policy">Legal</p>
+        </div>
+      </div>
+    </footer>
 
 
     <!-- ========== ajax : section2 & section3 ========= -->

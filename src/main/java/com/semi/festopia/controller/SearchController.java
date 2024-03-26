@@ -38,23 +38,6 @@ public class SearchController {
 		return searchService.popularFestival();
 	}
 
-	@GetMapping("searchResultMap")
-	public String searchResultMap(SearchDTO dto, Model model) {
-		if(dto.getCheckFeeStatus() != null) {
-			List<Festival> list = searchService.searchFestival(dto);
-			model.addAttribute("list", list);
-			return "searchResult";
-		} else {
-			return "redirect:/";
-		}
-	}
-
-	@GetMapping("viewCount")
-	public String viewCount(int fesCode) {
-		searchService.updateViewCnt(fesCode);
-		return "redirect:/searchResult";
-	}
-
 	@ResponseBody
 	@GetMapping("calendar")
 	public List<Festival> calendarFes(String startDate) {
