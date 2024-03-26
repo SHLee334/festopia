@@ -221,7 +221,7 @@ body {
   align-items: center;
 }
 #changeNickForm span{
-  width: 50%;
+  width: 38%;
   text-align: left;
   height: 20px;
 }
@@ -232,7 +232,7 @@ body {
   align-items: center;
 }
 #changeMailForm span{
-  width: 50%;
+  width: 38%;
   text-align: left;
   height: 20px;
 }
