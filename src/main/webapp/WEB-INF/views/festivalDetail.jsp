@@ -55,7 +55,7 @@
           
           <c:choose>
             <c:when test="${empty favorite}">
-            <c:if test="${user.auth eq 'ROLE_MEMBER'}">
+            <c:if test="${user eq 'anonymousUser' || user.auth eq 'ROLE_MEMBER'}">
               <h5><i class="fa-solid fa-heart" id="addFav"></i></h5>
               </c:if>
             </c:when>
