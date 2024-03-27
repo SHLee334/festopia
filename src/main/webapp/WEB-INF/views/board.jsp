@@ -12,9 +12,14 @@ uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>FESTOPIA | Find Seoul's Beat!</title>
+<!-- ========== 파비콘 ========== -->
+<link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
+
+<!-- ========== 스타일 적용 ========== -->
 <link rel="stylesheet" href="../../resources/css/admin.css">
 <link rel="stylesheet" href="../../resources/css/Image_Gallery.css">
+
 <!-- ========== 글꼴 ========== -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

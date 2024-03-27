@@ -7,13 +7,13 @@ $("#id").keyup(() => {
     data: "id=" + $("#id").val(),
     success: function (data) {
       if(data !== "") {
-        $("#idSpan").text("중복된 아이디입니다.").css("color", "red");
+        $("#idSpan").text("중복된 아이디입니다 :(").css("color", "red");
         idCheck = false;
       } else if(userIdCheck()) {
-        $("#idSpan").text("사용가능 아이디").css("color", "green");
+        $("#idSpan").text("사용 가능한 아이디입니다 !").css("color", "green");
         idCheck = true;
       } else {
-        $("#idSpan").text("* 영어 대/소문자 5 ~ 20 글자까지 등록 가능").css("color", "red");
+        $("#idSpan").text("* 영어 대/소문자 5 ~ 20 글자까지 등록 가능합니다.").css("color", "red");
         idCheck = false;
       }
     }
@@ -43,7 +43,7 @@ function validate() {
   } else if (userEmailCheck() !== 1) {
     $("#email").focus();
     return false;;
-  } 
+  }
   return true;
 }
 
@@ -116,23 +116,24 @@ function userEmailCheck() {
 
 // regex 조건들 체크
 $("#nickname").keyup((e) => {
-  inputHandler(e, nicknameCheck(), "* 닉네임은 최소 한글자 이상, 20자이하");
+  inputHandler(e, nicknameCheck(), "* 최소 1, 최대 20 글자까지 등록 가능합니다.");
 });
 
 $("#password").keyup((e) => {
-  inputHandler(e, userPwdCheck(), "* 영어 대/소문자 5 ~ 20 글자까지 등록 가능");
+  inputHandler(e, userPwdCheck(), "* 영어 대/소문자 5 ~ 20 글자까지 등록 가능합니다.");
 });
 
 $("#passwordCheck").keyup((e) => {
   inputHandler(
     e,
     userPwdDoubleCheck(),
-    "* 입력하신 비밀번호와 일치하지않습니다."
+    "* 입력하신 비밀번호와 일치하지 않습니다."
   );
 });
 
 $("#email").keyup((e) => {
   inputHandler(e, userEmailCheck(), "* 정확한 이메일 양식을 작성해주세요");
 });
+
 
 

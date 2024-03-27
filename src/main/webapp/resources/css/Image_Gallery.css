@@ -1,22 +1,19 @@
 .Container {
   position: absolute;
-  top: 35%;
+  top: 40%;
   left: 50%;
 }
 
 .Picture {
   display: inline-block;
   position: absolute;
-  top: 0;
-  left: 0;
   border: 5px solid #fff;
   border-radius: 3px;
   background: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  transform: translate(-50%, -50%);
   user-select: none;
   cursor: pointer;
-  text-overflow: ellipsis;
+  border-radius: 10px;
 }
 
 .Picture-img {
@@ -29,9 +26,8 @@
   position: relative;
   height: 400px;
   object-fit: cover;
-  border-top-left-radius: 0.3rem;
-  border-top-right-radius: 0.3rem;
-  text-overflow: ellipsis;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .Picture-note {
   font-family: "Poor Story", system-ui;
@@ -107,12 +103,6 @@
 * {
   box-sizing: border-box;
 }
-
-/* body {
-  margin: 0;
-  font-family: 'Caveat', serif;
-  overflow: hidden;
-} */
 
 .Me {
   position: fixed;

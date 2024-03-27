@@ -98,15 +98,13 @@ header {
 
 /* search input box */
 .search__input {
+  font-family: "Poor Story", system-ui;
   border: none;
   outline: none;
   width: calc(100% - 64px);
   height: 100%;
   border-radius: 4rem;
   padding-left: 14px;
-  font-family: var(--body-font);
-  font-size: var(--small-font-size);
-  font-weight: 500;
   opacity: 0;
   pointer-events: none;
   transition: opacity 1.5s;
@@ -421,7 +419,7 @@ input:hover {
   color: white;
   background-color: black;
   border-radius: 10px;
-  width: 980px;
+  width: 1012px;
   height: 40px;
 }
 
@@ -432,6 +430,7 @@ input:hover {
 /* 로그인 후 모달 스타일 */
 #currentNick {
   font-family: "Poor Story", system-ui;
+  font-weight: bold;
   text-align: center;
   font-weight: bold;
   padding: 10px 5px 10px 5px;
@@ -444,3 +443,4 @@ input:hover {
   font-weight: bold;
   font-size: 4rem;
 }
+

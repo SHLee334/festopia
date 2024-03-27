@@ -32,7 +32,8 @@
 <sec:authentication var="user" property="principal" />
 <% List<Favorite> fvList = (List<Favorite>) request.getAttribute("fvList"); %>
 <div class="fv-list-content">
-    <div class="fv-list-title">${user.nickname}'s favorite</div>
+    <div class="fv-list-title">
+      <span id="title-nickname">${user.nickname}</span>'s Favorite Festival List</div>
 
     <!-- ========== 찜목록 테이블 ========== -->
     <table class="table table-hover">

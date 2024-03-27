@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>FESTOPIA | Find Seoul's Beat, Dive into FESTOPIA!</title>
+<title>FESTOPIA | Find Seoul's Beat!</title>
 <!-- ========== 파비콘 ========== -->
-    <link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
+<link rel="icon" href="resources/resources/favicon.png" type="image/x-icon" />
 
 <!-- ========== jQuery ========== -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -52,7 +52,7 @@
           <p class="detail-body enrollDate"><span>등록일</span>${vo.enrollDate}</p>
 
           <!-- 찜 -->
-          
+
           <c:choose>
             <c:when test="${empty favorite}">
             <c:if test="${user eq 'anonymousUser' || user.auth eq 'ROLE_MEMBER'}">
@@ -92,10 +92,10 @@
 		              });
 		            });
           </script>
-			
+
 
           <!-- 공유(클립보드) -->
-          <div id="copy-toast-msg">❤️ url이 복사 되었습니다 ❤️</div>
+          <div id="copy-toast-msg">❤️ Copied to clipboard! ❤️</div>
           <h5>
             <i class="fa-solid fa-arrow-up-from-bracket" id="copyUrl" onclick="clip()"></i>
           </h5>
@@ -173,7 +173,7 @@
                               location.reload();
                             }
                           });
-                    });   
+                    });
                  });
                 </script>
 			</div>
@@ -186,7 +186,7 @@
 						<c:choose>
 							<c:when test="${user eq 'anonymousUser'}">
 								<button type="button" id="sendCom"
-								       onclick="handleOnClick()" 
+								       onclick="handleOnClick()"
 								       value="alert">
 								       <i class="fa-solid fa-comment-dots"></i>
 								</button>
@@ -198,7 +198,7 @@
 						</c:choose>
 					</form>
 					<script>
-					
+
 					</script>
 			</div>
 		</div>
@@ -207,3 +207,4 @@
 	</div>
 </body>
 </html>
+
