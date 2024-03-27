@@ -3,10 +3,14 @@
 }
 
 .fv-list-title {
-  font-family: "Poor Story", system-ui;
+  font-family: "Dongle", sans-serif;
   font-weight: bold;
-  font-size: 2.5rem;
-  margin: 0;
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
+#title-nickname {
+  color: rgb(167, 38, 85);
 }
 
 .fv-list-content {
@@ -56,3 +60,4 @@
 .tb-body-date {
   width: 200px;
 }
+

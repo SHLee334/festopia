@@ -141,6 +141,7 @@ body::after {
 }
 
 #copy-toast-msg {
+  font-family: "Poor Story", system-ui;
   opacity: 0;
   position: fixed;
   bottom: -100px;
@@ -287,3 +288,4 @@ body::after {
   display: flex;
   align-items: center;
 }
+

@@ -32,7 +32,7 @@ pageEncoding="UTF-8"%>
       </div>
       <div>
         <span>${requestScope.loginFail}</span>
-        <input type="submit" value="Login" id="bindPwd" />
+        <input type="submit" value="Log in" id="bindPwd" />
         <button type="button" id="sugestSingUp">Create account</button>
       </div>
     </form>
@@ -48,3 +48,4 @@ pageEncoding="UTF-8"%>
     </script>
   </body>
 </html>
+

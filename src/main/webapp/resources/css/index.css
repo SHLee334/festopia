@@ -15,7 +15,7 @@ body {
   min-height: calc(100vh - 10rem);
 }
 
-/* ========== 프로그레스 바 ========== */
+/* ========== 프로그레스 바 ==========
 .progress-bar-container {
   position: fixed;
   left: 0;
@@ -31,7 +31,7 @@ body {
   height: 100%;
   background: #00a8ff;
   background-color: rgb(195, 126, 235);
-}
+} */
 
 /* ========== 섹션이동 버튼 ========== */
 .section-btn-container {
@@ -296,7 +296,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  padding: 0 60px;
+  padding: 0 40px;
   height: 10rem;
   background: rgba(0, 0, 0, 0.9);
   color: rgba(255, 255, 255, 0.728);
@@ -308,25 +308,28 @@ body {
 }
 
 #footer-logo {
-  font-weight: bold;
-  font-size: 1.3rem;
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
+  font-size: 1.7rem;
 }
 
 #footer-slogan {
+  font-family: "Lilita One", sans-serif;
   margin-bottom: 10px;
 }
 
 #footer-national {
   font-weight: bold;
+  font-size: 1.3rem;
 }
 
 .footer-section2 {
-  margin-right: 40px;
-  line-height: 30px;
+  margin-right: 50px;
+  line-height: 25px;
 }
 
 .fa-solid {
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 #footer-addr-wrap {
@@ -346,9 +349,11 @@ body {
 
 .footer-section3 {
   line-height: 30px;
+  margin-right: 60px;
 }
 
 .footer-section3 p:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+

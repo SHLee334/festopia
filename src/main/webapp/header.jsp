@@ -58,10 +58,7 @@ uri="http://www.springframework.org/security/tags"%>
     />
 
     <!-- ========== 아이콘 추가 ========== -->
-    <script
-      src="https://kit.fontawesome.com/cbb1359000.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous" ></script>
   </head>
 
   <body>
@@ -99,7 +96,7 @@ uri="http://www.springframework.org/security/tags"%>
                     autocomplete="off"
                     checked="checked"
                   />
-                  <label class="btn category-btn" for="btn-check-1" 
+                  <label class="btn category-btn" for="btn-check-1"
                     >교육/체험</label
                   >
                   <input
@@ -343,7 +340,7 @@ uri="http://www.springframework.org/security/tags"%>
                     data-bs-target="#exampleModal"
                     id="login-trigger"
                   >
-                    Login
+                    Log in
                   </button>
                 </li>
 
@@ -363,9 +360,9 @@ uri="http://www.springframework.org/security/tags"%>
                 <sec:authorize
                   access="hasRole('ROLE_ADMIN') and isAuthenticated()"
                 />
-                <li id="currentNick">${user.nickname}님, 환영합니다</li>
-                <li><a class="dropdown-item" href="/mypage">마이페이지</a></li>
-                <li><a class="dropdown-item" href="/logout">로그아웃</a></li>
+                <li id="currentNick">Welcome, ${user.nickname}</li>
+                <li><a class="dropdown-item" href="/mypage">My page</a></li>
+                <li><a class="dropdown-item" href="/logout">Log out</a></li>
               </c:otherwise>
             </c:choose>
           </ul>
@@ -428,3 +425,4 @@ uri="http://www.springframework.org/security/tags"%>
     <script src="resources/js/header.js"></script>
   </body>
 </html>
+

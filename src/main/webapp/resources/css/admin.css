@@ -87,11 +87,27 @@ body {
 .innercontent0{
   width: 100%;
 }
-/* 일반 유저가 보는 환경 */
-.bSection-main{
-  background-color: #888;
-  height: 80vh;
+/* =============== 일반 유저가 보는 환경 =============== */
+.bSection-main {
+  height: 550px;
+  background-image: url(../../resources/resources/bg-pink-cloud3.jpeg);
+  position: relative;
+  isolation: isolate;
+  background-size: cover;
 }
+
+.bSection-main::after {
+  height: 550px;
+  content: "";
+  position: absolute;
+  background: white;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.4;
+}
+
+
+
 .user-board{
   width: 100%;
   display: flex;

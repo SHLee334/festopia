@@ -34,12 +34,12 @@
 
 /* ========== 닉네임 ========== */
 .nickname {
+  font-family: "Dongle", sans-serif;
+  font-weight: bolder;
+  font-size: 3rem;
   position: fixed;
   top: 40px;
   right: 70px;
-  font-family: "Dongle", sans-serif;
-  font-weight: bolder;
-  font-size: 3.5rem;
 }
 
 .nickname > span {
@@ -204,3 +204,4 @@
 #main-jsp3 {
   z-index: 10000;
 }
+

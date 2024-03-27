@@ -30,10 +30,10 @@ uri="http://www.springframework.org/security/tags"%>
   <body>
     <jsp:include page="/header.jsp" />
 
-    <!-- ========== 프로그레스 바 ========== -->
+    <!-- ========== 프로그레스 바 ==========
     <div class="progress-bar-container">
       <div class="progress-bar"></div>
-    </div>
+    </div> -->
 
     <main id="main-wrap">
       <!-- ========== 섹션이동 버튼 ========== -->
@@ -118,7 +118,7 @@ uri="http://www.springframework.org/security/tags"%>
     <footer class="footer">
       <div class="footer-section1">
         <p id="footer-logo">FESTOPIA</p>
-        <p id="footer-slogan">Find Seoul's Beat</p>
+        <p id="footer-slogan">Find Seoul's Beat!</p>
         <p id="footer-national">South Korea</p>
       </div>
       <div class="footer-section2">
@@ -208,3 +208,4 @@ uri="http://www.springframework.org/security/tags"%>
     <script src="resources/js/index.js"></script>
   </body>
 </html>
+
