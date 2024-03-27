@@ -45,8 +45,21 @@
   border: 1px solid grey;
 }
 .bSection-main {
-  background-color: #888;
-  height: 80vh;
+  height: 550px;
+  background-image: url(../../resources/resources/bg-pink-cloud3.jpeg);
+  position: relative;
+  isolation: isolate;
+  background-size: cover;
+}
+
+.bSection-main::after {
+  height: 550px;
+  content: "";
+  position: absolute;
+  background: white;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.4;
 }
 .view-user {
   width: 100%;
