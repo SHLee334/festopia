@@ -62,7 +62,6 @@
             <c:otherwise>
               <h5><i class="fa-solid fa-heart" id="delFav"></i></h5>
               <script>
-                console.log(${favorite.fvCode});
                    $("#delFav").click(() => {
                      $.ajax({
                        type: 'post',

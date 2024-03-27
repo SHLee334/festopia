@@ -18,7 +18,6 @@ public class UserDAO {
 	
 	public User loginUser(String id) {
 		User user = session.selectOne("userMapper.loginUser", id);
-		System.out.println("user : " + user);
 		return user;
 	}
 	

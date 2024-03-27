@@ -132,7 +132,7 @@ uri="http://www.springframework.org/security/tags" %>
 					<c:forEach items="${board}" var="b" varStatus="status">
 						<tr class="" onclick="location.href='noticeView?no=${b.no}&userCode=${b.userCode}'"  style="cursor:hand" >
 							<td>${fn:length(board) -  status.index}</td>
-							<td><a href="noticeView?no=${b.no}&userCode=${b.userCode}" id="adminDetail"> ${b.noticeTitle }</a></td>
+							<td>${b.noticeTitle }</td>
 							<td>${b.user.nickname}</td>
 							<td><fmt:formatDate value="${b.noticeDate}" pattern="yyyy-MM-dd"/></td>
 							<td id="actualCount">${b.viewCount}</td>
@@ -156,7 +156,7 @@ uri="http://www.springframework.org/security/tags" %>
 		  <div class="innercontent2">
 			<div class="modify-second-page" id="content-page">
 			  
-			  
+			  <img src="../../resources/resources/goodad.PNG">
 			</div>
 		  </div>
 		</div>

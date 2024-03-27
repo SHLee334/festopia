@@ -77,8 +77,6 @@ public class NoticeBoardController {
 	@GetMapping("/noticeView")
 	public void noticeView(Model model, String no, int userCode) {
 		model.addAttribute("vo", service.noticeView(Integer.parseInt(no)));
-		System.out.println(no);
-		System.out.println(userCode);
 		// board로 축제 찜목록 바운딩
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // 인증정보
 		User userDetails = (User) authentication.getPrincipal(); // 사용자 정보
@@ -102,7 +100,7 @@ public class NoticeBoardController {
 		}
 		service.updateView(b);
 		
-		return "redirect:/noticeView?no="+b.getNo();
+		return "redirect:/mypage";
 	}
 	
 	// 글 삭제

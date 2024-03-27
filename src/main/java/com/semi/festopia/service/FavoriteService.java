@@ -27,7 +27,6 @@ public class FavoriteService {
 	}
 
 	public List<Favorite> selectFvAll(int userCode) {
-		//System.out.println("service" + userCode);
 		return dao.selectFvAll(userCode);
 	}
 

@@ -38,7 +38,6 @@ public class AjaxController {
 	@PostMapping("/isDuplicated")
 	public User idCheck(String id) {
 		User user = service.idCheck(id);
-		System.out.println("user : " + user);
 		return user;
 	}
 	
@@ -46,7 +45,6 @@ public class AjaxController {
 	@ResponseBody
 	@PostMapping("/bindPwd")
 	public String pwdBind(@RequestParam("pwd") String pwd, HttpSession session) {
-		System.out.println("사용자한테 입력받은 로그인시 비밀번호 : " + pwd);
 		session.setAttribute("pwdBind", pwd);
 		return "/mypage-account";
 	}
@@ -61,7 +59,6 @@ public class AjaxController {
 		User userDetails = (User) authentication.getPrincipal(); // 사용자 정보
 			
 		if(service.updateUserNickname(user)==1) {
-			System.out.println("이것은 ajax의 vo(이름/메일 변경쪽) : " + user);
 
 			
 			SecurityContextHolder.getContext().setAuthentication(createNewAuthentication(authentication, userDetails.getUsername()));
@@ -78,7 +75,6 @@ public class AjaxController {
 	@PostMapping("/updateUserInfo")
 	public User updateUserInfo(User user) {
 		if(service.updateUserInfo(user)==1) {
-			System.out.println("이것은 ajax의 vo(비밀번호 변경쪽) : " + user);
 			return user;
 		}else {
 			return null;
@@ -94,40 +90,5 @@ public class AjaxController {
 		newAuth.setDetails(currentAuth.getDetails()); // 이 과정이 수정 버튼을 누르면 강제로 재 로그인 함으로써 모든 정보가 수정됨
 		return newAuth;
 	}
-	
-	//private String path = "D:\\festTest\\";
-	
-	
-//	// 마이페이지 유저 프로필 사진 변경 --> multipartfile 처리하는 변수로 담아올 수 있도록 
-//	@ResponseBody
-//	@PostMapping("/changeProfile")
-//	public User changeProfile(@RequestParam("userProfileUrl") MultipartFile file, @RequestParam("userCode") String userCode, User user) throws IllegalStateException, IOException {
-//		//@RequestParam("userProfileUrl") MultipartFile file, @RequestParam("userCode") String userCode
-//		System.out.println(user);
-//		System.out.println(service.changeProfile(user));
-//		System.out.println(file);
-//		System.out.println(userCode);
-//		if(!user.getFile().isEmpty()) {
-//			
-//			if(user.getUserProfileUrl()!=null) {
-//				File file1 = new File(path + user.getUserProfileUrl());
-//				file1.delete();
-//			}
-//			String url = fileUpload(user.getFile());
-//			user.setUserProfileUrl(url);
-//		}
-//		service.changeProfile(user);
-//		return user;
-//	}
-//	//파일 업로드 기능
-//	private String fileUpload(MultipartFile file) throws IllegalStateException, IOException {
-//
-//		// 중복방지를 위한 UUID 적용
-//		UUID uuid = UUID.randomUUID();
-//		String filename = uuid.toString() + "_" + file.getOriginalFilename();
-//		File copyFile = new File(path + filename);
-//		file.transferTo(copyFile); // 업로드한 지정한 path위치로 저장
-//		return filename;
-//	}
 
 }

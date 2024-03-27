@@ -151,10 +151,8 @@ uri="http://www.springframework.org/security/tags"%>
         type: "post",
         url: "/search",
         success: function (list) {
-          console.log(list);
           let htmlCode = "";
           for (const item of list) {
-            console.log(item);
             htmlCode +=
               '<a href="/detail?code=' + item.fesCode + ' "class="main-card">' +
               "<img src=" + item.poster + 'class="main-card-poster">' +
@@ -176,7 +174,7 @@ uri="http://www.springframework.org/security/tags"%>
           const calArr = [];
           for (const item of list) {
             const cal = {
-              title:"●"+ item.name,
+              title: item.name,
               start: item.startDate,
               end: item.startDate,
             };

@@ -15,24 +15,6 @@ body {
   min-height: calc(100vh - 10rem);
 }
 
-/* ========== 프로그레스 바 ==========
-.progress-bar-container {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 100;
-  width: 100vw;
-  height: 5px;
-  background: #ddd;
-}
-
-.progress-bar {
-  width: 0;
-  height: 100%;
-  background: #00a8ff;
-  background-color: rgb(195, 126, 235);
-} */
-
 /* ========== 섹션이동 버튼 ========== */
 .section-btn-container {
   position: fixed;
@@ -273,6 +255,11 @@ body {
 .fc .fc-daygrid-day-frame {
   height: 50px;
   overflow: hidden;
+}
+/* 각 일자별 개별 축제 영역 */
+
+.fc-daygrid-event-harness {
+  margin-bottom: 30px;
 }
 
 /* 일(each day) 숫자 */

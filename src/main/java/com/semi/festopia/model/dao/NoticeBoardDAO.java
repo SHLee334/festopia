@@ -16,7 +16,6 @@ public class NoticeBoardDAO {
 	private SqlSessionTemplate session;
 	
 	public List<NoticeBoard> boardList() {
-		//System.out.println(session.selectList("noticeMapper.boardList"));
 		return session.selectList("noticeMapper.boardList");
 	}
 	

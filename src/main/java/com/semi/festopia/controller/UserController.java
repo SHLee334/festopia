@@ -43,10 +43,9 @@ public class UserController {
 	}
 	
 	@PostMapping("login")
-	public String login(String username) {
+	public void login(String username) {
 		 User user = (User) service.loadUserByUsername(username);
-		 System.out.println("controller : " + user);
-		 return "redirect:/";
+		
 	}
 	
 	@GetMapping("loginFail")

@@ -151,7 +151,33 @@ prefix="sec" uri="http://www.springframework.org/security/tags"%>
        </form>
        </div> 
        
+       <script>
+        function setThumbnail(event) {
+          var reader = new FileReader();
+  
+          reader.onload = function (event) {
+            var img = document.createElement("img");
+            img.setAttribute("src", event.target.result);
+            document.querySelector("div#image_container").appendChild(img);
+          };
+  
+          reader.readAsDataURL(event.target.files[0]);
+        }
+  
+        $("#inputImg").on({
+          mouseenter: () => {
+            $("#image_container").show();
+          },
+          mouseleave: () => {
+            $("#image_container").hide();
+          },
+        });
+      </script>
+
        </c:if>
+
+
+
        <script src="../../resources/js/Image_Gallery.js"></script>
        <script src="../../resources/js/noticeView.js"></script>
   </body>

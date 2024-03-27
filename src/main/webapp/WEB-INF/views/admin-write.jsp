@@ -63,48 +63,48 @@ uri="http://www.springframework.org/security/tags" %>
       align-items: center;
     }
     .end-container label {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    vertical-align: middle;
-    background-color: #999999;
-    cursor: pointer;
-    height: 40px;
-    margin-right: 20px;
-    border-radius: 10px;
-  }
-  .end-container input[type="file"]{
-    position: absolute;
-    width: 0;
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-  }
-  .image_container{
-    width: 300px;
-    height: 300px;
-    display: none;
-    border: 1px solid grey;
-    border-radius: 10px;
-  }
-  #image_container img{
-    max-width: 80%;
-    border: 1px solid grey;
-    border-radius: 10px;
-  }
-  /* 버튼 */
-  .write-submit{
-    border: none;
-    cursor: pointer;
-    width: 100px;
-    color: white;
-    background-color: rgb(255, 138, 157);
-    padding: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 10px;
-  }
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      vertical-align: middle;
+      background-color: #999999;
+      cursor: pointer;
+      height: 40px;
+      margin-right: 20px;
+      border-radius: 10px;
+    }
+    .end-container input[type="file"] {
+      position: absolute;
+      width: 0;
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+    }
+    .image_container {
+      width: 300px;
+      height: 300px;
+      display: none;
+      border: 1px solid grey;
+      border-radius: 10px;
+    }
+    #image_container img {
+      max-width: 80%;
+      border: 1px solid grey;
+      border-radius: 10px;
+    }
+    /* 버튼 */
+    .write-submit {
+      border: none;
+      cursor: pointer;
+      width: 100px;
+      color: white;
+      background-color: rgb(255, 138, 157);
+      padding: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 10px;
+    }
   </style>
   <body>
     <div class="write-container">
@@ -131,53 +131,27 @@ uri="http://www.springframework.org/security/tags" %>
             placeholder="본문글을 입력해주세요."
           ></textarea>
         </div>
-        
+
         <div class="end-container">
-          
-            <label for="writeFile" id="inputImg"><i class="fa-solid fa-camera" ></i></label>
-            <!-- <label for="writeFile" id="imageModel-admin"><i class="fa-solid fa-camera" ></i></label> -->
-            <input
-              class="write-input"
-              type="file"
-              id="writeFile"
-              name="file"
-              accept="image/*"
-              onchange="setThumbnail(event);"
-            />
-          
+          <label for="writeFile" id="inputImg"
+            ><i class="fa-solid fa-camera"></i
+          ></label>
+          <!-- <label for="writeFile" id="imageModel-admin"><i class="fa-solid fa-camera" ></i></label> -->
+          <input
+            class="write-input"
+            type="file"
+            id="writeFile"
+            name="file"
+            accept="image/*"
+            onchange="setThumbnail(event);"
+          />
+
           <!-- 버튼 등록 -->
           <button type="submit" class="write-submit">등록</button>
         </div>
         <div id="image_container"></div>
       </form>
-
-      <!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
     </div>
-  </div>
-</div> -->
-    </div>
-  
-    
-
 
     <script>
       function setThumbnail(event) {
@@ -193,14 +167,13 @@ uri="http://www.springframework.org/security/tags" %>
       }
 
       $("#inputImg").on({
-        mouseenter: ()=>{
+        mouseenter: () => {
           $("#image_container").show();
         },
-        mouseleave: ()=>{
+        mouseleave: () => {
           $("#image_container").hide();
         },
-      }
-      )
+      });
     </script>
   </body>
 </html>
