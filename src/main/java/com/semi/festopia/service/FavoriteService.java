@@ -31,8 +31,4 @@ public class FavoriteService {
 		return dao.selectFvAll(userCode);
 	}
 
-	// 축제 조회 수
-	public int updateViewCnt(int fesCode){
-		return dao.updateViewCnt(fesCode);
-	}
 }

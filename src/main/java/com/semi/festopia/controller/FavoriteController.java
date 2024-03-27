@@ -31,7 +31,7 @@ public class FavoriteController {
 
 	/* ========== 축제 상세 ========== */
 	@GetMapping("/detail")
-	public String detail(String code, Model model, int fesCode) {
+	public String detail(String code, Model model) {
 		model.addAttribute("vo", searchService.detail(Integer.parseInt(code)));
 		
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -50,11 +50,6 @@ public class FavoriteController {
 
 		List<Comment> com = comService.viewCom(Integer.parseInt(code));
 		model.addAttribute("com", com);
-
-		// 조회 수
-		System.out.println("festival code" + fesCode);
-		favService.updateViewCnt(fesCode);
-
 
 		return "festivalDetail";
 	}

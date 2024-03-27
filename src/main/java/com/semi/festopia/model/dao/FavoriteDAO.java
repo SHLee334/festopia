@@ -31,8 +31,4 @@ public class FavoriteDAO {
 		return session.selectList("favorite.fvList", userCode);
 	}
 
-	// 축제 조회 수
-	public int updateViewCnt(int fesCode) {
-		return session.update("favorite.updateViewCnt", fesCode);
-	}
 }
