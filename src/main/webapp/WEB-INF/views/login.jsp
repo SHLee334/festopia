@@ -20,7 +20,7 @@ pageEncoding="UTF-8"%>
         </div>
       </div>
       <div class="login-content">
-        <label for="pwd">Password</label>
+        <label for="password">Password</label>
         <div>
           <input
             type="password"

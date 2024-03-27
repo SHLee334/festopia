@@ -77,15 +77,8 @@ public class AjaxController {
 	@ResponseBody
 	@PostMapping("/updateUserInfo")
 	public User updateUserInfo(User user) {
-		
-		//Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // 인증정보
-		//User userDetails = (User) authentication.getPrincipal(); // 사용자 정보
-
 		if(service.updateUserInfo(user)==1) {
 			System.out.println("이것은 ajax의 vo(비밀번호 변경쪽) : " + user);
-			
-			//SecurityContextHolder.getContext().setAuthentication(createNewAuthentication(authentication, userDetails.getUsername()));
-			
 			return user;
 		}else {
 			return null;
